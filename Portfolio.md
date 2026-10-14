@@ -1,5 +1,5 @@
 ---
-title: Portfolio
+title: Photography Portfolio
 subtitle: Curated tutorials, tools, and resources to help you learn and build.
 layout: "page"
 icon: fa-camera
