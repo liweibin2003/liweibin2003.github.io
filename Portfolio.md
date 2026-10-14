@@ -73,9 +73,19 @@ order: 2
 .image-grid img:hover {
   transform: scale(1.05); /* 鼠标悬浮图片微微放大 */
 }
+
+/* 统一标题样式，替代 Markdown 的 ### */
+.section-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #333;
+}
 </style>
 
-### Featured Videos
+<div class="section-title">Featured Videos</div>
+
 <!-- 视频四宫格区 -->
 <div class="video-grid">
   <!-- 视频 1：YouTube 源 + 本地图片封面 -->
@@ -102,15 +112,17 @@ order: 2
     <div class="video-title">Photoshop Tutorial: Cosplay</div>
   </div>
 
-  <!-- 视频 3：本地 mp4 源 + 本地视频默认封面 -->
+  <!-- 视频 4：本地 mp4 源 + 本地视频默认封面 -->
   <div class="video-item">
     <a href="{{ '/assets/images/4.mp4' | relative_url }}" data-fancybox="video-gallery">
       <video src="{{ '/assets/images/4.mp4' | relative_url }}" preload="metadata" muted></video>
     </a>
     <div class="video-title">Chinese Traditional Zither (me)</div>
   </div>
+</div> <!-- 补上了这里缺失的关闭标签 -->
 
-### Photo Gallery
+<div class="section-title">Photo Gallery</div>
+
 <!-- 图片九宫格区 -->
 <div class="image-grid">
   <a href="{{ '/assets/images/7.jpg' | relative_url }}" data-fancybox="image-gallery">
