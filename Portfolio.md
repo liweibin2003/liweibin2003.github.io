@@ -6,7 +6,7 @@ icon: fa-camera
 order: 3
 ---
 
-<!-- 引入 Fancybox 的 CSS 和 JS (用于点击放大和视频弹窗) -->
+<!-- 引入 Fancybox 的 CSS 和 JS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
@@ -29,16 +29,20 @@ order: 3
   width: 100%;
   display: block;
 }
-.video-item video {
+/* 兼容视频封面和图片封面，统一比例和样式 */
+.video-item video,
+.video-item img {
   width: 100%;
   aspect-ratio: 16 / 9; /* 统一视频封面比例 */
   object-fit: cover;
-  border-radius: 8px; /* 略微圆角更好看 */
+  border-radius: 8px; /* 略微圆角 */
   cursor: pointer;
   background-color: #000;
   transition: opacity 0.3s ease;
+  display: block;
 }
-.video-item video:hover {
+.video-item video:hover,
+.video-item img:hover {
   opacity: 0.85; /* 鼠标悬浮反馈 */
 }
 .video-title {
@@ -74,27 +78,34 @@ order: 3
 ### Featured Videos
 <!-- 视频四宫格区 -->
 <div class="video-grid">
+  <!-- 视频 1：YouTube 源 + 本地图片封面 -->
   <div class="video-item">
-    <a href="{{ '/assets/images/1.mp4' | relative_url }}" data-fancybox="video-gallery">
-      <video src="{{ '/assets/images/1.mp4' | relative_url }}" preload="metadata" muted></video>
+    <a href="https://youtu.be/In06Ry0ezLU" data-fancybox="video-gallery">
+      <img src="{{ '/assets/images/3.jpg' | relative_url }}" alt="Video 1 Cover">
     </a>
     <div class="video-title">视频 1 的标题</div>
   </div>
+
+  <!-- 视频 2：YouTube 源 + 本地图片封面 -->
   <div class="video-item">
-    <a href="{{ '/assets/images/2.mp4' | relative_url }}" data-fancybox="video-gallery">
-      <video src="{{ '/assets/images/2.mp4' | relative_url }}" preload="metadata" muted></video>
+    <a href="https://youtu.be/iLsmqV9zqbU" data-fancybox="video-gallery">
+      <img src="{{ '/assets/images/4.jpg' | relative_url }}" alt="Video 2 Cover">
     </a>
     <div class="video-title">视频 2 的标题</div>
   </div>
+
+  <!-- 视频 3：本地 mp4 源 + 本地视频默认封面 -->
   <div class="video-item">
     <a href="{{ '/assets/images/3.mp4' | relative_url }}" data-fancybox="video-gallery">
       <video src="{{ '/assets/images/3.mp4' | relative_url }}" preload="metadata" muted></video>
     </a>
     <div class="video-title">视频 3 的标题</div>
   </div>
+
+  <!-- 视频 4：本地 mp4 源 + 本地图片封面 -->
   <div class="video-item">
     <a href="{{ '/assets/images/4.mp4' | relative_url }}" data-fancybox="video-gallery">
-      <video src="{{ '/assets/images/4.mp4' | relative_url }}" preload="metadata" muted></video>
+      <img src="{{ '/assets/images/6.jpg' | relative_url }}" alt="Video 4 Cover">
     </a>
     <div class="video-title">视频 4 的标题</div>
   </div>
@@ -103,18 +114,6 @@ order: 3
 ### Photo Gallery
 <!-- 图片九宫格区 -->
 <div class="image-grid">
-  <a href="{{ '/assets/images/3.jpg' | relative_url }}" data-fancybox="image-gallery">
-    <img src="{{ '/assets/images/3.jpg' | relative_url }}" alt="Portfolio Image 3">
-  </a>
-  <a href="{{ '/assets/images/4.jpg' | relative_url }}" data-fancybox="image-gallery">
-    <img src="{{ '/assets/images/4.jpg' | relative_url }}" alt="Portfolio Image 4">
-  </a>
-  <a href="{{ '/assets/images/5.jpg' | relative_url }}" data-fancybox="image-gallery">
-    <img src="{{ '/assets/images/5.jpg' | relative_url }}" alt="Portfolio Image 5">
-  </a>
-  <a href="{{ '/assets/images/6.jpg' | relative_url }}" data-fancybox="image-gallery">
-    <img src="{{ '/assets/images/6.jpg' | relative_url }}" alt="Portfolio Image 6">
-  </a>
   <a href="{{ '/assets/images/7.jpg' | relative_url }}" data-fancybox="image-gallery">
     <img src="{{ '/assets/images/7.jpg' | relative_url }}" alt="Portfolio Image 7">
   </a>
@@ -124,14 +123,30 @@ order: 3
   <a href="{{ '/assets/images/9.jpg' | relative_url }}" data-fancybox="image-gallery">
     <img src="{{ '/assets/images/9.jpg' | relative_url }}" alt="Portfolio Image 9">
   </a>
-  <!-- 注意：这里目前是7张图。因为采用的是CSS Grid，它会自动排布成3x3的网格，最后一行会空出两个位置。如果你想凑齐完美的九宫格，可以在文件夹中补充 10.jpg 和 11.jpg，并在此处复制添加两个 <a> 标签即可。 -->
+  <a href="{{ '/assets/images/10.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/10.jpg' | relative_url }}" alt="Portfolio Image 10">
+  </a>
+  <a href="{{ '/assets/images/11.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/11.jpg' | relative_url }}" alt="Portfolio Image 11">
+  </a>
+  <a href="{{ '/assets/images/12.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/12.jpg' | relative_url }}" alt="Portfolio Image 12">
+  </a>
+  <a href="{{ '/assets/images/13.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/13.jpg' | relative_url }}" alt="Portfolio Image 13">
+  </a>
+  <a href="{{ '/assets/images/14.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/14.jpg' | relative_url }}" alt="Portfolio Image 14">
+  </a>
+  <a href="{{ '/assets/images/15.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/15.jpg' | relative_url }}" alt="Portfolio Image 15">
+  </a>
 </div>
 
 <!-- 初始化 Fancybox 脚本 -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     Fancybox.bind('[data-fancybox]', {
-      // 启用原图缩放和沉浸式体验
       Toolbar: {
         display: [
           "zoom",
