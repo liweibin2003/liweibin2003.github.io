@@ -3,7 +3,7 @@ title: Cool Websites
 subtitle: Curated tutorials, tools, and resources to help you learn and build.
 layout: "page"
 icon: fa-globe
-order: 5
+order: 3
 ---
 
 I love books! Here are some I'm reading now:
