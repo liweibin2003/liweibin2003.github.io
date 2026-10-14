@@ -10,6 +10,21 @@ order: 2
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
+/* === 修复原主题 CSS 与 Fancybox 冲突导致大图不显示的问题 === */
+.fancybox__container {
+  z-index: 99999 !important; /* 确保弹窗图层在网页的最顶层 */
+}
+
+.fancybox__container img,
+.fancybox__container .f-image {
+  opacity: 1 !important;           /* 强制取消透明，解决懒加载冲突 */
+  visibility: visible !important;  /* 强制可见 */
+  display: block !important;       /* 覆盖可能的 display: none */
+  animation: none !important;      /* 取消主题自带的图片载入动画 */
+  box-shadow: none !important;     /* 去除多余阴影 */
+  background: transparent !important;
+}
+
 <style>
 /* 四宫格视频布局 */
 .video-grid {
