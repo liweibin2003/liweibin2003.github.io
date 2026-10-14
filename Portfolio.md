@@ -105,7 +105,7 @@ order: 2
   <!-- 视频 4：本地 mp4 源 + 本地图片封面 -->
   <div class="video-item">
     <a href="{{ '/assets/images/4.mp4' | relative_url }}" data-fancybox="video-gallery">
-      <img src="{{ '/assets/images/6.jpg' | relative_url }}" alt="Video 4 Cover">
+      <img src="{{ '/assets/images/4.mp4' | relative_url }}" alt="Video 4 Cover">
     </a>
     <div class="video-title">视频 4 的标题</div>
   </div>
