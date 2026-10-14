@@ -76,4 +76,61 @@ order: 3
   <!-- jazzvswaffles.com -->
   <div class="website-card">
     <a href="https://jazzvswaffles.com" target="_blank" class="website-link">
-      jazzvswaffles.com
+      jazzvswaffles.com <span class="external-icon">↗</span>
+    </a>
+    <div class="website-desc">
+      An AI-powered simulator that pits any two arbitrary characters against each other in hilarious text-based battles.
+    </div>
+  </div>
+
+  <!-- calligrapher.ai -->
+  <div class="website-card">
+    <a href="https://calligrapher.ai" target="_blank" class="website-link">
+      calligrapher.ai <span class="external-icon">↗</span>
+    </a>
+    <div class="website-desc">
+      Generate realistic, randomly stylized English handwriting and signatures using AI.
+    </div>
+  </div>
+
+  <!-- lishichelun.com -->
+  <div class="website-card">
+    <a href="https://lishichelun.com" target="_blank" class="website-link">
+      lishichelun.com <span class="external-icon">↗</span>
+    </a>
+    <div class="website-desc">
+      Visualize the lifespans and major events of historical figures through an interactive timeline interface.
+    </div>
+  </div>
+
+  <!-- azure.microsoft.com -->
+  <div class="website-card">
+    <a href="https://azure.microsoft.com/en-us/products/ai-services/text-to-speech" target="_blank" class="website-link">
+      azure.microsoft.com <span class="external-icon">↗</span>
+    </a>
+    <div class="website-desc">
+      Microsoft's powerful AI Text-to-Speech (TTS) engine, offering highly realistic and natural-sounding voices.
+    </div>
+  </div>
+
+  <!-- waifulabs.com -->
+  <div class="website-card">
+    <a href="https://waifulabs.com" target="_blank" class="website-link">
+      waifulabs.com <span class="external-icon">↗</span>
+    </a>
+    <div class="website-desc">
+      Instantly generate custom anime-style character avatars with a single click using machine learning.
+    </div>
+  </div>
+
+  <!-- remove.bg -->
+  <div class="website-card">
+    <a href="https://www.remove.bg" target="_blank" class="website-link">
+      remove.bg <span class="external-icon">↗</span>
+    </a>
+    <div class="website-desc">
+      A lifesaver tool that automatically removes the background from any image perfectly in one click.
+    </div>
+  </div>
+
+</div>
