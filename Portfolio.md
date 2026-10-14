@@ -83,7 +83,7 @@ order: 2
     <a href="https://youtu.be/In06Ry0ezLU" data-fancybox="video-gallery">
       <img src="{{ '/assets/images/3.jpg' | relative_url }}" alt="Video 1 Cover">
     </a>
-    <div class="video-title">视频 1 的标题</div>
+    <div class="video-title">Mikumikudance</div>
   </div>
 
   <!-- 视频 2：YouTube 源 + 本地图片封面 -->
@@ -91,7 +91,7 @@ order: 2
     <a href="https://youtu.be/iLsmqV9zqbU" data-fancybox="video-gallery">
       <img src="{{ '/assets/images/4.jpg' | relative_url }}" alt="Video 2 Cover">
     </a>
-    <div class="video-title">视频 2 的标题</div>
+    <div class="video-title">CaltonHills-Drone</div>
   </div>
 
   <!-- 视频 3：本地 mp4 源 + 本地视频默认封面 -->
@@ -99,17 +99,16 @@ order: 2
     <a href="{{ '/assets/images/3.mp4' | relative_url }}" data-fancybox="video-gallery">
       <video src="{{ '/assets/images/3.mp4' | relative_url }}" preload="metadata" muted></video>
     </a>
-    <div class="video-title">视频 3 的标题</div>
+    <div class="video-title">Photoshop Tutorial: Cosplay</div>
   </div>
 
-  <!-- 视频 4：本地 mp4 源 + 本地图片封面 -->
+  <!-- 视频 3：本地 mp4 源 + 本地视频默认封面 -->
   <div class="video-item">
     <a href="{{ '/assets/images/4.mp4' | relative_url }}" data-fancybox="video-gallery">
-      <img src="{{ '/assets/images/4.mp4' | relative_url }}" alt="Video 4 Cover">
+      <video src="{{ '/assets/images/4.mp4' | relative_url }}" preload="metadata" muted></video>
     </a>
-    <div class="video-title">视频 4 的标题</div>
+    <div class="video-title">Chinese Traditional Zither (me)</div>
   </div>
-</div>
 
 ### Photo Gallery
 <!-- 图片九宫格区 -->
