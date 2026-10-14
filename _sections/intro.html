@@ -12,14 +12,9 @@ order: 1
   <p>A little space of my own. Welcome.</p>
 </header>
 
-<!-- 加入了 flex 布局，确保5个按钮居中对齐，并在手机端自动换行 -->
-<footer style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-  <!-- About 保持原样，页面内平滑滚动 -->
-  <a href="#about-me" class="button scrolly">About</a>
-  
-  <!-- 其他四个按钮跳转到对应页面，去掉了 scrolly 类名（因为不需要平滑滚动） -->
-  <a href="/Portfolio.html" class="button">Portfolio</a>
-  <a href="/Cool%20Websites.html" class="button">Websites</a>
-  <a href="/learning%20resources.html" class="button">Resources</a>
-  <a href="/blog.html" class="button">Blogs</a>
+<footer style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+  <a href="{{ '/Portfolio.html' | relative_url }}" class="button">Portfolio</a>
+  <a href="{{ '/Cool%20Websites.html' | relative_url }}" class="button">Websites</a>
+  <a href="{{ '/learning%20resources.html' | relative_url }}" class="button">Resources</a>
+  <a href="{{ '/blog.html' | relative_url }}" class="button">Blogs</a>
 </footer>
