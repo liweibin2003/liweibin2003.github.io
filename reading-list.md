@@ -3,7 +3,7 @@ title: Learning Resources
 subtitle: Curated tutorials, tools, and resources to help you learn and build.
 layout: "page"
 icon: fa-book
-order: 3
+order: 4
 ---
 
 I love books! Here are some I'm reading now:
