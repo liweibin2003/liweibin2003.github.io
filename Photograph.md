@@ -1,5 +1,5 @@
 ---
-title: Photography Portfolio
+title: Photograph
 subtitle: A collection of moments, seen through my lens.
 layout: "page"
 icon: fa-camera
