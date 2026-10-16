@@ -1,8 +1,8 @@
 ---
 title: Tableau
-subtitle: China Regional E-commerce Performance 2024-2025
+subtitle: Please zoom out the page to view.
 layout: "page"
-icon: fa-chart
+icon: fa-chart-line
 order: 2
 ---
 
