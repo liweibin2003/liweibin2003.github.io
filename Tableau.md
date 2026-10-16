@@ -1,5 +1,5 @@
 ---
-title: Tableau Portfolio
+title: Tableau
 subtitle: China Regional E-commerce Performance 2024-2025
 layout: "page"
 icon: fa-chart
