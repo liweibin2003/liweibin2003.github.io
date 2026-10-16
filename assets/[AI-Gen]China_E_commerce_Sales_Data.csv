@@ -1,0 +1,1501 @@
+Order_ID,Order_Date,Ship_Date,Ship_Mode,Customer_ID,Segment,Region,Province,Category,Sub_Category,Sales,Quantity,Discount,Profit
+CN-2024-617593,2024-07-19,2024-07-26,First Class,C-8241,Corporate,Northwest China,Xinjiang,Furniture,Chairs,423.58,10,0.15,133.46
+CN-2024-647265,2024-07-02,2024-07-05,First Class,C-9003,Home Office,East China,Anhui,Office Supplies,Pens,5717.53,1,0.15,1963.24
+CN-2024-579147,2024-01-21,2024-01-27,Same Day,C-2564,Home Office,Central China,Henan,Technology,Tablets,7392.84,1,0.3,-2126.91
+CN-2024-533938,2024-07-21,2024-07-25,First Class,C-8558,Corporate,Northeast China,Heilongjiang,Furniture,Tables,1846.43,14,0.1,512.39
+CN-2024-426203,2024-01-09,2024-01-16,Same Day,C-7142,Corporate,North China,Shanxi,Technology,Laptops,15756.63,15,0.1,5761.77
+CN-2025-444150,2025-03-15,2025-03-17,Standard Class,C-1499,Consumer,Northwest China,Gansu,Office Supplies,Storage,875.93,9,0.5,-6.85
+CN-2025-570908,2025-05-13,2025-05-19,Second Class,C-9048,Consumer,Southwest China,Chongqing,Technology,Smartphones,4779.57,12,0.2,1061.01
+CN-2025-316111,2025-12-01,2025-12-08,Same Day,C-2999,Consumer,South China,Guangxi,Furniture,Chairs,6291.89,3,0.1,745.91
+CN-2024-886571,2024-07-31,2024-08-01,First Class,C-7540,Home Office,East China,Jiangxi,Technology,Accessories,11355.39,15,0.1,1314.77
+CN-2025-274463,2025-06-10,2025-06-16,Second Class,C-4081,Home Office,Southwest China,Tibet,Office Supplies,Storage,2722.54,5,0.3,-971.95
+CN-2025-593606,2025-07-30,2025-08-03,Standard Class,C-5493,Consumer,East China,Fujian,Office Supplies,Paper,5293.37,14,0.0,1034.23
+CN-2025-769444,2025-08-25,2025-08-26,Standard Class,C-6524,Consumer,South China,Guangdong,Office Supplies,Storage,366.04,6,0.15,51.63
+CN-2025-954472,2025-10-14,2025-10-17,First Class,C-9800,Consumer,North China,Inner Mongolia,Technology,Tablets,9491.3,12,0.3,-4558.05
+CN-2024-726876,2024-03-30,2024-04-03,Same Day,C-5662,Home Office,North China,Beijing,Technology,Smartphones,6953.7,14,0.0,2229.6
+CN-2024-676466,2024-06-19,2024-06-25,First Class,C-8761,Consumer,Northeast China,Jilin,Office Supplies,Pens,1195.6,10,0.0,455.37
+CN-2024-374872,2024-10-27,2024-10-31,Standard Class,C-8225,Corporate,South China,Guangdong,Office Supplies,Binders,2638.67,9,0.0,625.59
+CN-2024-682229,2024-11-03,2024-11-09,First Class,C-6880,Consumer,North China,Beijing,Furniture,Tables,1120.79,7,0.0,329.7
+CN-2024-878849,2024-05-01,2024-05-07,Standard Class,C-3872,Corporate,East China,Jiangxi,Furniture,Tables,2921.06,9,0.5,-1203.44
+CN-2024-113949,2024-07-06,2024-07-11,First Class,C-7645,Consumer,Northwest China,Xinjiang,Technology,Laptops,20953.36,6,0.0,6130.58
+CN-2024-434579,2024-09-12,2024-09-19,First Class,C-6719,Corporate,Southwest China,Guizhou,Technology,Tablets,13815.89,3,0.2,3836.12
+CN-2024-564533,2024-11-20,2024-11-26,Second Class,C-9904,Home Office,Southwest China,Tibet,Technology,Laptops,4961.34,6,0.0,1844.9
+CN-2025-396746,2025-04-28,2025-05-05,Standard Class,C-8277,Corporate,North China,Shanxi,Technology,Smartphones,259.69,4,0.0,103.59
+CN-2024-928787,2024-12-06,2024-12-07,Second Class,C-7339,Home Office,East China,Shandong,Office Supplies,Paper,1926.57,5,0.3,-442.51
+CN-2024-432824,2024-02-14,2024-02-17,First Class,C-1331,Corporate,Northwest China,Gansu,Office Supplies,Paper,337.49,11,0.15,105.21
+CN-2025-897162,2025-09-23,2025-09-24,Standard Class,C-9211,Consumer,North China,Tianjin,Furniture,Bookcases,7444.37,1,0.0,1328.37
+CN-2024-444179,2024-02-01,2024-02-07,First Class,C-6374,Corporate,East China,Fujian,Office Supplies,Paper,623.95,10,0.3,-33.67
+CN-2025-532163,2025-10-22,2025-10-29,Standard Class,C-9820,Consumer,East China,Shandong,Office Supplies,Binders,1831.28,9,0.0,439.53
+CN-2024-347069,2024-06-25,2024-06-26,Second Class,C-4623,Home Office,Northwest China,Gansu,Technology,Laptops,5109.49,6,0.2,1128.6
+CN-2025-168625,2025-04-11,2025-04-15,Second Class,C-5201,Corporate,East China,Shanghai,Office Supplies,Binders,2933.0,8,0.0,1095.6
+CN-2024-486616,2024-04-19,2024-04-21,First Class,C-7273,Corporate,Northwest China,Qinghai,Office Supplies,Paper,3173.59,5,0.1,748.27
+CN-2024-210759,2024-10-06,2024-10-07,Standard Class,C-3808,Consumer,North China,Beijing,Furniture,Tables,2026.05,6,0.2,665.96
+CN-2025-729609,2025-11-13,2025-11-20,First Class,C-3018,Consumer,Southwest China,Tibet,Furniture,Chairs,84.94,11,0.5,-21.0
+CN-2024-634639,2024-04-15,2024-04-17,Second Class,C-4625,Consumer,Northwest China,Ningxia,Furniture,Bookcases,12843.65,11,0.1,4873.18
+CN-2024-974898,2024-08-29,2024-08-30,Standard Class,C-9870,Corporate,Southwest China,Yunnan,Office Supplies,Paper,678.76,4,0.3,-20.28
+CN-2025-107460,2025-06-30,2025-07-07,First Class,C-7044,Corporate,Southwest China,Chongqing,Technology,Tablets,688.75,4,0.3,-251.9
+CN-2024-465014,2024-12-20,2024-12-21,Same Day,C-9123,Home Office,Northwest China,Shaanxi,Technology,Tablets,2909.28,8,0.15,561.79
+CN-2025-815783,2025-11-27,2025-11-30,First Class,C-9802,Consumer,Southwest China,Yunnan,Technology,Smartphones,7822.5,14,0.3,-1299.5
+CN-2024-194689,2024-09-17,2024-09-23,First Class,C-9628,Home Office,Central China,Henan,Office Supplies,Binders,233.72,7,0.1,42.38
+CN-2025-902080,2025-01-20,2025-01-24,Standard Class,C-9730,Corporate,South China,Hainan,Technology,Smartphones,3733.68,2,0.0,1401.73
+CN-2025-504433,2025-08-30,2025-09-01,First Class,C-1936,Home Office,East China,Jiangxi,Furniture,Tables,3786.82,6,0.0,446.68
+CN-2024-522975,2024-06-11,2024-06-12,First Class,C-4965,Corporate,Southwest China,Yunnan,Office Supplies,Paper,5009.01,2,0.0,858.75
+CN-2024-379846,2024-01-31,2024-02-06,Standard Class,C-3246,Home Office,South China,Hainan,Furniture,Furnishings,2392.25,8,0.5,-467.38
+CN-2025-562566,2025-03-29,2025-03-30,Standard Class,C-1398,Corporate,South China,Guangdong,Furniture,Furnishings,4695.4,10,0.0,1001.14
+CN-2024-266719,2024-02-10,2024-02-14,Second Class,C-3102,Consumer,East China,Jiangsu,Office Supplies,Binders,597.02,14,0.0,118.69
+CN-2025-940616,2025-05-25,2025-05-27,First Class,C-7168,Corporate,South China,Hainan,Technology,Smartphones,4639.18,1,0.0,498.79
+CN-2025-430492,2025-08-12,2025-08-14,First Class,C-5488,Corporate,Central China,Hunan,Furniture,Tables,4795.72,2,0.3,-1456.93
+CN-2025-434807,2025-11-25,2025-11-26,First Class,C-5895,Home Office,East China,Anhui,Furniture,Chairs,767.53,7,0.5,-232.65
+CN-2025-518869,2025-06-30,2025-07-01,Second Class,C-6720,Corporate,Northwest China,Shaanxi,Office Supplies,Storage,1414.06,13,0.3,-283.06
+CN-2024-101941,2024-09-11,2024-09-12,Same Day,C-6803,Corporate,Southwest China,Sichuan,Office Supplies,Storage,2867.89,7,0.3,-238.79
+CN-2024-467337,2024-08-01,2024-08-07,Second Class,C-9675,Corporate,East China,Jiangxi,Office Supplies,Paper,96.52,10,0.15,36.25
+CN-2024-583150,2024-09-14,2024-09-19,Standard Class,C-6655,Home Office,South China,Guangxi,Technology,Tablets,1924.36,7,0.0,485.81
+CN-2025-780089,2025-09-07,2025-09-11,Second Class,C-8023,Consumer,South China,Guangdong,Furniture,Bookcases,5417.23,1,0.0,893.41
+CN-2025-182072,2025-08-28,2025-08-29,Same Day,C-9797,Corporate,East China,Zhejiang,Office Supplies,Paper,120.45,10,0.2,34.24
+CN-2024-256587,2024-03-07,2024-03-11,First Class,C-3961,Consumer,South China,Guangdong,Technology,Tablets,194.38,12,0.0,72.07
+CN-2025-908292,2025-12-14,2025-12-21,First Class,C-8507,Home Office,Northwest China,Qinghai,Technology,Smartphones,20338.36,11,0.0,6421.91
+CN-2025-683317,2025-09-24,2025-09-25,Second Class,C-3956,Home Office,North China,Inner Mongolia,Furniture,Furnishings,2558.57,4,0.3,-944.84
+CN-2025-842232,2025-01-16,2025-01-18,Second Class,C-2041,Home Office,Northwest China,Xinjiang,Office Supplies,Binders,501.5,4,0.5,-227.88
+CN-2024-317735,2024-08-01,2024-08-02,Standard Class,C-1734,Corporate,East China,Shanghai,Furniture,Furnishings,2109.72,10,0.1,347.9
+CN-2025-677373,2025-05-22,2025-05-27,Same Day,C-9327,Home Office,East China,Anhui,Office Supplies,Storage,1725.68,3,0.15,542.39
+CN-2025-680073,2025-06-17,2025-06-23,Second Class,C-1580,Home Office,East China,Shanghai,Furniture,Bookcases,1435.54,9,0.0,436.58
+CN-2024-153607,2024-04-23,2024-04-25,Same Day,C-7939,Consumer,Central China,Hubei,Furniture,Tables,3196.43,1,0.2,995.96
+CN-2024-294669,2024-03-28,2024-04-01,Second Class,C-4410,Home Office,East China,Anhui,Office Supplies,Paper,271.16,3,0.0,32.34
+CN-2025-982782,2025-11-03,2025-11-10,Second Class,C-2501,Home Office,South China,Hainan,Furniture,Bookcases,1729.58,13,0.3,-100.12
+CN-2025-680094,2025-05-07,2025-05-10,First Class,C-7038,Corporate,Southwest China,Chongqing,Office Supplies,Paper,4074.4,7,0.2,1619.34
+CN-2024-314040,2024-12-24,2024-12-29,Same Day,C-9428,Corporate,Northwest China,Shaanxi,Technology,Laptops,927.56,3,0.0,98.34
+CN-2025-724039,2025-01-13,2025-01-17,First Class,C-5775,Corporate,South China,Guangdong,Furniture,Bookcases,11353.44,2,0.0,1187.48
+CN-2024-961991,2024-06-21,2024-06-24,Same Day,C-5437,Corporate,Southwest China,Tibet,Office Supplies,Pens,952.58,14,0.0,263.91
+CN-2025-545693,2025-03-20,2025-03-23,Standard Class,C-7406,Corporate,Southwest China,Sichuan,Furniture,Furnishings,196.91,5,0.2,24.83
+CN-2024-520754,2024-02-08,2024-02-10,Second Class,C-1191,Home Office,South China,Hainan,Office Supplies,Pens,1326.21,2,0.0,225.98
+CN-2025-828215,2025-08-08,2025-08-12,Same Day,C-8500,Home Office,South China,Guangdong,Office Supplies,Pens,3419.26,11,0.0,1084.81
+CN-2024-114376,2024-05-17,2024-05-21,Second Class,C-5297,Corporate,Central China,Henan,Technology,Smartphones,3609.26,14,0.0,1190.75
+CN-2025-927388,2025-11-30,2025-12-04,Second Class,C-6068,Consumer,South China,Guangdong,Furniture,Chairs,11786.09,15,0.5,-180.91
+CN-2024-487889,2024-01-02,2024-01-06,First Class,C-4967,Corporate,Northwest China,Shaanxi,Technology,Laptops,10014.8,2,0.1,1921.48
+CN-2024-671237,2024-03-22,2024-03-29,First Class,C-3703,Corporate,East China,Anhui,Office Supplies,Storage,2088.67,14,0.15,654.55
+CN-2025-626145,2025-11-20,2025-11-23,Same Day,C-5705,Corporate,North China,Shanxi,Office Supplies,Storage,4679.85,12,0.5,160.12
+CN-2024-688259,2024-02-23,2024-02-25,Same Day,C-5622,Corporate,North China,Beijing,Technology,Smartphones,5395.35,2,0.0,1158.24
+CN-2024-697594,2024-01-06,2024-01-11,Standard Class,C-5497,Consumer,North China,Tianjin,Furniture,Bookcases,7509.7,8,0.3,-2928.76
+CN-2025-244398,2025-07-05,2025-07-10,First Class,C-3456,Consumer,Northwest China,Shaanxi,Furniture,Tables,507.26,7,0.5,-184.0
+CN-2025-645260,2025-05-08,2025-05-12,Second Class,C-4584,Consumer,South China,Guangdong,Office Supplies,Binders,1858.93,9,0.1,247.97
+CN-2025-885010,2025-03-05,2025-03-09,First Class,C-8576,Corporate,Northwest China,Gansu,Office Supplies,Paper,1427.65,9,0.0,318.05
+CN-2024-921233,2024-11-25,2024-11-30,Same Day,C-7019,Consumer,Southwest China,Sichuan,Office Supplies,Storage,524.48,13,0.2,56.06
+CN-2025-773560,2025-10-11,2025-10-16,Standard Class,C-4329,Corporate,South China,Guangxi,Furniture,Bookcases,17816.79,12,0.0,3058.06
+CN-2024-393439,2024-05-04,2024-05-11,Standard Class,C-8512,Consumer,North China,Shanxi,Technology,Accessories,2183.03,11,0.2,728.51
+CN-2024-854913,2024-12-12,2024-12-16,First Class,C-5980,Home Office,North China,Shanxi,Technology,Accessories,17073.09,15,0.0,4112.86
+CN-2024-737156,2024-04-17,2024-04-23,Second Class,C-6174,Consumer,East China,Zhejiang,Furniture,Chairs,9793.76,5,0.1,2712.11
+CN-2025-235303,2025-07-17,2025-07-19,Standard Class,C-4329,Corporate,North China,Tianjin,Furniture,Tables,2854.05,10,0.2,790.51
+CN-2025-487210,2025-12-08,2025-12-11,Same Day,C-1086,Corporate,Northeast China,Jilin,Furniture,Bookcases,14392.69,9,0.0,1787.68
+CN-2024-343445,2024-08-05,2024-08-07,Same Day,C-9814,Home Office,South China,Guangxi,Office Supplies,Paper,3518.16,1,0.1,1050.18
+CN-2024-563760,2024-01-26,2024-01-27,Standard Class,C-2076,Corporate,Southwest China,Yunnan,Technology,Smartphones,445.18,10,0.0,85.96
+CN-2025-839089,2025-12-10,2025-12-16,First Class,C-3532,Home Office,Northwest China,Ningxia,Furniture,Tables,1500.69,10,0.1,354.27
+CN-2025-682152,2025-04-13,2025-04-19,Second Class,C-1811,Home Office,North China,Hebei,Furniture,Furnishings,264.13,15,0.15,103.25
+CN-2025-287236,2025-03-09,2025-03-14,Same Day,C-3040,Consumer,North China,Tianjin,Furniture,Furnishings,2862.95,8,0.0,942.84
+CN-2025-283728,2025-07-24,2025-07-31,Same Day,C-7616,Corporate,North China,Beijing,Office Supplies,Paper,2502.49,14,0.0,665.99
+CN-2024-960060,2024-07-01,2024-07-07,Second Class,C-8510,Home Office,Northeast China,Jilin,Office Supplies,Storage,447.79,7,0.0,166.53
+CN-2025-810589,2025-08-12,2025-08-15,Same Day,C-5439,Consumer,Central China,Hunan,Furniture,Tables,1578.89,15,0.1,606.13
+CN-2024-988102,2024-12-12,2024-12-15,Second Class,C-6798,Consumer,Southwest China,Yunnan,Technology,Tablets,12829.77,1,0.5,-2186.05
+CN-2025-722128,2025-11-23,2025-11-24,Same Day,C-2845,Corporate,North China,Beijing,Technology,Accessories,5904.37,7,0.0,1946.1
+CN-2025-856895,2025-10-30,2025-11-04,Second Class,C-8606,Corporate,Northwest China,Gansu,Furniture,Bookcases,1902.45,14,0.0,244.32
+CN-2025-760696,2025-07-22,2025-07-25,Standard Class,C-9697,Consumer,East China,Zhejiang,Technology,Smartphones,7815.47,7,0.0,2250.54
+CN-2025-666866,2025-10-31,2025-11-03,First Class,C-2479,Corporate,Southwest China,Chongqing,Furniture,Bookcases,9271.28,5,0.0,3302.21
+CN-2024-537000,2024-02-23,2024-03-01,First Class,C-6525,Home Office,North China,Hebei,Technology,Accessories,2988.48,1,0.0,918.36
+CN-2024-546998,2024-02-10,2024-02-14,Second Class,C-6695,Consumer,Northeast China,Heilongjiang,Furniture,Chairs,6417.27,6,0.15,1691.04
+CN-2024-769489,2024-01-29,2024-02-04,Standard Class,C-7782,Home Office,Northeast China,Heilongjiang,Office Supplies,Pens,1580.24,11,0.5,37.66
+CN-2025-791056,2025-12-09,2025-12-14,Standard Class,C-2530,Home Office,East China,Anhui,Office Supplies,Binders,663.84,15,0.0,220.26
+CN-2024-269369,2024-08-09,2024-08-15,Second Class,C-4543,Corporate,North China,Tianjin,Technology,Smartphones,10753.58,2,0.0,2366.03
+CN-2025-645047,2025-10-10,2025-10-14,Same Day,C-4068,Home Office,East China,Fujian,Furniture,Bookcases,628.64,14,0.5,17.58
+CN-2024-776861,2024-06-12,2024-06-13,First Class,C-7234,Consumer,East China,Fujian,Technology,Accessories,27534.56,10,0.1,8783.88
+CN-2024-616930,2024-07-09,2024-07-10,First Class,C-5697,Home Office,Central China,Henan,Office Supplies,Storage,1165.67,8,0.5,-542.36
+CN-2024-798877,2024-04-15,2024-04-17,First Class,C-9925,Home Office,Northwest China,Xinjiang,Furniture,Bookcases,4209.84,6,0.3,-18.37
+CN-2024-363213,2024-09-14,2024-09-17,Standard Class,C-2708,Corporate,East China,Shandong,Technology,Smartphones,11956.43,13,0.0,3350.12
+CN-2025-524422,2025-11-25,2025-11-27,First Class,C-6803,Consumer,East China,Jiangsu,Technology,Smartphones,2006.11,5,0.1,222.59
+CN-2025-242008,2025-04-03,2025-04-07,Standard Class,C-5765,Corporate,Southwest China,Chongqing,Office Supplies,Paper,3719.9,5,0.15,1095.84
+CN-2024-963146,2024-07-07,2024-07-12,First Class,C-9785,Corporate,Northwest China,Qinghai,Office Supplies,Binders,2717.98,12,0.0,355.95
+CN-2024-227059,2024-01-21,2024-01-25,Standard Class,C-4506,Consumer,South China,Guangdong,Technology,Accessories,14264.44,8,0.0,1928.99
+CN-2025-206799,2025-02-16,2025-02-23,Same Day,C-9605,Consumer,Northwest China,Qinghai,Office Supplies,Pens,53.16,8,0.1,14.35
+CN-2025-806293,2025-07-03,2025-07-07,Same Day,C-6899,Consumer,Southwest China,Yunnan,Office Supplies,Paper,1247.77,8,0.0,299.63
+CN-2024-806610,2024-12-09,2024-12-10,First Class,C-4962,Corporate,Northwest China,Gansu,Technology,Tablets,8836.5,15,0.3,123.47
+CN-2024-918526,2024-06-11,2024-06-18,Same Day,C-7414,Corporate,Southwest China,Sichuan,Furniture,Bookcases,4771.17,3,0.0,861.8
+CN-2025-551956,2025-08-03,2025-08-05,Standard Class,C-7948,Consumer,Northwest China,Gansu,Technology,Laptops,6716.95,10,0.2,893.46
+CN-2025-412258,2025-03-13,2025-03-16,Standard Class,C-7077,Corporate,East China,Shandong,Office Supplies,Binders,262.65,13,0.0,92.92
+CN-2025-966935,2025-11-22,2025-11-25,First Class,C-2336,Corporate,South China,Guangxi,Office Supplies,Pens,2388.01,10,0.15,790.08
+CN-2025-390292,2025-12-20,2025-12-27,First Class,C-9361,Corporate,South China,Guangdong,Technology,Accessories,3665.39,9,0.0,1428.19
+CN-2025-948345,2025-12-29,2025-12-31,Second Class,C-4466,Consumer,Southwest China,Sichuan,Office Supplies,Pens,752.27,13,0.15,112.91
+CN-2025-271337,2025-04-15,2025-04-20,First Class,C-8453,Corporate,East China,Anhui,Technology,Tablets,516.8,5,0.0,75.94
+CN-2025-443498,2025-05-19,2025-05-23,Standard Class,C-3365,Consumer,South China,Guangdong,Office Supplies,Binders,131.91,2,0.1,23.05
+CN-2024-275397,2024-10-01,2024-10-07,Second Class,C-8046,Corporate,South China,Guangxi,Technology,Tablets,16810.9,12,0.0,4354.54
+CN-2024-898471,2024-03-23,2024-03-24,Second Class,C-4507,Consumer,East China,Jiangxi,Technology,Smartphones,26980.64,12,0.5,-9237.75
+CN-2025-736767,2025-09-12,2025-09-15,Same Day,C-4907,Consumer,Northwest China,Qinghai,Office Supplies,Storage,465.83,3,0.5,6.35
+CN-2024-410166,2024-01-18,2024-01-24,Standard Class,C-6511,Corporate,Northeast China,Liaoning,Technology,Smartphones,1143.27,13,0.0,139.56
+CN-2024-614386,2024-01-30,2024-01-31,Second Class,C-9971,Corporate,South China,Guangxi,Technology,Accessories,15901.94,8,0.3,-794.62
+CN-2025-948855,2025-11-09,2025-11-14,First Class,C-3773,Consumer,East China,Fujian,Technology,Tablets,145.95,6,0.0,50.01
+CN-2025-122226,2025-06-13,2025-06-14,Standard Class,C-7349,Consumer,North China,Hebei,Office Supplies,Binders,204.93,9,0.0,46.13
+CN-2025-618394,2025-06-30,2025-07-02,Same Day,C-1515,Consumer,South China,Guangdong,Office Supplies,Paper,4152.25,2,0.2,1096.84
+CN-2024-523503,2024-08-17,2024-08-18,First Class,C-3598,Consumer,North China,Beijing,Office Supplies,Paper,3443.81,3,0.0,1175.12
+CN-2024-338035,2024-11-05,2024-11-12,Same Day,C-5531,Home Office,Southwest China,Sichuan,Furniture,Furnishings,450.87,2,0.3,-196.39
+CN-2025-687690,2025-09-03,2025-09-08,First Class,C-1935,Consumer,East China,Shandong,Office Supplies,Storage,813.95,1,0.0,136.54
+CN-2025-755050,2025-03-30,2025-04-05,Same Day,C-4516,Corporate,Northwest China,Qinghai,Office Supplies,Pens,2117.3,12,0.1,360.95
+CN-2024-981368,2024-11-03,2024-11-08,First Class,C-2280,Home Office,East China,Zhejiang,Office Supplies,Storage,2450.04,5,0.2,709.96
+CN-2025-983930,2025-03-16,2025-03-17,First Class,C-5614,Consumer,North China,Inner Mongolia,Technology,Laptops,9440.92,6,0.2,1162.63
+CN-2025-475404,2025-05-11,2025-05-14,Standard Class,C-6565,Corporate,South China,Guangxi,Office Supplies,Pens,2231.22,8,0.0,628.61
+CN-2024-227431,2024-01-21,2024-01-22,Standard Class,C-3493,Home Office,South China,Guangdong,Office Supplies,Storage,367.74,11,0.0,96.53
+CN-2024-275569,2024-01-12,2024-01-16,Same Day,C-5268,Consumer,North China,Shanxi,Technology,Accessories,3174.1,8,0.15,877.68
+CN-2025-177350,2025-12-19,2025-12-24,Second Class,C-4064,Consumer,Southwest China,Guizhou,Office Supplies,Storage,838.51,4,0.15,303.39
+CN-2024-329776,2024-03-19,2024-03-22,First Class,C-7505,Home Office,North China,Beijing,Furniture,Bookcases,11837.27,11,0.0,1830.0
+CN-2025-147120,2025-04-09,2025-04-12,First Class,C-2399,Home Office,South China,Guangxi,Technology,Smartphones,8512.92,13,0.1,1811.55
+CN-2024-608233,2024-03-15,2024-03-16,Standard Class,C-4986,Corporate,Northwest China,Ningxia,Office Supplies,Pens,182.58,4,0.2,55.13
+CN-2025-345589,2025-02-22,2025-02-24,Same Day,C-6011,Corporate,Northwest China,Xinjiang,Office Supplies,Storage,2830.66,6,0.0,819.95
+CN-2025-520003,2025-05-31,2025-06-07,First Class,C-8442,Consumer,East China,Jiangxi,Technology,Laptops,2347.62,10,0.0,914.97
+CN-2025-570558,2025-07-23,2025-07-25,First Class,C-2837,Home Office,East China,Jiangxi,Office Supplies,Paper,555.95,15,0.0,136.43
+CN-2025-747951,2025-03-07,2025-03-13,Same Day,C-7177,Home Office,Southwest China,Tibet,Office Supplies,Pens,1899.28,13,0.1,382.84
+CN-2025-268257,2025-09-26,2025-09-28,First Class,C-4425,Corporate,East China,Shandong,Furniture,Furnishings,1835.34,11,0.0,290.08
+CN-2024-287231,2024-05-18,2024-05-19,Standard Class,C-6583,Home Office,East China,Shanghai,Furniture,Tables,1218.09,5,0.15,244.88
+CN-2024-642928,2024-03-19,2024-03-22,Standard Class,C-8775,Consumer,Central China,Hunan,Technology,Tablets,19497.83,7,0.2,5665.51
+CN-2024-331336,2024-11-08,2024-11-11,First Class,C-4361,Home Office,East China,Zhejiang,Technology,Accessories,2874.2,9,0.15,785.58
+CN-2025-210449,2025-07-06,2025-07-08,First Class,C-6782,Corporate,Northwest China,Gansu,Technology,Laptops,3610.3,7,0.2,1407.51
+CN-2024-315747,2024-07-21,2024-07-23,Same Day,C-8465,Consumer,South China,Guangdong,Technology,Tablets,3431.65,1,0.5,-1090.48
+CN-2025-930393,2025-07-07,2025-07-13,Standard Class,C-4388,Home Office,North China,Hebei,Furniture,Bookcases,4665.26,14,0.0,1744.02
+CN-2025-126017,2025-02-20,2025-02-21,First Class,C-8265,Corporate,East China,Shandong,Office Supplies,Paper,564.66,2,0.15,57.38
+CN-2025-390669,2025-02-20,2025-02-23,Same Day,C-8959,Consumer,Southwest China,Sichuan,Furniture,Bookcases,12549.56,15,0.0,1595.78
+CN-2024-102150,2024-05-25,2024-05-27,Same Day,C-8739,Corporate,Southwest China,Guizhou,Technology,Accessories,5845.95,15,0.15,1533.51
+CN-2024-879976,2024-12-18,2024-12-23,Second Class,C-1526,Consumer,Northwest China,Ningxia,Office Supplies,Storage,700.31,4,0.1,93.44
+CN-2025-514248,2025-02-02,2025-02-08,Same Day,C-7464,Corporate,East China,Shanghai,Furniture,Chairs,2854.86,13,0.3,-1146.74
+CN-2024-451453,2024-06-12,2024-06-17,Second Class,C-2862,Corporate,Central China,Henan,Technology,Tablets,1699.4,13,0.15,388.7
+CN-2024-250114,2024-08-10,2024-08-11,Standard Class,C-9031,Corporate,North China,Hebei,Technology,Smartphones,3557.03,6,0.0,1102.6
+CN-2024-198627,2024-05-22,2024-05-27,First Class,C-2139,Corporate,Northeast China,Jilin,Furniture,Chairs,7676.08,11,0.0,2088.64
+CN-2024-146928,2024-05-16,2024-05-20,Same Day,C-8413,Consumer,Southwest China,Tibet,Technology,Smartphones,6427.18,10,0.3,-822.82
+CN-2024-391701,2024-04-08,2024-04-10,Same Day,C-7733,Corporate,Northwest China,Xinjiang,Furniture,Tables,15458.52,4,0.15,5160.41
+CN-2025-318741,2025-11-24,2025-12-01,First Class,C-1272,Consumer,East China,Fujian,Furniture,Bookcases,8103.84,3,0.3,-2589.49
+CN-2025-808134,2025-05-06,2025-05-11,Second Class,C-5419,Consumer,South China,Hainan,Technology,Accessories,6097.87,9,0.0,1535.41
+CN-2025-441464,2025-08-23,2025-08-27,Standard Class,C-7762,Home Office,East China,Shanghai,Office Supplies,Paper,2424.62,5,0.0,583.59
+CN-2025-763771,2025-07-31,2025-08-02,Second Class,C-4465,Home Office,East China,Fujian,Office Supplies,Storage,4039.64,8,0.3,-768.22
+CN-2024-398420,2024-09-08,2024-09-12,First Class,C-8919,Consumer,North China,Shanxi,Furniture,Furnishings,5777.65,13,0.0,1015.34
+CN-2025-515642,2025-02-27,2025-03-04,Same Day,C-3931,Consumer,East China,Shanghai,Furniture,Furnishings,6458.65,6,0.15,1102.79
+CN-2024-231109,2024-07-17,2024-07-20,Same Day,C-5070,Consumer,Central China,Hubei,Technology,Laptops,13562.62,5,0.15,1748.1
+CN-2024-663709,2024-09-16,2024-09-17,Same Day,C-6424,Corporate,Northwest China,Xinjiang,Furniture,Bookcases,11933.36,1,0.1,2461.0
+CN-2024-227847,2024-10-08,2024-10-10,Same Day,C-3681,Corporate,Northwest China,Xinjiang,Furniture,Furnishings,1733.02,2,0.0,301.46
+CN-2024-200352,2024-09-21,2024-09-25,Standard Class,C-6836,Corporate,Northeast China,Jilin,Office Supplies,Binders,2283.71,7,0.3,-141.11
+CN-2024-379104,2024-08-23,2024-08-28,Same Day,C-8594,Home Office,North China,Inner Mongolia,Office Supplies,Binders,27.07,7,0.0,8.77
+CN-2025-194187,2025-02-26,2025-02-28,Standard Class,C-1113,Consumer,South China,Guangdong,Office Supplies,Storage,1283.0,3,0.3,-119.45
+CN-2024-123318,2024-12-11,2024-12-12,Second Class,C-5925,Corporate,East China,Shandong,Furniture,Chairs,6935.23,12,0.3,-3149.7
+CN-2025-301007,2025-12-12,2025-12-15,Standard Class,C-9643,Home Office,Northwest China,Gansu,Technology,Smartphones,9730.78,9,0.0,2380.93
+CN-2024-985867,2024-11-04,2024-11-08,Standard Class,C-5383,Home Office,East China,Fujian,Technology,Smartphones,4491.59,9,0.0,1183.59
+CN-2025-683458,2025-11-26,2025-11-28,Standard Class,C-8983,Corporate,Central China,Henan,Office Supplies,Binders,3274.0,8,0.2,1211.42
+CN-2024-207596,2024-11-21,2024-11-26,Second Class,C-7650,Home Office,East China,Jiangxi,Office Supplies,Storage,1213.27,12,0.0,356.49
+CN-2025-117886,2025-06-07,2025-06-13,First Class,C-8076,Corporate,North China,Shanxi,Furniture,Furnishings,77.27,3,0.5,-17.28
+CN-2025-599651,2025-07-31,2025-08-01,Standard Class,C-9427,Consumer,Central China,Hubei,Technology,Tablets,9704.58,14,0.0,1888.93
+CN-2024-286603,2024-03-20,2024-03-27,Same Day,C-4494,Corporate,Northeast China,Heilongjiang,Technology,Accessories,3006.32,6,0.2,588.45
+CN-2024-463352,2024-09-26,2024-10-01,Second Class,C-9419,Corporate,North China,Tianjin,Technology,Smartphones,30554.1,4,0.0,10577.27
+CN-2024-305034,2024-06-23,2024-06-26,Same Day,C-5250,Corporate,North China,Inner Mongolia,Furniture,Chairs,13605.55,2,0.5,-1144.43
+CN-2024-197475,2024-09-15,2024-09-21,First Class,C-4519,Consumer,Central China,Henan,Office Supplies,Storage,1265.38,13,0.0,166.59
+CN-2024-650279,2024-08-03,2024-08-07,Same Day,C-8162,Home Office,Southwest China,Tibet,Furniture,Chairs,4150.5,4,0.0,779.54
+CN-2024-659426,2024-12-16,2024-12-20,Standard Class,C-2389,Corporate,North China,Shanxi,Furniture,Tables,1555.1,9,0.5,-706.29
+CN-2024-230157,2024-03-12,2024-03-17,Same Day,C-7361,Consumer,Northwest China,Shaanxi,Furniture,Furnishings,5253.0,4,0.0,1489.11
+CN-2025-480930,2025-09-03,2025-09-10,Standard Class,C-5989,Home Office,East China,Shanghai,Technology,Laptops,902.23,2,0.0,124.29
+CN-2025-273770,2025-06-29,2025-07-06,Same Day,C-3958,Home Office,Central China,Hubei,Furniture,Chairs,1678.3,9,0.3,-807.41
+CN-2025-611387,2025-07-24,2025-07-25,Second Class,C-3306,Corporate,Northeast China,Heilongjiang,Furniture,Bookcases,9210.53,12,0.15,2263.22
+CN-2025-344062,2025-12-20,2025-12-26,Standard Class,C-3112,Corporate,Southwest China,Guizhou,Office Supplies,Pens,906.93,1,0.1,185.52
+CN-2025-954522,2025-06-12,2025-06-14,Second Class,C-1735,Consumer,Northwest China,Xinjiang,Technology,Accessories,5118.86,1,0.5,-1272.48
+CN-2024-520240,2024-06-10,2024-06-16,Second Class,C-8553,Home Office,South China,Guangdong,Office Supplies,Storage,3631.58,7,0.0,1242.15
+CN-2025-705491,2025-01-10,2025-01-13,Standard Class,C-9709,Corporate,Central China,Hunan,Furniture,Tables,6054.8,4,0.0,1040.42
+CN-2024-124843,2024-11-13,2024-11-20,Second Class,C-2212,Consumer,Southwest China,Guizhou,Office Supplies,Storage,366.36,11,0.5,-5.38
+CN-2025-843953,2025-12-06,2025-12-08,Same Day,C-9142,Home Office,East China,Anhui,Technology,Laptops,15387.34,8,0.0,5011.24
+CN-2024-406857,2024-01-10,2024-01-13,Standard Class,C-9499,Corporate,South China,Hainan,Office Supplies,Pens,1557.58,14,0.0,558.07
+CN-2024-387007,2024-06-27,2024-07-04,Standard Class,C-7768,Corporate,Southwest China,Sichuan,Furniture,Bookcases,15303.46,15,0.15,2928.82
+CN-2025-283074,2025-06-28,2025-07-02,Same Day,C-8793,Corporate,Northeast China,Liaoning,Office Supplies,Pens,877.61,15,0.2,135.92
+CN-2024-463911,2024-06-04,2024-06-08,Standard Class,C-4428,Corporate,South China,Hainan,Office Supplies,Storage,1819.32,15,0.2,206.52
+CN-2025-496277,2025-10-14,2025-10-20,Same Day,C-1334,Home Office,Northwest China,Shaanxi,Technology,Tablets,8263.18,1,0.3,-3065.55
+CN-2024-198906,2024-06-11,2024-06-18,Second Class,C-7921,Home Office,North China,Shanxi,Office Supplies,Binders,1633.89,11,0.2,295.58
+CN-2025-777450,2025-05-21,2025-05-22,First Class,C-2530,Corporate,East China,Jiangsu,Technology,Tablets,305.01,6,0.1,117.77
+CN-2024-754785,2024-01-01,2024-01-08,Standard Class,C-6360,Home Office,Northwest China,Shaanxi,Technology,Laptops,20977.99,8,0.2,4375.1
+CN-2024-226351,2024-06-26,2024-07-03,Same Day,C-8082,Home Office,Central China,Henan,Technology,Tablets,16243.28,5,0.5,-1591.51
+CN-2025-642537,2025-05-07,2025-05-12,Second Class,C-7936,Consumer,Southwest China,Chongqing,Office Supplies,Storage,292.04,12,0.0,97.73
+CN-2024-688067,2024-12-19,2024-12-21,Second Class,C-9563,Consumer,Northwest China,Ningxia,Office Supplies,Pens,372.96,12,0.1,38.09
+CN-2025-138793,2025-01-23,2025-01-27,First Class,C-2611,Corporate,Southwest China,Sichuan,Office Supplies,Binders,1134.98,3,0.2,157.06
+CN-2024-337242,2024-08-03,2024-08-08,Same Day,C-1017,Consumer,Northwest China,Shaanxi,Office Supplies,Storage,266.62,13,0.0,60.66
+CN-2024-959587,2024-08-22,2024-08-26,First Class,C-1119,Home Office,South China,Guangdong,Furniture,Bookcases,167.36,14,0.0,37.69
+CN-2024-681972,2024-08-10,2024-08-14,First Class,C-6047,Consumer,Southwest China,Yunnan,Office Supplies,Storage,4530.54,14,0.0,1018.05
+CN-2025-802652,2025-06-08,2025-06-10,Second Class,C-7560,Home Office,South China,Guangdong,Office Supplies,Storage,872.19,12,0.0,132.46
+CN-2025-102489,2025-11-07,2025-11-14,First Class,C-1881,Home Office,North China,Inner Mongolia,Office Supplies,Paper,2108.67,8,0.5,-279.08
+CN-2024-593957,2024-05-19,2024-05-23,Standard Class,C-6904,Consumer,Northwest China,Gansu,Furniture,Chairs,13337.55,13,0.3,-6293.3
+CN-2024-181747,2024-07-02,2024-07-06,Second Class,C-4197,Consumer,Northwest China,Xinjiang,Office Supplies,Paper,2788.08,9,0.0,800.49
+CN-2025-850049,2025-05-27,2025-05-28,First Class,C-7082,Consumer,Southwest China,Tibet,Office Supplies,Storage,2503.4,11,0.2,392.41
+CN-2024-831241,2024-02-21,2024-02-23,First Class,C-3120,Corporate,Northeast China,Liaoning,Office Supplies,Storage,151.63,10,0.0,50.15
+CN-2024-233036,2024-07-01,2024-07-04,First Class,C-6956,Corporate,East China,Fujian,Furniture,Furnishings,6790.51,10,0.5,-2569.6
+CN-2024-781684,2024-09-11,2024-09-15,Same Day,C-3167,Consumer,Southwest China,Sichuan,Technology,Laptops,9851.75,12,0.2,1658.04
+CN-2025-170920,2025-04-14,2025-04-16,First Class,C-4608,Consumer,South China,Hainan,Furniture,Tables,4754.84,4,0.0,476.58
+CN-2025-397422,2025-10-26,2025-11-02,Same Day,C-8445,Home Office,North China,Shanxi,Furniture,Bookcases,1018.64,5,0.5,-24.28
+CN-2024-560688,2024-08-23,2024-08-25,Same Day,C-1648,Consumer,North China,Beijing,Furniture,Furnishings,14427.53,14,0.1,1944.1
+CN-2024-799804,2024-12-04,2024-12-05,Same Day,C-5323,Corporate,Northwest China,Gansu,Technology,Laptops,11927.99,9,0.0,3933.98
+CN-2024-386154,2024-03-30,2024-04-06,Standard Class,C-7600,Corporate,Northwest China,Shaanxi,Office Supplies,Storage,1520.35,13,0.5,-126.79
+CN-2024-886884,2024-08-25,2024-09-01,Standard Class,C-5760,Home Office,East China,Fujian,Technology,Laptops,14944.64,7,0.0,5334.08
+CN-2024-106423,2024-05-08,2024-05-10,Second Class,C-6712,Consumer,Northwest China,Gansu,Furniture,Chairs,435.85,10,0.0,170.69
+CN-2024-448466,2024-03-25,2024-03-31,Second Class,C-1066,Consumer,Northwest China,Qinghai,Furniture,Furnishings,4864.82,3,0.2,767.58
+CN-2025-361769,2025-12-19,2025-12-21,Standard Class,C-2829,Home Office,Northeast China,Liaoning,Furniture,Tables,3056.38,3,0.5,-726.48
+CN-2025-146476,2025-01-02,2025-01-05,Second Class,C-1407,Corporate,Northwest China,Shaanxi,Office Supplies,Storage,205.22,8,0.2,28.77
+CN-2025-996943,2025-01-06,2025-01-13,Second Class,C-3835,Consumer,Northwest China,Ningxia,Furniture,Bookcases,10045.53,7,0.5,-1096.3
+CN-2025-651159,2025-11-06,2025-11-11,First Class,C-9931,Consumer,Central China,Henan,Technology,Laptops,1927.02,3,0.0,608.8
+CN-2024-814850,2024-10-23,2024-10-26,Same Day,C-1530,Consumer,North China,Shanxi,Furniture,Furnishings,14674.59,3,0.15,4294.38
+CN-2024-716206,2024-12-30,2025-01-05,Standard Class,C-9274,Corporate,East China,Shandong,Office Supplies,Pens,920.02,12,0.5,-353.0
+CN-2025-984802,2025-08-30,2025-08-31,First Class,C-4070,Consumer,South China,Guangxi,Office Supplies,Paper,2458.89,11,0.1,968.39
+CN-2025-756079,2025-08-17,2025-08-23,Second Class,C-9781,Corporate,Northwest China,Ningxia,Technology,Accessories,7188.66,8,0.3,-1309.44
+CN-2025-850220,2025-10-27,2025-11-01,Standard Class,C-4468,Corporate,East China,Jiangxi,Furniture,Tables,1376.97,2,0.0,459.29
+CN-2024-632706,2024-03-16,2024-03-21,Standard Class,C-1780,Corporate,North China,Shanxi,Office Supplies,Paper,660.25,7,0.0,156.13
+CN-2024-963377,2024-02-29,2024-03-01,Second Class,C-8576,Consumer,East China,Fujian,Technology,Smartphones,4233.85,15,0.0,1087.14
+CN-2024-504873,2024-07-27,2024-07-28,First Class,C-8707,Home Office,South China,Guangxi,Technology,Laptops,3524.69,13,0.5,-98.13
+CN-2024-527421,2024-11-15,2024-11-22,Second Class,C-6156,Corporate,East China,Anhui,Furniture,Tables,1240.76,14,0.2,173.9
+CN-2025-483056,2025-08-31,2025-09-02,Standard Class,C-2111,Consumer,Central China,Henan,Office Supplies,Binders,1915.45,5,0.0,416.14
+CN-2024-621625,2024-03-14,2024-03-21,Same Day,C-3332,Consumer,East China,Shandong,Technology,Tablets,2916.76,10,0.3,-946.53
+CN-2024-796773,2024-03-01,2024-03-08,Second Class,C-9107,Consumer,East China,Anhui,Technology,Tablets,1349.5,7,0.15,137.14
+CN-2025-635469,2025-07-21,2025-07-27,Same Day,C-5746,Consumer,North China,Shanxi,Furniture,Tables,246.55,15,0.5,-5.02
+CN-2025-607481,2025-06-08,2025-06-15,Second Class,C-7496,Consumer,East China,Shandong,Furniture,Chairs,468.99,13,0.15,153.81
+CN-2025-715356,2025-04-20,2025-04-26,Standard Class,C-5261,Consumer,North China,Beijing,Office Supplies,Binders,1607.47,5,0.1,298.79
+CN-2024-642201,2024-02-06,2024-02-10,Second Class,C-4333,Consumer,Northeast China,Liaoning,Office Supplies,Paper,627.33,5,0.0,66.01
+CN-2024-595085,2024-12-19,2024-12-26,First Class,C-5879,Corporate,North China,Hebei,Office Supplies,Pens,3353.89,3,0.15,845.19
+CN-2024-301040,2024-02-16,2024-02-18,First Class,C-6397,Home Office,North China,Tianjin,Office Supplies,Pens,2136.89,9,0.2,750.76
+CN-2025-499712,2025-12-20,2025-12-25,Second Class,C-3898,Consumer,North China,Inner Mongolia,Furniture,Bookcases,2620.04,9,0.2,637.35
+CN-2024-861404,2024-12-09,2024-12-13,First Class,C-1966,Corporate,Central China,Hunan,Furniture,Bookcases,6443.43,11,0.0,1300.5
+CN-2025-828606,2025-07-30,2025-08-04,Standard Class,C-5131,Home Office,Northwest China,Shaanxi,Technology,Tablets,14083.56,2,0.0,3991.96
+CN-2025-285679,2025-08-02,2025-08-05,Same Day,C-2370,Consumer,Northwest China,Gansu,Technology,Tablets,3075.67,8,0.0,921.27
+CN-2025-619803,2025-09-16,2025-09-23,Second Class,C-3504,Home Office,East China,Jiangsu,Furniture,Tables,11928.17,7,0.3,-2803.73
+CN-2025-850675,2025-08-12,2025-08-15,First Class,C-4664,Home Office,Southwest China,Sichuan,Technology,Smartphones,28633.45,2,0.0,10457.26
+CN-2024-973080,2024-06-10,2024-06-15,Second Class,C-8345,Home Office,Northwest China,Gansu,Furniture,Tables,3297.07,5,0.3,-1331.31
+CN-2025-912151,2025-06-22,2025-06-26,Standard Class,C-9801,Corporate,East China,Fujian,Office Supplies,Storage,1645.95,13,0.5,-223.02
+CN-2025-134525,2025-01-04,2025-01-11,Second Class,C-7824,Consumer,East China,Jiangxi,Technology,Smartphones,19950.39,15,0.1,3041.62
+CN-2024-619576,2024-07-08,2024-07-09,Same Day,C-9061,Corporate,North China,Tianjin,Furniture,Chairs,6385.72,6,0.0,844.16
+CN-2024-530061,2024-05-26,2024-05-28,Second Class,C-8134,Consumer,North China,Beijing,Office Supplies,Storage,55.13,14,0.2,10.33
+CN-2024-532516,2024-06-22,2024-06-24,Second Class,C-5944,Corporate,South China,Guangxi,Office Supplies,Paper,2889.15,15,0.3,-472.51
+CN-2025-123376,2025-01-11,2025-01-16,First Class,C-3978,Home Office,Central China,Hubei,Furniture,Chairs,677.67,9,0.0,257.24
+CN-2025-379076,2025-08-18,2025-08-23,Standard Class,C-8963,Corporate,South China,Hainan,Office Supplies,Pens,1250.79,3,0.15,137.47
+CN-2025-376461,2025-10-02,2025-10-04,Standard Class,C-8525,Corporate,North China,Inner Mongolia,Furniture,Bookcases,15763.78,9,0.3,-691.16
+CN-2025-679522,2025-08-16,2025-08-23,Standard Class,C-7576,Home Office,Southwest China,Chongqing,Furniture,Bookcases,12754.81,10,0.0,1993.48
+CN-2024-301522,2024-05-22,2024-05-24,Same Day,C-6059,Corporate,South China,Guangxi,Office Supplies,Paper,3347.54,15,0.15,1266.2
+CN-2025-226944,2025-08-16,2025-08-23,Second Class,C-9398,Consumer,East China,Jiangsu,Office Supplies,Pens,4766.36,5,0.0,498.49
+CN-2024-506870,2024-03-11,2024-03-18,Standard Class,C-9424,Corporate,Central China,Hubei,Office Supplies,Paper,787.59,15,0.2,260.92
+CN-2024-120612,2024-01-19,2024-01-20,Second Class,C-8112,Consumer,Northwest China,Xinjiang,Office Supplies,Pens,4643.06,10,0.0,1142.35
+CN-2025-707974,2025-03-24,2025-03-31,Same Day,C-1294,Home Office,East China,Shandong,Furniture,Furnishings,4546.42,12,0.5,81.59
+CN-2024-147870,2024-08-20,2024-08-27,First Class,C-9455,Consumer,North China,Shanxi,Office Supplies,Storage,4118.78,2,0.3,-122.27
+CN-2025-444184,2025-06-04,2025-06-09,First Class,C-1921,Consumer,Northeast China,Liaoning,Furniture,Chairs,2537.8,13,0.15,799.7
+CN-2024-600737,2024-05-22,2024-05-28,Second Class,C-3674,Consumer,Northwest China,Qinghai,Furniture,Chairs,7333.33,15,0.0,1756.13
+CN-2025-461917,2025-07-30,2025-08-03,Second Class,C-5355,Consumer,Northeast China,Liaoning,Furniture,Bookcases,12284.68,8,0.15,1851.15
+CN-2025-929813,2025-01-06,2025-01-08,Second Class,C-4056,Consumer,North China,Beijing,Office Supplies,Pens,2210.46,15,0.0,675.26
+CN-2025-540061,2025-01-29,2025-02-02,Standard Class,C-5872,Corporate,South China,Hainan,Technology,Tablets,4323.69,5,0.15,1622.97
+CN-2024-291519,2024-06-26,2024-06-28,First Class,C-9838,Home Office,East China,Jiangsu,Technology,Laptops,7186.6,1,0.1,1760.68
+CN-2024-548444,2024-10-02,2024-10-09,Second Class,C-4947,Home Office,Northeast China,Liaoning,Technology,Accessories,773.77,15,0.1,92.25
+CN-2024-773541,2024-07-14,2024-07-19,Standard Class,C-7197,Home Office,East China,Shandong,Furniture,Tables,4818.09,7,0.0,1733.75
+CN-2025-316320,2025-12-09,2025-12-12,Standard Class,C-9862,Home Office,Northwest China,Qinghai,Technology,Tablets,7092.32,7,0.0,1440.5
+CN-2024-836234,2024-05-26,2024-05-28,Standard Class,C-5316,Corporate,Northwest China,Ningxia,Technology,Tablets,15647.73,13,0.0,5846.6
+CN-2025-684342,2025-04-22,2025-04-28,Second Class,C-4835,Consumer,Northeast China,Liaoning,Furniture,Bookcases,4010.37,1,0.0,1305.01
+CN-2025-765414,2025-10-02,2025-10-04,Standard Class,C-6928,Consumer,South China,Guangxi,Furniture,Chairs,1977.74,1,0.0,789.87
+CN-2024-112210,2024-07-17,2024-07-19,Standard Class,C-6729,Consumer,Southwest China,Guizhou,Technology,Laptops,24316.22,3,0.0,8520.09
+CN-2025-311937,2025-08-26,2025-08-28,First Class,C-8926,Home Office,Northeast China,Heilongjiang,Furniture,Bookcases,1024.96,5,0.0,155.18
+CN-2025-503075,2025-05-13,2025-05-15,Same Day,C-7381,Consumer,Southwest China,Chongqing,Technology,Laptops,13164.54,15,0.3,-4298.89
+CN-2025-792599,2025-04-07,2025-04-12,First Class,C-2865,Corporate,Southwest China,Yunnan,Office Supplies,Binders,360.35,5,0.0,124.72
+CN-2025-655337,2025-03-10,2025-03-13,Standard Class,C-4613,Corporate,South China,Guangdong,Furniture,Tables,2610.88,3,0.0,779.74
+CN-2025-212463,2025-08-05,2025-08-10,First Class,C-2575,Home Office,South China,Guangxi,Technology,Laptops,21061.55,4,0.5,564.37
+CN-2024-756607,2024-04-28,2024-05-03,Second Class,C-6732,Consumer,North China,Tianjin,Technology,Tablets,3104.05,2,0.0,741.85
+CN-2025-122015,2025-11-17,2025-11-20,First Class,C-8742,Consumer,South China,Guangdong,Office Supplies,Pens,1057.99,11,0.3,-482.33
+CN-2025-759114,2025-06-06,2025-06-12,Second Class,C-8425,Home Office,Northwest China,Ningxia,Technology,Laptops,16633.2,7,0.3,-7395.66
+CN-2025-690208,2025-12-22,2025-12-25,Standard Class,C-7977,Home Office,Northwest China,Qinghai,Furniture,Bookcases,12857.98,7,0.15,4071.03
+CN-2025-507827,2025-11-18,2025-11-24,Second Class,C-2831,Home Office,Central China,Hunan,Furniture,Bookcases,2077.17,2,0.0,759.2
+CN-2025-394136,2025-07-20,2025-07-26,Same Day,C-1062,Home Office,Central China,Hubei,Technology,Smartphones,31328.41,2,0.1,5748.46
+CN-2024-491057,2024-09-19,2024-09-20,Second Class,C-7378,Corporate,Southwest China,Yunnan,Office Supplies,Paper,428.5,11,0.0,85.77
+CN-2025-568156,2025-12-23,2025-12-28,Second Class,C-8291,Corporate,North China,Tianjin,Technology,Smartphones,1214.23,10,0.0,289.94
+CN-2025-872794,2025-04-08,2025-04-12,Standard Class,C-1198,Home Office,North China,Beijing,Furniture,Tables,6181.71,1,0.3,-2055.79
+CN-2024-574348,2024-06-20,2024-06-23,Second Class,C-4208,Corporate,East China,Jiangsu,Technology,Tablets,16903.54,9,0.2,4876.3
+CN-2025-913428,2025-10-08,2025-10-12,Second Class,C-1746,Corporate,South China,Hainan,Office Supplies,Binders,2324.85,2,0.2,266.0
+CN-2024-888490,2024-08-10,2024-08-11,Same Day,C-1179,Home Office,East China,Fujian,Office Supplies,Storage,3145.82,7,0.2,632.84
+CN-2025-211298,2025-01-30,2025-02-05,Same Day,C-2281,Home Office,North China,Shanxi,Office Supplies,Storage,3918.47,11,0.1,980.65
+CN-2025-308328,2025-12-01,2025-12-02,Standard Class,C-5872,Home Office,Southwest China,Sichuan,Furniture,Bookcases,6558.39,3,0.0,1559.83
+CN-2025-719749,2025-08-29,2025-09-04,Second Class,C-1075,Consumer,South China,Hainan,Office Supplies,Pens,140.44,15,0.2,29.31
+CN-2024-485881,2024-07-29,2024-07-31,Second Class,C-3921,Consumer,Northwest China,Ningxia,Office Supplies,Binders,446.52,8,0.5,-58.29
+CN-2025-670468,2025-03-22,2025-03-28,Same Day,C-6602,Corporate,Northeast China,Jilin,Technology,Accessories,2719.65,13,0.0,669.83
+CN-2025-257746,2025-02-27,2025-03-03,First Class,C-7457,Corporate,North China,Shanxi,Technology,Tablets,1791.96,15,0.15,382.31
+CN-2025-664839,2025-10-13,2025-10-18,Same Day,C-6908,Corporate,East China,Shanghai,Office Supplies,Pens,2794.9,8,0.3,-76.14
+CN-2025-533613,2025-11-06,2025-11-10,First Class,C-3270,Corporate,North China,Hebei,Furniture,Furnishings,595.76,8,0.3,-164.19
+CN-2024-430806,2024-01-25,2024-01-29,First Class,C-6358,Home Office,East China,Jiangsu,Office Supplies,Binders,5302.99,1,0.1,1539.13
+CN-2025-283715,2025-02-18,2025-02-21,Standard Class,C-6545,Home Office,Southwest China,Tibet,Office Supplies,Pens,794.85,5,0.3,-181.48
+CN-2024-977698,2024-10-17,2024-10-19,Second Class,C-8117,Corporate,Southwest China,Chongqing,Office Supplies,Storage,1758.95,12,0.3,-500.93
+CN-2024-451840,2024-11-13,2024-11-14,Standard Class,C-9654,Consumer,Central China,Hubei,Office Supplies,Storage,69.07,6,0.15,17.27
+CN-2025-614435,2025-10-22,2025-10-27,Standard Class,C-8133,Consumer,North China,Tianjin,Furniture,Furnishings,8320.33,15,0.0,2397.53
+CN-2025-106535,2025-12-17,2025-12-22,Second Class,C-3660,Home Office,East China,Shandong,Technology,Accessories,10263.29,6,0.5,-2670.03
+CN-2024-867430,2024-06-02,2024-06-04,First Class,C-4537,Home Office,Southwest China,Sichuan,Furniture,Bookcases,3478.98,9,0.0,747.09
+CN-2024-270434,2024-10-14,2024-10-20,First Class,C-2584,Consumer,East China,Anhui,Furniture,Chairs,1456.42,14,0.2,545.86
+CN-2024-502913,2024-08-19,2024-08-23,Same Day,C-4847,Home Office,North China,Beijing,Technology,Laptops,12324.25,10,0.0,1744.5
+CN-2025-259720,2025-04-25,2025-05-02,Second Class,C-3815,Corporate,East China,Fujian,Furniture,Tables,685.42,6,0.0,164.83
+CN-2025-123293,2025-02-10,2025-02-17,Standard Class,C-1350,Corporate,East China,Jiangsu,Office Supplies,Binders,2269.62,12,0.0,708.06
+CN-2024-860385,2024-08-22,2024-08-25,Standard Class,C-7315,Corporate,Northeast China,Liaoning,Technology,Tablets,20232.67,13,0.1,6379.79
+CN-2025-392288,2025-07-18,2025-07-21,Second Class,C-9697,Home Office,North China,Shanxi,Technology,Tablets,19675.17,6,0.3,-3271.41
+CN-2024-883603,2024-01-20,2024-01-22,Second Class,C-5285,Home Office,Central China,Hubei,Furniture,Furnishings,1073.56,10,0.0,162.81
+CN-2024-567259,2024-10-16,2024-10-21,Second Class,C-2469,Corporate,East China,Anhui,Furniture,Tables,18258.17,8,0.0,5035.1
+CN-2025-438291,2025-05-20,2025-05-24,Same Day,C-6373,Home Office,Northeast China,Liaoning,Furniture,Furnishings,3307.47,12,0.0,725.8
+CN-2024-844292,2024-07-01,2024-07-05,First Class,C-8205,Corporate,East China,Fujian,Furniture,Furnishings,5875.18,11,0.0,2205.28
+CN-2025-586426,2025-06-28,2025-07-02,Same Day,C-7797,Corporate,Central China,Hubei,Office Supplies,Paper,1929.96,13,0.3,-146.88
+CN-2025-828681,2025-01-06,2025-01-12,Second Class,C-4361,Home Office,Southwest China,Yunnan,Office Supplies,Paper,143.62,4,0.0,34.89
+CN-2025-132249,2025-12-20,2025-12-25,Second Class,C-1813,Consumer,Northwest China,Qinghai,Furniture,Bookcases,2735.1,6,0.0,1092.23
+CN-2025-676137,2025-01-25,2025-02-01,Same Day,C-6862,Home Office,East China,Shandong,Technology,Tablets,34655.15,10,0.5,-118.07
+CN-2024-605368,2024-01-22,2024-01-28,Second Class,C-4956,Consumer,North China,Tianjin,Office Supplies,Storage,1629.7,15,0.0,629.98
+CN-2025-436626,2025-09-21,2025-09-28,First Class,C-9076,Home Office,East China,Jiangsu,Office Supplies,Pens,4130.43,15,0.3,-302.27
+CN-2025-235683,2025-12-04,2025-12-08,First Class,C-9239,Corporate,North China,Shanxi,Furniture,Tables,5526.51,11,0.3,-579.95
+CN-2024-327626,2024-01-05,2024-01-08,Same Day,C-1858,Corporate,North China,Beijing,Furniture,Furnishings,262.15,9,0.0,32.6
+CN-2025-695435,2025-09-12,2025-09-16,Second Class,C-4364,Corporate,North China,Hebei,Office Supplies,Storage,2842.27,11,0.0,522.78
+CN-2025-105641,2025-10-30,2025-11-02,Same Day,C-9409,Consumer,North China,Tianjin,Office Supplies,Pens,2089.77,10,0.1,690.95
+CN-2024-375909,2024-10-02,2024-10-09,Second Class,C-7332,Home Office,South China,Guangdong,Furniture,Chairs,6183.53,15,0.5,-2536.4
+CN-2024-356904,2024-02-23,2024-02-24,Same Day,C-9970,Home Office,North China,Hebei,Furniture,Bookcases,6491.35,6,0.5,245.25
+CN-2025-345157,2025-10-10,2025-10-11,First Class,C-7870,Home Office,East China,Shandong,Furniture,Furnishings,4665.91,2,0.2,1219.46
+CN-2025-889105,2025-04-25,2025-05-01,Same Day,C-9840,Home Office,Northwest China,Ningxia,Furniture,Bookcases,3693.56,11,0.15,1438.22
+CN-2025-643496,2025-12-31,2026-01-04,Standard Class,C-7974,Corporate,East China,Shandong,Office Supplies,Paper,844.53,7,0.1,117.92
+CN-2024-565851,2024-12-09,2024-12-12,Second Class,C-9151,Corporate,Northwest China,Ningxia,Technology,Laptops,21716.25,2,0.0,2992.2
+CN-2025-469313,2025-10-27,2025-10-29,Standard Class,C-8412,Home Office,Central China,Hubei,Technology,Smartphones,23046.33,3,0.5,-10118.32
+CN-2024-546183,2024-08-19,2024-08-25,Second Class,C-7407,Consumer,East China,Shandong,Office Supplies,Storage,4037.15,5,0.2,562.98
+CN-2024-151414,2024-03-17,2024-03-23,First Class,C-2308,Home Office,East China,Shanghai,Furniture,Furnishings,3619.19,4,0.2,1396.33
+CN-2024-814807,2024-07-31,2024-08-05,First Class,C-6336,Consumer,North China,Beijing,Furniture,Bookcases,17948.94,6,0.0,5688.84
+CN-2024-535669,2024-01-14,2024-01-21,Same Day,C-6060,Home Office,East China,Shanghai,Technology,Tablets,35682.35,15,0.3,-9361.76
+CN-2025-450397,2025-02-16,2025-02-18,Standard Class,C-5444,Home Office,South China,Guangdong,Technology,Accessories,288.59,15,0.0,95.39
+CN-2025-332748,2025-10-09,2025-10-13,Second Class,C-8957,Home Office,East China,Anhui,Office Supplies,Pens,492.82,15,0.3,-105.24
+CN-2024-765561,2024-03-31,2024-04-06,First Class,C-9469,Consumer,Central China,Hunan,Furniture,Furnishings,2964.79,8,0.0,358.01
+CN-2024-680101,2024-02-20,2024-02-24,Second Class,C-6480,Corporate,East China,Zhejiang,Furniture,Chairs,954.2,10,0.0,219.08
+CN-2024-517418,2024-11-02,2024-11-07,Standard Class,C-8287,Home Office,Southwest China,Chongqing,Technology,Laptops,571.25,15,0.0,86.12
+CN-2024-781681,2024-09-19,2024-09-25,Second Class,C-4061,Home Office,Northwest China,Gansu,Office Supplies,Storage,83.15,13,0.15,20.86
+CN-2024-596217,2024-08-12,2024-08-17,First Class,C-3756,Corporate,Northwest China,Xinjiang,Furniture,Tables,7170.84,5,0.2,1424.29
+CN-2025-655908,2025-09-08,2025-09-15,First Class,C-3096,Consumer,Northwest China,Shaanxi,Technology,Accessories,19207.23,14,0.2,6547.08
+CN-2025-191857,2025-01-13,2025-01-18,Standard Class,C-3810,Corporate,Central China,Henan,Technology,Smartphones,6809.05,4,0.1,2257.61
+CN-2024-598819,2024-02-26,2024-03-01,Second Class,C-6592,Corporate,East China,Jiangxi,Furniture,Chairs,8325.12,10,0.2,1757.3
+CN-2025-138136,2025-01-01,2025-01-05,Same Day,C-2463,Home Office,Southwest China,Sichuan,Office Supplies,Pens,3614.23,13,0.0,1044.2
+CN-2024-186512,2024-09-11,2024-09-14,Same Day,C-5088,Home Office,East China,Jiangsu,Technology,Smartphones,4385.17,5,0.3,-101.46
+CN-2024-450809,2024-08-14,2024-08-17,Standard Class,C-5315,Corporate,Northeast China,Liaoning,Office Supplies,Binders,1447.36,5,0.2,385.08
+CN-2025-467527,2025-03-20,2025-03-25,First Class,C-1547,Home Office,Southwest China,Yunnan,Office Supplies,Pens,3481.95,6,0.5,-653.83
+CN-2025-870757,2025-01-03,2025-01-10,Same Day,C-4520,Consumer,East China,Shanghai,Technology,Accessories,14900.27,10,0.15,5755.17
+CN-2025-130711,2025-01-16,2025-01-23,Second Class,C-2625,Home Office,South China,Guangdong,Office Supplies,Pens,971.44,9,0.1,287.39
+CN-2024-393109,2024-08-12,2024-08-18,Same Day,C-6353,Consumer,Northwest China,Qinghai,Furniture,Furnishings,960.59,14,0.0,273.79
+CN-2024-124708,2024-03-25,2024-03-29,Standard Class,C-7375,Corporate,Southwest China,Chongqing,Technology,Laptops,3623.06,13,0.3,-1258.98
+CN-2024-412997,2024-06-25,2024-06-27,Standard Class,C-6661,Corporate,Northwest China,Shaanxi,Furniture,Tables,3173.4,1,0.5,-507.58
+CN-2024-267284,2024-07-16,2024-07-20,Second Class,C-7776,Corporate,Central China,Hunan,Office Supplies,Paper,162.47,13,0.0,45.96
+CN-2025-310261,2025-09-12,2025-09-18,Standard Class,C-2614,Corporate,Southwest China,Tibet,Office Supplies,Pens,1057.31,13,0.1,361.89
+CN-2024-532928,2024-05-26,2024-06-01,First Class,C-7407,Corporate,Northeast China,Heilongjiang,Technology,Smartphones,315.44,15,0.3,-118.93
+CN-2025-947138,2025-05-23,2025-05-30,Standard Class,C-2712,Consumer,North China,Beijing,Office Supplies,Pens,1162.05,1,0.3,-60.58
+CN-2025-137010,2025-02-13,2025-02-15,Standard Class,C-8154,Consumer,Southwest China,Yunnan,Office Supplies,Paper,3667.92,1,0.0,766.91
+CN-2025-385329,2025-04-08,2025-04-10,Second Class,C-7054,Home Office,North China,Hebei,Furniture,Bookcases,13958.19,10,0.1,4442.49
+CN-2025-657208,2025-08-29,2025-09-04,Same Day,C-6817,Home Office,Northwest China,Shaanxi,Technology,Smartphones,4909.28,4,0.0,1700.73
+CN-2025-897093,2025-06-03,2025-06-06,Standard Class,C-6807,Consumer,Southwest China,Chongqing,Office Supplies,Pens,2076.75,10,0.3,61.89
+CN-2025-385587,2025-02-05,2025-02-09,First Class,C-8461,Corporate,South China,Guangxi,Technology,Accessories,24260.57,11,0.2,9592.99
+CN-2025-756344,2025-02-28,2025-03-07,Second Class,C-8804,Home Office,East China,Shanghai,Furniture,Furnishings,4344.4,12,0.1,1432.77
+CN-2025-178399,2025-11-09,2025-11-14,First Class,C-8551,Corporate,East China,Zhejiang,Office Supplies,Binders,1207.86,5,0.0,136.58
+CN-2024-957305,2024-06-22,2024-06-28,Standard Class,C-3538,Consumer,Southwest China,Yunnan,Technology,Laptops,796.72,12,0.3,-23.82
+CN-2024-560568,2024-06-20,2024-06-27,Second Class,C-9464,Corporate,South China,Guangdong,Technology,Accessories,1241.7,15,0.1,397.73
+CN-2024-896499,2024-09-17,2024-09-23,Same Day,C-9427,Home Office,Southwest China,Guizhou,Furniture,Chairs,14959.88,1,0.1,3822.95
+CN-2024-648437,2024-02-04,2024-02-09,Second Class,C-8910,Corporate,Southwest China,Tibet,Furniture,Furnishings,8642.9,3,0.15,1022.3
+CN-2024-333927,2024-08-03,2024-08-08,First Class,C-2830,Corporate,East China,Anhui,Technology,Tablets,15751.11,15,0.1,1677.51
+CN-2024-159017,2024-10-07,2024-10-08,First Class,C-9332,Consumer,Southwest China,Tibet,Technology,Accessories,5196.33,5,0.2,2049.25
+CN-2024-544189,2024-01-30,2024-02-06,Second Class,C-9201,Home Office,North China,Hebei,Office Supplies,Pens,2072.51,10,0.2,350.74
+CN-2025-582581,2025-06-22,2025-06-23,Second Class,C-2428,Home Office,Southwest China,Sichuan,Furniture,Chairs,12363.5,3,0.0,3495.0
+CN-2024-204219,2024-12-30,2025-01-01,Standard Class,C-7840,Corporate,East China,Fujian,Office Supplies,Paper,2768.65,10,0.15,454.7
+CN-2024-703894,2024-08-02,2024-08-04,First Class,C-1814,Corporate,Northeast China,Liaoning,Technology,Laptops,909.42,10,0.3,-289.89
+CN-2025-499493,2025-02-27,2025-02-28,Same Day,C-5674,Home Office,East China,Shandong,Office Supplies,Binders,310.87,10,0.15,70.73
+CN-2025-967805,2025-02-06,2025-02-08,Second Class,C-7163,Consumer,Southwest China,Guizhou,Technology,Tablets,4998.03,7,0.0,729.63
+CN-2024-830786,2024-04-17,2024-04-19,Second Class,C-6201,Consumer,South China,Guangxi,Furniture,Bookcases,129.94,2,0.3,0.83
+CN-2025-846910,2025-01-02,2025-01-08,Standard Class,C-9397,Consumer,Northeast China,Heilongjiang,Office Supplies,Pens,1648.58,14,0.0,371.5
+CN-2024-120030,2024-07-03,2024-07-09,Second Class,C-3649,Corporate,Central China,Henan,Technology,Accessories,12309.13,3,0.15,1322.42
+CN-2025-523153,2025-09-17,2025-09-19,Standard Class,C-8084,Home Office,East China,Shanghai,Office Supplies,Pens,2295.08,2,0.1,369.09
+CN-2024-780991,2024-12-26,2024-12-28,Same Day,C-8504,Consumer,Northwest China,Xinjiang,Furniture,Tables,1736.98,8,0.2,692.21
+CN-2025-121506,2025-09-18,2025-09-19,Standard Class,C-4961,Consumer,East China,Anhui,Office Supplies,Paper,450.89,12,0.1,65.56
+CN-2024-807835,2024-10-27,2024-11-02,First Class,C-2530,Home Office,Northeast China,Heilongjiang,Technology,Tablets,22782.43,15,0.3,-827.95
+CN-2024-961410,2024-10-16,2024-10-17,Same Day,C-2175,Corporate,North China,Tianjin,Furniture,Furnishings,7961.32,9,0.5,-2301.46
+CN-2025-946446,2025-02-23,2025-03-02,First Class,C-4810,Home Office,East China,Anhui,Office Supplies,Binders,258.12,12,0.1,96.91
+CN-2024-341666,2024-01-02,2024-01-06,Second Class,C-5947,Consumer,Southwest China,Yunnan,Furniture,Bookcases,8969.42,6,0.0,3214.89
+CN-2024-474977,2024-08-20,2024-08-26,First Class,C-4485,Home Office,Northeast China,Liaoning,Office Supplies,Binders,3443.2,4,0.0,1272.99
+CN-2025-665446,2025-04-20,2025-04-27,Standard Class,C-4756,Consumer,East China,Jiangxi,Technology,Tablets,4212.14,1,0.1,783.62
+CN-2024-807934,2024-10-23,2024-10-25,First Class,C-9394,Corporate,North China,Hebei,Furniture,Furnishings,13366.81,9,0.5,-6600.34
+CN-2024-831251,2024-01-26,2024-01-31,Standard Class,C-2709,Home Office,Central China,Hubei,Technology,Laptops,17991.1,1,0.0,6319.88
+CN-2025-626573,2025-11-02,2025-11-09,Second Class,C-1360,Home Office,Central China,Hubei,Office Supplies,Pens,1006.84,3,0.3,-179.01
+CN-2024-920941,2024-02-05,2024-02-10,First Class,C-8046,Consumer,Central China,Hunan,Technology,Accessories,4766.7,1,0.0,792.24
+CN-2024-621871,2024-07-09,2024-07-11,Same Day,C-6065,Consumer,Northwest China,Ningxia,Technology,Smartphones,1458.87,8,0.1,434.61
+CN-2024-453904,2024-08-05,2024-08-06,First Class,C-1466,Consumer,Southwest China,Guizhou,Furniture,Furnishings,3324.31,3,0.5,-1460.86
+CN-2025-847637,2025-10-03,2025-10-10,Standard Class,C-7117,Home Office,East China,Anhui,Furniture,Bookcases,126.79,13,0.2,28.67
+CN-2025-720779,2025-10-30,2025-10-31,Second Class,C-7038,Corporate,East China,Shandong,Furniture,Chairs,8437.2,13,0.15,1571.02
+CN-2024-812231,2024-06-18,2024-06-20,Second Class,C-3189,Home Office,East China,Jiangsu,Furniture,Bookcases,1540.9,5,0.0,498.59
+CN-2025-686405,2025-02-21,2025-02-26,Second Class,C-2674,Corporate,Northwest China,Shaanxi,Furniture,Bookcases,13485.24,3,0.15,3900.11
+CN-2024-748587,2024-07-03,2024-07-07,Standard Class,C-9925,Consumer,North China,Beijing,Technology,Tablets,3557.31,10,0.2,1074.77
+CN-2024-517161,2024-09-08,2024-09-15,Standard Class,C-7621,Home Office,South China,Hainan,Furniture,Chairs,1578.99,9,0.0,299.65
+CN-2024-221078,2024-09-20,2024-09-22,First Class,C-1574,Home Office,Southwest China,Tibet,Furniture,Tables,1767.72,9,0.3,-624.87
+CN-2025-838395,2025-06-13,2025-06-17,First Class,C-2962,Home Office,Northwest China,Ningxia,Furniture,Chairs,135.58,6,0.0,29.28
+CN-2024-916957,2024-09-22,2024-09-29,Standard Class,C-4145,Consumer,North China,Hebei,Technology,Accessories,2050.53,7,0.2,300.65
+CN-2025-319774,2025-11-09,2025-11-16,Same Day,C-9969,Home Office,Central China,Hunan,Office Supplies,Binders,5649.89,15,0.0,1044.93
+CN-2024-998554,2024-02-13,2024-02-16,Second Class,C-6069,Corporate,Southwest China,Tibet,Office Supplies,Paper,231.22,5,0.0,76.63
+CN-2024-475070,2024-02-17,2024-02-18,Same Day,C-5581,Consumer,Northwest China,Ningxia,Technology,Laptops,4783.22,14,0.0,1528.25
+CN-2024-529082,2024-05-09,2024-05-12,First Class,C-8059,Consumer,South China,Guangdong,Technology,Accessories,6030.42,11,0.0,1651.58
+CN-2024-321915,2024-08-26,2024-08-28,Same Day,C-7954,Corporate,East China,Zhejiang,Technology,Accessories,2544.6,8,0.15,751.07
+CN-2025-923340,2025-06-26,2025-06-27,Same Day,C-4377,Consumer,South China,Hainan,Office Supplies,Storage,635.62,15,0.0,76.31
+CN-2024-424657,2024-08-01,2024-08-02,First Class,C-4634,Home Office,Central China,Henan,Technology,Smartphones,3379.02,5,0.3,-840.14
+CN-2024-106860,2024-01-05,2024-01-06,Same Day,C-6135,Home Office,East China,Anhui,Technology,Tablets,16954.35,1,0.3,170.18
+CN-2025-940838,2025-02-17,2025-02-24,Standard Class,C-4718,Consumer,Northeast China,Liaoning,Office Supplies,Binders,371.59,5,0.2,54.14
+CN-2025-234170,2025-04-23,2025-04-29,First Class,C-3337,Home Office,Central China,Hunan,Office Supplies,Storage,994.06,11,0.1,124.06
+CN-2025-742168,2025-07-04,2025-07-11,First Class,C-7206,Home Office,Northwest China,Xinjiang,Office Supplies,Binders,112.56,8,0.0,39.49
+CN-2024-304350,2024-11-26,2024-11-27,Same Day,C-7963,Corporate,Central China,Hubei,Office Supplies,Paper,230.79,14,0.5,-42.12
+CN-2024-641756,2024-07-10,2024-07-13,Second Class,C-9922,Consumer,North China,Tianjin,Office Supplies,Paper,1043.3,1,0.0,252.19
+CN-2024-492260,2024-06-18,2024-06-22,First Class,C-3294,Consumer,South China,Guangxi,Office Supplies,Pens,1823.53,7,0.0,568.04
+CN-2025-527226,2025-01-23,2025-01-26,First Class,C-9609,Consumer,East China,Jiangsu,Office Supplies,Paper,1199.08,9,0.0,151.43
+CN-2025-491423,2025-08-11,2025-08-13,First Class,C-5676,Home Office,Northwest China,Ningxia,Furniture,Tables,7791.55,13,0.0,1928.09
+CN-2024-472338,2024-06-01,2024-06-07,First Class,C-4108,Corporate,North China,Inner Mongolia,Office Supplies,Pens,1608.22,13,0.2,297.33
+CN-2025-236762,2025-07-08,2025-07-11,Second Class,C-7016,Consumer,Northwest China,Gansu,Office Supplies,Pens,2745.04,10,0.15,1095.58
+CN-2025-163359,2025-05-23,2025-05-28,Second Class,C-8906,Corporate,East China,Shanghai,Furniture,Chairs,5877.91,1,0.0,2297.08
+CN-2025-719030,2025-08-07,2025-08-09,Standard Class,C-8151,Consumer,Central China,Hunan,Office Supplies,Storage,1121.01,1,0.0,376.03
+CN-2025-667877,2025-05-27,2025-06-03,First Class,C-3965,Corporate,Southwest China,Yunnan,Furniture,Bookcases,8473.71,13,0.0,1831.43
+CN-2024-879506,2024-11-03,2024-11-04,First Class,C-1090,Consumer,North China,Shanxi,Furniture,Bookcases,2108.96,3,0.0,734.07
+CN-2024-499071,2024-08-27,2024-09-02,Same Day,C-4431,Consumer,East China,Jiangsu,Office Supplies,Storage,3146.49,9,0.0,482.47
+CN-2024-716301,2024-11-13,2024-11-20,First Class,C-5865,Consumer,Southwest China,Sichuan,Furniture,Chairs,3074.06,10,0.0,340.51
+CN-2024-655859,2024-06-16,2024-06-17,First Class,C-1177,Home Office,North China,Tianjin,Furniture,Tables,6419.88,7,0.15,1433.15
+CN-2025-520924,2025-10-26,2025-10-27,First Class,C-6177,Home Office,Northeast China,Liaoning,Office Supplies,Storage,1248.76,14,0.5,-407.56
+CN-2024-895927,2024-01-01,2024-01-05,First Class,C-6585,Home Office,East China,Jiangxi,Office Supplies,Pens,3183.39,15,0.5,-419.64
+CN-2024-774208,2024-12-17,2024-12-21,Second Class,C-9230,Corporate,East China,Zhejiang,Furniture,Tables,2727.1,11,0.2,1018.04
+CN-2024-586375,2024-05-10,2024-05-13,Standard Class,C-9522,Home Office,Southwest China,Yunnan,Office Supplies,Storage,1325.23,14,0.5,-633.01
+CN-2024-400686,2024-07-15,2024-07-22,First Class,C-5213,Home Office,North China,Shanxi,Office Supplies,Pens,1017.75,15,0.1,157.24
+CN-2025-812983,2025-08-21,2025-08-24,Standard Class,C-1944,Consumer,Southwest China,Chongqing,Technology,Tablets,21918.26,7,0.0,7853.12
+CN-2025-276592,2025-10-07,2025-10-10,Second Class,C-6653,Corporate,East China,Shandong,Technology,Laptops,4587.66,8,0.0,1521.92
+CN-2024-389209,2024-11-09,2024-11-10,Same Day,C-4864,Home Office,Northwest China,Ningxia,Furniture,Tables,17869.5,12,0.15,7095.65
+CN-2024-262536,2024-04-08,2024-04-14,Same Day,C-5588,Corporate,Central China,Hubei,Office Supplies,Binders,259.48,9,0.3,-114.08
+CN-2025-538283,2025-07-13,2025-07-17,Standard Class,C-6200,Home Office,East China,Jiangxi,Technology,Laptops,1546.99,1,0.0,485.41
+CN-2024-463610,2024-07-18,2024-07-20,Same Day,C-4057,Home Office,Southwest China,Yunnan,Technology,Smartphones,2525.45,5,0.5,-697.48
+CN-2024-371733,2024-01-10,2024-01-15,Standard Class,C-6469,Home Office,Northwest China,Xinjiang,Technology,Tablets,2681.89,15,0.0,700.23
+CN-2024-902955,2024-10-15,2024-10-21,Second Class,C-1464,Corporate,East China,Zhejiang,Office Supplies,Binders,710.9,11,0.0,256.43
+CN-2025-191337,2025-05-25,2025-05-30,Same Day,C-8107,Consumer,South China,Guangxi,Furniture,Tables,13149.18,3,0.5,-5526.66
+CN-2024-728401,2024-12-21,2024-12-23,Second Class,C-9546,Home Office,North China,Tianjin,Technology,Tablets,14018.24,2,0.0,3351.09
+CN-2024-913650,2024-11-10,2024-11-17,First Class,C-3354,Home Office,Northwest China,Ningxia,Technology,Tablets,37654.79,13,0.0,12668.26
+CN-2024-492642,2024-11-28,2024-12-05,Second Class,C-7807,Home Office,Northwest China,Ningxia,Technology,Tablets,4889.31,11,0.5,-2221.87
+CN-2024-965142,2024-11-13,2024-11-18,First Class,C-2198,Home Office,Northwest China,Ningxia,Technology,Tablets,12142.66,2,0.5,-1725.75
+CN-2024-424798,2024-01-09,2024-01-12,First Class,C-8595,Home Office,East China,Jiangxi,Office Supplies,Storage,3760.67,8,0.0,855.1
+CN-2024-573192,2024-11-04,2024-11-09,Same Day,C-7409,Corporate,Southwest China,Chongqing,Furniture,Furnishings,1313.62,4,0.5,-219.52
+CN-2025-864747,2025-11-01,2025-11-07,Standard Class,C-9777,Corporate,East China,Jiangxi,Technology,Tablets,27627.47,8,0.0,4694.11
+CN-2025-791660,2025-10-22,2025-10-26,Standard Class,C-3470,Home Office,East China,Fujian,Technology,Smartphones,6732.42,15,0.15,1793.47
+CN-2024-319537,2024-03-25,2024-03-29,Standard Class,C-8580,Home Office,East China,Fujian,Furniture,Furnishings,1340.78,2,0.2,225.41
+CN-2024-115798,2024-11-24,2024-11-30,Standard Class,C-8530,Consumer,Central China,Hunan,Technology,Tablets,11424.51,7,0.0,2577.74
+CN-2025-156171,2025-12-02,2025-12-05,Second Class,C-6002,Home Office,Northwest China,Qinghai,Furniture,Chairs,1031.54,6,0.2,182.2
+CN-2025-337268,2025-11-01,2025-11-03,Second Class,C-4035,Home Office,East China,Anhui,Technology,Smartphones,24239.57,15,0.3,-545.62
+CN-2025-237787,2025-05-26,2025-05-31,Second Class,C-6922,Home Office,Northwest China,Qinghai,Furniture,Chairs,13923.71,6,0.0,1498.06
+CN-2025-463417,2025-06-18,2025-06-21,Same Day,C-5092,Corporate,North China,Shanxi,Furniture,Chairs,10392.03,9,0.3,-4245.35
+CN-2025-951985,2025-08-03,2025-08-05,Same Day,C-7114,Consumer,East China,Jiangsu,Furniture,Bookcases,10169.16,10,0.1,3964.09
+CN-2025-572111,2025-08-01,2025-08-05,First Class,C-3979,Consumer,East China,Anhui,Technology,Smartphones,26259.74,8,0.0,2728.27
+CN-2025-895299,2025-12-19,2025-12-21,Standard Class,C-4333,Consumer,North China,Tianjin,Furniture,Furnishings,330.73,5,0.0,117.26
+CN-2024-738424,2024-12-22,2024-12-26,First Class,C-9440,Home Office,Southwest China,Yunnan,Office Supplies,Paper,99.57,10,0.0,34.7
+CN-2024-280113,2024-05-20,2024-05-25,First Class,C-2436,Consumer,Southwest China,Yunnan,Furniture,Bookcases,3104.03,6,0.1,1133.88
+CN-2025-353456,2025-03-31,2025-04-07,First Class,C-3708,Home Office,North China,Inner Mongolia,Furniture,Bookcases,7551.73,9,0.5,371.38
+CN-2024-621129,2024-08-15,2024-08-18,Same Day,C-1313,Consumer,Northwest China,Xinjiang,Furniture,Bookcases,675.82,7,0.2,210.14
+CN-2025-952463,2025-09-19,2025-09-22,Same Day,C-4030,Home Office,Northwest China,Ningxia,Technology,Laptops,3954.84,4,0.15,990.97
+CN-2024-405629,2024-06-03,2024-06-10,First Class,C-6024,Consumer,Northwest China,Ningxia,Furniture,Furnishings,4496.92,8,0.0,1717.0
+CN-2025-449674,2025-06-10,2025-06-11,First Class,C-4455,Home Office,North China,Tianjin,Office Supplies,Paper,1130.0,8,0.2,151.64
+CN-2024-435004,2024-05-07,2024-05-11,Standard Class,C-3369,Home Office,Southwest China,Chongqing,Office Supplies,Paper,1153.17,10,0.2,341.97
+CN-2025-828459,2025-12-09,2025-12-12,Same Day,C-1929,Corporate,North China,Shanxi,Office Supplies,Binders,3457.52,3,0.5,-43.85
+CN-2024-403801,2024-06-01,2024-06-08,Standard Class,C-5719,Consumer,East China,Jiangsu,Furniture,Furnishings,9787.78,7,0.0,2513.56
+CN-2025-421571,2025-10-24,2025-10-27,Standard Class,C-3216,Home Office,East China,Anhui,Technology,Laptops,11891.95,8,0.2,3619.45
+CN-2024-248235,2024-03-08,2024-03-12,Second Class,C-1008,Corporate,South China,Guangxi,Furniture,Bookcases,5465.62,14,0.0,2065.75
+CN-2025-519282,2025-10-09,2025-10-13,Second Class,C-6837,Corporate,Southwest China,Tibet,Furniture,Bookcases,6437.98,13,0.5,208.37
+CN-2025-903497,2025-04-05,2025-04-12,First Class,C-4389,Corporate,Northwest China,Ningxia,Technology,Accessories,16269.21,8,0.5,-2775.55
+CN-2024-595338,2024-12-07,2024-12-12,Second Class,C-1957,Home Office,Northwest China,Qinghai,Office Supplies,Pens,2963.75,2,0.1,645.79
+CN-2025-669038,2025-03-28,2025-04-02,Second Class,C-1166,Consumer,Southwest China,Guizhou,Furniture,Furnishings,5565.04,10,0.5,-1269.31
+CN-2025-951840,2025-12-09,2025-12-15,Same Day,C-3384,Consumer,Southwest China,Sichuan,Office Supplies,Binders,878.41,7,0.0,169.58
+CN-2025-331309,2025-01-12,2025-01-14,First Class,C-2488,Consumer,East China,Jiangxi,Technology,Tablets,16461.3,12,0.3,-6453.43
+CN-2024-840139,2024-09-21,2024-09-23,First Class,C-5489,Consumer,Southwest China,Chongqing,Furniture,Furnishings,2458.11,2,0.0,613.88
+CN-2024-633666,2024-06-24,2024-06-27,Standard Class,C-2281,Home Office,East China,Shandong,Technology,Laptops,10219.31,6,0.0,1447.01
+CN-2024-738094,2024-12-26,2025-01-02,Same Day,C-8148,Home Office,North China,Beijing,Technology,Smartphones,7306.76,6,0.5,-3452.58
+CN-2025-946038,2025-04-29,2025-05-03,First Class,C-1884,Corporate,South China,Hainan,Furniture,Furnishings,4485.07,9,0.15,1645.54
+CN-2025-382974,2025-03-19,2025-03-23,Second Class,C-4646,Corporate,Northwest China,Xinjiang,Furniture,Bookcases,18939.46,7,0.5,272.59
+CN-2024-537576,2024-04-13,2024-04-19,Second Class,C-5709,Consumer,East China,Shandong,Office Supplies,Storage,101.43,8,0.0,15.65
+CN-2024-170868,2024-08-14,2024-08-18,Same Day,C-6918,Home Office,Central China,Henan,Furniture,Bookcases,4126.87,13,0.0,419.01
+CN-2024-413420,2024-05-15,2024-05-20,Same Day,C-2256,Corporate,Central China,Hunan,Office Supplies,Storage,150.63,14,0.3,-42.54
+CN-2025-903103,2025-11-01,2025-11-04,First Class,C-8190,Corporate,Northeast China,Liaoning,Technology,Tablets,24760.07,10,0.5,-9039.58
+CN-2025-391408,2025-11-11,2025-11-15,Same Day,C-4579,Corporate,Southwest China,Tibet,Technology,Smartphones,1122.56,14,0.1,205.98
+CN-2024-441205,2024-09-13,2024-09-14,First Class,C-9330,Consumer,Northwest China,Xinjiang,Technology,Accessories,11114.58,9,0.0,2312.9
+CN-2025-320056,2025-12-09,2025-12-15,First Class,C-4807,Home Office,East China,Jiangsu,Office Supplies,Pens,4101.04,5,0.0,458.77
+CN-2024-823416,2024-10-20,2024-10-26,First Class,C-4687,Corporate,North China,Shanxi,Furniture,Bookcases,2162.36,1,0.2,766.57
+CN-2024-704915,2024-10-19,2024-10-20,Same Day,C-4743,Consumer,North China,Inner Mongolia,Furniture,Furnishings,3822.31,2,0.0,1059.67
+CN-2025-697691,2025-12-21,2025-12-23,Second Class,C-4040,Home Office,Northeast China,Heilongjiang,Office Supplies,Pens,4100.9,6,0.5,-1781.34
+CN-2024-433521,2024-07-20,2024-07-27,Second Class,C-7521,Consumer,North China,Hebei,Technology,Accessories,538.32,12,0.2,152.24
+CN-2024-857758,2024-10-26,2024-10-28,Standard Class,C-7512,Home Office,East China,Jiangsu,Furniture,Tables,1471.71,15,0.0,181.18
+CN-2025-434589,2025-08-26,2025-09-01,Second Class,C-2665,Corporate,Northeast China,Heilongjiang,Furniture,Bookcases,13163.9,4,0.2,3759.07
+CN-2025-554217,2025-02-27,2025-03-05,First Class,C-2748,Corporate,East China,Shandong,Furniture,Bookcases,7858.73,4,0.0,2828.83
+CN-2024-755565,2024-12-28,2024-12-31,Second Class,C-6092,Corporate,Northwest China,Shaanxi,Furniture,Chairs,5134.76,4,0.2,1894.74
+CN-2024-768316,2024-10-10,2024-10-13,Same Day,C-1791,Home Office,Northeast China,Liaoning,Office Supplies,Binders,3681.21,5,0.15,1373.74
+CN-2025-582893,2025-02-12,2025-02-18,Standard Class,C-6828,Corporate,Northwest China,Shaanxi,Technology,Laptops,2349.05,11,0.2,930.39
+CN-2025-603964,2025-05-14,2025-05-21,Same Day,C-4420,Home Office,East China,Shanghai,Furniture,Furnishings,5143.82,7,0.2,1347.24
+CN-2025-303146,2025-10-30,2025-11-03,Second Class,C-1952,Home Office,Northwest China,Qinghai,Technology,Tablets,5400.89,2,0.0,881.92
+CN-2025-787975,2025-06-25,2025-07-02,Second Class,C-4242,Home Office,East China,Shanghai,Furniture,Bookcases,1979.59,7,0.0,646.06
+CN-2024-369819,2024-05-16,2024-05-19,Standard Class,C-2686,Consumer,Northeast China,Liaoning,Furniture,Furnishings,12132.66,4,0.0,2492.46
+CN-2025-325311,2025-09-22,2025-09-25,Same Day,C-5462,Home Office,Northwest China,Qinghai,Technology,Laptops,9703.0,2,0.0,1622.21
+CN-2025-110513,2025-05-09,2025-05-15,Same Day,C-8758,Consumer,Southwest China,Chongqing,Office Supplies,Pens,1576.47,2,0.0,520.76
+CN-2024-965866,2024-12-18,2024-12-20,Standard Class,C-2344,Consumer,North China,Tianjin,Office Supplies,Storage,1308.79,14,0.2,227.49
+CN-2025-114146,2025-10-19,2025-10-26,Second Class,C-7247,Corporate,East China,Shanghai,Furniture,Furnishings,1450.7,10,0.0,546.21
+CN-2024-165640,2024-09-13,2024-09-17,Standard Class,C-3022,Corporate,Central China,Henan,Office Supplies,Storage,3690.21,4,0.0,667.68
+CN-2025-769890,2025-09-12,2025-09-19,Second Class,C-5535,Home Office,South China,Hainan,Technology,Smartphones,4020.87,15,0.15,1017.81
+CN-2025-713619,2025-07-05,2025-07-09,Standard Class,C-2191,Corporate,Northwest China,Shaanxi,Technology,Tablets,5438.54,13,0.15,741.9
+CN-2024-542550,2024-06-28,2024-06-30,Second Class,C-3385,Home Office,South China,Hainan,Technology,Tablets,23122.15,4,0.5,-2192.14
+CN-2024-585091,2024-02-04,2024-02-05,Second Class,C-2163,Consumer,East China,Shandong,Furniture,Chairs,16534.29,6,0.0,2249.95
+CN-2025-891109,2025-10-24,2025-10-31,Same Day,C-6284,Consumer,North China,Hebei,Furniture,Chairs,664.08,11,0.15,85.81
+CN-2025-459696,2025-04-17,2025-04-21,Standard Class,C-2131,Corporate,Southwest China,Chongqing,Office Supplies,Paper,35.71,3,0.0,5.58
+CN-2024-119252,2024-05-21,2024-05-26,Standard Class,C-6774,Home Office,Southwest China,Chongqing,Office Supplies,Pens,742.45,11,0.2,212.19
+CN-2024-160952,2024-10-03,2024-10-07,Same Day,C-5267,Consumer,East China,Jiangsu,Technology,Accessories,14020.7,3,0.0,4698.53
+CN-2025-614142,2025-01-20,2025-01-23,Second Class,C-8597,Consumer,Southwest China,Guizhou,Office Supplies,Pens,1033.24,11,0.3,-179.97
+CN-2025-893840,2025-07-23,2025-07-26,First Class,C-4568,Consumer,Northwest China,Qinghai,Technology,Laptops,9229.57,14,0.2,2994.03
+CN-2025-117654,2025-09-08,2025-09-14,Same Day,C-4020,Consumer,South China,Guangxi,Furniture,Tables,5954.44,10,0.0,2022.49
+CN-2025-523542,2025-05-09,2025-05-15,First Class,C-6972,Home Office,East China,Shanghai,Technology,Accessories,479.0,1,0.0,158.44
+CN-2024-408429,2024-06-16,2024-06-19,Standard Class,C-2802,Consumer,East China,Jiangsu,Office Supplies,Binders,2098.69,4,0.5,-705.97
+CN-2024-388031,2024-01-19,2024-01-21,Second Class,C-9386,Corporate,North China,Shanxi,Furniture,Bookcases,5323.81,8,0.3,-739.54
+CN-2024-850033,2024-01-17,2024-01-20,Same Day,C-9043,Home Office,East China,Jiangsu,Office Supplies,Paper,311.78,6,0.1,55.81
+CN-2024-560473,2024-12-25,2024-12-28,Second Class,C-6867,Corporate,North China,Beijing,Office Supplies,Binders,1946.91,3,0.1,744.54
+CN-2024-456792,2024-03-26,2024-04-02,First Class,C-9739,Consumer,Southwest China,Tibet,Technology,Laptops,32121.79,12,0.5,1068.97
+CN-2024-472445,2024-11-29,2024-11-30,Same Day,C-5227,Corporate,East China,Shandong,Technology,Smartphones,9337.95,7,0.0,2079.82
+CN-2024-582555,2024-12-05,2024-12-12,Second Class,C-4063,Home Office,North China,Inner Mongolia,Furniture,Furnishings,2463.01,6,0.0,796.68
+CN-2025-102643,2025-11-24,2025-11-30,First Class,C-9880,Corporate,Northwest China,Shaanxi,Furniture,Chairs,2405.52,14,0.0,385.36
+CN-2025-534120,2025-11-08,2025-11-13,First Class,C-1565,Corporate,Southwest China,Chongqing,Office Supplies,Paper,530.58,4,0.5,-208.34
+CN-2025-806229,2025-11-29,2025-12-01,Same Day,C-8929,Consumer,North China,Beijing,Office Supplies,Binders,1128.85,14,0.15,362.01
+CN-2025-787875,2025-03-31,2025-04-06,First Class,C-5251,Corporate,Southwest China,Sichuan,Office Supplies,Pens,34.61,15,0.15,8.21
+CN-2025-869156,2025-06-25,2025-06-27,Standard Class,C-5464,Consumer,East China,Jiangsu,Technology,Accessories,28682.83,9,0.1,9961.93
+CN-2025-698694,2025-08-13,2025-08-19,Standard Class,C-2917,Corporate,Southwest China,Tibet,Technology,Smartphones,11217.12,10,0.3,-2598.6
+CN-2025-252360,2025-03-28,2025-03-30,Same Day,C-2264,Home Office,North China,Shanxi,Office Supplies,Storage,4787.53,8,0.1,1577.52
+CN-2025-626011,2025-01-25,2025-01-26,Same Day,C-9183,Consumer,Southwest China,Tibet,Technology,Tablets,4014.5,3,0.0,1413.12
+CN-2024-802364,2024-11-12,2024-11-18,First Class,C-1334,Corporate,Central China,Hubei,Furniture,Chairs,9075.89,6,0.2,2529.89
+CN-2025-828233,2025-01-24,2025-01-30,First Class,C-8697,Home Office,South China,Guangxi,Furniture,Tables,10229.65,9,0.1,2030.1
+CN-2025-511837,2025-05-13,2025-05-16,Same Day,C-3711,Home Office,North China,Tianjin,Office Supplies,Paper,311.55,11,0.15,99.51
+CN-2025-845736,2025-10-05,2025-10-08,Second Class,C-1019,Home Office,Central China,Hubei,Office Supplies,Storage,4124.1,2,0.0,1480.83
+CN-2024-939821,2024-01-02,2024-01-04,Standard Class,C-7339,Consumer,Northwest China,Gansu,Office Supplies,Paper,1424.96,3,0.0,411.7
+CN-2024-432226,2024-09-15,2024-09-20,First Class,C-4741,Consumer,East China,Fujian,Furniture,Furnishings,1247.72,13,0.5,-317.51
+CN-2024-115349,2024-12-11,2024-12-17,Standard Class,C-7014,Consumer,Central China,Hunan,Office Supplies,Pens,3133.34,13,0.5,-921.64
+CN-2024-161356,2024-05-20,2024-05-24,Same Day,C-5044,Corporate,Southwest China,Chongqing,Office Supplies,Binders,192.66,8,0.2,75.06
+CN-2025-226062,2025-06-05,2025-06-12,Standard Class,C-4443,Corporate,East China,Shandong,Office Supplies,Binders,4812.99,1,0.1,1655.94
+CN-2024-879349,2024-11-30,2024-12-06,Standard Class,C-2416,Home Office,Southwest China,Sichuan,Furniture,Furnishings,838.74,10,0.5,-214.5
+CN-2025-479804,2025-11-12,2025-11-16,Second Class,C-1942,Corporate,Central China,Hubei,Technology,Accessories,27789.06,13,0.5,-237.04
+CN-2024-603525,2024-08-22,2024-08-28,First Class,C-4573,Corporate,Northwest China,Xinjiang,Furniture,Bookcases,8600.75,3,0.2,1591.63
+CN-2024-197791,2024-11-14,2024-11-17,First Class,C-8238,Consumer,Northwest China,Xinjiang,Technology,Smartphones,15186.02,5,0.2,5747.72
+CN-2025-517341,2025-02-17,2025-02-20,First Class,C-5495,Home Office,Southwest China,Tibet,Office Supplies,Paper,901.13,1,0.15,249.67
+CN-2025-821893,2025-04-21,2025-04-22,Second Class,C-3899,Corporate,East China,Shanghai,Technology,Tablets,13349.51,11,0.0,5280.24
+CN-2025-275780,2025-07-16,2025-07-23,Second Class,C-9485,Home Office,Northwest China,Qinghai,Office Supplies,Storage,387.33,10,0.15,128.16
+CN-2024-827757,2024-09-29,2024-10-01,Same Day,C-8249,Home Office,North China,Beijing,Office Supplies,Storage,962.94,2,0.3,-171.12
+CN-2025-819348,2025-12-06,2025-12-07,First Class,C-7538,Corporate,North China,Inner Mongolia,Furniture,Tables,431.48,14,0.3,-201.78
+CN-2024-421866,2024-11-25,2024-11-28,Second Class,C-1561,Consumer,South China,Hainan,Office Supplies,Storage,2170.47,3,0.2,572.36
+CN-2024-513380,2024-05-18,2024-05-21,Same Day,C-7006,Home Office,North China,Shanxi,Furniture,Furnishings,3812.68,10,0.0,1444.42
+CN-2025-840426,2025-09-11,2025-09-18,Same Day,C-2448,Consumer,Northwest China,Xinjiang,Office Supplies,Paper,166.41,12,0.5,-58.58
+CN-2025-663548,2025-07-12,2025-07-15,Same Day,C-3009,Consumer,East China,Shandong,Technology,Tablets,4625.99,11,0.2,989.86
+CN-2024-243625,2024-01-30,2024-02-03,Second Class,C-2034,Consumer,Central China,Hubei,Furniture,Tables,3955.46,14,0.0,818.52
+CN-2024-370451,2024-08-03,2024-08-04,Same Day,C-1250,Consumer,Central China,Hubei,Technology,Accessories,9230.38,5,0.0,1028.61
+CN-2025-128191,2025-11-21,2025-11-24,First Class,C-3140,Consumer,South China,Hainan,Office Supplies,Pens,411.61,3,0.1,93.33
+CN-2025-732256,2025-09-05,2025-09-12,Standard Class,C-4255,Consumer,Northwest China,Qinghai,Technology,Laptops,14720.89,12,0.0,5648.02
+CN-2025-459584,2025-02-07,2025-02-12,Second Class,C-6832,Corporate,Northeast China,Heilongjiang,Furniture,Furnishings,7985.78,15,0.0,2515.57
+CN-2024-817513,2024-01-02,2024-01-08,First Class,C-7890,Consumer,North China,Tianjin,Technology,Smartphones,11123.22,3,0.5,-5139.28
+CN-2025-266507,2025-04-10,2025-04-14,Same Day,C-2725,Consumer,South China,Guangdong,Office Supplies,Paper,844.8,12,0.15,152.49
+CN-2025-255397,2025-05-21,2025-05-25,Second Class,C-2321,Consumer,Northwest China,Ningxia,Office Supplies,Storage,1691.83,4,0.3,64.76
+CN-2025-123710,2025-12-05,2025-12-08,Same Day,C-6431,Home Office,East China,Shandong,Technology,Tablets,6780.77,4,0.3,-1631.07
+CN-2025-517644,2025-08-23,2025-08-27,Same Day,C-1743,Consumer,East China,Jiangsu,Technology,Smartphones,7553.19,7,0.5,-3227.6
+CN-2024-920330,2024-07-28,2024-08-01,Second Class,C-3682,Corporate,North China,Inner Mongolia,Furniture,Tables,6473.31,11,0.0,890.41
+CN-2024-820289,2024-10-17,2024-10-20,Same Day,C-2999,Home Office,Southwest China,Yunnan,Office Supplies,Storage,488.44,14,0.0,101.21
+CN-2024-714584,2024-05-22,2024-05-25,First Class,C-1881,Corporate,South China,Guangdong,Furniture,Chairs,1422.82,2,0.0,440.33
+CN-2024-521359,2024-11-06,2024-11-08,First Class,C-3132,Home Office,East China,Jiangxi,Office Supplies,Paper,2767.22,7,0.15,1056.8
+CN-2024-277720,2024-11-07,2024-11-12,Same Day,C-9333,Corporate,Southwest China,Sichuan,Furniture,Bookcases,1094.47,9,0.3,-457.82
+CN-2025-554203,2025-07-27,2025-08-01,Standard Class,C-1127,Corporate,East China,Fujian,Furniture,Furnishings,3024.03,5,0.0,743.88
+CN-2024-700847,2024-04-20,2024-04-25,Second Class,C-9640,Consumer,Northeast China,Heilongjiang,Technology,Smartphones,16179.9,8,0.2,2282.32
+CN-2024-158008,2024-03-01,2024-03-03,Same Day,C-9903,Home Office,Northeast China,Heilongjiang,Furniture,Chairs,18021.01,11,0.2,6431.6
+CN-2024-269444,2024-05-26,2024-05-29,Second Class,C-2848,Corporate,East China,Shandong,Office Supplies,Storage,3686.02,14,0.0,1008.5
+CN-2025-972475,2025-03-25,2025-03-31,First Class,C-8708,Home Office,South China,Guangdong,Technology,Laptops,15827.73,10,0.3,-2387.19
+CN-2025-108810,2025-11-05,2025-11-12,Second Class,C-8629,Consumer,South China,Guangxi,Furniture,Chairs,5959.17,7,0.15,2264.2
+CN-2025-727635,2025-08-18,2025-08-19,Same Day,C-5434,Consumer,Northwest China,Xinjiang,Office Supplies,Pens,105.45,3,0.1,12.95
+CN-2025-733718,2025-07-26,2025-07-28,Standard Class,C-9835,Consumer,Southwest China,Chongqing,Office Supplies,Paper,2290.6,8,0.1,238.94
+CN-2024-105337,2024-05-20,2024-05-25,Same Day,C-3965,Corporate,East China,Jiangxi,Technology,Tablets,285.43,11,0.2,107.76
+CN-2024-562136,2024-06-05,2024-06-07,Second Class,C-4295,Corporate,Northwest China,Ningxia,Technology,Accessories,22880.5,4,0.1,4972.7
+CN-2024-452488,2024-08-12,2024-08-13,First Class,C-7514,Corporate,North China,Inner Mongolia,Furniture,Bookcases,5295.75,7,0.5,-1934.86
+CN-2024-663042,2024-06-20,2024-06-22,First Class,C-5151,Corporate,Central China,Hunan,Technology,Tablets,3283.65,3,0.0,729.28
+CN-2025-257730,2025-04-16,2025-04-18,Standard Class,C-1770,Home Office,Southwest China,Chongqing,Furniture,Chairs,1232.47,1,0.2,217.1
+CN-2024-553228,2024-04-27,2024-05-03,Second Class,C-7593,Corporate,Central China,Hunan,Furniture,Bookcases,12973.02,5,0.3,-829.12
+CN-2025-575867,2025-10-05,2025-10-11,Same Day,C-3441,Corporate,North China,Hebei,Technology,Smartphones,20508.43,1,0.3,-8506.89
+CN-2025-463677,2025-03-30,2025-04-01,Second Class,C-9281,Consumer,East China,Fujian,Technology,Laptops,16645.42,9,0.2,5790.15
+CN-2024-241174,2024-09-13,2024-09-17,Second Class,C-7956,Consumer,North China,Shanxi,Furniture,Chairs,3436.56,4,0.0,1132.1
+CN-2025-879711,2025-03-12,2025-03-16,First Class,C-2066,Home Office,North China,Tianjin,Furniture,Tables,4841.36,7,0.5,-2007.85
+CN-2025-657882,2025-05-26,2025-05-29,Same Day,C-8510,Corporate,South China,Hainan,Technology,Tablets,798.79,9,0.0,252.16
+CN-2025-317434,2025-08-27,2025-09-01,Standard Class,C-3632,Home Office,East China,Zhejiang,Technology,Laptops,22382.78,8,0.1,5075.35
+CN-2025-690467,2025-10-03,2025-10-06,Second Class,C-8849,Consumer,Central China,Hunan,Furniture,Chairs,14291.49,9,0.0,3485.94
+CN-2024-613813,2024-10-23,2024-10-28,Standard Class,C-7584,Corporate,North China,Shanxi,Furniture,Chairs,4609.3,8,0.3,-493.65
+CN-2025-979638,2025-03-04,2025-03-11,First Class,C-6242,Consumer,North China,Inner Mongolia,Technology,Smartphones,1262.97,4,0.1,426.5
+CN-2025-732600,2025-07-23,2025-07-26,First Class,C-3255,Consumer,East China,Fujian,Office Supplies,Pens,71.2,15,0.0,24.31
+CN-2024-610925,2024-11-18,2024-11-23,Standard Class,C-7205,Consumer,Central China,Hubei,Technology,Accessories,3175.61,13,0.0,711.15
+CN-2024-751705,2024-10-04,2024-10-10,Second Class,C-3271,Corporate,East China,Fujian,Office Supplies,Binders,2143.96,15,0.2,796.03
+CN-2024-678528,2024-02-18,2024-02-20,First Class,C-8688,Home Office,Southwest China,Yunnan,Office Supplies,Binders,3385.39,3,0.0,352.92
+CN-2025-130333,2025-07-06,2025-07-11,First Class,C-8369,Corporate,Southwest China,Tibet,Furniture,Furnishings,7459.11,14,0.15,780.58
+CN-2024-338822,2024-05-22,2024-05-23,Same Day,C-1859,Home Office,North China,Tianjin,Office Supplies,Paper,794.15,15,0.2,207.61
+CN-2024-420376,2024-01-09,2024-01-11,Same Day,C-2959,Corporate,Southwest China,Sichuan,Furniture,Bookcases,2610.13,2,0.0,570.5
+CN-2025-694445,2025-09-15,2025-09-17,Standard Class,C-1690,Home Office,East China,Jiangxi,Office Supplies,Storage,3384.34,12,0.0,942.71
+CN-2025-570033,2025-06-26,2025-06-27,Same Day,C-7741,Home Office,Central China,Henan,Technology,Accessories,1804.24,4,0.0,651.23
+CN-2025-581084,2025-01-28,2025-01-30,Same Day,C-8556,Consumer,North China,Hebei,Office Supplies,Pens,460.49,6,0.0,139.49
+CN-2025-662613,2025-02-27,2025-03-05,Second Class,C-1071,Corporate,North China,Hebei,Office Supplies,Pens,4541.81,11,0.2,1033.03
+CN-2024-431258,2024-11-17,2024-11-19,First Class,C-5058,Corporate,East China,Fujian,Furniture,Furnishings,813.13,1,0.0,282.65
+CN-2024-841215,2024-04-01,2024-04-05,Standard Class,C-8899,Corporate,East China,Jiangxi,Furniture,Tables,3648.91,13,0.0,1271.41
+CN-2025-469408,2025-07-03,2025-07-05,Same Day,C-6919,Corporate,North China,Beijing,Furniture,Tables,8801.88,2,0.15,2632.08
+CN-2024-852071,2024-07-25,2024-07-26,Same Day,C-4438,Home Office,Southwest China,Guizhou,Office Supplies,Storage,900.17,4,0.1,287.87
+CN-2025-311494,2025-06-05,2025-06-11,Standard Class,C-5302,Consumer,Southwest China,Guizhou,Furniture,Bookcases,14004.47,9,0.0,3068.56
+CN-2024-923778,2024-02-27,2024-02-29,Second Class,C-9651,Consumer,East China,Fujian,Furniture,Tables,3822.69,9,0.0,416.49
+CN-2025-190332,2025-02-20,2025-02-23,Same Day,C-3598,Consumer,North China,Inner Mongolia,Technology,Tablets,38805.79,5,0.0,8205.52
+CN-2024-686245,2024-12-26,2024-12-27,Second Class,C-5245,Corporate,Central China,Hunan,Technology,Smartphones,17900.9,12,0.5,20.34
+CN-2025-987033,2025-10-16,2025-10-19,Same Day,C-5014,Consumer,North China,Tianjin,Technology,Smartphones,9325.73,2,0.2,1516.64
+CN-2024-130683,2024-09-15,2024-09-20,First Class,C-3760,Home Office,Northeast China,Liaoning,Technology,Smartphones,27124.04,10,0.0,9710.24
+CN-2024-873500,2024-06-18,2024-06-20,First Class,C-5874,Consumer,North China,Inner Mongolia,Furniture,Bookcases,6057.39,3,0.3,-2568.47
+CN-2025-443284,2025-09-23,2025-09-26,Standard Class,C-5745,Home Office,Central China,Henan,Technology,Tablets,1361.04,7,0.5,-196.14
+CN-2024-383634,2024-12-03,2024-12-10,Second Class,C-7638,Home Office,Southwest China,Guizhou,Office Supplies,Paper,26.77,8,0.0,6.39
+CN-2025-444728,2025-04-22,2025-04-28,Standard Class,C-8039,Home Office,Northwest China,Xinjiang,Technology,Laptops,1313.05,14,0.0,379.07
+CN-2024-855798,2024-07-26,2024-07-31,First Class,C-4579,Corporate,Northwest China,Gansu,Office Supplies,Storage,33.63,6,0.0,4.2
+CN-2024-963430,2024-02-01,2024-02-04,Same Day,C-5854,Home Office,East China,Jiangsu,Furniture,Tables,8231.32,12,0.15,1659.72
+CN-2024-451818,2024-07-04,2024-07-08,Same Day,C-3821,Consumer,Central China,Henan,Office Supplies,Storage,4612.35,1,0.3,-1800.52
+CN-2024-406194,2024-08-24,2024-08-30,Same Day,C-5867,Consumer,Northwest China,Shaanxi,Office Supplies,Binders,496.77,7,0.15,151.73
+CN-2024-974658,2024-06-07,2024-06-14,Standard Class,C-7414,Corporate,Central China,Henan,Furniture,Chairs,1272.01,5,0.2,274.4
+CN-2024-331160,2024-06-11,2024-06-16,First Class,C-8335,Corporate,Northwest China,Qinghai,Office Supplies,Storage,4074.09,3,0.0,626.55
+CN-2025-604827,2025-04-27,2025-05-01,First Class,C-1808,Corporate,Central China,Henan,Office Supplies,Paper,218.06,2,0.0,48.72
+CN-2024-892139,2024-10-12,2024-10-13,First Class,C-6697,Consumer,Southwest China,Yunnan,Technology,Laptops,10860.76,5,0.0,2441.37
+CN-2025-602077,2025-04-26,2025-05-01,Standard Class,C-3121,Home Office,North China,Tianjin,Furniture,Furnishings,3460.52,6,0.0,709.72
+CN-2024-399821,2024-09-22,2024-09-26,Same Day,C-4748,Home Office,South China,Guangxi,Office Supplies,Paper,1842.72,8,0.0,659.45
+CN-2024-518803,2024-02-23,2024-02-29,First Class,C-4887,Corporate,South China,Guangxi,Office Supplies,Binders,5388.9,8,0.2,539.21
+CN-2025-610546,2025-11-08,2025-11-14,Same Day,C-5793,Corporate,Northeast China,Liaoning,Technology,Tablets,13002.88,8,0.2,2912.94
+CN-2024-748797,2024-12-19,2024-12-21,Same Day,C-9651,Home Office,North China,Shanxi,Office Supplies,Paper,1116.37,14,0.0,398.99
+CN-2025-894620,2025-10-14,2025-10-21,Same Day,C-3633,Consumer,Northwest China,Qinghai,Technology,Smartphones,7799.75,3,0.3,-103.17
+CN-2024-205044,2024-03-05,2024-03-08,Same Day,C-9081,Corporate,Northwest China,Xinjiang,Technology,Accessories,5822.82,3,0.1,1316.09
+CN-2024-741822,2024-06-09,2024-06-11,Same Day,C-1631,Home Office,Northwest China,Gansu,Technology,Laptops,4864.67,7,0.0,799.88
+CN-2025-685497,2025-11-04,2025-11-11,Standard Class,C-8687,Home Office,North China,Tianjin,Office Supplies,Paper,3136.19,13,0.1,921.04
+CN-2024-791257,2024-11-03,2024-11-10,Standard Class,C-4827,Consumer,Northwest China,Shaanxi,Office Supplies,Pens,1078.05,14,0.0,423.02
+CN-2024-992760,2024-06-11,2024-06-12,Second Class,C-3408,Home Office,North China,Inner Mongolia,Technology,Accessories,6335.65,3,0.2,2395.91
+CN-2025-882482,2025-12-30,2026-01-05,Standard Class,C-5598,Home Office,Central China,Hunan,Technology,Smartphones,15571.13,4,0.0,4295.19
+CN-2025-497519,2025-06-23,2025-06-28,Same Day,C-1543,Corporate,Central China,Hunan,Furniture,Bookcases,427.52,5,0.3,-188.33
+CN-2024-173650,2024-10-07,2024-10-11,Same Day,C-7805,Consumer,North China,Inner Mongolia,Furniture,Chairs,5673.44,12,0.15,1425.87
+CN-2025-980054,2025-03-29,2025-04-04,Second Class,C-5138,Consumer,East China,Zhejiang,Office Supplies,Paper,164.45,3,0.2,33.47
+CN-2024-335330,2024-07-07,2024-07-11,First Class,C-4551,Consumer,East China,Jiangxi,Technology,Smartphones,13475.1,3,0.0,2389.5
+CN-2024-665912,2024-07-30,2024-08-04,Same Day,C-4008,Corporate,East China,Shanghai,Technology,Smartphones,10235.49,13,0.15,3268.8
+CN-2025-688779,2025-11-15,2025-11-17,First Class,C-8824,Consumer,North China,Beijing,Furniture,Chairs,14051.2,10,0.0,1850.71
+CN-2024-497660,2024-02-11,2024-02-14,First Class,C-8205,Consumer,Southwest China,Sichuan,Technology,Laptops,604.81,6,0.0,216.01
+CN-2024-514227,2024-10-27,2024-11-03,Same Day,C-2603,Consumer,Southwest China,Chongqing,Furniture,Chairs,10881.91,8,0.3,429.14
+CN-2024-149989,2024-04-25,2024-04-27,Standard Class,C-5678,Consumer,Central China,Henan,Furniture,Chairs,13930.3,13,0.1,4063.96
+CN-2025-656868,2025-11-28,2025-11-30,Standard Class,C-9797,Corporate,South China,Hainan,Office Supplies,Pens,480.37,15,0.1,118.88
+CN-2025-366011,2025-09-20,2025-09-22,First Class,C-2598,Consumer,East China,Anhui,Technology,Accessories,2511.27,10,0.5,-698.13
+CN-2025-171487,2025-06-02,2025-06-06,Standard Class,C-4625,Home Office,East China,Jiangxi,Technology,Accessories,24385.16,6,0.2,4846.98
+CN-2024-128251,2024-09-12,2024-09-17,First Class,C-3898,Corporate,North China,Hebei,Technology,Laptops,5231.38,14,0.0,976.81
+CN-2024-475713,2024-10-27,2024-11-01,Second Class,C-5350,Consumer,North China,Inner Mongolia,Office Supplies,Binders,324.51,1,0.1,126.4
+CN-2025-178453,2025-08-10,2025-08-16,Standard Class,C-2289,Consumer,Southwest China,Tibet,Office Supplies,Storage,475.34,15,0.0,183.09
+CN-2025-346324,2025-12-16,2025-12-20,First Class,C-5648,Corporate,East China,Zhejiang,Technology,Tablets,28259.45,7,0.1,9681.0
+CN-2024-745074,2024-05-11,2024-05-18,Standard Class,C-5119,Corporate,Central China,Hunan,Technology,Smartphones,3029.19,1,0.0,1118.49
+CN-2025-185755,2025-06-28,2025-07-04,Second Class,C-1145,Corporate,Northwest China,Gansu,Office Supplies,Pens,1115.05,2,0.5,-219.16
+CN-2025-808996,2025-07-30,2025-08-03,Standard Class,C-4317,Consumer,North China,Hebei,Office Supplies,Storage,1273.78,2,0.15,506.39
+CN-2025-986777,2025-03-23,2025-03-24,Standard Class,C-6972,Consumer,East China,Fujian,Furniture,Tables,6498.93,13,0.0,2533.66
+CN-2024-426859,2024-02-27,2024-03-03,Same Day,C-9172,Consumer,Northwest China,Ningxia,Furniture,Tables,10779.15,4,0.3,-74.18
+CN-2024-973367,2024-03-23,2024-03-24,Standard Class,C-7110,Corporate,North China,Shanxi,Technology,Accessories,4663.57,5,0.3,-1257.06
+CN-2025-130965,2025-08-19,2025-08-25,First Class,C-4557,Corporate,North China,Inner Mongolia,Technology,Accessories,26558.37,6,0.3,-883.28
+CN-2025-500447,2025-01-28,2025-01-30,First Class,C-7328,Corporate,East China,Shanghai,Technology,Laptops,2044.18,15,0.15,477.16
+CN-2025-918750,2025-09-13,2025-09-16,Second Class,C-4391,Home Office,Central China,Henan,Office Supplies,Binders,1294.53,10,0.0,260.55
+CN-2025-848748,2025-03-12,2025-03-16,Standard Class,C-6491,Consumer,Northeast China,Heilongjiang,Office Supplies,Storage,467.61,14,0.0,103.07
+CN-2024-745294,2024-04-06,2024-04-07,First Class,C-3142,Corporate,East China,Fujian,Technology,Accessories,23316.16,13,0.15,5971.39
+CN-2025-620217,2025-05-19,2025-05-21,Standard Class,C-4500,Corporate,Northeast China,Jilin,Technology,Laptops,598.0,11,0.2,177.72
+CN-2024-439143,2024-05-03,2024-05-05,Second Class,C-4723,Home Office,Southwest China,Guizhou,Furniture,Bookcases,12834.93,6,0.5,-4159.53
+CN-2024-201959,2024-05-18,2024-05-21,Standard Class,C-1176,Consumer,East China,Jiangsu,Office Supplies,Paper,3569.72,10,0.15,605.26
+CN-2025-850224,2025-12-12,2025-12-17,Standard Class,C-8387,Consumer,Central China,Hubei,Furniture,Chairs,4895.74,1,0.0,546.49
+CN-2024-709112,2024-05-27,2024-05-31,Same Day,C-4933,Corporate,North China,Hebei,Furniture,Furnishings,15768.06,6,0.0,3575.98
+CN-2025-708193,2025-06-08,2025-06-14,First Class,C-6449,Corporate,Northeast China,Liaoning,Office Supplies,Storage,182.56,14,0.5,-61.55
+CN-2024-305618,2024-02-07,2024-02-10,Second Class,C-3840,Corporate,East China,Zhejiang,Technology,Tablets,7468.8,4,0.15,1549.67
+CN-2024-712163,2024-12-26,2024-12-27,First Class,C-5743,Consumer,Central China,Hunan,Furniture,Tables,5739.41,10,0.5,-200.91
+CN-2024-382664,2024-11-22,2024-11-27,Standard Class,C-1326,Corporate,South China,Guangdong,Technology,Smartphones,1598.8,6,0.3,-537.44
+CN-2024-406376,2024-12-16,2024-12-22,First Class,C-9606,Corporate,East China,Fujian,Furniture,Furnishings,167.99,3,0.0,59.25
+CN-2024-176790,2024-04-27,2024-04-28,First Class,C-5720,Home Office,East China,Shanghai,Technology,Accessories,485.32,1,0.0,109.24
+CN-2025-430564,2025-10-10,2025-10-14,First Class,C-1784,Corporate,South China,Guangxi,Technology,Accessories,24122.78,9,0.1,9033.12
+CN-2024-715853,2024-11-25,2024-11-26,Same Day,C-4759,Corporate,Central China,Hubei,Office Supplies,Storage,421.43,13,0.0,108.87
+CN-2024-600366,2024-08-23,2024-08-27,Standard Class,C-2523,Corporate,North China,Hebei,Furniture,Chairs,16302.16,12,0.5,-5683.14
+CN-2024-284280,2024-02-06,2024-02-07,First Class,C-9632,Home Office,Central China,Hunan,Technology,Accessories,501.68,14,0.15,135.82
+CN-2024-187251,2024-05-14,2024-05-18,Standard Class,C-5679,Consumer,North China,Shanxi,Furniture,Furnishings,1088.99,15,0.1,159.25
+CN-2025-716942,2025-08-04,2025-08-05,Second Class,C-2545,Home Office,North China,Beijing,Furniture,Furnishings,5433.26,14,0.2,1723.98
+CN-2024-454948,2024-11-19,2024-11-21,Standard Class,C-4429,Corporate,East China,Zhejiang,Furniture,Tables,5419.87,3,0.3,-1153.91
+CN-2024-408088,2024-07-05,2024-07-10,Standard Class,C-1178,Home Office,Northwest China,Gansu,Furniture,Tables,5913.98,7,0.5,-1240.22
+CN-2025-256116,2025-10-13,2025-10-19,Second Class,C-1533,Home Office,Central China,Henan,Office Supplies,Paper,1736.89,9,0.5,-234.58
+CN-2024-875761,2024-05-27,2024-05-28,Same Day,C-8809,Home Office,Central China,Hubei,Office Supplies,Pens,2694.91,3,0.0,988.92
+CN-2025-215143,2025-08-30,2025-09-06,First Class,C-7347,Consumer,Northeast China,Jilin,Technology,Tablets,30066.34,11,0.0,11425.83
+CN-2025-690699,2025-01-23,2025-01-24,Second Class,C-8714,Consumer,Central China,Hubei,Technology,Accessories,1342.81,8,0.0,422.25
+CN-2024-742097,2024-03-22,2024-03-25,First Class,C-3323,Home Office,North China,Shanxi,Technology,Laptops,26730.85,10,0.15,7918.67
+CN-2025-355990,2025-05-26,2025-05-28,Standard Class,C-6051,Corporate,Southwest China,Yunnan,Technology,Tablets,30413.09,2,0.0,4938.5
+CN-2024-560373,2024-01-29,2024-02-05,First Class,C-1920,Consumer,Southwest China,Guizhou,Furniture,Tables,2011.58,14,0.0,248.5
+CN-2025-703269,2025-01-09,2025-01-11,Second Class,C-1931,Consumer,Central China,Hunan,Technology,Tablets,6166.66,11,0.5,-1756.22
+CN-2024-388994,2024-10-06,2024-10-08,Same Day,C-9648,Corporate,Southwest China,Yunnan,Technology,Tablets,2141.02,13,0.5,-123.28
+CN-2025-445374,2025-03-31,2025-04-05,Second Class,C-8345,Consumer,Southwest China,Chongqing,Technology,Smartphones,1492.15,9,0.2,428.5
+CN-2024-787856,2024-11-15,2024-11-22,Standard Class,C-7088,Home Office,Northeast China,Liaoning,Technology,Smartphones,15415.93,7,0.2,2718.24
+CN-2025-763489,2025-04-19,2025-04-26,Same Day,C-1532,Home Office,East China,Fujian,Technology,Smartphones,28072.61,3,0.0,4616.15
+CN-2024-424451,2024-02-26,2024-02-27,Second Class,C-8667,Home Office,North China,Inner Mongolia,Furniture,Tables,7018.47,7,0.3,-1773.62
+CN-2025-953136,2025-07-09,2025-07-16,First Class,C-5323,Corporate,Northwest China,Shaanxi,Furniture,Tables,16893.26,12,0.0,4371.69
+CN-2024-631149,2024-03-01,2024-03-04,Standard Class,C-3304,Home Office,North China,Beijing,Office Supplies,Storage,5560.48,7,0.0,1266.82
+CN-2024-766347,2024-08-10,2024-08-12,First Class,C-8962,Home Office,North China,Hebei,Office Supplies,Binders,867.31,11,0.15,170.38
+CN-2024-819530,2024-03-21,2024-03-28,Same Day,C-5527,Consumer,Southwest China,Sichuan,Furniture,Chairs,12540.45,6,0.0,1573.99
+CN-2024-336690,2024-08-31,2024-09-02,Second Class,C-6368,Corporate,South China,Guangdong,Technology,Tablets,7629.55,5,0.15,2934.23
+CN-2025-522315,2025-05-29,2025-06-03,Second Class,C-7690,Home Office,Southwest China,Tibet,Furniture,Bookcases,5984.33,12,0.15,954.21
+CN-2024-276664,2024-06-03,2024-06-10,First Class,C-2875,Home Office,North China,Beijing,Furniture,Bookcases,16144.34,12,0.3,-7662.01
+CN-2024-109203,2024-05-29,2024-05-31,Standard Class,C-9014,Corporate,East China,Anhui,Technology,Smartphones,24396.39,5,0.1,6550.28
+CN-2024-307470,2024-08-08,2024-08-09,Standard Class,C-4236,Home Office,Southwest China,Guizhou,Office Supplies,Pens,135.23,10,0.5,-39.1
+CN-2024-673477,2024-12-18,2024-12-21,Same Day,C-2777,Home Office,North China,Tianjin,Office Supplies,Storage,448.47,3,0.2,152.65
+CN-2024-649390,2024-04-15,2024-04-18,Second Class,C-8946,Consumer,Northwest China,Shaanxi,Furniture,Bookcases,11847.73,6,0.5,-1184.16
+CN-2024-822616,2024-09-09,2024-09-13,First Class,C-6434,Consumer,Northeast China,Heilongjiang,Furniture,Chairs,15545.98,2,0.3,-6282.97
+CN-2025-465193,2025-11-25,2025-11-28,Same Day,C-2952,Corporate,Southwest China,Guizhou,Office Supplies,Storage,1235.12,1,0.15,187.15
+CN-2025-506948,2025-08-21,2025-08-24,First Class,C-9033,Consumer,South China,Guangxi,Office Supplies,Storage,3700.75,12,0.0,525.04
+CN-2024-665634,2024-04-03,2024-04-07,Standard Class,C-7720,Corporate,East China,Anhui,Office Supplies,Storage,2989.16,1,0.0,537.32
+CN-2025-616071,2025-03-17,2025-03-24,Second Class,C-5623,Consumer,North China,Tianjin,Technology,Accessories,4454.09,10,0.0,1577.73
+CN-2025-553741,2025-07-15,2025-07-19,Same Day,C-5984,Corporate,South China,Hainan,Office Supplies,Pens,1052.03,3,0.0,174.97
+CN-2025-171374,2025-05-25,2025-05-27,Second Class,C-1320,Corporate,North China,Hebei,Furniture,Furnishings,3564.98,4,0.1,1154.23
+CN-2025-904460,2025-04-13,2025-04-16,Standard Class,C-6394,Consumer,East China,Anhui,Technology,Tablets,6896.31,7,0.2,1340.18
+CN-2024-328489,2024-08-11,2024-08-14,Standard Class,C-8307,Corporate,Southwest China,Yunnan,Office Supplies,Binders,861.16,10,0.1,110.51
+CN-2024-944843,2024-03-28,2024-03-30,Standard Class,C-4707,Corporate,Southwest China,Yunnan,Furniture,Furnishings,3893.82,7,0.2,1402.66
+CN-2025-433390,2025-11-25,2025-11-30,Second Class,C-2432,Corporate,East China,Fujian,Furniture,Furnishings,182.09,10,0.0,59.92
+CN-2025-841854,2025-05-02,2025-05-09,Same Day,C-7904,Corporate,Central China,Henan,Office Supplies,Paper,3209.91,2,0.0,1050.44
+CN-2025-114436,2025-10-02,2025-10-08,Second Class,C-5929,Home Office,Northeast China,Liaoning,Office Supplies,Binders,278.59,2,0.3,-7.43
+CN-2025-375791,2025-04-22,2025-04-24,Same Day,C-8653,Consumer,Northeast China,Jilin,Office Supplies,Pens,996.44,1,0.0,261.72
+CN-2024-678271,2024-01-16,2024-01-22,First Class,C-9407,Corporate,Southwest China,Yunnan,Office Supplies,Binders,1380.76,9,0.2,526.51
+CN-2024-228336,2024-11-28,2024-12-01,Standard Class,C-1792,Home Office,East China,Shandong,Furniture,Tables,4477.31,1,0.0,1497.34
+CN-2024-551328,2024-11-13,2024-11-19,First Class,C-8765,Consumer,Southwest China,Sichuan,Office Supplies,Paper,729.18,15,0.0,118.23
+CN-2025-634837,2025-07-01,2025-07-02,Standard Class,C-9236,Home Office,North China,Inner Mongolia,Furniture,Tables,4206.66,13,0.1,1474.07
+CN-2024-494106,2024-02-22,2024-02-26,First Class,C-3872,Corporate,East China,Fujian,Furniture,Furnishings,9450.37,1,0.0,3528.47
+CN-2025-676996,2025-03-14,2025-03-16,Same Day,C-2522,Corporate,East China,Shanghai,Office Supplies,Pens,906.71,4,0.2,237.15
+CN-2024-889996,2024-02-25,2024-02-29,Same Day,C-1853,Home Office,Southwest China,Tibet,Technology,Accessories,1988.85,13,0.0,683.26
+CN-2024-173597,2024-02-04,2024-02-08,Second Class,C-9233,Corporate,South China,Hainan,Furniture,Bookcases,729.49,1,0.0,280.83
+CN-2024-974476,2024-02-09,2024-02-15,Standard Class,C-9238,Corporate,North China,Inner Mongolia,Furniture,Chairs,8449.36,4,0.15,2730.8
+CN-2025-998675,2025-10-04,2025-10-09,First Class,C-7489,Consumer,Southwest China,Tibet,Office Supplies,Storage,1125.7,11,0.5,-160.8
+CN-2024-699771,2024-04-12,2024-04-19,Second Class,C-9810,Consumer,North China,Shanxi,Office Supplies,Storage,458.66,1,0.0,53.58
+CN-2025-315089,2025-05-29,2025-06-05,First Class,C-5545,Consumer,Northeast China,Liaoning,Furniture,Bookcases,5211.32,13,0.0,1599.1
+CN-2025-503462,2025-04-05,2025-04-09,Standard Class,C-6308,Corporate,East China,Fujian,Office Supplies,Binders,2171.14,15,0.3,-979.0
+CN-2025-956387,2025-01-12,2025-01-16,Second Class,C-7609,Consumer,East China,Zhejiang,Technology,Tablets,11269.18,1,0.1,1808.07
+CN-2025-144935,2025-09-04,2025-09-08,Second Class,C-6252,Consumer,North China,Tianjin,Technology,Smartphones,1310.31,12,0.0,322.54
+CN-2024-790789,2024-02-27,2024-03-03,Same Day,C-9453,Consumer,North China,Hebei,Technology,Laptops,8358.51,12,0.2,2826.44
+CN-2025-383967,2025-11-08,2025-11-11,First Class,C-9337,Consumer,Southwest China,Tibet,Office Supplies,Binders,2854.4,4,0.2,868.52
+CN-2024-553615,2024-09-05,2024-09-08,Second Class,C-7414,Corporate,East China,Jiangsu,Furniture,Chairs,12647.22,6,0.3,-4787.49
+CN-2025-832218,2025-01-18,2025-01-19,Same Day,C-2297,Corporate,Southwest China,Yunnan,Technology,Laptops,530.95,10,0.1,176.7
+CN-2025-776019,2025-01-31,2025-02-06,Second Class,C-1662,Corporate,Central China,Henan,Technology,Accessories,17054.66,15,0.0,2895.83
+CN-2025-597220,2025-07-15,2025-07-18,First Class,C-4987,Home Office,Northwest China,Shaanxi,Technology,Smartphones,12305.11,9,0.15,1687.48
+CN-2025-197788,2025-12-02,2025-12-07,Same Day,C-7261,Consumer,Southwest China,Yunnan,Furniture,Tables,5025.36,15,0.0,1488.77
+CN-2024-415798,2024-12-31,2025-01-01,First Class,C-8741,Consumer,Central China,Henan,Technology,Accessories,21634.21,5,0.3,-4954.93
+CN-2024-296996,2024-03-28,2024-04-04,Standard Class,C-9012,Consumer,Northwest China,Gansu,Technology,Smartphones,3300.37,15,0.15,586.17
+CN-2025-292814,2025-03-15,2025-03-22,Same Day,C-9923,Corporate,Northwest China,Shaanxi,Office Supplies,Paper,529.24,13,0.2,176.73
+CN-2025-968607,2025-11-22,2025-11-24,First Class,C-4152,Corporate,Southwest China,Guizhou,Office Supplies,Binders,3505.37,12,0.1,917.61
+CN-2024-800098,2024-02-08,2024-02-11,First Class,C-5284,Home Office,East China,Jiangsu,Technology,Tablets,5835.57,3,0.0,1942.05
+CN-2024-635503,2024-11-06,2024-11-11,Same Day,C-1850,Consumer,East China,Fujian,Technology,Smartphones,1541.43,12,0.2,432.28
+CN-2024-592327,2024-03-23,2024-03-28,First Class,C-5482,Consumer,Northwest China,Qinghai,Furniture,Tables,10268.43,4,0.3,118.75
+CN-2024-573886,2024-06-28,2024-07-01,Same Day,C-7168,Home Office,Northeast China,Liaoning,Furniture,Furnishings,1338.39,6,0.0,376.95
+CN-2024-687517,2024-03-25,2024-03-27,Standard Class,C-8414,Home Office,East China,Anhui,Office Supplies,Storage,4383.03,3,0.0,1127.12
+CN-2024-554523,2024-08-10,2024-08-17,Same Day,C-4072,Consumer,Northeast China,Liaoning,Technology,Tablets,19814.94,1,0.3,111.85
+CN-2025-145106,2025-05-15,2025-05-22,Same Day,C-2800,Consumer,North China,Hebei,Office Supplies,Pens,1448.13,6,0.3,-513.47
+CN-2024-324649,2024-07-05,2024-07-11,Standard Class,C-1509,Home Office,Southwest China,Tibet,Technology,Smartphones,4649.34,11,0.0,805.3
+CN-2024-384436,2024-04-19,2024-04-20,Same Day,C-4743,Corporate,North China,Hebei,Furniture,Furnishings,7341.38,11,0.0,750.17
+CN-2025-110234,2025-06-30,2025-07-05,Second Class,C-3276,Consumer,North China,Inner Mongolia,Technology,Tablets,12490.67,9,0.2,4720.92
+CN-2024-468525,2024-09-21,2024-09-23,Standard Class,C-6935,Consumer,Northeast China,Heilongjiang,Furniture,Chairs,5821.9,9,0.0,1188.64
+CN-2024-307087,2024-01-11,2024-01-12,Second Class,C-5669,Consumer,South China,Guangdong,Technology,Accessories,3131.12,4,0.3,-591.42
+CN-2025-844928,2025-03-02,2025-03-08,Second Class,C-5482,Corporate,Northwest China,Shaanxi,Furniture,Furnishings,1492.81,11,0.5,30.79
+CN-2025-680436,2025-04-23,2025-04-29,First Class,C-1544,Home Office,Northeast China,Heilongjiang,Office Supplies,Paper,5941.24,9,0.5,-1228.82
+CN-2025-848368,2025-11-11,2025-11-17,Standard Class,C-1337,Consumer,Central China,Hubei,Furniture,Tables,8883.01,11,0.0,2907.74
+CN-2024-856303,2024-11-12,2024-11-17,Same Day,C-2803,Consumer,Central China,Henan,Office Supplies,Storage,248.15,4,0.15,53.23
+CN-2024-888120,2024-08-23,2024-08-29,Standard Class,C-2528,Home Office,Southwest China,Guizhou,Office Supplies,Storage,3061.68,5,0.0,1109.64
+CN-2025-531741,2025-07-27,2025-07-28,Standard Class,C-7392,Home Office,East China,Shanghai,Technology,Accessories,20639.92,10,0.2,7489.22
+CN-2025-434265,2025-07-24,2025-07-29,First Class,C-6115,Consumer,Central China,Hunan,Technology,Tablets,5567.32,12,0.0,1516.89
+CN-2024-186429,2024-09-02,2024-09-03,Same Day,C-6300,Home Office,Southwest China,Yunnan,Furniture,Tables,4777.21,15,0.0,923.42
+CN-2025-627226,2025-03-19,2025-03-26,First Class,C-4236,Corporate,South China,Guangxi,Furniture,Chairs,5923.78,14,0.0,1060.67
+CN-2025-937827,2025-12-10,2025-12-17,Same Day,C-2090,Home Office,East China,Jiangsu,Office Supplies,Binders,1374.36,8,0.3,-99.18
+CN-2025-529170,2025-12-01,2025-12-08,Same Day,C-3915,Home Office,East China,Anhui,Technology,Laptops,10923.65,9,0.15,2210.57
+CN-2025-614391,2025-03-08,2025-03-11,First Class,C-2018,Corporate,North China,Tianjin,Office Supplies,Pens,471.71,9,0.3,-11.48
+CN-2024-480653,2024-09-02,2024-09-08,Standard Class,C-4773,Home Office,Northwest China,Gansu,Office Supplies,Storage,1988.07,3,0.5,-10.45
+CN-2024-214185,2024-06-08,2024-06-14,Same Day,C-6475,Home Office,Southwest China,Tibet,Furniture,Chairs,1216.58,1,0.5,-99.42
+CN-2024-550568,2024-04-15,2024-04-16,Standard Class,C-3163,Consumer,Northwest China,Xinjiang,Office Supplies,Binders,3497.28,12,0.15,1141.25
+CN-2024-354825,2024-11-26,2024-11-29,Standard Class,C-4912,Consumer,East China,Jiangsu,Office Supplies,Binders,1910.12,12,0.15,205.5
+CN-2024-334864,2024-10-13,2024-10-14,Standard Class,C-3533,Corporate,Northeast China,Heilongjiang,Technology,Laptops,10022.77,3,0.5,-2514.8
+CN-2024-160529,2024-08-22,2024-08-29,Second Class,C-7376,Corporate,East China,Fujian,Office Supplies,Binders,2402.66,11,0.5,-883.64
+CN-2024-771081,2024-07-18,2024-07-19,Second Class,C-4361,Home Office,Northeast China,Jilin,Office Supplies,Paper,2636.36,7,0.0,761.63
+CN-2025-627911,2025-02-04,2025-02-09,Standard Class,C-1448,Consumer,South China,Guangdong,Office Supplies,Binders,519.94,5,0.5,-241.66
+CN-2024-320629,2024-01-26,2024-02-01,Second Class,C-3168,Home Office,Southwest China,Chongqing,Technology,Smartphones,7243.31,13,0.15,1757.09
+CN-2024-748760,2024-08-20,2024-08-25,First Class,C-6908,Consumer,Southwest China,Tibet,Office Supplies,Storage,329.93,8,0.3,-27.58
+CN-2024-214110,2024-07-09,2024-07-16,Same Day,C-3277,Corporate,Northeast China,Liaoning,Furniture,Chairs,5407.72,5,0.1,1847.1
+CN-2025-896193,2025-11-25,2025-11-26,Second Class,C-1660,Home Office,North China,Beijing,Furniture,Chairs,601.37,6,0.2,236.65
+CN-2025-255336,2025-11-11,2025-11-13,Standard Class,C-7755,Home Office,North China,Shanxi,Office Supplies,Paper,933.97,6,0.0,183.25
+CN-2024-702373,2024-08-18,2024-08-25,Second Class,C-4720,Home Office,East China,Anhui,Office Supplies,Paper,135.68,9,0.2,16.3
+CN-2025-131609,2025-02-16,2025-02-17,First Class,C-1813,Home Office,East China,Shanghai,Office Supplies,Binders,3929.74,9,0.0,1000.05
+CN-2024-940131,2024-09-04,2024-09-11,Same Day,C-4402,Corporate,Southwest China,Chongqing,Furniture,Furnishings,800.27,4,0.2,144.23
+CN-2024-752847,2024-07-09,2024-07-11,Standard Class,C-2390,Home Office,South China,Guangxi,Furniture,Furnishings,2650.21,1,0.1,808.67
+CN-2025-965455,2025-09-20,2025-09-24,Second Class,C-1406,Corporate,Central China,Hubei,Furniture,Bookcases,1980.76,6,0.3,-381.47
+CN-2025-257684,2025-02-14,2025-02-17,Same Day,C-3400,Consumer,Central China,Henan,Office Supplies,Pens,579.98,11,0.5,-149.74
+CN-2025-748462,2025-06-01,2025-06-02,Standard Class,C-2284,Consumer,Northwest China,Xinjiang,Furniture,Tables,11316.53,15,0.1,3777.31
+CN-2024-560494,2024-07-07,2024-07-14,Second Class,C-4179,Consumer,Southwest China,Tibet,Office Supplies,Pens,2887.9,4,0.0,426.74
+CN-2024-291869,2024-11-12,2024-11-14,Same Day,C-8274,Home Office,Northeast China,Heilongjiang,Technology,Tablets,13910.89,14,0.3,-5602.03
+CN-2024-522859,2024-08-20,2024-08-27,Second Class,C-2152,Home Office,Southwest China,Sichuan,Furniture,Tables,6294.83,11,0.0,2093.87
+CN-2024-524288,2024-01-28,2024-01-29,Standard Class,C-8653,Consumer,Northwest China,Ningxia,Office Supplies,Pens,506.87,5,0.2,62.86
+CN-2025-647509,2025-11-22,2025-11-26,Second Class,C-4560,Home Office,South China,Hainan,Furniture,Tables,307.08,15,0.0,108.49
+CN-2024-138599,2024-04-26,2024-05-02,First Class,C-9390,Home Office,East China,Jiangxi,Furniture,Bookcases,7211.86,13,0.1,893.97
+CN-2025-103106,2025-10-17,2025-10-23,Same Day,C-3503,Consumer,East China,Shandong,Technology,Tablets,2728.29,15,0.3,-32.42
+CN-2025-540846,2025-03-19,2025-03-21,First Class,C-9226,Corporate,North China,Hebei,Technology,Accessories,6051.73,6,0.5,-600.18
+CN-2025-711042,2025-01-14,2025-01-21,Same Day,C-1852,Home Office,Northwest China,Xinjiang,Office Supplies,Pens,2363.82,1,0.0,583.12
+CN-2025-667489,2025-07-01,2025-07-06,Standard Class,C-5739,Consumer,Northwest China,Gansu,Furniture,Bookcases,2302.78,10,0.0,243.72
+CN-2025-532138,2025-06-10,2025-06-17,Standard Class,C-5618,Home Office,Southwest China,Chongqing,Furniture,Chairs,4833.44,6,0.0,1772.18
+CN-2024-675416,2024-08-18,2024-08-20,Second Class,C-8648,Consumer,Southwest China,Tibet,Office Supplies,Pens,1259.5,1,0.0,240.83
+CN-2024-919799,2024-05-04,2024-05-07,Second Class,C-6565,Home Office,East China,Jiangsu,Technology,Smartphones,22926.81,11,0.0,3676.42
+CN-2024-655383,2024-02-25,2024-02-28,First Class,C-9585,Home Office,South China,Guangxi,Office Supplies,Pens,1681.73,3,0.0,560.06
+CN-2024-868619,2024-02-17,2024-02-21,Same Day,C-3719,Consumer,Southwest China,Guizhou,Office Supplies,Paper,2278.09,7,0.0,853.66
+CN-2025-152460,2025-02-01,2025-02-07,First Class,C-8778,Corporate,East China,Jiangsu,Technology,Accessories,2504.96,10,0.3,-808.23
+CN-2024-725745,2024-01-14,2024-01-16,Second Class,C-9179,Corporate,East China,Jiangxi,Furniture,Bookcases,1611.97,2,0.0,301.11
+CN-2025-570560,2025-03-26,2025-03-30,Standard Class,C-2680,Corporate,Central China,Hubei,Office Supplies,Pens,1947.4,5,0.0,284.13
+CN-2024-752196,2024-01-08,2024-01-11,Second Class,C-2573,Home Office,Southwest China,Sichuan,Furniture,Furnishings,2893.9,4,0.2,650.35
+CN-2024-992753,2024-09-18,2024-09-24,First Class,C-3942,Home Office,South China,Guangdong,Technology,Smartphones,8628.62,5,0.2,2916.19
+CN-2024-782538,2024-03-18,2024-03-20,Standard Class,C-5793,Home Office,North China,Hebei,Technology,Accessories,8968.69,12,0.0,1054.63
+CN-2024-252127,2024-07-13,2024-07-14,Second Class,C-3673,Corporate,South China,Guangxi,Furniture,Tables,6627.53,4,0.0,970.36
+CN-2025-294820,2025-04-25,2025-04-26,First Class,C-9994,Home Office,Northwest China,Ningxia,Technology,Accessories,2580.67,4,0.0,776.74
+CN-2024-755681,2024-11-25,2024-11-30,First Class,C-2189,Corporate,Central China,Hubei,Office Supplies,Pens,1657.16,8,0.0,352.12
+CN-2024-150960,2024-10-26,2024-10-30,Standard Class,C-4996,Consumer,North China,Tianjin,Technology,Smartphones,1476.63,15,0.3,-546.66
+CN-2024-980108,2024-08-23,2024-08-25,Second Class,C-6728,Corporate,Northwest China,Qinghai,Technology,Laptops,3546.78,7,0.3,-1378.64
+CN-2025-317657,2025-05-11,2025-05-17,Standard Class,C-5841,Corporate,Central China,Henan,Office Supplies,Paper,4154.43,5,0.5,-78.72
+CN-2024-179849,2024-05-17,2024-05-21,Same Day,C-9787,Home Office,North China,Tianjin,Technology,Tablets,374.2,3,0.0,120.65
+CN-2024-116147,2024-08-15,2024-08-17,First Class,C-3071,Corporate,Northeast China,Liaoning,Office Supplies,Binders,2824.53,7,0.0,680.55
+CN-2025-834506,2025-02-21,2025-02-28,Second Class,C-3259,Corporate,Northwest China,Qinghai,Office Supplies,Pens,460.48,13,0.0,115.68
+CN-2024-249017,2024-11-11,2024-11-13,Second Class,C-1342,Corporate,Northwest China,Ningxia,Office Supplies,Binders,214.28,7,0.3,-19.34
+CN-2025-675055,2025-09-11,2025-09-17,Second Class,C-3444,Home Office,East China,Shandong,Office Supplies,Binders,123.11,1,0.5,4.38
+CN-2025-483691,2025-05-03,2025-05-10,Second Class,C-7225,Corporate,South China,Guangxi,Furniture,Chairs,9477.65,13,0.1,1940.54
+CN-2024-215690,2024-02-02,2024-02-06,Second Class,C-2286,Home Office,Northwest China,Ningxia,Technology,Accessories,19149.63,5,0.15,4904.46
+CN-2025-931940,2025-11-23,2025-11-27,Standard Class,C-9479,Consumer,Northwest China,Shaanxi,Office Supplies,Pens,476.06,8,0.15,91.32
+CN-2025-872176,2025-12-17,2025-12-22,Second Class,C-6445,Home Office,Central China,Henan,Technology,Laptops,21292.85,14,0.0,7683.69
+CN-2025-355548,2025-05-20,2025-05-21,Second Class,C-7900,Consumer,Northwest China,Qinghai,Technology,Laptops,30154.45,3,0.15,3244.47
+CN-2024-790457,2024-09-16,2024-09-22,First Class,C-1632,Home Office,Northeast China,Jilin,Furniture,Furnishings,15879.7,3,0.15,5439.98
+CN-2024-268993,2024-07-18,2024-07-24,Second Class,C-9946,Consumer,Southwest China,Tibet,Technology,Tablets,3811.42,8,0.2,870.53
+CN-2024-756310,2024-05-31,2024-06-02,Standard Class,C-6495,Home Office,Southwest China,Guizhou,Furniture,Chairs,1826.1,2,0.0,551.67
+CN-2025-286376,2025-08-30,2025-09-03,First Class,C-1564,Consumer,East China,Fujian,Office Supplies,Pens,2052.4,7,0.1,428.54
+CN-2025-787164,2025-12-21,2025-12-22,Second Class,C-5694,Home Office,North China,Shanxi,Technology,Laptops,25817.92,9,0.0,8272.92
+CN-2024-652076,2024-06-20,2024-06-26,Standard Class,C-1660,Home Office,Central China,Hubei,Technology,Accessories,3218.99,2,0.1,591.83
+CN-2025-111498,2025-08-16,2025-08-19,Standard Class,C-3029,Home Office,South China,Guangdong,Technology,Tablets,22929.4,5,0.15,2743.04
+CN-2025-874897,2025-06-26,2025-06-28,Second Class,C-9292,Consumer,South China,Guangdong,Office Supplies,Pens,508.98,4,0.2,162.38
+CN-2024-269311,2024-03-05,2024-03-09,First Class,C-1958,Home Office,East China,Fujian,Technology,Accessories,11219.45,6,0.1,2847.79
+CN-2024-565586,2024-04-05,2024-04-11,Standard Class,C-9287,Home Office,East China,Zhejiang,Furniture,Tables,451.24,14,0.1,166.76
+CN-2025-302547,2025-03-12,2025-03-15,Standard Class,C-7537,Consumer,Northwest China,Shaanxi,Furniture,Bookcases,1866.58,13,0.0,197.13
+CN-2024-720621,2024-08-11,2024-08-16,Standard Class,C-6778,Corporate,Northeast China,Liaoning,Technology,Tablets,3201.77,7,0.3,-499.16
+CN-2025-931445,2025-02-06,2025-02-13,Second Class,C-6452,Consumer,Central China,Hubei,Furniture,Furnishings,15854.51,6,0.0,6206.15
+CN-2024-473445,2024-07-07,2024-07-11,Second Class,C-7151,Home Office,South China,Guangdong,Furniture,Tables,11647.89,2,0.1,3760.67
+CN-2024-371130,2024-01-03,2024-01-04,Standard Class,C-2060,Consumer,Southwest China,Sichuan,Furniture,Bookcases,6442.38,15,0.0,1870.6
+CN-2024-548949,2024-09-30,2024-10-05,Second Class,C-7474,Consumer,East China,Zhejiang,Furniture,Tables,973.75,10,0.5,-76.01
+CN-2025-886548,2025-08-21,2025-08-25,Same Day,C-5780,Corporate,South China,Guangdong,Furniture,Furnishings,12377.64,13,0.0,3020.29
+CN-2024-568661,2024-06-24,2024-06-25,First Class,C-7740,Consumer,Northwest China,Xinjiang,Office Supplies,Binders,2042.22,7,0.5,-51.19
+CN-2024-966791,2024-03-14,2024-03-17,First Class,C-2034,Home Office,South China,Hainan,Office Supplies,Storage,3755.97,13,0.0,971.66
+CN-2025-693849,2025-03-04,2025-03-07,Same Day,C-5500,Home Office,Northwest China,Shaanxi,Technology,Smartphones,18959.11,8,0.15,7546.17
+CN-2024-984473,2024-05-10,2024-05-13,First Class,C-8361,Consumer,Northwest China,Qinghai,Furniture,Furnishings,2412.97,8,0.3,-555.07
+CN-2025-911714,2025-07-10,2025-07-12,Same Day,C-6202,Home Office,Central China,Hunan,Furniture,Tables,3284.36,6,0.0,1048.3
+CN-2024-457580,2024-08-05,2024-08-06,Standard Class,C-3270,Consumer,East China,Shanghai,Office Supplies,Storage,582.13,3,0.1,215.55
+CN-2024-857712,2024-11-24,2024-11-25,Same Day,C-8351,Consumer,South China,Hainan,Furniture,Furnishings,10260.03,9,0.2,3554.26
+CN-2025-148050,2025-06-14,2025-06-18,Same Day,C-2344,Consumer,Northeast China,Heilongjiang,Furniture,Furnishings,7066.23,13,0.5,222.78
+CN-2025-288114,2025-05-03,2025-05-08,First Class,C-2947,Home Office,Northeast China,Jilin,Technology,Laptops,31551.59,10,0.3,-10715.88
+CN-2025-928384,2025-12-28,2026-01-01,First Class,C-6253,Corporate,South China,Guangdong,Technology,Accessories,7963.2,5,0.2,1948.36
+CN-2024-269484,2024-01-27,2024-01-28,Standard Class,C-6235,Consumer,Southwest China,Tibet,Furniture,Bookcases,1899.41,15,0.0,370.61
+CN-2025-423775,2025-10-25,2025-10-28,Standard Class,C-8901,Home Office,East China,Jiangsu,Furniture,Furnishings,1729.47,9,0.0,288.42
+CN-2024-106947,2024-05-21,2024-05-24,Second Class,C-4012,Corporate,East China,Shandong,Office Supplies,Pens,1428.77,10,0.1,390.9
+CN-2024-999730,2024-03-19,2024-03-22,Standard Class,C-3070,Corporate,Northwest China,Gansu,Office Supplies,Binders,1778.22,1,0.15,560.38
+CN-2025-716597,2025-09-28,2025-09-29,Second Class,C-8070,Consumer,East China,Zhejiang,Technology,Laptops,2194.59,3,0.0,408.97
+CN-2025-355069,2025-02-07,2025-02-11,First Class,C-4017,Home Office,Northwest China,Gansu,Technology,Laptops,4911.23,12,0.15,1806.97
+CN-2025-889387,2025-12-03,2025-12-06,Second Class,C-5793,Consumer,South China,Guangxi,Technology,Tablets,371.56,11,0.1,135.94
+CN-2025-623370,2025-10-19,2025-10-23,First Class,C-1824,Consumer,North China,Inner Mongolia,Technology,Tablets,19161.62,12,0.1,5912.12
+CN-2024-297386,2024-02-09,2024-02-14,Second Class,C-5654,Corporate,Southwest China,Chongqing,Technology,Accessories,11832.43,14,0.0,3342.7
+CN-2025-356049,2025-07-29,2025-07-30,First Class,C-3424,Home Office,Central China,Hunan,Furniture,Chairs,12400.91,12,0.0,2130.28
+CN-2024-758953,2024-07-20,2024-07-23,First Class,C-4232,Corporate,Southwest China,Chongqing,Technology,Accessories,4513.43,10,0.3,216.27
+CN-2025-753115,2025-05-23,2025-05-28,Second Class,C-9793,Consumer,East China,Jiangsu,Technology,Accessories,1378.5,7,0.3,-452.68
+CN-2024-799373,2024-12-17,2024-12-19,First Class,C-4290,Corporate,East China,Jiangxi,Office Supplies,Paper,438.33,3,0.3,-196.47
+CN-2025-911274,2025-08-27,2025-09-02,Standard Class,C-9034,Consumer,Northeast China,Liaoning,Furniture,Chairs,5619.68,15,0.0,881.37
+CN-2025-771100,2025-05-20,2025-05-21,Standard Class,C-5266,Consumer,Northwest China,Xinjiang,Furniture,Chairs,4746.99,15,0.5,-403.26
+CN-2024-943285,2024-07-11,2024-07-14,Standard Class,C-3165,Corporate,Northeast China,Liaoning,Office Supplies,Pens,997.44,12,0.0,135.94
+CN-2024-773708,2024-03-06,2024-03-07,First Class,C-4443,Consumer,Northeast China,Jilin,Furniture,Tables,2050.3,14,0.1,502.94
+CN-2024-639358,2024-01-22,2024-01-23,Same Day,C-4455,Home Office,East China,Jiangsu,Furniture,Chairs,11990.07,4,0.0,2158.75
+CN-2024-805472,2024-06-26,2024-07-01,Second Class,C-1357,Home Office,Central China,Hunan,Technology,Accessories,10671.8,15,0.0,1585.81
+CN-2024-845643,2024-06-14,2024-06-18,First Class,C-3392,Consumer,East China,Anhui,Technology,Tablets,27750.61,7,0.3,-6943.02
+CN-2024-768618,2024-08-06,2024-08-10,Standard Class,C-2337,Consumer,Northwest China,Shaanxi,Office Supplies,Storage,797.97,10,0.0,211.19
+CN-2024-610937,2024-02-03,2024-02-10,First Class,C-4459,Consumer,North China,Inner Mongolia,Technology,Smartphones,20574.55,9,0.15,4275.86
+CN-2024-129898,2024-01-13,2024-01-18,Standard Class,C-1765,Consumer,Central China,Henan,Furniture,Chairs,1370.24,11,0.5,-254.09
+CN-2025-286143,2025-12-22,2025-12-23,First Class,C-8145,Corporate,Northeast China,Liaoning,Technology,Tablets,29622.27,3,0.0,3154.59
+CN-2025-982317,2025-06-09,2025-06-12,First Class,C-5219,Corporate,North China,Inner Mongolia,Furniture,Bookcases,448.2,14,0.0,79.74
+CN-2024-467504,2024-08-13,2024-08-15,Same Day,C-9996,Home Office,Central China,Henan,Technology,Tablets,33886.47,4,0.1,11703.25
+CN-2024-913014,2024-03-02,2024-03-04,Second Class,C-1922,Corporate,Northwest China,Xinjiang,Office Supplies,Pens,2618.51,15,0.2,900.3
+CN-2025-929726,2025-06-25,2025-06-28,First Class,C-2361,Consumer,East China,Jiangsu,Office Supplies,Binders,789.36,4,0.3,-324.43
+CN-2025-389671,2025-10-26,2025-10-28,Standard Class,C-2390,Consumer,North China,Tianjin,Technology,Smartphones,470.4,1,0.0,178.42
+CN-2024-344710,2024-07-21,2024-07-27,Standard Class,C-2660,Home Office,Central China,Hubei,Furniture,Furnishings,3559.99,13,0.0,1339.71
+CN-2024-359530,2024-11-17,2024-11-21,Standard Class,C-5811,Consumer,Northeast China,Liaoning,Technology,Accessories,2235.72,5,0.3,-160.19
+CN-2025-558117,2025-04-05,2025-04-09,Same Day,C-5538,Consumer,North China,Shanxi,Technology,Laptops,10324.65,1,0.15,3998.93
+CN-2025-474388,2025-01-30,2025-02-05,Same Day,C-8654,Consumer,East China,Shandong,Office Supplies,Storage,4616.65,5,0.2,632.65
+CN-2025-132584,2025-06-21,2025-06-22,Same Day,C-9945,Consumer,Northwest China,Xinjiang,Technology,Smartphones,30674.15,7,0.15,9756.8
+CN-2024-775748,2024-09-14,2024-09-21,Second Class,C-5600,Home Office,Northwest China,Shaanxi,Furniture,Tables,6329.87,15,0.1,1993.7
+CN-2024-654808,2024-06-25,2024-06-28,Second Class,C-3040,Corporate,Southwest China,Sichuan,Furniture,Bookcases,920.55,9,0.15,213.38
+CN-2024-588637,2024-07-03,2024-07-06,Same Day,C-5877,Consumer,Southwest China,Tibet,Office Supplies,Storage,1451.7,10,0.0,228.41
+CN-2024-485508,2024-11-14,2024-11-17,First Class,C-6340,Consumer,Northeast China,Heilongjiang,Office Supplies,Binders,2718.83,5,0.0,558.42
+CN-2025-581079,2025-09-09,2025-09-15,Second Class,C-8782,Consumer,North China,Hebei,Office Supplies,Paper,3680.45,10,0.0,756.1
+CN-2024-393009,2024-10-22,2024-10-24,Same Day,C-7370,Corporate,Southwest China,Tibet,Technology,Laptops,2119.58,7,0.15,670.75
+CN-2025-976899,2025-06-04,2025-06-08,First Class,C-9328,Corporate,East China,Jiangxi,Office Supplies,Binders,1724.08,6,0.5,-438.14
+CN-2025-460139,2025-06-08,2025-06-09,Second Class,C-7141,Consumer,North China,Hebei,Technology,Laptops,18620.24,11,0.0,3137.31
+CN-2024-112413,2024-06-25,2024-07-01,Standard Class,C-3138,Consumer,Northwest China,Gansu,Technology,Tablets,6844.89,1,0.3,129.92
+CN-2024-828360,2024-02-23,2024-02-25,Second Class,C-6920,Corporate,South China,Guangxi,Office Supplies,Binders,2970.12,5,0.0,622.86
+CN-2025-658452,2025-02-05,2025-02-08,Standard Class,C-4237,Consumer,North China,Shanxi,Technology,Tablets,12649.79,9,0.0,4961.71
+CN-2025-137407,2025-08-23,2025-08-27,Same Day,C-6888,Home Office,Northwest China,Xinjiang,Office Supplies,Pens,1784.96,8,0.0,449.89
+CN-2025-817600,2025-12-08,2025-12-11,Same Day,C-2939,Consumer,Southwest China,Tibet,Furniture,Bookcases,4341.46,4,0.3,-1093.77
+CN-2025-299615,2025-08-05,2025-08-12,Second Class,C-2490,Corporate,Northeast China,Jilin,Furniture,Tables,1751.39,5,0.0,667.19
+CN-2024-955841,2024-07-27,2024-07-29,Second Class,C-5442,Home Office,East China,Anhui,Office Supplies,Storage,3597.06,4,0.3,-1753.3
+CN-2024-881391,2024-03-25,2024-03-27,Same Day,C-7344,Corporate,South China,Guangdong,Office Supplies,Paper,499.5,7,0.0,50.89
+CN-2025-112994,2025-07-06,2025-07-13,Second Class,C-5068,Consumer,East China,Shanghai,Office Supplies,Binders,1202.5,4,0.5,-431.17
+CN-2024-851872,2024-11-30,2024-12-03,Standard Class,C-9584,Consumer,South China,Hainan,Office Supplies,Storage,2257.73,11,0.5,-673.22
+CN-2025-956603,2025-11-11,2025-11-17,First Class,C-7282,Consumer,Southwest China,Guizhou,Furniture,Tables,9806.62,15,0.0,2689.58
+CN-2025-727575,2025-09-21,2025-09-28,First Class,C-2889,Consumer,North China,Beijing,Furniture,Chairs,2424.63,11,0.0,959.15
+CN-2024-260991,2024-03-09,2024-03-14,Same Day,C-9785,Corporate,Northwest China,Qinghai,Furniture,Bookcases,141.85,13,0.0,27.45
+CN-2024-744705,2024-01-19,2024-01-20,Second Class,C-6633,Corporate,East China,Shanghai,Technology,Accessories,3206.77,11,0.5,-1303.72
+CN-2024-825692,2024-12-01,2024-12-05,Same Day,C-4983,Home Office,East China,Anhui,Office Supplies,Storage,1182.63,6,0.0,457.71
+CN-2025-639641,2025-01-26,2025-02-02,First Class,C-5419,Corporate,Central China,Hubei,Office Supplies,Storage,1063.33,5,0.0,317.17
+CN-2025-315220,2025-12-23,2025-12-30,Second Class,C-1246,Corporate,East China,Shandong,Furniture,Tables,1177.23,1,0.1,467.23
+CN-2024-234454,2024-08-16,2024-08-18,Second Class,C-6368,Consumer,Central China,Hunan,Technology,Smartphones,26328.54,7,0.0,2983.26
+CN-2024-944945,2024-05-11,2024-05-15,Standard Class,C-5708,Home Office,Northwest China,Gansu,Furniture,Tables,3203.12,8,0.1,1233.97
+CN-2024-571434,2024-09-13,2024-09-19,Second Class,C-4700,Consumer,East China,Shanghai,Furniture,Furnishings,17714.7,9,0.1,2886.49
+CN-2025-232686,2025-06-23,2025-06-29,Same Day,C-7114,Home Office,North China,Inner Mongolia,Office Supplies,Paper,22.96,6,0.5,-3.76
+CN-2024-527307,2024-07-06,2024-07-08,Same Day,C-2650,Home Office,East China,Fujian,Technology,Laptops,23207.84,10,0.0,4981.89
+CN-2024-236135,2024-05-26,2024-06-01,First Class,C-9763,Home Office,North China,Shanxi,Technology,Accessories,3731.63,4,0.1,405.13
+CN-2025-688636,2025-02-14,2025-02-20,First Class,C-7827,Home Office,Southwest China,Tibet,Office Supplies,Paper,1637.42,14,0.0,258.74
+CN-2024-740767,2024-04-15,2024-04-19,First Class,C-1942,Consumer,East China,Zhejiang,Office Supplies,Pens,5149.6,1,0.0,723.74
+CN-2024-873940,2024-06-21,2024-06-25,Second Class,C-2887,Consumer,Central China,Henan,Furniture,Furnishings,4535.08,10,0.0,477.16
+CN-2024-149666,2024-05-08,2024-05-14,Second Class,C-9475,Home Office,East China,Shandong,Office Supplies,Storage,2746.51,15,0.5,-750.68
+CN-2025-102173,2025-12-22,2025-12-24,First Class,C-5710,Home Office,East China,Zhejiang,Technology,Smartphones,25116.65,8,0.0,6026.5
+CN-2025-331061,2025-12-31,2026-01-04,First Class,C-9257,Corporate,East China,Shandong,Office Supplies,Paper,1144.03,1,0.3,-485.94
+CN-2024-832042,2024-02-26,2024-02-27,Standard Class,C-6827,Corporate,East China,Shandong,Office Supplies,Pens,1760.27,6,0.1,409.06
+CN-2025-209399,2025-06-23,2025-06-27,Second Class,C-8030,Consumer,Northwest China,Gansu,Technology,Tablets,12477.56,15,0.5,-4757.57
+CN-2025-552761,2025-03-19,2025-03-26,Same Day,C-2948,Corporate,East China,Shandong,Technology,Accessories,250.98,4,0.15,60.39
+CN-2025-606328,2025-12-17,2025-12-22,Second Class,C-1098,Consumer,Northwest China,Ningxia,Technology,Accessories,2146.88,3,0.3,56.03
+CN-2024-594082,2024-07-28,2024-08-01,Same Day,C-7523,Home Office,South China,Hainan,Furniture,Chairs,5970.44,8,0.0,1557.64
+CN-2025-605956,2025-10-08,2025-10-11,First Class,C-6641,Consumer,North China,Shanxi,Office Supplies,Paper,3513.91,15,0.0,922.75
+CN-2025-898142,2025-01-26,2025-01-29,First Class,C-8879,Consumer,Northeast China,Heilongjiang,Technology,Tablets,1938.34,15,0.3,-892.78
+CN-2024-369210,2024-01-23,2024-01-26,First Class,C-9815,Consumer,North China,Beijing,Office Supplies,Storage,2563.46,15,0.1,620.96
+CN-2025-846368,2025-07-06,2025-07-13,Same Day,C-1154,Consumer,East China,Fujian,Technology,Smartphones,2582.0,4,0.5,-365.36
+CN-2025-391249,2025-12-02,2025-12-04,Second Class,C-3398,Home Office,Central China,Hubei,Office Supplies,Pens,1357.27,4,0.0,218.05
+CN-2025-529227,2025-09-16,2025-09-20,First Class,C-5775,Consumer,South China,Hainan,Technology,Laptops,6312.72,11,0.0,2276.05
+CN-2024-754440,2024-11-30,2024-12-01,First Class,C-7532,Consumer,Northeast China,Jilin,Furniture,Tables,3906.96,10,0.2,1055.28
+CN-2025-922748,2025-02-27,2025-03-04,Same Day,C-6281,Consumer,South China,Hainan,Furniture,Chairs,7853.57,13,0.0,1303.14
+CN-2024-518103,2024-08-25,2024-08-26,Same Day,C-6246,Corporate,North China,Shanxi,Furniture,Furnishings,1588.45,13,0.0,275.53
+CN-2024-276032,2024-06-22,2024-06-24,First Class,C-8321,Home Office,East China,Jiangxi,Technology,Smartphones,5314.74,15,0.0,629.32
+CN-2024-152651,2024-07-06,2024-07-08,Same Day,C-4766,Corporate,Northwest China,Xinjiang,Office Supplies,Binders,2747.57,6,0.15,1060.52
+CN-2025-225752,2025-09-19,2025-09-24,Same Day,C-9986,Home Office,North China,Shanxi,Furniture,Tables,17432.4,5,0.5,-8239.13
+CN-2025-675933,2025-08-23,2025-08-29,Standard Class,C-8056,Consumer,South China,Guangxi,Office Supplies,Pens,2585.17,4,0.0,911.02
+CN-2024-566839,2024-12-31,2025-01-06,Standard Class,C-1975,Corporate,Central China,Hunan,Office Supplies,Pens,510.82,10,0.1,157.82
+CN-2025-229799,2025-12-18,2025-12-22,First Class,C-7609,Corporate,Northeast China,Jilin,Furniture,Bookcases,2152.36,13,0.3,-415.05
+CN-2024-178809,2024-06-08,2024-06-13,Standard Class,C-5766,Home Office,Northwest China,Gansu,Technology,Tablets,1155.79,10,0.0,396.95
+CN-2024-730205,2024-02-12,2024-02-16,Same Day,C-9191,Corporate,Northwest China,Ningxia,Office Supplies,Binders,284.79,11,0.0,103.49
+CN-2025-927775,2025-09-12,2025-09-16,Same Day,C-5332,Home Office,East China,Shanghai,Technology,Smartphones,6272.93,12,0.1,1511.22
+CN-2025-398684,2025-06-19,2025-06-24,First Class,C-4642,Corporate,North China,Beijing,Furniture,Chairs,7782.46,13,0.0,2961.24
+CN-2025-839713,2025-07-12,2025-07-16,Standard Class,C-1836,Consumer,South China,Hainan,Furniture,Chairs,7942.42,15,0.0,961.28
+CN-2025-578502,2025-03-30,2025-04-05,First Class,C-8202,Consumer,Northwest China,Shaanxi,Furniture,Tables,5302.01,3,0.1,1549.61
+CN-2024-622432,2024-04-25,2024-04-29,Same Day,C-9622,Home Office,South China,Guangxi,Furniture,Furnishings,4300.99,6,0.5,-584.62
+CN-2025-119205,2025-05-19,2025-05-22,Second Class,C-9586,Consumer,North China,Shanxi,Technology,Smartphones,7991.78,6,0.5,-2764.28
+CN-2025-696637,2025-06-22,2025-06-29,Second Class,C-7178,Home Office,Northeast China,Heilongjiang,Technology,Smartphones,7208.45,14,0.0,2605.54
+CN-2024-305127,2024-06-08,2024-06-09,Second Class,C-8800,Consumer,South China,Hainan,Furniture,Bookcases,1241.46,15,0.5,29.44
+CN-2024-571792,2024-03-17,2024-03-22,Second Class,C-6258,Consumer,South China,Hainan,Office Supplies,Pens,3852.23,10,0.0,907.52
+CN-2024-284884,2024-04-27,2024-04-28,Standard Class,C-8829,Consumer,East China,Shandong,Technology,Smartphones,3268.61,3,0.15,1154.04
+CN-2025-378794,2025-04-14,2025-04-21,First Class,C-6322,Corporate,East China,Shanghai,Technology,Accessories,5240.27,6,0.5,-2393.24
+CN-2025-296168,2025-08-11,2025-08-13,Same Day,C-9467,Home Office,Northwest China,Ningxia,Office Supplies,Storage,2063.74,5,0.0,388.99
+CN-2025-278900,2025-08-15,2025-08-19,First Class,C-4765,Home Office,East China,Anhui,Furniture,Furnishings,959.59,6,0.0,115.86
+CN-2025-284576,2025-07-13,2025-07-19,First Class,C-9969,Corporate,Northwest China,Qinghai,Office Supplies,Paper,1506.98,13,0.0,229.25
+CN-2025-118885,2025-12-25,2025-12-28,Second Class,C-2362,Corporate,Northwest China,Gansu,Technology,Tablets,1975.14,12,0.0,351.62
+CN-2024-384790,2024-08-12,2024-08-19,Second Class,C-7960,Home Office,Northwest China,Gansu,Office Supplies,Paper,297.45,14,0.1,60.87
+CN-2025-320496,2025-04-19,2025-04-24,Same Day,C-8499,Consumer,Southwest China,Guizhou,Office Supplies,Storage,3703.99,4,0.1,677.61
+CN-2025-867540,2025-03-24,2025-03-29,Standard Class,C-5837,Consumer,East China,Jiangsu,Furniture,Bookcases,3567.4,12,0.1,920.93
+CN-2025-918704,2025-11-26,2025-12-03,Standard Class,C-5580,Corporate,North China,Inner Mongolia,Technology,Smartphones,1624.28,14,0.0,441.42
+CN-2024-869063,2024-09-29,2024-10-05,Standard Class,C-3018,Corporate,South China,Guangxi,Technology,Smartphones,18512.83,11,0.3,-5900.91
+CN-2024-582466,2024-10-30,2024-11-04,Standard Class,C-1613,Consumer,South China,Guangdong,Technology,Accessories,16217.54,11,0.3,-7843.75
+CN-2024-108909,2024-09-30,2024-10-06,First Class,C-1871,Corporate,East China,Shandong,Furniture,Tables,1534.32,3,0.0,590.48
+CN-2024-980043,2024-12-29,2025-01-04,Second Class,C-9367,Consumer,Northwest China,Qinghai,Office Supplies,Binders,2297.5,7,0.0,877.4
+CN-2024-181420,2024-01-29,2024-02-02,Second Class,C-1444,Home Office,Central China,Hubei,Furniture,Tables,8117.25,12,0.0,3100.6
+CN-2024-477573,2024-06-24,2024-06-28,Second Class,C-6465,Home Office,Southwest China,Yunnan,Office Supplies,Storage,52.9,1,0.5,-15.3
+CN-2025-297237,2025-09-25,2025-09-26,Standard Class,C-5592,Corporate,Northwest China,Ningxia,Office Supplies,Pens,300.99,15,0.3,-143.65
+CN-2024-102522,2024-05-19,2024-05-20,Same Day,C-7726,Consumer,North China,Tianjin,Office Supplies,Pens,505.17,15,0.5,-30.35
+CN-2024-399215,2024-05-13,2024-05-15,First Class,C-6737,Home Office,East China,Shandong,Furniture,Furnishings,5671.95,14,0.2,1456.26
+CN-2024-195342,2024-03-31,2024-04-07,Standard Class,C-7115,Corporate,Southwest China,Yunnan,Office Supplies,Paper,2110.31,9,0.5,-886.01
+CN-2025-508155,2025-01-08,2025-01-11,Standard Class,C-7829,Corporate,Northwest China,Ningxia,Furniture,Tables,126.57,14,0.15,33.86
+CN-2025-254086,2025-06-07,2025-06-10,Second Class,C-6232,Consumer,North China,Hebei,Office Supplies,Paper,621.16,13,0.0,224.74
+CN-2024-115073,2024-02-16,2024-02-22,Same Day,C-6369,Consumer,Central China,Henan,Technology,Laptops,5364.15,1,0.0,1526.52
+CN-2025-279014,2025-03-30,2025-04-02,Standard Class,C-9078,Corporate,Northeast China,Liaoning,Office Supplies,Storage,2144.01,1,0.2,320.63
+CN-2024-775657,2024-05-25,2024-05-26,First Class,C-1087,Corporate,Northwest China,Qinghai,Office Supplies,Binders,168.43,12,0.2,36.54
+CN-2024-992585,2024-06-29,2024-07-05,First Class,C-8391,Consumer,South China,Guangxi,Technology,Laptops,21776.11,8,0.3,-4793.94
+CN-2024-500193,2024-06-17,2024-06-21,Second Class,C-7157,Corporate,East China,Anhui,Office Supplies,Binders,2160.8,9,0.3,-696.76
+CN-2025-932976,2025-03-22,2025-03-28,Same Day,C-9198,Home Office,East China,Jiangxi,Office Supplies,Binders,533.11,1,0.0,207.63
+CN-2025-231405,2025-02-06,2025-02-07,Standard Class,C-4682,Corporate,Central China,Hubei,Technology,Tablets,1736.97,14,0.15,328.48
+CN-2025-542948,2025-05-23,2025-05-24,Second Class,C-9693,Consumer,East China,Jiangsu,Office Supplies,Paper,4898.25,3,0.0,1514.51
+CN-2024-450119,2024-11-14,2024-11-20,First Class,C-7494,Home Office,Southwest China,Chongqing,Furniture,Bookcases,5055.75,13,0.3,-2289.01
+CN-2024-439762,2024-08-15,2024-08-17,First Class,C-5960,Corporate,Northwest China,Shaanxi,Technology,Accessories,5337.1,7,0.1,1558.95
+CN-2025-245261,2025-08-30,2025-09-05,Second Class,C-7973,Corporate,North China,Tianjin,Furniture,Furnishings,10109.2,13,0.1,2888.33
+CN-2025-351725,2025-09-22,2025-09-24,Standard Class,C-2944,Consumer,Northeast China,Liaoning,Office Supplies,Storage,1003.08,7,0.2,140.51
+CN-2024-743772,2024-08-09,2024-08-11,Standard Class,C-8234,Home Office,South China,Guangxi,Furniture,Chairs,5339.62,10,0.5,-1116.6
+CN-2025-322071,2025-05-27,2025-06-02,Same Day,C-8926,Corporate,Southwest China,Sichuan,Office Supplies,Paper,2374.12,1,0.1,327.24
+CN-2025-394102,2025-11-16,2025-11-21,Standard Class,C-1803,Home Office,Southwest China,Guizhou,Office Supplies,Paper,241.53,6,0.0,54.21
+CN-2024-118901,2024-08-31,2024-09-05,Second Class,C-4960,Home Office,Northeast China,Heilongjiang,Furniture,Chairs,4805.96,9,0.0,939.75
+CN-2024-628931,2024-08-20,2024-08-27,Same Day,C-1887,Consumer,North China,Hebei,Office Supplies,Binders,2835.28,12,0.0,644.89
+CN-2024-802474,2024-06-20,2024-06-23,First Class,C-8575,Corporate,Southwest China,Guizhou,Office Supplies,Binders,1617.56,1,0.15,302.19
+CN-2024-671635,2024-10-26,2024-10-29,Same Day,C-6650,Corporate,East China,Shandong,Technology,Laptops,4197.08,7,0.1,1344.64
+CN-2025-396298,2025-02-09,2025-02-15,Second Class,C-3289,Consumer,Southwest China,Chongqing,Furniture,Furnishings,3182.6,10,0.5,-1081.73
+CN-2024-184721,2024-08-06,2024-08-08,Second Class,C-4358,Home Office,North China,Hebei,Office Supplies,Paper,1416.18,9,0.3,-501.75
+CN-2024-283483,2024-06-26,2024-06-29,Same Day,C-1152,Home Office,North China,Tianjin,Technology,Tablets,13511.13,6,0.0,3264.43
+CN-2024-654161,2024-08-31,2024-09-02,Same Day,C-6201,Corporate,Northwest China,Xinjiang,Office Supplies,Binders,1949.04,7,0.0,597.24
+CN-2025-951495,2025-09-21,2025-09-25,Second Class,C-8753,Home Office,Southwest China,Guizhou,Technology,Smartphones,12066.88,14,0.3,-1242.08
+CN-2025-297084,2025-02-22,2025-02-28,Same Day,C-4194,Corporate,Northwest China,Gansu,Furniture,Furnishings,3985.66,5,0.1,1558.49
+CN-2025-555831,2025-12-10,2025-12-12,Second Class,C-4106,Consumer,East China,Zhejiang,Technology,Tablets,23156.81,7,0.5,-82.43
+CN-2025-589113,2025-06-22,2025-06-23,Second Class,C-4660,Corporate,North China,Shanxi,Furniture,Bookcases,7159.32,8,0.15,2183.97
+CN-2024-561854,2024-09-19,2024-09-25,Standard Class,C-7713,Home Office,North China,Shanxi,Technology,Smartphones,6067.99,12,0.0,846.28
+CN-2024-365471,2024-07-27,2024-08-01,Same Day,C-6741,Consumer,Southwest China,Yunnan,Technology,Laptops,12384.48,8,0.0,1669.51
+CN-2024-584629,2024-02-24,2024-03-01,First Class,C-2702,Corporate,South China,Hainan,Technology,Laptops,3333.17,4,0.0,1259.59
+CN-2024-283210,2024-11-21,2024-11-25,Second Class,C-3331,Home Office,East China,Fujian,Office Supplies,Paper,4128.58,3,0.3,-1842.79
+CN-2025-851967,2025-03-15,2025-03-19,First Class,C-7635,Consumer,North China,Inner Mongolia,Office Supplies,Binders,2174.99,14,0.0,575.18
+CN-2024-429279,2024-03-27,2024-04-02,First Class,C-9268,Corporate,North China,Beijing,Office Supplies,Binders,2018.97,8,0.1,698.4
+CN-2024-776231,2024-11-10,2024-11-12,Standard Class,C-5410,Consumer,South China,Hainan,Office Supplies,Storage,1757.91,9,0.3,-276.58
+CN-2025-852410,2025-05-21,2025-05-25,Same Day,C-1645,Consumer,North China,Tianjin,Office Supplies,Storage,1427.49,11,0.15,337.93
+CN-2025-664025,2025-03-12,2025-03-17,Second Class,C-7358,Home Office,Northeast China,Jilin,Furniture,Chairs,1647.34,13,0.15,300.42
+CN-2025-626249,2025-04-11,2025-04-18,Second Class,C-1312,Consumer,East China,Jiangsu,Office Supplies,Paper,858.4,9,0.0,343.22
+CN-2025-899206,2025-10-28,2025-11-03,Second Class,C-8904,Consumer,North China,Shanxi,Furniture,Bookcases,13148.24,11,0.1,1546.95
+CN-2025-268324,2025-05-29,2025-05-31,Standard Class,C-8767,Consumer,Northeast China,Liaoning,Furniture,Chairs,9313.89,14,0.5,-3530.31
+CN-2025-967664,2025-05-07,2025-05-08,Standard Class,C-5089,Consumer,North China,Tianjin,Technology,Smartphones,17193.57,5,0.0,5632.04
+CN-2025-852462,2025-03-03,2025-03-06,First Class,C-4764,Corporate,North China,Hebei,Technology,Laptops,3545.73,11,0.3,-451.39
+CN-2025-718183,2025-06-13,2025-06-17,First Class,C-4214,Home Office,East China,Shandong,Furniture,Tables,9174.27,10,0.5,-986.0
+CN-2024-728396,2024-02-03,2024-02-07,First Class,C-8816,Home Office,Central China,Hunan,Furniture,Chairs,10239.83,10,0.2,2084.84
+CN-2024-267416,2024-05-22,2024-05-29,Same Day,C-9642,Consumer,Central China,Henan,Technology,Tablets,4699.49,13,0.3,-179.22
+CN-2024-654209,2024-05-23,2024-05-30,First Class,C-6451,Corporate,Northeast China,Jilin,Furniture,Tables,4572.2,15,0.0,989.98
+CN-2024-268801,2024-02-02,2024-02-08,First Class,C-8840,Consumer,Central China,Hunan,Furniture,Bookcases,3668.56,9,0.0,843.66
+CN-2024-867687,2024-07-28,2024-07-29,First Class,C-2051,Corporate,Southwest China,Tibet,Technology,Tablets,11037.75,4,0.1,1756.58
+CN-2024-653398,2024-02-05,2024-02-06,Standard Class,C-3131,Corporate,Central China,Hunan,Furniture,Furnishings,117.68,6,0.1,21.45
+CN-2025-668372,2025-08-05,2025-08-10,Second Class,C-9821,Consumer,Northwest China,Shaanxi,Office Supplies,Paper,2718.11,6,0.5,-1229.39
+CN-2025-142863,2025-02-14,2025-02-19,Standard Class,C-8480,Home Office,Northwest China,Qinghai,Technology,Tablets,4879.17,15,0.1,1267.87
+CN-2025-564275,2025-12-01,2025-12-05,Standard Class,C-1740,Home Office,Northwest China,Gansu,Technology,Accessories,1463.02,6,0.5,-251.02
+CN-2025-815737,2025-11-07,2025-11-08,Second Class,C-3175,Home Office,East China,Jiangsu,Office Supplies,Binders,3650.87,10,0.0,1277.61
+CN-2024-947885,2024-07-30,2024-08-02,Same Day,C-5073,Corporate,Southwest China,Tibet,Office Supplies,Paper,2154.39,11,0.5,-782.63
+CN-2024-550266,2024-05-22,2024-05-24,Same Day,C-7646,Consumer,Northeast China,Liaoning,Technology,Tablets,26505.7,6,0.5,-6853.06
+CN-2024-399334,2024-11-10,2024-11-11,First Class,C-9982,Home Office,Central China,Hubei,Technology,Tablets,24450.05,1,0.5,-2360.93
+CN-2024-316704,2024-12-19,2024-12-22,First Class,C-8973,Corporate,Northwest China,Gansu,Technology,Laptops,14226.06,8,0.0,3028.85
+CN-2024-536518,2024-04-27,2024-05-03,Standard Class,C-4056,Home Office,Northwest China,Ningxia,Furniture,Tables,1409.87,9,0.5,-607.72
+CN-2024-319480,2024-09-14,2024-09-19,Same Day,C-8111,Home Office,East China,Jiangsu,Furniture,Tables,9326.76,4,0.1,2983.57
+CN-2024-976631,2024-08-02,2024-08-03,Second Class,C-9939,Corporate,South China,Guangxi,Office Supplies,Paper,4924.77,12,0.0,1095.0
+CN-2025-249440,2025-12-08,2025-12-13,First Class,C-9764,Consumer,Southwest China,Guizhou,Office Supplies,Paper,1162.58,6,0.2,446.32
+CN-2025-295209,2025-04-25,2025-04-29,Standard Class,C-5788,Home Office,Southwest China,Chongqing,Technology,Laptops,18603.79,5,0.2,2886.15
+CN-2024-249194,2024-11-20,2024-11-23,Standard Class,C-4503,Home Office,North China,Inner Mongolia,Office Supplies,Storage,191.49,1,0.0,46.44
+CN-2025-139240,2025-10-28,2025-10-30,Same Day,C-2560,Corporate,Northeast China,Jilin,Technology,Smartphones,4473.11,13,0.0,949.53
+CN-2024-160341,2024-01-06,2024-01-13,Same Day,C-6653,Consumer,Central China,Henan,Furniture,Bookcases,11294.14,12,0.0,3082.92
+CN-2024-284083,2024-01-22,2024-01-27,First Class,C-6133,Consumer,East China,Zhejiang,Technology,Tablets,16352.05,15,0.2,3576.23
+CN-2024-320362,2024-04-25,2024-05-02,First Class,C-2739,Consumer,Northwest China,Gansu,Furniture,Furnishings,10335.56,13,0.5,-1310.4
+CN-2024-287229,2024-03-22,2024-03-29,Second Class,C-8043,Corporate,Southwest China,Chongqing,Office Supplies,Binders,2972.66,8,0.2,888.99
+CN-2024-964414,2024-04-11,2024-04-17,First Class,C-8934,Home Office,East China,Zhejiang,Technology,Accessories,28374.31,15,0.0,11152.49
+CN-2024-766631,2024-01-06,2024-01-10,Same Day,C-1045,Consumer,Northwest China,Qinghai,Furniture,Chairs,4485.68,13,0.0,1053.62
+CN-2025-474598,2025-02-10,2025-02-15,Standard Class,C-8909,Corporate,North China,Shanxi,Technology,Tablets,5613.46,10,0.3,-1763.04
+CN-2025-772360,2025-02-11,2025-02-15,Standard Class,C-3754,Corporate,East China,Fujian,Technology,Laptops,21029.52,2,0.1,3022.86
+CN-2024-432686,2024-07-12,2024-07-16,Same Day,C-4813,Home Office,East China,Anhui,Technology,Tablets,21288.59,2,0.15,3486.87
+CN-2025-234217,2025-12-02,2025-12-04,Second Class,C-4319,Consumer,East China,Shanghai,Office Supplies,Binders,570.9,6,0.1,195.64
+CN-2025-322629,2025-06-01,2025-06-02,Second Class,C-5543,Corporate,East China,Anhui,Furniture,Bookcases,1380.04,5,0.2,412.29
+CN-2024-322530,2024-01-14,2024-01-21,First Class,C-1142,Home Office,Central China,Henan,Office Supplies,Pens,1632.71,8,0.0,356.96
+CN-2024-551690,2024-12-06,2024-12-13,Standard Class,C-8476,Corporate,North China,Tianjin,Technology,Tablets,23062.1,11,0.1,5748.71
+CN-2025-667999,2025-02-24,2025-03-03,First Class,C-4235,Home Office,East China,Shanghai,Technology,Smartphones,651.9,2,0.15,121.43
+CN-2025-311644,2025-07-18,2025-07-22,Second Class,C-9556,Consumer,North China,Hebei,Technology,Accessories,841.99,3,0.3,-377.74
+CN-2024-317545,2024-07-29,2024-08-01,Same Day,C-1445,Corporate,North China,Tianjin,Technology,Smartphones,25850.31,12,0.0,2761.99
+CN-2024-676045,2024-01-04,2024-01-05,Same Day,C-8687,Consumer,East China,Zhejiang,Technology,Tablets,14621.27,2,0.0,1478.53
+CN-2025-505880,2025-03-22,2025-03-26,Standard Class,C-3730,Corporate,South China,Guangxi,Furniture,Furnishings,12572.48,12,0.1,4456.22
+CN-2024-516777,2024-06-09,2024-06-13,Same Day,C-3166,Home Office,South China,Hainan,Office Supplies,Binders,1622.16,14,0.15,367.45
+CN-2024-697858,2024-04-27,2024-05-01,First Class,C-3758,Corporate,Central China,Hunan,Office Supplies,Pens,1277.89,7,0.0,431.59
+CN-2025-453893,2025-04-18,2025-04-19,Second Class,C-1615,Corporate,Northwest China,Ningxia,Office Supplies,Pens,1429.85,8,0.5,-563.32
+CN-2024-826596,2024-03-25,2024-03-31,Second Class,C-6443,Home Office,Northwest China,Shaanxi,Office Supplies,Storage,2566.43,3,0.2,953.79
+CN-2024-794675,2024-07-25,2024-08-01,Second Class,C-3483,Consumer,South China,Guangxi,Technology,Smartphones,8878.44,12,0.2,2729.91
+CN-2024-934241,2024-12-06,2024-12-09,Standard Class,C-9873,Consumer,Central China,Henan,Office Supplies,Binders,1325.05,5,0.5,-631.14
+CN-2025-580508,2025-07-14,2025-07-15,Same Day,C-1172,Consumer,East China,Jiangxi,Furniture,Chairs,9178.85,2,0.0,2764.27
+CN-2025-753252,2025-06-13,2025-06-15,Second Class,C-9084,Corporate,North China,Tianjin,Office Supplies,Binders,4014.23,2,0.1,1585.24
+CN-2024-691911,2024-01-27,2024-01-28,Second Class,C-6097,Corporate,South China,Guangdong,Office Supplies,Paper,1098.2,8,0.15,162.17
+CN-2024-434144,2024-04-15,2024-04-19,Same Day,C-2500,Home Office,Northwest China,Ningxia,Furniture,Chairs,196.69,6,0.1,23.1
+CN-2025-319721,2025-11-03,2025-11-04,Second Class,C-8852,Corporate,East China,Shandong,Office Supplies,Paper,654.33,10,0.0,213.04
+CN-2025-484410,2025-03-28,2025-03-31,Same Day,C-5010,Corporate,Central China,Hunan,Furniture,Chairs,3848.59,1,0.0,537.86
+CN-2025-871494,2025-03-30,2025-04-05,First Class,C-6513,Home Office,Southwest China,Sichuan,Furniture,Tables,7349.77,11,0.3,-355.81
+CN-2025-437564,2025-06-12,2025-06-13,Standard Class,C-7207,Home Office,Northeast China,Heilongjiang,Furniture,Chairs,462.75,13,0.1,65.52
+CN-2024-403620,2024-12-07,2024-12-08,First Class,C-2356,Consumer,North China,Hebei,Technology,Smartphones,2278.21,6,0.0,269.97
+CN-2024-174772,2024-09-19,2024-09-24,Standard Class,C-7830,Home Office,East China,Zhejiang,Office Supplies,Paper,4225.87,3,0.15,693.44
+CN-2025-953629,2025-08-21,2025-08-27,Second Class,C-1184,Consumer,East China,Shandong,Furniture,Furnishings,92.46,7,0.3,-11.33
+CN-2025-904625,2025-02-15,2025-02-16,Second Class,C-9397,Corporate,North China,Shanxi,Office Supplies,Paper,521.21,3,0.5,-249.16
+CN-2024-314612,2024-01-02,2024-01-08,Standard Class,C-2728,Consumer,Southwest China,Guizhou,Office Supplies,Pens,2559.01,15,0.5,-482.97
+CN-2025-860954,2025-06-26,2025-06-28,Standard Class,C-4932,Home Office,Central China,Henan,Office Supplies,Binders,1618.82,5,0.3,-394.57
+CN-2025-822930,2025-04-13,2025-04-18,Second Class,C-2659,Consumer,East China,Jiangxi,Technology,Tablets,3819.51,12,0.3,-1562.82
+CN-2024-882614,2024-09-15,2024-09-17,Standard Class,C-8762,Consumer,Central China,Henan,Technology,Laptops,754.45,2,0.15,292.38
+CN-2024-210886,2024-06-22,2024-06-24,First Class,C-9544,Home Office,North China,Hebei,Technology,Tablets,909.93,3,0.0,351.1
+CN-2024-135148,2024-01-23,2024-01-30,Standard Class,C-3272,Home Office,Northwest China,Shaanxi,Technology,Smartphones,624.28,3,0.15,100.26
+CN-2024-436294,2024-02-13,2024-02-16,Same Day,C-9672,Corporate,North China,Shanxi,Furniture,Furnishings,1255.62,3,0.15,328.73
+CN-2025-118373,2025-01-13,2025-01-20,Second Class,C-6252,Corporate,Central China,Hunan,Furniture,Tables,4728.14,9,0.15,1228.64
+CN-2024-995498,2024-02-05,2024-02-09,Second Class,C-1109,Corporate,Southwest China,Guizhou,Technology,Tablets,6919.69,11,0.5,-363.63
+CN-2024-693003,2024-12-24,2024-12-31,Same Day,C-7424,Consumer,Northwest China,Ningxia,Furniture,Furnishings,4699.64,3,0.1,916.91
+CN-2024-677711,2024-05-01,2024-05-02,Same Day,C-8587,Corporate,East China,Shanghai,Office Supplies,Storage,2700.11,4,0.0,739.9
+CN-2025-435038,2025-07-29,2025-08-02,Second Class,C-6733,Corporate,East China,Jiangsu,Furniture,Bookcases,3347.79,2,0.0,343.2
+CN-2024-275298,2024-10-11,2024-10-15,Same Day,C-3146,Corporate,East China,Jiangsu,Office Supplies,Paper,2881.04,2,0.3,-803.49
+CN-2025-498577,2025-12-10,2025-12-11,First Class,C-5548,Corporate,Northeast China,Heilongjiang,Office Supplies,Pens,1203.3,4,0.0,270.38
+CN-2025-260179,2025-11-09,2025-11-13,Second Class,C-7857,Corporate,Central China,Hunan,Technology,Smartphones,16826.25,11,0.3,-7347.52
+CN-2025-464131,2025-10-27,2025-10-28,Standard Class,C-7315,Corporate,Northwest China,Ningxia,Furniture,Chairs,2002.22,5,0.3,-324.8
+CN-2025-359113,2025-07-29,2025-08-05,Standard Class,C-2072,Consumer,Southwest China,Tibet,Technology,Laptops,6483.61,3,0.5,-2329.87
+CN-2025-233437,2025-07-10,2025-07-13,Standard Class,C-5468,Corporate,Northwest China,Xinjiang,Furniture,Furnishings,741.2,3,0.0,195.19
+CN-2024-467172,2024-12-15,2024-12-20,Second Class,C-3620,Consumer,Central China,Hunan,Office Supplies,Paper,2105.88,10,0.5,-779.46
+CN-2024-698458,2024-08-20,2024-08-21,First Class,C-1113,Corporate,South China,Hainan,Office Supplies,Binders,2761.53,12,0.2,411.58
+CN-2024-477313,2024-11-28,2024-11-29,First Class,C-1038,Home Office,Central China,Henan,Furniture,Furnishings,2361.52,15,0.0,313.97
+CN-2025-682371,2025-12-27,2025-12-29,Same Day,C-3814,Consumer,South China,Guangdong,Office Supplies,Binders,3609.4,8,0.0,1360.41
+CN-2024-355285,2024-02-17,2024-02-22,Standard Class,C-7553,Corporate,North China,Shanxi,Office Supplies,Pens,4292.16,14,0.0,1171.33
+CN-2025-236359,2025-09-15,2025-09-19,Standard Class,C-8388,Consumer,East China,Anhui,Office Supplies,Paper,98.47,9,0.0,23.18
+CN-2025-128240,2025-05-11,2025-05-13,Same Day,C-9873,Corporate,East China,Jiangxi,Furniture,Furnishings,142.57,2,0.3,-66.01
+CN-2025-989404,2025-03-05,2025-03-06,Second Class,C-6236,Corporate,East China,Anhui,Furniture,Furnishings,1452.19,5,0.0,324.54
+CN-2024-219470,2024-11-22,2024-11-28,Second Class,C-9073,Corporate,Southwest China,Yunnan,Furniture,Chairs,5075.19,8,0.0,1950.97
+CN-2024-655581,2024-07-12,2024-07-19,Same Day,C-2476,Consumer,Northeast China,Jilin,Office Supplies,Binders,857.88,15,0.2,162.47
+CN-2024-522833,2024-06-08,2024-06-10,Same Day,C-5542,Corporate,Northeast China,Liaoning,Office Supplies,Pens,1793.82,3,0.5,-273.94
+CN-2024-295077,2024-10-24,2024-10-27,Same Day,C-4893,Corporate,North China,Hebei,Technology,Accessories,458.12,1,0.5,-170.02
+CN-2025-865740,2025-07-14,2025-07-17,Same Day,C-4843,Corporate,Northeast China,Heilongjiang,Technology,Laptops,9258.19,9,0.0,2868.91
+CN-2024-551094,2024-01-25,2024-02-01,Second Class,C-3080,Home Office,Southwest China,Chongqing,Technology,Laptops,99.09,8,0.0,33.64
+CN-2024-800278,2024-02-23,2024-02-29,First Class,C-1190,Corporate,North China,Hebei,Technology,Laptops,547.78,7,0.0,126.7
+CN-2024-503588,2024-07-02,2024-07-08,Same Day,C-7069,Corporate,Northwest China,Qinghai,Furniture,Bookcases,5951.57,13,0.15,1632.23
+CN-2024-700358,2024-03-06,2024-03-11,Standard Class,C-4330,Corporate,Northeast China,Liaoning,Furniture,Chairs,4569.7,5,0.15,933.14
+CN-2025-250075,2025-02-23,2025-03-01,First Class,C-7173,Home Office,Southwest China,Guizhou,Furniture,Tables,13006.31,4,0.2,2673.19
+CN-2024-550051,2024-09-09,2024-09-10,Standard Class,C-4050,Home Office,Northeast China,Jilin,Furniture,Chairs,8012.84,5,0.0,2612.97
+CN-2025-106036,2025-04-26,2025-04-28,Standard Class,C-6397,Consumer,Southwest China,Guizhou,Office Supplies,Paper,2828.7,14,0.0,753.26
+CN-2024-864248,2024-07-29,2024-08-05,First Class,C-2258,Consumer,Northeast China,Heilongjiang,Office Supplies,Paper,1027.12,11,0.0,327.36
+CN-2024-485608,2024-07-29,2024-08-03,Same Day,C-3698,Consumer,Southwest China,Chongqing,Technology,Laptops,22972.7,15,0.2,3447.39
+CN-2024-762044,2024-07-08,2024-07-14,Standard Class,C-3111,Consumer,East China,Jiangsu,Technology,Laptops,497.53,5,0.0,128.94
+CN-2024-741546,2024-10-21,2024-10-27,First Class,C-2327,Home Office,South China,Hainan,Furniture,Furnishings,8905.4,14,0.0,1979.17
+CN-2024-775002,2024-11-17,2024-11-20,Same Day,C-6877,Consumer,Central China,Hubei,Furniture,Furnishings,6410.35,1,0.2,1642.3
+CN-2024-791220,2024-01-11,2024-01-12,Second Class,C-6628,Consumer,Southwest China,Yunnan,Technology,Smartphones,23245.95,2,0.0,6699.17
+CN-2024-130776,2024-05-31,2024-06-06,First Class,C-7614,Corporate,East China,Zhejiang,Office Supplies,Pens,2200.1,5,0.3,-587.03
+CN-2024-308568,2024-05-16,2024-05-21,Same Day,C-7307,Corporate,North China,Shanxi,Furniture,Chairs,14723.87,12,0.0,4429.2
+CN-2025-428770,2025-04-01,2025-04-06,Same Day,C-6626,Consumer,Southwest China,Sichuan,Furniture,Tables,1026.15,2,0.1,160.94
+CN-2025-722827,2025-10-25,2025-10-30,Standard Class,C-3838,Consumer,East China,Shanghai,Technology,Smartphones,11428.15,15,0.0,3466.85
+CN-2025-697341,2025-11-07,2025-11-12,Second Class,C-5266,Home Office,Central China,Henan,Furniture,Furnishings,4337.48,1,0.0,499.66
+CN-2025-584988,2025-11-10,2025-11-12,First Class,C-2595,Consumer,Southwest China,Guizhou,Technology,Laptops,27699.56,7,0.3,-11507.69
+CN-2025-915062,2025-08-31,2025-09-02,Same Day,C-5669,Consumer,Northwest China,Ningxia,Technology,Laptops,14624.42,15,0.0,5238.0
+CN-2024-544083,2024-01-27,2024-02-02,Standard Class,C-5779,Consumer,North China,Tianjin,Technology,Smartphones,8834.84,5,0.3,-2707.13
+CN-2025-146299,2025-05-28,2025-06-01,Same Day,C-1783,Corporate,East China,Shanghai,Furniture,Furnishings,639.97,3,0.0,166.04
+CN-2025-562338,2025-09-26,2025-09-28,Second Class,C-5046,Corporate,Central China,Hunan,Office Supplies,Binders,916.55,9,0.0,160.46
+CN-2024-771899,2024-11-08,2024-11-11,First Class,C-6062,Corporate,Southwest China,Chongqing,Office Supplies,Paper,1589.57,9,0.3,-263.12
+CN-2024-561785,2024-11-16,2024-11-17,Standard Class,C-2608,Home Office,North China,Shanxi,Technology,Smartphones,1933.98,6,0.0,542.79
+CN-2024-840074,2024-03-08,2024-03-10,Same Day,C-5841,Consumer,Central China,Henan,Furniture,Furnishings,5253.2,5,0.0,1783.12
+CN-2025-447866,2025-06-04,2025-06-11,Second Class,C-3907,Corporate,Northwest China,Qinghai,Technology,Tablets,7430.03,9,0.1,1356.19
+CN-2025-988445,2025-07-16,2025-07-19,Standard Class,C-4895,Corporate,Northwest China,Shaanxi,Technology,Tablets,12949.22,5,0.0,3377.38
+CN-2025-809719,2025-03-17,2025-03-21,Standard Class,C-2987,Home Office,East China,Fujian,Technology,Smartphones,2110.43,2,0.0,826.32
+CN-2024-326081,2024-04-07,2024-04-13,Second Class,C-2571,Consumer,East China,Shanghai,Furniture,Bookcases,1572.74,12,0.0,468.07
+CN-2024-861586,2024-02-12,2024-02-16,Second Class,C-1982,Home Office,East China,Shandong,Office Supplies,Paper,1678.37,1,0.0,493.47
+CN-2024-447558,2024-01-20,2024-01-22,First Class,C-2229,Consumer,Central China,Hunan,Furniture,Chairs,379.97,3,0.0,96.81
+CN-2025-296707,2025-09-04,2025-09-08,Second Class,C-9513,Home Office,Northwest China,Ningxia,Office Supplies,Binders,476.77,3,0.5,-142.64
+CN-2024-285378,2024-12-31,2025-01-04,First Class,C-2395,Home Office,Southwest China,Guizhou,Technology,Tablets,447.4,12,0.0,115.2
+CN-2024-296530,2024-05-19,2024-05-24,Standard Class,C-5692,Consumer,Northwest China,Shaanxi,Office Supplies,Pens,687.87,9,0.1,137.87
+CN-2024-645839,2024-07-08,2024-07-10,Same Day,C-7387,Consumer,North China,Shanxi,Technology,Accessories,1261.65,6,0.0,164.49
+CN-2025-870925,2025-11-27,2025-12-02,First Class,C-8848,Consumer,North China,Inner Mongolia,Technology,Laptops,1290.57,2,0.1,305.01
+CN-2024-460934,2024-04-16,2024-04-18,Standard Class,C-9172,Consumer,East China,Fujian,Office Supplies,Storage,1462.01,8,0.5,-474.04
+CN-2024-259822,2024-02-21,2024-02-27,Same Day,C-7170,Consumer,Northwest China,Xinjiang,Office Supplies,Binders,92.31,1,0.1,21.92
+CN-2024-805163,2024-08-13,2024-08-16,First Class,C-5053,Home Office,Central China,Hubei,Technology,Laptops,32930.02,3,0.0,8599.29
+CN-2025-948351,2025-04-27,2025-05-01,First Class,C-2822,Corporate,Central China,Hunan,Furniture,Furnishings,7870.55,6,0.0,1644.26
+CN-2025-863319,2025-08-21,2025-08-22,Second Class,C-1181,Consumer,Northwest China,Qinghai,Furniture,Bookcases,7045.95,15,0.3,-2129.0
+CN-2024-989155,2024-04-09,2024-04-11,Second Class,C-9336,Consumer,Central China,Hunan,Technology,Smartphones,3510.26,11,0.15,1019.51
+CN-2025-612862,2025-06-26,2025-07-02,First Class,C-8011,Home Office,North China,Tianjin,Office Supplies,Pens,1867.21,2,0.1,241.4
+CN-2025-785028,2025-09-05,2025-09-12,Same Day,C-2935,Home Office,North China,Hebei,Furniture,Furnishings,11969.82,3,0.0,4172.33
+CN-2024-441970,2024-12-10,2024-12-11,Same Day,C-7823,Consumer,Southwest China,Sichuan,Office Supplies,Paper,1242.63,15,0.0,425.9
+CN-2025-736472,2025-12-12,2025-12-18,First Class,C-8142,Corporate,Northwest China,Ningxia,Furniture,Tables,9892.51,5,0.0,1155.45
+CN-2024-298652,2024-03-11,2024-03-18,First Class,C-8939,Home Office,North China,Beijing,Office Supplies,Binders,1795.67,7,0.0,618.34
+CN-2025-421747,2025-11-27,2025-11-28,Standard Class,C-7516,Consumer,Northeast China,Jilin,Furniture,Tables,5790.64,12,0.3,-968.19
+CN-2025-202321,2025-05-14,2025-05-17,Second Class,C-5310,Home Office,East China,Jiangsu,Technology,Laptops,2229.85,2,0.15,745.28
+CN-2024-126484,2024-05-08,2024-05-10,Same Day,C-9420,Consumer,South China,Hainan,Office Supplies,Paper,1351.24,2,0.0,294.28
+CN-2025-428442,2025-07-01,2025-07-08,Same Day,C-1566,Consumer,Southwest China,Guizhou,Technology,Laptops,28659.9,14,0.15,10895.72
+CN-2025-265733,2025-03-22,2025-03-26,Standard Class,C-3924,Corporate,Northwest China,Ningxia,Office Supplies,Paper,496.14,8,0.0,89.44
+CN-2025-400708,2025-04-01,2025-04-06,Second Class,C-2104,Consumer,North China,Inner Mongolia,Furniture,Tables,9262.39,7,0.3,198.66
+CN-2025-127843,2025-11-22,2025-11-29,Same Day,C-5815,Home Office,Northwest China,Gansu,Technology,Laptops,4631.2,12,0.0,728.69
+CN-2024-336317,2024-05-06,2024-05-12,Same Day,C-3098,Home Office,East China,Shandong,Office Supplies,Paper,724.2,11,0.15,188.99
+CN-2024-241776,2024-04-26,2024-04-27,First Class,C-7255,Corporate,South China,Guangxi,Technology,Laptops,1170.73,2,0.3,-389.62
+CN-2024-728940,2024-09-02,2024-09-04,First Class,C-1028,Home Office,South China,Hainan,Furniture,Bookcases,360.18,8,0.0,125.37
+CN-2024-281583,2024-05-26,2024-05-29,Same Day,C-9414,Consumer,South China,Guangxi,Furniture,Chairs,4989.43,11,0.1,960.54
+CN-2025-597104,2025-03-16,2025-03-18,First Class,C-9459,Home Office,Northwest China,Shaanxi,Office Supplies,Pens,215.43,11,0.5,-39.68
+CN-2024-970599,2024-06-16,2024-06-17,Standard Class,C-7925,Home Office,Northwest China,Qinghai,Technology,Tablets,15089.83,8,0.15,2208.11
+CN-2024-360906,2024-04-19,2024-04-24,Same Day,C-8212,Consumer,Southwest China,Chongqing,Office Supplies,Paper,257.25,4,0.0,74.02
+CN-2024-889109,2024-09-19,2024-09-21,Same Day,C-9741,Corporate,East China,Zhejiang,Technology,Laptops,5907.83,5,0.2,1243.04
+CN-2025-714067,2025-03-25,2025-03-26,First Class,C-8938,Consumer,North China,Beijing,Office Supplies,Pens,3527.23,12,0.0,851.6
+CN-2024-150218,2024-01-15,2024-01-18,Second Class,C-1112,Corporate,Northwest China,Ningxia,Furniture,Bookcases,75.81,2,0.15,21.14
+CN-2025-746560,2025-03-10,2025-03-16,Second Class,C-6291,Corporate,Central China,Henan,Furniture,Furnishings,10443.86,4,0.1,2277.77
+CN-2025-215352,2025-04-09,2025-04-16,Standard Class,C-8301,Corporate,East China,Jiangxi,Office Supplies,Storage,273.53,7,0.0,39.03
+CN-2024-710995,2024-01-12,2024-01-19,Same Day,C-7388,Consumer,Northeast China,Liaoning,Furniture,Bookcases,940.61,3,0.5,-136.51
+CN-2025-672895,2025-12-21,2025-12-26,First Class,C-5082,Consumer,Northeast China,Heilongjiang,Technology,Accessories,27665.11,6,0.1,5489.46
+CN-2024-924121,2024-12-02,2024-12-09,Second Class,C-3562,Consumer,North China,Hebei,Technology,Accessories,5715.16,12,0.0,1368.44
+CN-2025-785592,2025-01-04,2025-01-09,First Class,C-9762,Home Office,North China,Shanxi,Office Supplies,Storage,2674.97,1,0.5,-164.2
+CN-2024-160065,2024-05-04,2024-05-10,Standard Class,C-6614,Corporate,Central China,Hubei,Furniture,Tables,2244.77,13,0.5,-589.56
+CN-2025-447541,2025-02-04,2025-02-08,Same Day,C-3888,Consumer,Northwest China,Ningxia,Technology,Laptops,1151.9,3,0.5,-318.44
+CN-2025-572002,2025-09-23,2025-09-29,Second Class,C-7836,Consumer,Northwest China,Gansu,Technology,Tablets,14685.94,3,0.1,4848.22
+CN-2024-118117,2024-09-05,2024-09-12,Standard Class,C-1034,Consumer,East China,Zhejiang,Technology,Tablets,1483.86,12,0.3,-448.14
+CN-2024-890794,2024-05-27,2024-05-31,Standard Class,C-7493,Corporate,Northwest China,Shaanxi,Technology,Laptops,1724.83,14,0.0,373.49
+CN-2025-166746,2025-07-07,2025-07-14,First Class,C-4724,Corporate,Northwest China,Qinghai,Office Supplies,Pens,618.65,13,0.0,66.87
+CN-2025-131224,2025-07-26,2025-08-02,Second Class,C-7107,Corporate,Northwest China,Qinghai,Office Supplies,Storage,3713.89,1,0.0,1047.32
+CN-2025-132572,2025-08-02,2025-08-09,Same Day,C-6044,Corporate,North China,Beijing,Furniture,Bookcases,3873.69,6,0.0,1515.14
+CN-2024-736941,2024-12-25,2024-12-28,First Class,C-8514,Consumer,Southwest China,Yunnan,Office Supplies,Paper,1333.43,14,0.0,199.98
+CN-2025-545824,2025-07-23,2025-07-25,First Class,C-1269,Home Office,East China,Fujian,Technology,Tablets,10449.62,2,0.15,4170.93
+CN-2024-397474,2024-09-23,2024-09-25,Second Class,C-9837,Consumer,East China,Fujian,Furniture,Furnishings,7283.13,3,0.15,1540.92
+CN-2025-323257,2025-12-22,2025-12-27,Second Class,C-2846,Corporate,East China,Jiangxi,Technology,Tablets,6988.81,6,0.1,890.33
+CN-2024-919165,2024-05-19,2024-05-21,Second Class,C-2822,Home Office,Southwest China,Yunnan,Technology,Accessories,35990.72,3,0.15,10614.8
+CN-2024-256562,2024-06-27,2024-07-04,Standard Class,C-5740,Consumer,Central China,Hunan,Technology,Accessories,934.68,4,0.15,342.7
+CN-2025-340876,2025-01-19,2025-01-26,Second Class,C-4346,Home Office,Northwest China,Qinghai,Technology,Accessories,21296.12,10,0.15,2225.72
+CN-2024-720114,2024-12-17,2024-12-24,Second Class,C-4994,Consumer,Southwest China,Chongqing,Office Supplies,Binders,97.7,2,0.3,-46.42
+CN-2025-306649,2025-09-14,2025-09-19,First Class,C-1207,Consumer,Central China,Henan,Furniture,Furnishings,1549.03,10,0.15,504.12
+CN-2025-981211,2025-07-29,2025-07-30,Second Class,C-9924,Corporate,Southwest China,Tibet,Office Supplies,Paper,2578.35,7,0.5,82.15
+CN-2025-644912,2025-06-09,2025-06-11,Standard Class,C-4279,Home Office,East China,Fujian,Furniture,Bookcases,527.94,7,0.1,104.55
+CN-2024-793821,2024-10-15,2024-10-16,Standard Class,C-5840,Corporate,Northeast China,Liaoning,Technology,Accessories,29717.74,6,0.3,-3267.4
+CN-2025-174713,2025-09-25,2025-09-30,Standard Class,C-7237,Consumer,East China,Shanghai,Office Supplies,Pens,3596.28,2,0.0,1377.49
+CN-2025-296128,2025-04-18,2025-04-19,Second Class,C-5824,Consumer,Northeast China,Jilin,Furniture,Bookcases,1773.17,12,0.3,-24.56
+CN-2024-772579,2024-02-09,2024-02-12,Standard Class,C-1470,Home Office,North China,Beijing,Technology,Laptops,510.69,13,0.0,163.24
+CN-2024-743146,2024-06-10,2024-06-15,Standard Class,C-2291,Home Office,Central China,Hunan,Office Supplies,Pens,4017.76,15,0.1,796.57
+CN-2024-323218,2024-06-15,2024-06-16,Second Class,C-2508,Home Office,Northeast China,Liaoning,Office Supplies,Binders,1307.0,13,0.5,-126.69
+CN-2025-904611,2025-05-03,2025-05-06,Second Class,C-2941,Home Office,Northwest China,Shaanxi,Technology,Smartphones,21645.41,8,0.15,3173.38
+CN-2025-402402,2025-03-27,2025-03-30,Second Class,C-8114,Consumer,Northeast China,Jilin,Office Supplies,Pens,3305.1,3,0.0,509.1
+CN-2025-501505,2025-11-25,2025-11-30,First Class,C-8448,Corporate,East China,Zhejiang,Furniture,Chairs,7613.91,6,0.0,1327.49
+CN-2024-824184,2024-08-03,2024-08-10,Second Class,C-6114,Corporate,South China,Hainan,Technology,Tablets,19936.3,7,0.1,5418.58
+CN-2025-240181,2025-11-17,2025-11-24,Same Day,C-5989,Corporate,South China,Guangxi,Technology,Tablets,23282.14,5,0.3,-7881.2
+CN-2024-228480,2024-04-23,2024-04-26,Same Day,C-2064,Home Office,Northwest China,Gansu,Technology,Tablets,10082.39,3,0.5,-309.03
+CN-2025-464676,2025-07-28,2025-08-02,Same Day,C-4666,Home Office,Southwest China,Guizhou,Furniture,Tables,4054.09,15,0.15,684.41
+CN-2024-550692,2024-08-14,2024-08-16,Same Day,C-3120,Corporate,East China,Zhejiang,Technology,Accessories,11877.19,5,0.15,1782.15
+CN-2024-105679,2024-09-21,2024-09-25,Same Day,C-5215,Consumer,South China,Guangxi,Office Supplies,Binders,861.8,2,0.15,284.73
+CN-2025-304352,2025-06-17,2025-06-24,Same Day,C-7610,Consumer,Central China,Hunan,Technology,Accessories,32214.62,12,0.1,12612.51
+CN-2025-707860,2025-10-29,2025-11-04,First Class,C-6129,Corporate,East China,Shanghai,Office Supplies,Storage,2529.32,7,0.5,-1004.56
+CN-2025-263869,2025-03-14,2025-03-19,Same Day,C-2029,Consumer,Northeast China,Liaoning,Technology,Tablets,2167.24,3,0.1,781.54
+CN-2024-408681,2024-07-05,2024-07-09,First Class,C-6524,Home Office,South China,Guangdong,Office Supplies,Pens,542.31,13,0.0,209.94
+CN-2024-791040,2024-11-01,2024-11-03,Same Day,C-1211,Home Office,East China,Anhui,Office Supplies,Storage,597.07,9,0.0,147.4
+CN-2025-682607,2025-02-06,2025-02-11,First Class,C-5077,Home Office,Northwest China,Xinjiang,Office Supplies,Binders,4316.97,7,0.3,-1192.32
+CN-2024-160612,2024-11-28,2024-12-01,First Class,C-9932,Home Office,East China,Jiangxi,Technology,Tablets,2258.07,12,0.0,546.24
+CN-2025-661973,2025-06-01,2025-06-02,First Class,C-3085,Home Office,Southwest China,Guizhou,Furniture,Bookcases,444.09,14,0.2,128.62
+CN-2025-955352,2025-05-03,2025-05-04,Second Class,C-2933,Consumer,South China,Hainan,Furniture,Chairs,1606.1,11,0.2,389.64
+CN-2025-305391,2025-06-09,2025-06-16,Second Class,C-6079,Home Office,Northwest China,Shaanxi,Furniture,Chairs,18397.36,11,0.3,-5239.1
+CN-2025-214107,2025-03-24,2025-03-29,Same Day,C-8491,Home Office,East China,Shandong,Office Supplies,Binders,4227.66,6,0.5,-799.28
+CN-2024-823276,2024-04-20,2024-04-25,Same Day,C-1013,Consumer,North China,Inner Mongolia,Office Supplies,Paper,1779.83,1,0.5,-347.5
+CN-2024-799111,2024-05-29,2024-06-05,Standard Class,C-8726,Home Office,South China,Hainan,Office Supplies,Pens,516.74,5,0.15,197.93
+CN-2024-798090,2024-10-20,2024-10-23,Same Day,C-5462,Home Office,East China,Jiangxi,Office Supplies,Binders,3000.11,7,0.0,930.38
+CN-2025-330025,2025-03-24,2025-03-25,Standard Class,C-1628,Corporate,North China,Inner Mongolia,Office Supplies,Paper,349.62,3,0.15,36.82
+CN-2025-823931,2025-06-06,2025-06-12,Same Day,C-8678,Corporate,South China,Hainan,Office Supplies,Pens,3596.17,10,0.5,-1039.63
+CN-2025-546423,2025-12-20,2025-12-23,Standard Class,C-9369,Consumer,Southwest China,Chongqing,Technology,Laptops,6165.0,14,0.1,1138.78
+CN-2024-621006,2024-06-08,2024-06-10,Standard Class,C-6749,Corporate,South China,Guangxi,Technology,Smartphones,30176.55,9,0.0,9223.06
+CN-2025-754103,2025-10-10,2025-10-11,Same Day,C-8479,Corporate,Northeast China,Liaoning,Office Supplies,Binders,129.95,3,0.5,1.3
+CN-2025-724446,2025-10-28,2025-10-30,Same Day,C-1651,Corporate,Southwest China,Sichuan,Furniture,Furnishings,8925.55,14,0.3,-1841.32
+CN-2024-953897,2024-07-17,2024-07-19,Same Day,C-8292,Corporate,Southwest China,Yunnan,Office Supplies,Binders,1565.93,15,0.0,437.75
+CN-2024-833229,2024-07-05,2024-07-07,Second Class,C-2505,Consumer,Southwest China,Sichuan,Technology,Laptops,3479.53,1,0.2,986.54
+CN-2025-245789,2025-03-29,2025-03-30,First Class,C-5660,Corporate,Southwest China,Chongqing,Office Supplies,Storage,4467.38,5,0.5,-2171.36
+CN-2024-104528,2024-08-22,2024-08-23,Same Day,C-4803,Home Office,East China,Shanghai,Furniture,Furnishings,5242.05,15,0.3,-906.21
+CN-2025-480259,2025-06-27,2025-06-29,Same Day,C-2548,Corporate,East China,Jiangsu,Office Supplies,Binders,4285.74,9,0.0,750.7
+CN-2024-938488,2024-01-08,2024-01-10,Standard Class,C-3623,Home Office,Northwest China,Gansu,Furniture,Furnishings,8507.48,5,0.0,3327.88
+CN-2025-310721,2025-06-08,2025-06-12,Second Class,C-9058,Consumer,South China,Hainan,Office Supplies,Paper,2104.11,8,0.0,477.64
+CN-2025-272439,2025-12-31,2026-01-01,Same Day,C-4286,Corporate,Northwest China,Qinghai,Furniture,Tables,4247.37,13,0.5,-1352.71
+CN-2024-100656,2024-06-10,2024-06-13,Same Day,C-2465,Consumer,Northeast China,Jilin,Technology,Tablets,7452.24,9,0.0,2320.92
+CN-2024-709895,2024-01-10,2024-01-11,Standard Class,C-7310,Home Office,Southwest China,Sichuan,Technology,Tablets,13283.4,1,0.3,-605.0
+CN-2024-320055,2024-09-23,2024-09-25,Standard Class,C-9886,Corporate,East China,Fujian,Office Supplies,Binders,399.26,11,0.0,101.58
+CN-2024-158179,2024-01-20,2024-01-27,Same Day,C-1653,Consumer,Southwest China,Tibet,Office Supplies,Pens,448.26,1,0.5,-133.68
+CN-2024-935047,2024-11-28,2024-11-30,Second Class,C-8024,Consumer,Northwest China,Gansu,Furniture,Bookcases,4830.51,6,0.1,1058.21
+CN-2025-255549,2025-03-11,2025-03-17,Standard Class,C-2246,Corporate,Central China,Hubei,Furniture,Bookcases,7122.55,2,0.1,2532.15
+CN-2024-436647,2024-11-09,2024-11-15,First Class,C-7578,Corporate,East China,Fujian,Technology,Laptops,22419.73,7,0.0,6455.04
+CN-2025-344384,2025-12-08,2025-12-13,Second Class,C-8706,Corporate,Southwest China,Yunnan,Furniture,Chairs,14609.38,4,0.0,4342.45
+CN-2024-690112,2024-01-18,2024-01-23,Second Class,C-8530,Consumer,Northeast China,Heilongjiang,Technology,Laptops,3288.57,4,0.2,816.94
+CN-2025-721521,2025-07-07,2025-07-09,First Class,C-8870,Consumer,South China,Hainan,Technology,Tablets,6560.29,2,0.1,1924.06
+CN-2025-543171,2025-04-06,2025-04-07,Same Day,C-7426,Corporate,Northeast China,Jilin,Technology,Tablets,31561.04,2,0.15,10152.24
+CN-2025-326508,2025-11-30,2025-12-04,Standard Class,C-8848,Home Office,Northeast China,Heilongjiang,Office Supplies,Binders,708.21,13,0.1,126.96
+CN-2025-857744,2025-04-12,2025-04-15,Same Day,C-2346,Corporate,North China,Beijing,Technology,Tablets,7894.44,8,0.1,2568.1
+CN-2024-973877,2024-04-19,2024-04-23,Same Day,C-9761,Corporate,East China,Shandong,Office Supplies,Paper,2401.35,6,0.0,297.62
+CN-2024-313294,2024-09-07,2024-09-12,Second Class,C-6680,Corporate,Central China,Hubei,Office Supplies,Pens,1426.28,3,0.0,415.8
+CN-2024-648619,2024-11-22,2024-11-25,Same Day,C-6843,Consumer,Southwest China,Chongqing,Technology,Accessories,2343.46,2,0.0,930.57
+CN-2025-417886,2025-12-26,2025-12-30,Standard Class,C-1703,Corporate,East China,Shanghai,Office Supplies,Binders,2579.3,4,0.3,-882.36
+CN-2025-745088,2025-06-11,2025-06-18,Second Class,C-1777,Corporate,South China,Guangxi,Furniture,Chairs,1903.29,13,0.1,635.83
+CN-2024-996844,2024-07-02,2024-07-07,First Class,C-6781,Home Office,Southwest China,Sichuan,Technology,Laptops,601.22,2,0.0,237.39
+CN-2025-556794,2025-04-25,2025-04-27,Standard Class,C-7353,Home Office,Central China,Hunan,Furniture,Furnishings,3875.25,1,0.15,1062.69
+CN-2025-868308,2025-08-27,2025-09-02,Standard Class,C-6252,Consumer,East China,Jiangsu,Furniture,Chairs,10705.9,15,0.0,2571.33
+CN-2024-898392,2024-03-09,2024-03-12,Second Class,C-8926,Consumer,South China,Guangdong,Office Supplies,Binders,3817.85,12,0.0,1130.79
+CN-2024-589752,2024-07-10,2024-07-12,Standard Class,C-2061,Consumer,Northwest China,Xinjiang,Technology,Laptops,21839.36,7,0.3,-5164.94
+CN-2024-934100,2024-05-29,2024-06-05,Same Day,C-1504,Corporate,South China,Hainan,Office Supplies,Binders,121.7,8,0.0,38.59
+CN-2024-386344,2024-08-15,2024-08-16,Second Class,C-1015,Corporate,Northwest China,Shaanxi,Technology,Tablets,1954.14,4,0.15,224.7
+CN-2025-515864,2025-03-22,2025-03-27,Same Day,C-6975,Consumer,Central China,Hunan,Furniture,Furnishings,2967.36,1,0.1,344.94
+CN-2024-788953,2024-04-03,2024-04-04,Standard Class,C-1814,Home Office,North China,Hebei,Technology,Tablets,2495.49,4,0.3,-658.3
+CN-2025-990962,2025-12-07,2025-12-08,Standard Class,C-1977,Consumer,East China,Jiangsu,Technology,Laptops,9984.77,4,0.3,-4847.29
+CN-2024-638522,2024-07-24,2024-07-26,Second Class,C-8964,Consumer,East China,Jiangxi,Office Supplies,Pens,2935.84,13,0.3,-573.27
+CN-2024-172426,2024-09-23,2024-09-27,Second Class,C-2377,Consumer,East China,Anhui,Technology,Laptops,21997.94,13,0.0,7731.27
+CN-2025-885859,2025-05-10,2025-05-14,Same Day,C-1585,Consumer,North China,Inner Mongolia,Office Supplies,Pens,1112.43,5,0.1,347.69
+CN-2025-745376,2025-09-03,2025-09-04,Second Class,C-3758,Corporate,Central China,Henan,Office Supplies,Paper,2907.06,4,0.5,-919.09
+CN-2024-517973,2024-03-12,2024-03-18,Same Day,C-5932,Home Office,Southwest China,Yunnan,Technology,Laptops,5455.06,12,0.0,1198.56
+CN-2024-579393,2024-01-11,2024-01-14,Standard Class,C-4846,Corporate,South China,Hainan,Office Supplies,Storage,228.56,11,0.0,70.02
+CN-2025-959631,2025-02-04,2025-02-06,Same Day,C-3937,Home Office,East China,Fujian,Furniture,Furnishings,5172.46,7,0.5,-1596.72
+CN-2025-205745,2025-12-22,2025-12-25,Standard Class,C-7824,Consumer,Northwest China,Ningxia,Technology,Laptops,8823.22,6,0.0,1360.01
+CN-2024-447493,2024-10-01,2024-10-08,Standard Class,C-9898,Home Office,Northwest China,Qinghai,Furniture,Furnishings,4037.81,6,0.2,1111.3
+CN-2024-276719,2024-10-09,2024-10-11,Standard Class,C-3939,Corporate,Northwest China,Ningxia,Furniture,Chairs,2991.13,2,0.0,503.42
+CN-2025-478466,2025-10-01,2025-10-02,Same Day,C-4283,Home Office,Southwest China,Sichuan,Furniture,Furnishings,3249.71,7,0.0,436.27
+CN-2024-464914,2024-09-28,2024-10-04,First Class,C-7310,Corporate,Northeast China,Heilongjiang,Office Supplies,Binders,1697.85,5,0.3,-394.06
+CN-2025-574916,2025-11-18,2025-11-24,First Class,C-4063,Consumer,Southwest China,Chongqing,Technology,Accessories,12861.28,3,0.0,1306.61
+CN-2025-267824,2025-10-04,2025-10-08,First Class,C-4617,Corporate,Northwest China,Qinghai,Furniture,Furnishings,1815.66,1,0.0,463.04
+CN-2024-831338,2024-05-28,2024-06-01,First Class,C-7298,Corporate,Central China,Henan,Office Supplies,Pens,2253.01,7,0.0,351.5
+CN-2025-387688,2025-09-10,2025-09-13,Standard Class,C-1554,Consumer,Northwest China,Ningxia,Technology,Smartphones,36569.57,2,0.3,-7345.84
+CN-2024-377647,2024-12-19,2024-12-20,Second Class,C-3251,Corporate,Southwest China,Tibet,Furniture,Furnishings,2097.14,15,0.5,-962.91
+CN-2024-836439,2024-06-20,2024-06-24,Standard Class,C-5417,Consumer,Southwest China,Chongqing,Office Supplies,Binders,776.68,14,0.0,238.25
+CN-2024-585045,2024-06-23,2024-06-29,First Class,C-8739,Consumer,North China,Hebei,Furniture,Furnishings,6743.68,3,0.1,2116.39
+CN-2025-486985,2025-11-15,2025-11-20,Second Class,C-2973,Consumer,East China,Shanghai,Office Supplies,Paper,558.56,8,0.0,198.68
+CN-2024-843034,2024-01-23,2024-01-30,Standard Class,C-6640,Home Office,Southwest China,Chongqing,Technology,Tablets,35884.02,11,0.0,13691.45
+CN-2025-505940,2025-03-11,2025-03-14,First Class,C-6660,Home Office,East China,Jiangsu,Office Supplies,Storage,292.57,10,0.0,70.89
+CN-2024-766096,2024-04-19,2024-04-23,Second Class,C-8281,Home Office,South China,Hainan,Technology,Accessories,6798.78,13,0.0,1771.73
+CN-2025-909851,2025-08-24,2025-08-27,Second Class,C-2909,Home Office,Northwest China,Xinjiang,Office Supplies,Binders,119.89,9,0.1,39.03
+CN-2025-655555,2025-06-16,2025-06-18,Standard Class,C-8681,Consumer,North China,Beijing,Furniture,Tables,5159.82,12,0.2,1015.0
+CN-2025-470265,2025-06-22,2025-06-28,Same Day,C-6082,Home Office,North China,Hebei,Technology,Laptops,24154.75,4,0.0,3823.41
+CN-2025-701769,2025-08-16,2025-08-20,Same Day,C-4530,Corporate,North China,Hebei,Office Supplies,Binders,1046.21,3,0.0,295.11
+CN-2025-583162,2025-09-22,2025-09-26,Same Day,C-7633,Corporate,Southwest China,Yunnan,Furniture,Furnishings,8472.95,15,0.0,3250.51
+CN-2025-547067,2025-11-18,2025-11-25,Second Class,C-5998,Consumer,Southwest China,Chongqing,Office Supplies,Storage,1267.87,1,0.1,277.32
+CN-2025-796092,2025-09-23,2025-09-29,Same Day,C-8524,Corporate,Northeast China,Jilin,Office Supplies,Pens,2828.05,11,0.0,840.74
+CN-2024-609211,2024-08-21,2024-08-26,Second Class,C-3389,Corporate,South China,Hainan,Technology,Laptops,19724.87,15,0.0,6707.96
+CN-2024-428724,2024-01-08,2024-01-11,Same Day,C-1074,Consumer,East China,Shanghai,Furniture,Furnishings,13633.39,2,0.0,4821.89
+CN-2025-129816,2025-01-13,2025-01-18,First Class,C-3882,Home Office,Northwest China,Qinghai,Office Supplies,Storage,585.61,4,0.5,-243.65
+CN-2024-395595,2024-06-14,2024-06-16,First Class,C-4742,Consumer,East China,Jiangxi,Office Supplies,Pens,967.19,8,0.0,264.56
+CN-2025-461944,2025-04-16,2025-04-19,Same Day,C-9891,Home Office,Southwest China,Sichuan,Technology,Smartphones,5727.43,5,0.0,1932.49
+CN-2025-622212,2025-11-08,2025-11-11,First Class,C-7607,Corporate,East China,Shandong,Office Supplies,Storage,557.79,5,0.2,117.75
+CN-2025-550462,2025-11-26,2025-11-27,Same Day,C-5469,Consumer,Northeast China,Liaoning,Office Supplies,Binders,736.58,4,0.0,211.45
+CN-2025-559678,2025-06-10,2025-06-15,First Class,C-8468,Corporate,North China,Hebei,Furniture,Bookcases,218.65,15,0.5,-54.99
+CN-2024-783566,2024-01-15,2024-01-20,Standard Class,C-1634,Corporate,Northeast China,Heilongjiang,Technology,Tablets,2552.22,13,0.0,587.45
+CN-2025-859642,2025-07-02,2025-07-08,Same Day,C-5382,Home Office,East China,Fujian,Technology,Smartphones,4422.12,15,0.3,160.08
+CN-2025-802742,2025-04-21,2025-04-28,Second Class,C-2293,Home Office,East China,Anhui,Technology,Accessories,215.8,9,0.0,75.7
+CN-2024-851476,2024-09-28,2024-10-03,Standard Class,C-4103,Home Office,Southwest China,Guizhou,Office Supplies,Storage,507.53,6,0.1,117.61
+CN-2024-424637,2024-10-15,2024-10-18,Second Class,C-3801,Consumer,East China,Shanghai,Technology,Tablets,4018.95,10,0.1,586.78
+CN-2024-931193,2024-01-04,2024-01-06,First Class,C-3012,Home Office,Central China,Hubei,Furniture,Furnishings,8803.18,15,0.15,2729.25
+CN-2024-350968,2024-09-25,2024-09-28,First Class,C-1988,Consumer,Northeast China,Liaoning,Office Supplies,Paper,2778.01,4,0.3,6.3
+CN-2025-389650,2025-11-25,2025-11-30,Standard Class,C-6851,Corporate,East China,Jiangxi,Furniture,Bookcases,4513.53,5,0.15,823.16
+CN-2024-847421,2024-12-09,2024-12-15,Same Day,C-4904,Home Office,Southwest China,Yunnan,Technology,Accessories,4784.3,2,0.1,576.78
+CN-2025-107156,2025-01-24,2025-01-25,Second Class,C-6662,Corporate,Northwest China,Ningxia,Furniture,Furnishings,2754.06,11,0.1,1052.17
+CN-2025-847548,2025-07-02,2025-07-04,Second Class,C-5742,Corporate,North China,Hebei,Office Supplies,Pens,1425.0,10,0.0,483.32
+CN-2025-291291,2025-06-18,2025-06-19,Same Day,C-5742,Home Office,East China,Anhui,Technology,Accessories,1908.11,2,0.5,-835.05
+CN-2025-996846,2025-08-04,2025-08-05,Same Day,C-8335,Corporate,Central China,Henan,Technology,Tablets,15602.74,8,0.5,-66.13
+CN-2024-288544,2024-11-26,2024-11-28,Standard Class,C-3543,Consumer,South China,Guangdong,Technology,Tablets,6037.56,11,0.0,1768.33
+CN-2025-936894,2025-03-21,2025-03-24,Standard Class,C-9693,Consumer,Northeast China,Jilin,Office Supplies,Pens,127.32,10,0.2,17.61
+CN-2025-485686,2025-05-20,2025-05-25,Second Class,C-3979,Consumer,Central China,Hunan,Office Supplies,Binders,968.86,11,0.1,307.21
+CN-2024-298134,2024-03-07,2024-03-14,Second Class,C-1766,Consumer,East China,Anhui,Office Supplies,Pens,427.05,4,0.5,-4.01
+CN-2024-810440,2024-01-21,2024-01-26,Second Class,C-1678,Consumer,Southwest China,Sichuan,Furniture,Furnishings,9403.18,6,0.0,2980.35
+CN-2025-806158,2025-04-14,2025-04-21,Second Class,C-8212,Corporate,South China,Guangxi,Technology,Accessories,11668.58,3,0.2,4211.95
+CN-2025-540166,2025-08-04,2025-08-08,Standard Class,C-8311,Consumer,Northeast China,Liaoning,Office Supplies,Storage,1590.67,10,0.0,357.41
+CN-2025-749294,2025-11-03,2025-11-06,Second Class,C-9836,Home Office,Southwest China,Tibet,Furniture,Tables,6983.34,5,0.3,-3173.5
+CN-2024-359896,2024-11-29,2024-12-05,Same Day,C-3225,Consumer,South China,Guangdong,Office Supplies,Binders,2406.76,4,0.15,499.61
+CN-2025-950248,2025-03-23,2025-03-28,Same Day,C-8291,Home Office,North China,Inner Mongolia,Furniture,Tables,400.62,4,0.2,159.73
+CN-2024-905262,2024-10-22,2024-10-25,Second Class,C-6362,Home Office,Northeast China,Jilin,Office Supplies,Pens,962.28,5,0.0,370.9
+CN-2024-463599,2024-09-06,2024-09-11,Second Class,C-8791,Home Office,Northeast China,Liaoning,Office Supplies,Paper,3804.31,15,0.0,1073.24
+CN-2025-280271,2025-11-13,2025-11-16,Second Class,C-4018,Corporate,North China,Tianjin,Furniture,Furnishings,1144.54,5,0.2,217.34
+CN-2024-379065,2024-12-27,2024-12-29,Second Class,C-9276,Corporate,Northwest China,Shaanxi,Furniture,Bookcases,1550.9,5,0.15,611.7
+CN-2024-966586,2024-02-24,2024-03-02,Standard Class,C-9859,Corporate,Central China,Henan,Office Supplies,Storage,1474.66,8,0.1,385.79
+CN-2024-377932,2024-12-21,2024-12-25,Second Class,C-8825,Consumer,South China,Guangxi,Office Supplies,Pens,1371.02,6,0.0,266.32
+CN-2025-832318,2025-02-05,2025-02-07,First Class,C-7999,Corporate,North China,Tianjin,Furniture,Chairs,709.22,4,0.0,196.99
+CN-2025-790519,2025-07-01,2025-07-05,First Class,C-5054,Corporate,Northwest China,Xinjiang,Furniture,Chairs,4905.8,12,0.0,1063.97
+CN-2025-167027,2025-12-24,2025-12-28,Standard Class,C-4260,Home Office,Southwest China,Sichuan,Office Supplies,Paper,1224.41,5,0.1,396.67
+CN-2025-879449,2025-05-04,2025-05-09,Same Day,C-3093,Consumer,Northwest China,Gansu,Furniture,Bookcases,90.68,15,0.1,29.01
+CN-2025-885444,2025-09-17,2025-09-23,Standard Class,C-4999,Consumer,Northeast China,Liaoning,Office Supplies,Binders,4662.39,7,0.3,-981.22
+CN-2024-137617,2024-01-06,2024-01-07,Second Class,C-6735,Home Office,East China,Shandong,Office Supplies,Storage,603.01,15,0.15,161.74
+CN-2025-908001,2025-08-17,2025-08-20,Standard Class,C-1905,Consumer,Northeast China,Jilin,Furniture,Tables,793.6,2,0.3,-18.74
+CN-2024-722203,2024-01-24,2024-01-25,First Class,C-5152,Home Office,Northwest China,Gansu,Furniture,Furnishings,1018.64,9,0.2,293.8
+CN-2024-410611,2024-07-07,2024-07-13,Same Day,C-1433,Consumer,North China,Tianjin,Office Supplies,Storage,1723.1,2,0.0,278.9
+CN-2024-736842,2024-09-04,2024-09-07,First Class,C-4711,Consumer,South China,Guangxi,Office Supplies,Binders,5120.15,3,0.0,1513.24
+CN-2024-478803,2024-02-12,2024-02-16,First Class,C-6728,Corporate,Northwest China,Qinghai,Furniture,Bookcases,131.44,8,0.15,23.63
+CN-2024-302373,2024-05-27,2024-06-01,Second Class,C-5861,Consumer,North China,Shanxi,Office Supplies,Storage,325.93,11,0.1,126.5
+CN-2025-417618,2025-11-23,2025-11-24,Standard Class,C-8912,Consumer,Central China,Hunan,Furniture,Tables,466.68,9,0.0,145.27
+CN-2024-887592,2024-02-13,2024-02-18,Same Day,C-9637,Consumer,Central China,Henan,Office Supplies,Pens,2988.38,1,0.2,778.2
+CN-2025-468393,2025-12-28,2025-12-29,Second Class,C-4377,Consumer,East China,Jiangsu,Office Supplies,Binders,870.47,4,0.0,342.1
+CN-2025-652236,2025-10-21,2025-10-22,Second Class,C-1323,Corporate,Northwest China,Gansu,Furniture,Tables,3015.52,15,0.15,477.43
+CN-2025-366467,2025-11-05,2025-11-08,First Class,C-2161,Home Office,Southwest China,Guizhou,Furniture,Tables,6282.37,13,0.5,-856.05
+CN-2024-236730,2024-06-12,2024-06-18,Same Day,C-2377,Corporate,East China,Shandong,Furniture,Chairs,8673.03,15,0.1,879.07
+CN-2024-464766,2024-05-09,2024-05-14,Same Day,C-4341,Home Office,Northeast China,Liaoning,Furniture,Bookcases,17210.01,7,0.0,3573.57
+CN-2025-624831,2025-01-10,2025-01-11,Second Class,C-2474,Home Office,Southwest China,Guizhou,Furniture,Tables,1618.29,5,0.15,514.58
+CN-2025-692042,2025-02-05,2025-02-07,Standard Class,C-2460,Corporate,Central China,Henan,Office Supplies,Paper,1491.11,5,0.1,388.44
+CN-2025-665273,2025-02-19,2025-02-22,First Class,C-7474,Home Office,North China,Beijing,Technology,Laptops,23060.75,9,0.0,7994.33
+CN-2025-400945,2025-04-26,2025-04-29,Same Day,C-7349,Home Office,East China,Jiangsu,Technology,Smartphones,6089.21,15,0.3,-2849.27
+CN-2025-152994,2025-04-17,2025-04-22,First Class,C-4039,Corporate,Southwest China,Guizhou,Office Supplies,Storage,3148.04,2,0.5,-736.76
+CN-2025-212314,2025-09-17,2025-09-24,First Class,C-2229,Consumer,Northwest China,Xinjiang,Technology,Accessories,27665.86,6,0.0,6134.77
+CN-2024-227429,2024-12-01,2024-12-05,Second Class,C-5764,Home Office,East China,Jiangsu,Office Supplies,Pens,231.15,14,0.0,77.77
+CN-2025-665397,2025-01-10,2025-01-16,Same Day,C-3798,Consumer,East China,Jiangsu,Office Supplies,Storage,1994.66,5,0.2,460.38
+CN-2025-164264,2025-04-10,2025-04-12,First Class,C-9112,Consumer,East China,Jiangsu,Office Supplies,Paper,1518.65,2,0.1,537.49
+CN-2024-684739,2024-07-28,2024-08-04,Second Class,C-1874,Corporate,Northeast China,Liaoning,Office Supplies,Pens,1153.78,12,0.0,284.45
+CN-2024-797030,2024-10-04,2024-10-06,Second Class,C-3430,Corporate,East China,Zhejiang,Technology,Accessories,757.54,15,0.3,-62.57
+CN-2025-520116,2025-03-24,2025-03-28,First Class,C-2814,Corporate,Northeast China,Liaoning,Technology,Laptops,1326.08,6,0.0,452.18
+CN-2024-484112,2024-03-11,2024-03-15,Same Day,C-3227,Home Office,South China,Guangxi,Furniture,Bookcases,15778.82,1,0.15,3245.05
+CN-2025-747201,2025-09-25,2025-10-01,Standard Class,C-4665,Home Office,East China,Fujian,Technology,Accessories,3316.54,4,0.5,-1332.93
+CN-2024-377498,2024-12-09,2024-12-16,Same Day,C-7582,Corporate,Northeast China,Heilongjiang,Furniture,Tables,12503.72,8,0.2,3830.52
+CN-2025-244857,2025-12-11,2025-12-13,Second Class,C-9217,Corporate,Northwest China,Qinghai,Furniture,Chairs,6978.29,7,0.2,1066.12
+CN-2024-659714,2024-03-10,2024-03-14,Same Day,C-5798,Corporate,East China,Jiangsu,Technology,Accessories,1970.52,5,0.1,555.45
+CN-2025-534566,2025-09-22,2025-09-24,Second Class,C-6416,Consumer,Central China,Henan,Office Supplies,Pens,1136.83,10,0.15,157.41
+CN-2025-385960,2025-10-01,2025-10-03,Second Class,C-7876,Consumer,North China,Hebei,Office Supplies,Storage,283.51,5,0.15,82.58
+CN-2025-923664,2025-03-24,2025-03-25,First Class,C-4509,Corporate,Northwest China,Qinghai,Office Supplies,Paper,927.27,6,0.2,150.08
+CN-2024-776670,2024-02-29,2024-03-04,Second Class,C-3701,Consumer,Northeast China,Jilin,Office Supplies,Paper,1481.44,7,0.3,48.8
+CN-2024-728190,2024-07-30,2024-07-31,Standard Class,C-5338,Consumer,East China,Zhejiang,Technology,Smartphones,2449.06,7,0.5,-132.22
+CN-2024-399322,2024-08-06,2024-08-10,First Class,C-2449,Corporate,Southwest China,Tibet,Office Supplies,Pens,256.99,6,0.1,47.36
+CN-2024-560096,2024-05-11,2024-05-13,Same Day,C-9579,Consumer,North China,Tianjin,Technology,Tablets,1074.38,1,0.0,226.54
+CN-2025-393498,2025-10-14,2025-10-15,First Class,C-1132,Corporate,Central China,Hubei,Office Supplies,Storage,945.55,13,0.3,-268.08
+CN-2025-158844,2025-08-04,2025-08-08,Second Class,C-4057,Consumer,East China,Jiangsu,Technology,Smartphones,17758.27,13,0.0,4163.52
+CN-2025-683210,2025-03-28,2025-04-03,First Class,C-6441,Corporate,Southwest China,Chongqing,Office Supplies,Paper,564.19,11,0.0,85.29
+CN-2024-555514,2024-05-23,2024-05-24,Second Class,C-1319,Corporate,Northwest China,Qinghai,Technology,Tablets,24834.91,8,0.0,8970.54
+CN-2024-471812,2024-01-08,2024-01-15,First Class,C-1341,Consumer,South China,Hainan,Furniture,Chairs,11571.17,6,0.3,-5096.72
+CN-2024-258301,2024-04-25,2024-04-28,Same Day,C-7739,Home Office,Northwest China,Xinjiang,Technology,Laptops,3636.54,12,0.1,1339.23
+CN-2025-884924,2025-11-06,2025-11-11,Same Day,C-7308,Consumer,East China,Anhui,Furniture,Furnishings,15727.44,3,0.0,3994.66
+CN-2024-434954,2024-07-02,2024-07-07,Second Class,C-1557,Corporate,Northeast China,Liaoning,Office Supplies,Binders,40.42,5,0.0,13.86
+CN-2025-827697,2025-11-17,2025-11-21,Second Class,C-8345,Consumer,North China,Shanxi,Office Supplies,Paper,600.2,14,0.15,221.96
+CN-2025-621632,2025-09-20,2025-09-26,Standard Class,C-2614,Home Office,North China,Tianjin,Office Supplies,Storage,567.29,2,0.2,174.71
+CN-2024-447543,2024-12-15,2024-12-19,Second Class,C-1937,Consumer,Southwest China,Tibet,Furniture,Chairs,15977.09,5,0.2,4572.98
+CN-2025-268958,2025-10-15,2025-10-18,Same Day,C-9563,Home Office,North China,Tianjin,Furniture,Chairs,4620.79,7,0.0,791.03
+CN-2025-116609,2025-01-29,2025-02-05,Same Day,C-7344,Home Office,Southwest China,Yunnan,Technology,Accessories,3260.8,13,0.3,-1323.99
+CN-2024-191910,2024-02-20,2024-02-24,Standard Class,C-1076,Corporate,North China,Tianjin,Technology,Laptops,1882.17,3,0.0,751.19
+CN-2025-496939,2025-10-19,2025-10-21,Second Class,C-9434,Consumer,East China,Shandong,Furniture,Chairs,1785.74,12,0.2,367.68
+CN-2024-943312,2024-03-18,2024-03-24,Same Day,C-7480,Consumer,South China,Guangdong,Office Supplies,Paper,3866.67,5,0.2,1261.94
+CN-2025-131347,2025-07-07,2025-07-11,Second Class,C-2351,Consumer,North China,Hebei,Furniture,Chairs,1595.14,7,0.0,205.79
+CN-2025-316272,2025-07-03,2025-07-05,First Class,C-7363,Home Office,Southwest China,Chongqing,Technology,Tablets,16526.01,14,0.3,-5224.63
+CN-2024-803233,2024-02-14,2024-02-18,Second Class,C-5232,Consumer,Northwest China,Shaanxi,Office Supplies,Pens,1048.72,5,0.0,326.07
+CN-2024-267473,2024-08-29,2024-09-05,Second Class,C-7230,Home Office,Southwest China,Guizhou,Technology,Laptops,6168.51,5,0.3,-2469.81
+CN-2025-805830,2025-02-12,2025-02-17,First Class,C-6928,Corporate,South China,Guangxi,Furniture,Tables,3686.62,3,0.0,409.6
+CN-2025-715195,2025-03-15,2025-03-21,Second Class,C-8503,Corporate,South China,Hainan,Office Supplies,Pens,866.66,15,0.0,332.3
+CN-2025-606631,2025-11-20,2025-11-27,Second Class,C-6751,Corporate,North China,Inner Mongolia,Office Supplies,Binders,487.67,6,0.1,60.51
+CN-2024-881158,2024-04-18,2024-04-23,Standard Class,C-2510,Home Office,Northwest China,Xinjiang,Technology,Tablets,36575.1,10,0.0,5591.82
+CN-2025-898972,2025-06-15,2025-06-17,Same Day,C-1169,Home Office,Northwest China,Xinjiang,Furniture,Bookcases,600.52,6,0.2,60.77
+CN-2025-264999,2025-05-13,2025-05-17,Second Class,C-4277,Corporate,North China,Tianjin,Technology,Accessories,5978.72,5,0.1,1813.23
+CN-2025-225073,2025-03-01,2025-03-06,First Class,C-7445,Home Office,South China,Guangdong,Technology,Accessories,3414.71,9,0.2,506.87
+CN-2025-491644,2025-08-03,2025-08-07,First Class,C-5373,Consumer,Central China,Hunan,Furniture,Bookcases,11663.56,8,0.5,537.91
+CN-2024-225697,2024-01-25,2024-01-30,Second Class,C-2633,Corporate,East China,Jiangxi,Office Supplies,Pens,972.91,8,0.3,-482.99
+CN-2024-326358,2024-09-30,2024-10-03,Standard Class,C-8139,Home Office,East China,Jiangxi,Office Supplies,Storage,579.97,15,0.2,211.55
+CN-2024-584577,2024-04-02,2024-04-08,Same Day,C-5478,Consumer,East China,Shandong,Office Supplies,Storage,217.61,4,0.0,72.83
+CN-2024-504370,2024-03-05,2024-03-06,Second Class,C-7509,Home Office,East China,Shanghai,Furniture,Chairs,3572.03,9,0.3,-661.58
+CN-2024-866190,2024-04-15,2024-04-17,Same Day,C-4031,Corporate,South China,Hainan,Office Supplies,Pens,1623.1,1,0.15,242.82
+CN-2024-545757,2024-04-09,2024-04-12,First Class,C-6569,Home Office,Southwest China,Sichuan,Technology,Tablets,15402.62,7,0.1,5421.42
+CN-2024-746345,2024-04-22,2024-04-24,Standard Class,C-5877,Consumer,Southwest China,Yunnan,Office Supplies,Binders,5425.5,3,0.1,1842.03
+CN-2024-525779,2024-05-11,2024-05-13,First Class,C-8556,Consumer,East China,Zhejiang,Office Supplies,Storage,218.26,10,0.1,41.95
+CN-2024-625917,2024-07-28,2024-07-29,Standard Class,C-4164,Corporate,North China,Hebei,Office Supplies,Binders,1447.24,8,0.1,495.25
+CN-2024-134957,2024-03-25,2024-03-28,Second Class,C-8327,Consumer,North China,Hebei,Office Supplies,Storage,1773.64,2,0.2,249.73
+CN-2025-947543,2025-06-18,2025-06-23,Same Day,C-9244,Consumer,East China,Jiangsu,Technology,Tablets,2514.61,12,0.15,367.33
+CN-2025-710869,2025-02-03,2025-02-07,Standard Class,C-1599,Home Office,North China,Shanxi,Technology,Accessories,29802.74,11,0.0,8501.63
+CN-2024-560868,2024-04-17,2024-04-18,First Class,C-1873,Home Office,East China,Shanghai,Office Supplies,Paper,1178.54,8,0.0,302.79
+CN-2024-195824,2024-03-14,2024-03-15,Same Day,C-2095,Corporate,East China,Jiangsu,Furniture,Bookcases,1939.94,1,0.15,331.33
+CN-2025-884402,2025-05-29,2025-06-03,Second Class,C-8567,Home Office,Central China,Hubei,Furniture,Chairs,2986.02,12,0.5,-141.93
+CN-2025-838648,2025-11-09,2025-11-12,Standard Class,C-1248,Home Office,North China,Tianjin,Office Supplies,Binders,2093.85,14,0.2,793.54
+CN-2024-778486,2024-04-11,2024-04-18,Same Day,C-3150,Home Office,North China,Shanxi,Technology,Laptops,26657.19,2,0.2,7486.68
+CN-2024-121333,2024-01-21,2024-01-23,Standard Class,C-5113,Home Office,North China,Tianjin,Furniture,Furnishings,9823.94,2,0.3,-3316.02
+CN-2025-800408,2025-04-23,2025-04-26,Same Day,C-2240,Corporate,North China,Beijing,Furniture,Bookcases,13050.64,12,0.1,4062.11
+CN-2025-439605,2025-09-07,2025-09-10,First Class,C-8331,Home Office,North China,Beijing,Technology,Tablets,7430.43,7,0.2,1167.94
+CN-2025-138368,2025-12-02,2025-12-05,Standard Class,C-7224,Home Office,South China,Guangdong,Technology,Accessories,4959.74,4,0.5,-1363.23
+CN-2025-705605,2025-07-18,2025-07-24,First Class,C-3585,Home Office,North China,Beijing,Furniture,Tables,15579.86,4,0.0,4911.8
+CN-2025-123690,2025-04-19,2025-04-20,Second Class,C-5964,Home Office,Northeast China,Jilin,Furniture,Tables,11897.64,2,0.1,4183.42
+CN-2025-547731,2025-07-30,2025-08-05,Standard Class,C-5273,Consumer,Northeast China,Heilongjiang,Furniture,Furnishings,5703.77,2,0.5,-80.15
+CN-2025-409555,2025-02-11,2025-02-14,Second Class,C-2676,Corporate,North China,Tianjin,Office Supplies,Paper,3038.96,2,0.2,1015.01
+CN-2024-268369,2024-05-15,2024-05-18,Same Day,C-9159,Home Office,Northwest China,Xinjiang,Technology,Tablets,2135.58,9,0.15,529.02
+CN-2024-406346,2024-03-25,2024-03-26,Same Day,C-8909,Consumer,Northwest China,Gansu,Office Supplies,Storage,2311.78,4,0.2,799.54
+CN-2024-204067,2024-07-10,2024-07-15,Same Day,C-1228,Consumer,North China,Shanxi,Technology,Tablets,9712.39,8,0.15,1534.9
+CN-2025-131609,2025-10-01,2025-10-03,First Class,C-2493,Consumer,South China,Hainan,Office Supplies,Pens,3168.19,6,0.2,388.81
+CN-2024-890651,2024-04-22,2024-04-23,Second Class,C-5620,Consumer,South China,Guangdong,Furniture,Tables,3648.26,1,0.0,486.49
+CN-2024-649208,2024-12-15,2024-12-16,Same Day,C-6556,Corporate,Central China,Hubei,Technology,Tablets,4191.87,11,0.0,646.2
+CN-2024-654294,2024-07-15,2024-07-17,Same Day,C-6347,Consumer,Central China,Hubei,Technology,Laptops,17558.38,8,0.1,5790.11
+CN-2025-964479,2025-08-26,2025-09-01,Same Day,C-1371,Home Office,Southwest China,Tibet,Technology,Accessories,448.77,9,0.15,66.73
+CN-2024-895507,2024-08-16,2024-08-20,Same Day,C-5439,Home Office,Northeast China,Jilin,Furniture,Furnishings,9500.39,14,0.15,3542.92
+CN-2025-677550,2025-06-28,2025-07-01,Standard Class,C-1872,Corporate,Northwest China,Xinjiang,Technology,Smartphones,2089.3,12,0.0,452.39
+CN-2024-387692,2024-10-31,2024-11-07,Second Class,C-2848,Corporate,Northwest China,Shaanxi,Office Supplies,Storage,1415.29,4,0.15,255.59
+CN-2025-397316,2025-01-12,2025-01-19,First Class,C-5046,Home Office,Central China,Hunan,Office Supplies,Paper,119.21,4,0.0,27.98
+CN-2025-315301,2025-01-17,2025-01-23,Same Day,C-4297,Consumer,Northeast China,Heilongjiang,Technology,Accessories,3694.94,10,0.0,958.3
+CN-2025-520641,2025-05-19,2025-05-20,Standard Class,C-1708,Home Office,Southwest China,Tibet,Office Supplies,Binders,206.3,7,0.0,73.16
+CN-2024-631621,2024-07-31,2024-08-05,Second Class,C-7803,Consumer,East China,Jiangxi,Office Supplies,Paper,2127.9,13,0.1,568.57
+CN-2024-478882,2024-08-10,2024-08-15,First Class,C-2681,Corporate,East China,Jiangxi,Office Supplies,Binders,3130.63,12,0.15,1048.66
+CN-2024-109299,2024-09-17,2024-09-22,Same Day,C-3741,Consumer,Northeast China,Heilongjiang,Technology,Laptops,4444.65,5,0.0,1731.38
+CN-2024-798016,2024-09-21,2024-09-24,Same Day,C-1882,Consumer,Central China,Hubei,Office Supplies,Pens,3110.32,1,0.3,-638.34
+CN-2025-679823,2025-06-12,2025-06-18,First Class,C-1747,Home Office,Southwest China,Sichuan,Furniture,Chairs,751.49,13,0.15,293.89
+CN-2024-886100,2024-05-29,2024-06-01,Same Day,C-3203,Corporate,Central China,Hunan,Technology,Smartphones,27539.1,2,0.5,-2958.5
+CN-2024-110069,2024-08-19,2024-08-20,Standard Class,C-4029,Consumer,North China,Shanxi,Office Supplies,Paper,2988.8,14,0.5,-1397.74
+CN-2025-715858,2025-07-21,2025-07-27,Standard Class,C-7781,Corporate,East China,Jiangsu,Furniture,Tables,1958.35,12,0.1,622.25
+CN-2024-282442,2024-12-15,2024-12-17,Second Class,C-1532,Corporate,Northeast China,Heilongjiang,Furniture,Chairs,1187.45,4,0.0,214.08
+CN-2025-357026,2025-11-18,2025-11-23,Second Class,C-8889,Home Office,East China,Shandong,Technology,Accessories,6288.48,2,0.1,2311.34
+CN-2024-100082,2024-07-06,2024-07-10,Same Day,C-1242,Home Office,Northwest China,Gansu,Office Supplies,Paper,113.44,13,0.1,21.56
+CN-2025-743651,2025-07-09,2025-07-15,First Class,C-9689,Corporate,Southwest China,Guizhou,Technology,Accessories,1172.77,1,0.15,423.73
+CN-2025-383459,2025-08-14,2025-08-21,Same Day,C-2042,Corporate,Southwest China,Yunnan,Technology,Laptops,26329.93,13,0.3,-9661.96
+CN-2024-156410,2024-01-29,2024-01-31,Same Day,C-2433,Corporate,East China,Anhui,Office Supplies,Paper,58.44,6,0.3,-4.91
+CN-2024-436859,2024-01-29,2024-02-04,Same Day,C-6139,Consumer,North China,Shanxi,Technology,Smartphones,21556.98,4,0.2,7306.32
+CN-2024-675649,2024-06-28,2024-06-29,First Class,C-7025,Corporate,Central China,Hunan,Technology,Tablets,1970.57,1,0.0,274.15
+CN-2025-528408,2025-12-30,2026-01-01,First Class,C-3403,Corporate,North China,Tianjin,Office Supplies,Binders,1460.39,9,0.1,379.55
+CN-2024-659133,2024-06-25,2024-06-28,Same Day,C-9975,Home Office,Southwest China,Sichuan,Office Supplies,Pens,3694.23,14,0.15,742.94
+CN-2025-544545,2025-03-27,2025-04-03,Second Class,C-3641,Consumer,Northwest China,Gansu,Furniture,Chairs,1138.73,4,0.2,396.56
+CN-2025-459574,2025-04-02,2025-04-07,First Class,C-8932,Corporate,North China,Hebei,Furniture,Bookcases,15463.2,15,0.15,5039.69
+CN-2024-522660,2024-03-13,2024-03-14,Second Class,C-6627,Consumer,South China,Guangxi,Furniture,Bookcases,6956.49,10,0.5,-602.65
+CN-2025-391618,2025-09-16,2025-09-19,First Class,C-4471,Consumer,Southwest China,Guizhou,Furniture,Tables,3059.51,10,0.0,497.01
+CN-2025-956079,2025-08-28,2025-08-29,First Class,C-6978,Home Office,South China,Guangxi,Office Supplies,Storage,814.05,15,0.0,193.23
+CN-2024-599752,2024-09-04,2024-09-07,Second Class,C-1927,Consumer,East China,Shandong,Technology,Laptops,3474.67,6,0.0,764.33
+CN-2024-369132,2024-12-23,2024-12-26,Standard Class,C-4266,Home Office,Northwest China,Gansu,Furniture,Furnishings,9392.47,7,0.1,3483.74
+CN-2025-622197,2025-05-19,2025-05-26,Second Class,C-1669,Consumer,East China,Anhui,Furniture,Furnishings,7884.52,3,0.0,1549.34
+CN-2024-405829,2024-07-08,2024-07-10,Same Day,C-8562,Home Office,Northeast China,Heilongjiang,Furniture,Furnishings,5707.18,1,0.0,1233.9
+CN-2025-914088,2025-02-15,2025-02-17,Same Day,C-5874,Consumer,Central China,Hubei,Furniture,Tables,791.82,8,0.0,199.16
+CN-2024-964358,2024-07-11,2024-07-16,First Class,C-2929,Consumer,Northwest China,Gansu,Furniture,Tables,786.49,7,0.1,193.62
+CN-2025-613402,2025-10-08,2025-10-11,First Class,C-5620,Consumer,Northeast China,Jilin,Technology,Smartphones,2629.83,13,0.0,667.24
+CN-2024-353067,2024-08-30,2024-08-31,Standard Class,C-7087,Corporate,East China,Shanghai,Office Supplies,Pens,1027.81,5,0.3,-494.76
