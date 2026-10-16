@@ -1,8 +1,8 @@
 ---
 title: Tableau Portfolio
-subtitle: [Fictional Data]China Regional E-commerce Performance 2024-2025
+subtitle: China Regional E-commerce Performance 2024-2025
 layout: "page"
-icon: fa-chart-line
+icon: fa-chart
 order: 2
 ---
 
@@ -48,12 +48,25 @@ order: 2
 
 <br>
 
-XXX
+### Executive Performance Summary
+
+* **Top-Line Health:** The business generated **8,783,652** in total sales and **1,159,933** in profit across 1,499 orders, achieving a healthy overall profit ratio of **13.2%**.
+
+### Market & Category Dynamics
+
+* **Regional Dominance:** **East China** leads all territories, producing the highest total sales (1.93M) and profit (268K). Conversely, Northeast China represents the weakest market, contributing the lowest overall sales (826K).
+* **Product Efficiency:** **Technology** acts as the primary revenue engine, accounting for nearly 60% of total sales (5.14M) and driving the highest raw profits (675K). **Office Supplies** generates the lowest sales volume but maintains the most efficient and stable profit margin across all categories at **13.3%**.
+
+### Operational Risks & Seasonality
+
+* **Discount Margin Erosion:** Aggressive pricing strategies are severely damaging profitability. The scatter plot trendlines and raw data reveal an inverse relationship between sales volume and margin under heavy promotions; applying discounts of **30% and 50%** consistently results in **net-negative** average profits per order, with numerous individual regional transactions incurring explicit financial losses.
+* **Q4 Profit Collapse:** Sales volume successfully peaks during the summer months (July and August, reaching up to 931,056). However, there is a severe profitability drop in early Q4; despite steady sales, the profit ratio plummets to a yearly low of **5.7% in October** and **6.4% in November**, indicating that Q4 promotional periods are effectively driving raw volume at the total expense of margin.
 
 <br>
 
 <!-- Data Source Download Button -->
-<a href="#" download style="display: inline-block; padding: 10px 22px; background-color: #0056b3; color: white; text-decoration: none; border-radius: 5px; font-weight: 500; font-family: Arial, sans-serif; transition: background-color 0.3s;">
+<!-- 注意：请将 href 中的 ecommerce_data.csv 替换为您实际的文件名 -->
+<a href="/assets/[AI-Gen]China_E_commerce_Sales_Data.csv" download style="display: inline-block; padding: 10px 22px; background-color: #0056b3; color: white; text-decoration: none; border-radius: 5px; font-weight: 500; font-family: Arial, sans-serif; transition: background-color 0.3s;">
     <i class="fa fa-download" style="margin-right: 8px;"></i> Download Data Source
 </a>
 
