@@ -14,7 +14,7 @@ order: 2
     margin-bottom: 35px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-align: left; /* 关键修改 1：强制整个卡片内的基础文本左对齐 */
+    text-align: left; /* 强制整个卡片内的基础文本左对齐 */
   }
   .portfolio-card:hover {
     transform: translateY(-3px);
@@ -27,25 +27,16 @@ order: 2
     font-size: 1.5em;
     border-bottom: 2px solid #f0f2f5;
     padding-bottom: 10px;
-    text-align: center; /* 关键修改 2：强制大标题单独居中 */
+    text-align: center; /* 强制大标题单独居中 */
   }
   .portfolio-card p {
     margin-bottom: 12px;
     line-height: 1.6;
     color: #4a4a4a;
   }
-  .portfolio-card ul {
-    margin-top: 0;
-    margin-bottom: 15px;
-    padding-left: 20px;
-    color: #4a4a4a;
-  }
-  .portfolio-card li {
-    margin-bottom: 6px;
-  }
   .portfolio-link {
-    display: block; /* 关键修改 3：将内联元素改为块级元素 */
-    width: fit-content; /* 宽度贴合文字 */
+    display: block; 
+    width: fit-content; 
     margin: 20px auto 0; /* 左右 auto 强制按钮在父容器中居中 */
     font-size: 1.05em;
     font-weight: 700;
@@ -63,7 +54,7 @@ order: 2
 </style>
 
 <div class="portfolio-card">
-  <h3>🤖 VibeCoding: Automated US Market Radar</h3>
+  <h3>🤖 <strong>VibeCoding: Automated US Market Radar</strong></h3>
   
   <p><strong>🛠️ Tech Stack:</strong> Python, GitHub Actions, Jekyll (Liquid), Google Gemini 3.8 Flash AI, yfinance</p>
   
@@ -74,3 +65,4 @@ order: 2
   
   <a href="/market.html" class="portfolio-link">👉 Click here to view the live Market Radar</a>
 </div>
+
