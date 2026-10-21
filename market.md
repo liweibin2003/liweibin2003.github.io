@@ -2,7 +2,7 @@
 title: Market Radar
 subtitle: An autonomous, serverless market intelligence pipeline engineered with Python ETL, GitHub Actions CI/CD, and LLM-driven data synthesis.
 layout: "page"
-icon: fa-chart-line
+icon: fa-dollar-sign
 order: 3
 ---
 
