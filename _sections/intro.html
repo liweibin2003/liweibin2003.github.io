@@ -8,15 +8,19 @@ order: 1
 ---
 
 <header style="text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 0, 0, 0.5);">
-  <!-- 放大主标题，3em 可以根据需要改成 2.5em 或 4em -->
-  <h2 class="alt" style="font-size: 3em;"><strong>Forever is composed of Nows</strong></h2>
+  <!-- 加入 font-family 换成更现代、平滑的无衬线字体（如 Helvetica 或 Segoe UI） -->
+  <h2 class="alt" style="font-size: 3em; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+    <strong>Forever is composed of Nows</strong>
+  </h2>
   
-  <!-- 放大副标题，1.5em 可以根据需要改成 1.2em 或 2em -->
-  <p style="font-size: 1.5em; margin-top: 15px;">A little space of my own. Welcome.</p>
+  <p style="font-size: 1.5em; margin-top: 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-weight: 400;">
+    A little space of my own. Welcome.
+  </p>
 </header>
 
 <footer style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; margin-top: 3rem;">
-  <!-- 放大按钮：font-size 控制字体大小（且通常会按比例放大整个按钮），padding 控制按钮的左右宽度 -->
-  <a href="#portfolio" class="button scrolly" style="font-size: 1.3em; padding: 0 40px;">Portfolio</a>
-  <a href="#about-me" class="button scrolly" style="font-size: 1.3em; padding: 0 40px;">About Me</a>
+  <!-- 修改 padding 为 18px 40px (18px控制上下高度，40px控制左右宽度) -->
+  <!-- 加入 height: auto; 和 line-height: normal; 防止被模板的原有固定高度压扁 -->
+  <a href="#portfolio" class="button scrolly" style="font-size: 1.3em; padding: 18px 40px; height: auto; line-height: normal;">Portfolio</a>
+  <a href="#about-me" class="button scrolly" style="font-size: 1.3em; padding: 18px 40px; height: auto; line-height: normal;">About Me</a>
 </footer>
