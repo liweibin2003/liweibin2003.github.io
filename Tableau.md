@@ -3,7 +3,7 @@ title: Tableau
 subtitle: Please zoom out the page to view.
 layout: "page"
 icon: fa-chart-line
-order: 2
+order: 3
 ---
 
 <div class='tableauPlaceholder' id='viz1792150319853' style='position: relative'>
