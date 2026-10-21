@@ -46,10 +46,10 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          if git diff --quiet; then
+          git add _data/market_summary.json assets/charts/
+          if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git add _data/market_summary.json
-            git commit -m "Auto-update market digest [skip ci]"
+            git commit -m "Auto-update market digest and chart [skip ci]"
             git push
           fi
