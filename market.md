@@ -64,6 +64,14 @@ order: 3
     display: table;
     margin: 15px 0;
   }
+  /* 👇 新增这一段：强制图片自适应容器宽度 👇 */
+  .phase-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto 0; /* 让图片居中，并与上方文字留出间距 */
+    border-radius: 8px;  /* 可选：给图片加上微小的圆角，质感更好 */
+  }
 </style>
 
 <div class="market-meta-bar">
