@@ -1,6 +1,6 @@
 ---
 title: Market Radar
-subtitle: Automated institutional market intelligence powered by Python & Gemini AI.
+subtitle: An autonomous, serverless market intelligence pipeline engineered with Python ETL, GitHub Actions CI/CD, and LLM-driven data synthesis.
 layout: "page"
 icon: fa-chart-line
 order: 3
