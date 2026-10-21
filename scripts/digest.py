@@ -4,49 +4,35 @@ import requests
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import yfinance as yf
+import pandas as pd
 
-# 1. 核心配置与资产清单
+# 强制 matplotlib 在无 GUI 的服务器环境下运行
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+
 WATCHLIST = {
-    "indices": {
-        "^GSPC": "S&P 500",
-        "^IXIC": "Nasdaq Composite",
-        "^DJI": "Dow Jones"
-    },
-    "commodities": {
-        "BZ=F": "Brent Crude Oil",
-        "GC=F": "Gold Futures (London Gold Proxy)"
-    },
+    "indices": {"^GSPC": "S&P 500", "^IXIC": "Nasdaq Composite", "^DJI": "Dow Jones"},
+    "commodities": {"BZ=F": "Brent Crude Oil", "GC=F": "Gold Futures (London Gold)"},
     "bellwethers": {
-        "NVDA": "Nvidia (AI/Semis)",
-        "AAPL": "Apple (Consumer Tech)",
-        "MSFT": "Microsoft (Cloud/Enterprise)",
-        "AMZN": "Amazon (E-Commerce/Cloud)",
-        "TSLA": "Tesla (EV/Autonomous)",
-        "TSM": "TSMC (Chip Foundry)",
-        "JPM": "JPMorgan Chase (Financials)",
-        "LLY": "Eli Lilly (Pharma/Healthcare)",
+        "NVDA": "Nvidia (AI/Semis)", "AAPL": "Apple (Consumer Tech)", 
+        "MSFT": "Microsoft (Cloud/Enterprise)", "AMZN": "Amazon (E-Commerce/Cloud)", 
+        "TSLA": "Tesla (EV/Autonomous)", "TSM": "TSMC (Chip Foundry)", 
+        "JPM": "JPMorgan Chase (Financials)", "LLY": "Eli Lilly (Pharma/Healthcare)", 
         "XOM": "ExxonMobil (Energy)"
     }
 }
 
 DATA_FILE_PATH = os.path.join(os.path.dirname(__file__), "..", "_data", "market_summary.json")
 
-# 2. 判断纽约时间与运行阶段 (兼容夏令时/冬令时)
 def detect_market_phase():
     ny_now = datetime.now(ZoneInfo("America/New_York"))
-    
-    # 过滤周末 (周六=5, 周日=6)
     if ny_now.weekday() >= 5:
         print(f"[{ny_now}] Weekend detected. Market closed. Exiting.")
         return None, ny_now
 
     current_minute = ny_now.hour * 60 + ny_now.minute
-
-    # 定义4个阶段的时间容差窗口 (美东时间)
-    # 09:00 -> 540m (允许 08:50 - 09:15)
-    # 09:35 -> 575m (允许 09:30 - 09:50)
-    # 13:00 -> 780m (允许 12:50 - 13:15)
-    # 16:05 -> 965m (允许 16:00 - 16:25)
     if 530 <= current_minute <= 555:
         return "pre_market", ny_now
     elif 570 <= current_minute <= 590:
@@ -56,47 +42,35 @@ def detect_market_phase():
     elif 960 <= current_minute <= 985:
         return "market_close", ny_now
     else:
-        # 如果是手动触发或测试，默认设置为最近或当前的阶段
         print(f"[{ny_now}] Outside preset time windows. Defaulting to manual inspection mode.")
         return "manual_run", ny_now
 
-# 3. 提取行情与精选新闻
 def harvest_market_data():
-    all_tickers = (
-        list(WATCHLIST["indices"].keys()) +
-        list(WATCHLIST["commodities"].keys()) +
-        list(WATCHLIST["bellwethers"].keys())
-    )
-    
+    all_tickers = list(WATCHLIST["indices"].keys()) + list(WATCHLIST["commodities"].keys()) + list(WATCHLIST["bellwethers"].keys())
     data = yf.download(all_tickers, period="2d", interval="1d", progress=False)
     
     metrics = []
     for ticker in all_tickers:
         try:
-            close_series = data["Close"][ticker].dropna()
+            # 兼容不同版本 yfinance 返回的列结构
+            if isinstance(data["Close"], pd.DataFrame):
+                close_series = data["Close"][ticker].dropna()
+            else:
+                close_series = data["Close"].dropna()
+                
             if len(close_series) >= 2:
-                prev_close = close_series.iloc[-2]
-                curr_price = close_series.iloc[-1]
+                prev_close = float(close_series.iloc[-2])
+                curr_price = float(close_series.iloc[-1])
                 chg_pct = ((curr_price - prev_close) / prev_close) * 100
             else:
-                curr_price = close_series.iloc[-1]
+                curr_price = float(close_series.iloc[-1])
                 chg_pct = 0.0
             
-            name = (
-                WATCHLIST["indices"].get(ticker) or 
-                WATCHLIST["commodities"].get(ticker) or 
-                WATCHLIST["bellwethers"].get(ticker)
-            )
-            metrics.append({
-                "ticker": ticker,
-                "name": name,
-                "price": round(curr_price, 2),
-                "change_pct": round(chg_pct, 2)
-            })
+            name = WATCHLIST["indices"].get(ticker) or WATCHLIST["commodities"].get(ticker) or WATCHLIST["bellwethers"].get(ticker)
+            metrics.append({"ticker": ticker, "name": name, "price": round(curr_price, 2), "change_pct": round(chg_pct, 2)})
         except Exception as e:
-            print(f"Error parsing {ticker}: {e}")
+            continue
 
-    # 抓取具有代表性的财经要闻
     news_items = []
     primary_tickers = ["^GSPC", "NVDA", "AAPL", "TSLA"]
     for sym in primary_tickers:
@@ -104,120 +78,144 @@ def harvest_market_data():
             t = yf.Ticker(sym)
             for item in (t.news or [])[:2]:
                 title = item.get("title")
-                publisher = item.get("publisher", "Financial Wire")
                 if title and title not in [n["title"] for n in news_items]:
-                    news_items.append({"title": title, "publisher": publisher})
+                    news_items.append({"title": title, "publisher": item.get("publisher", "Financial Wire")})
         except Exception:
             continue
 
     return metrics, news_items[:8]
 
-# 4. 调用 Google AI Studio (Gemini 2.5 Flash)
+def generate_nasdaq_chart(ny_now):
+    try:
+        # 获取纳指当天的 5 分钟线数据
+        data = yf.download("^IXIC", period="1d", interval="5m", progress=False)
+        if data.empty:
+            return ""
+        
+        # 兼容最新版 yfinance 的多层索引结构
+        if 'Close' in data:
+            if isinstance(data['Close'], pd.DataFrame) and "^IXIC" in data['Close'].columns:
+                close_series = data['Close']["^IXIC"]
+            else:
+                close_series = data['Close']
+        else:
+            return ""
+
+        plt.figure(figsize=(9, 4))
+        plt.plot(close_series.index, close_series.values, color='#4a90e2', linewidth=2.5)
+        
+        plt.title(f"Nasdaq Composite (^IXIC) Intraday - {ny_now.strftime('%b %d, %Y')}", fontsize=13, fontweight='bold', color='#2c3e50')
+        plt.grid(True, linestyle='--', alpha=0.4)
+        plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%H:%M'))
+        plt.gca().spines['top'].set_visible(False)
+        plt.gca().spines['right'].set_visible(False)
+        plt.ylabel("Index Value")
+        plt.tight_layout()
+        
+        # 确保图片保存路径存在
+        chart_dir = os.path.join(os.path.dirname(__file__), "..", "assets", "charts")
+        os.makedirs(chart_dir, exist_ok=True)
+        chart_filename = "nasdaq_intraday.png"
+        chart_path = os.path.join(chart_dir, chart_filename)
+        
+        plt.savefig(chart_path, dpi=150, transparent=True)
+        plt.close()
+        
+        # 利用时间戳参数防止 GitHub Pages 和浏览器缓存旧图片
+        timestamp = int(ny_now.timestamp())
+        return f"\n\n### 📈 Real-Time Nasdaq Intraday Chart\n![Nasdaq Chart](/assets/charts/{chart_filename}?t={timestamp})\n"
+    except Exception as e:
+        print(f"Chart generation failed: {e}")
+        return ""
+
 def generate_ai_analysis(phase, ny_now, metrics, news):
     api_key = os.environ.get("LLM_API_KEY")
     if not api_key:
         raise ValueError("Missing LLM_API_KEY environment variable!")
 
     phase_titles = {
-        "pre_market": "Pre-Market Macro & Catalyst Briefing (09:00 AM ET)",
-        "market_open": "Opening Bell Pulse & Early Action (09:35 AM ET)",
-        "mid_day": "Mid-Day Liquidity & Sector Rotation Review (01:00 PM ET)",
-        "market_close": "Closing Bell Comprehensive Wrap & Risk Analysis (04:05 PM ET)",
+        "pre_market": "Pre-Market Macro & Catalyst Briefing",
+        "market_open": "Opening Bell Pulse & Early Action",
+        "mid_day": "Mid-Day Liquidity & Sector Rotation Review",
+        "market_close": "Closing Bell Comprehensive Wrap",
         "manual_run": "On-Demand Market Intelligence Report"
     }
-    current_title = phase_titles.get(phase, "Market Intelligence Report")
-
-    # 构造英文专业 Prompt
+    
     prompt = f"""
 You are an institutional macro strategist and equity analyst on Wall Street. 
-Generate a sharp, professional, highly structured executive financial digest in English based on the provided raw market data and news.
+Generate a highly detailed, comprehensive, and structured executive financial digest in English based on the provided raw data.
 
-Session Phase: {current_title}
+Session Phase: {phase_titles.get(phase, "Market Report")}
 Timestamp: {ny_now.strftime('%Y-%m-%d %H:%M:%S %Z')}
 
 Input Snapshot:
 1. Asset Metrics: {json.dumps(metrics)}
 2. Recent News Headliners: {json.dumps(news)}
 
-Styling and Formatting Requirements:
-- Write strictly in **fluent, rigorous financial English**.
-- Avoid dry plain text. Use rich Markdown styling:
-  * Strategic business emojis (📊, 🟢, 🔴, ⚠️, ⚡, 💡) to denote direction and asset classes.
-  * Key terms in **bold** and critical warnings/takeaways in `code highlight` or *italicized emphasis*.
-  * Organize the Core Asset Snapshot into a clean, compact Markdown Table: columns: `Asset`, `Symbol`, `Price`, `Chg %`, `Signal`.
-- Structure the analysis into four distinct sections:
-  1. `### 🌐 Executive Macro & Market Regime`: Broader sentiment, index trends, macro backdrop (rates, dollar, yields context).
-  2. `### 📈 Core Asset Snapshot Table`: The structured table mentioned above.
-  3. `### ⚡ Sector Movers & Bellwether Divergence`: Deep-dive into notable outperformers/underperformers among big tech, semis, energy, or financials.
-  4. `### 🎯 Strategic Takeaways & Key Watchlist`: Key catalysts ahead for the next trading phase.
+STRICT Formatting & Depth Requirements:
+- CRITICAL DEPTH: Provide IN-DEPTH analysis. Sections 1, 3, and 4 MUST each contain at least 2 to 3 robust, insightful paragraphs. Expand thoroughly on macro implications, rate expectations, sector rotations, and news sentiment. Do NOT write single short sentences.
+- Use rich Markdown styling: Emojis (📊, 🟢, 🔴, ⚠️, ⚡, 💡), **bold** key terms, and `code highlight` for tickers.
+- CRITICAL TABLE FORMAT (DO NOT BREAK THIS): You MUST leave one completely empty line BEFORE and AFTER the table. You MUST use standard hyphens (-) for dividers, NEVER use em-dashes (—). 
+  Correct Table Example:
+  
+  | Asset | Symbol | Price | Chg % | Signal |
+  |---|---|---|---|---|
+  | S&P 500 | `^GSPC` | 5000.00 | +1.20% | 🟢 Bullish |
 
-Make the insights concise, rigorous, and devoid of fluff. Return ONLY valid Markdown content.
+Structure exactly into these four sections:
+1. `### 🌐 Executive Macro & Market Regime`: Thorough 3-paragraph analysis of broader sentiment, index trends, and macro backdrop.
+2. `### 📈 Core Asset Snapshot Table`: The structured table following the strict rules above.
+3. `### ⚡ Sector Movers & Bellwether Divergence`: Deep-dive into notable outperformers/underperformers based on the data.
+4. `### 🎯 Strategic Takeaways & Key Watchlist`: Key catalysts ahead and actionable institutional insights.
+
+Return ONLY valid Markdown content.
 """
 
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
-    headers = {"Content-Type": "application/json"}
-    payload = {
-        "contents": [{
-            "parts": [{"text": prompt}]
-        }],
-        "generationConfig": {
-            "temperature": 0.3,
-            "maxOutputTokens": 2048
-        }
-    }
-
-    resp = requests.post(url, headers=headers, json=payload, timeout=60)
+    payload = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"temperature": 0.5, "maxOutputTokens": 3000}}
+    
+    resp = requests.post(url, headers={"Content-Type": "application/json"}, json=payload, timeout=90)
     if resp.status_code != 200:
-        raise RuntimeError(f"Gemini API request failed [{resp.status_code}]: {resp.text}")
+        raise RuntimeError(f"API Error [{resp.status_code}]: {resp.text}")
+    return resp.json()["candidates"][0]["content"]["parts"][0]["text"]
 
-    result = resp.json()
-    return result["candidates"][0]["content"]["parts"][0]["text"]
-
-# 5. 保存到 _data/market_summary.json
 def update_json_store(phase, ny_now, analysis_content):
     os.makedirs(os.path.dirname(DATA_FILE_PATH), exist_ok=True)
     today_str = ny_now.strftime("%Y-%m-%d")
-
-    data_store = {
-        "last_updated": ny_now.strftime("%Y-%m-%d %H:%M:%S %Z"),
-        "date": today_str,
-        "phases": {}
-    }
+    data_store = {"last_updated": ny_now.strftime("%Y-%m-%d %H:%M:%S %Z"), "date": today_str, "phases": {}}
 
     if os.path.exists(DATA_FILE_PATH):
         try:
             with open(DATA_FILE_PATH, "r", encoding="utf-8") as f:
                 existing = json.load(f)
-                # 如果是同一天，保留之前阶段的数据
                 if existing.get("date") == today_str:
                     data_store["phases"] = existing.get("phases", {})
         except Exception:
             pass
 
-    data_store["phases"][phase] = {
-        "timestamp": ny_now.strftime("%H:%M:%S %Z"),
-        "content": analysis_content
-    }
-
+    data_store["phases"][phase] = {"timestamp": ny_now.strftime("%H:%M:%S %Z"), "content": analysis_content}
     with open(DATA_FILE_PATH, "w", encoding="utf-8") as f:
         json.dump(data_store, f, indent=2, ensure_ascii=False)
-    print(f"Successfully recorded [{phase}] digest into {DATA_FILE_PATH}")
 
-# 6. 主调度器
 def main():
     phase, ny_now = detect_market_phase()
     if not phase:
         return
 
-    print(f"Triggered phase: {phase} at {ny_now.strftime('%Y-%m-%d %H:%M:%S %Z')}")
-    print("Fetching market data and financial news...")
+    print("Fetching market data and news...")
     metrics, news = harvest_market_data()
 
-    print("Requesting Gemini 2.5 Flash analysis...")
+    print("Generating Intraday Chart...")
+    chart_markdown = generate_nasdaq_chart(ny_now)
+
+    print("Requesting Gemini analysis...")
     analysis = generate_ai_analysis(phase, ny_now, metrics, news)
 
-    print("Writing results to Jekyll _data...")
-    update_json_store(phase, ny_now, analysis)
+    # 组合 AI 文本与真实的图表 Markdown
+    final_content = analysis + chart_markdown
+
+    print("Writing results...")
+    update_json_store(phase, ny_now, final_content)
 
 if __name__ == "__main__":
     main()
