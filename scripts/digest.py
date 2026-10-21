@@ -172,7 +172,7 @@ Structure exactly into these four sections:
 Return ONLY valid Markdown content.
 """
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro:generateContent?key={api_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.8-flash:generateContent?key={api_key}"
     payload = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"temperature": 0.5, "maxOutputTokens": 3000}}
     
     max_retries = 5
