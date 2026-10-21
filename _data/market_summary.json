@@ -1,1 +1,10 @@
-
+{
+  "last_updated": "2026-10-21 16:05:00 EDT",
+  "date": "2026-10-21",
+  "phases": {
+    "pre_market": {
+      "timestamp": "09:00:15 EDT",
+      "content": "### 🌐 Executive Macro & Market Regime\nUS Equity Futures are trading cautiously higher as market participants digest overnight economic prints. Yields remain steady with the 10-year Treasury note hovering near 4.15%.\n\n### 📈 Core Asset Snapshot Table\n| Asset | Symbol | Price | Chg % | Signal |\n| :--- | :--- | :--- | :--- | :--- |\n| S&P 500 Futures | `^GSPC` | 5860.20 | +0.28% | 🟢 Bullish Bias |\n| Nasdaq 100 Futures | `^IXIC` | 20450.10 | +0.42% | 🟢 Tech Strength |\n| Brent Crude Oil | `BZ=F` | 74.30 | -0.15% | ⚪ Consolidation |\n| Gold Futures | `GC=F` | 2735.40 | +0.65% | 🟡 Safe Haven Bid |\n\n### ⚡ Sector Movers & Bellwether Divergence\n- **Nvidia (`NVDA`)**: Up +1.2% in pre-market on continued hyperscaler capex optimism.\n- **Apple (`AAPL`)**: Flat (+0.05%) tracking supply chain checks in Asia.\n\n### 🎯 Strategic Takeaways & Key Watchlist\nWatch for the opening liquidity sweep at 09:30 AM ET. Key resistance on S&P sits around 5,880."
+    }
+  }
+}
