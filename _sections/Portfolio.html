@@ -1,0 +1,82 @@
+---
+title: Portfolio
+icon: fa-laptop
+order: 2
+---
+
+<style>
+  /* 作品集卡片的全局样式 */
+  .portfolio-card {
+    background-color: #fcfcfc;
+    border: 1px solid #eaeaea;
+    border-radius: 12px; /* 圆角设计 */
+    padding: 25px 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04); /* 柔和的阴影 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  /* 鼠标悬浮时的动态反馈 */
+  .portfolio-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  .portfolio-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.5em;
+    border-bottom: 2px solid #f0f2f5;
+    padding-bottom: 10px;
+  }
+  .portfolio-card p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: #4a4a4a;
+  }
+  .portfolio-card ul {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    color: #4a4a4a;
+  }
+  .portfolio-card li {
+    margin-bottom: 6px;
+  }
+  .portfolio-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.05em;
+    font-weight: 700;
+    color: #1b65d4;
+    text-decoration: none;
+    background: #e8f4fd;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+  .portfolio-link:hover {
+    background: #d4eaf9;
+    text-decoration: none;
+  }
+</style>
+
+<!-- 第一张作品卡片：Market Radar -->
+<div class="portfolio-card">
+  <h3>🤖 Automated US Market Radar</h3>
+  
+  <p><strong>🛠️ Tech Stack:</strong> Python, GitHub Actions, Jekyll (Liquid), Google Gemini-3.8-Flash, yfinance, Matplotlib</p>
+  
+  <p><strong>💡 Role:</strong> AI Automation Engineer / Full-Stack Creator</p>
+  
+  <p><strong>📝 Project Overview:</strong><br>
+  A fully automated, serverless financial intelligence pipeline. Operating four times daily during US trading hours, this system aggregates real-time market data and news, leverages a Large Language Model for institutional-grade macro analysis, and seamlessly updates a static Jekyll blog without human intervention.</p>
+  
+  <p><strong>✨ Key Highlights & Technical Achievements:</strong></p>
+  <ul>
+    <li><strong>Zero-Cost Serverless Architecture:</strong> Driven entirely by GitHub Actions cron jobs with dynamic Python-level timezone logic to handle Daylight Saving Time (DST/EST) transitions flawlessly.</li>
+    <li><strong>Multi-Source Data Aggregation:</strong> Harvests real-time pricing and news from <code>yfinance</code>, tracking major indices, key commodities (Brent Crude, London Gold proxy), and sector bellwethers (e.g., NVDA, AAPL, LLY) to build a holistic market snapshot.</li>
+    <li><strong>Rigorous AI Prompt Engineering:</strong> Crafted specialized prompts instructing the Gemini model to act as a Wall Street institutional strategist, enforcing strict Markdown structural constraints to prevent formatting collapse and hallucination.</li>
+  </ul>
+
+  <a href="/market.html" class="portfolio-link">👉 Click here to view the live Market Radar</a>
+</div>
