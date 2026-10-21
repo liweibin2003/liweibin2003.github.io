@@ -1,57 +1,51 @@
 name: US Market Auto Tracker
 
-# 触发条件配置
 on:
-  workflow_dispatch: # 允许你在 GitHub 网页端手动点击运行，方便测试！
+  workflow_dispatch: # 随时可以在 GitHub 网页点击手动执行测试！
   schedule:
-    # GitHub Actions 使用 UTC 时间。中国时间(UTC+8) - 8小时 = UTC 时间。
-    # 以下时间对应美股夏令时（3月-11月），周一到周五(1-5)执行。
-    - cron: '0 13 * * 1-5'   # UTC 13:00 -> 中国 21:00 (盘前)
-    - cron: '35 13 * * 1-5'  # UTC 13:35 -> 中国 21:35 (开盘5分钟)
-    - cron: '0 17 * * 1-5'   # UTC 17:00 -> 中国 01:00 (盘中)
-    - cron: '5 20 * * 1-5'   # UTC 20:05 -> 中国 04:05 (收盘)
+    # --- 夏令时点位 (EDT = UTC-4) ---
+    - cron: '0 13 * * 1-5'   # 09:00 EDT
+    - cron: '35 13 * * 1-5'  # 09:35 EDT
+    - cron: '0 17 * * 1-5'   # 13:00 EDT
+    - cron: '5 20 * * 1-5'   # 16:05 EDT
 
-# 任务流程
+    # --- 冬令时点位 (EST = UTC-5) ---
+    - cron: '0 14 * * 1-5'   # 09:00 EST
+    - cron: '35 14 * * 1-5'  # 09:35 EST
+    - cron: '0 18 * * 1-5'   # 13:00 EST
+    - cron: '5 21 * * 1-5'   # 16:05 EST
+
 jobs:
   update-market-data:
     runs-on: ubuntu-latest
-    
-    # 赋予 Action 写入仓库的权限，这是自动提交文件的前提
     permissions:
       contents: write
 
     steps:
-      # 1. 拉取你的整个网站代码
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. 配置 Python 环境
       - name: Set up Python 3.10
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-          cache: 'pip' # 缓存依赖，加快后续运行速度
+          cache: 'pip'
 
-      # 3. 安装依赖（后续我们会写 requirements.txt）
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      # 4. 运行你的核心分析脚本
       - name: Run Market Digest Script
         env:
-          # 将你在 GitHub 配置的秘钥注入为环境变量
-          LLM_API_KEY: ${{ secrets.LLM_API_KEY }} 
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
         run: |
           python scripts/digest.py
 
-      # 5. 将脚本生成的新数据提交并推送到仓库
       - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          # 检查是否有文件变动，有的话才提交
           if git diff --quiet; then
             echo "No changes to commit"
           else
