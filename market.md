@@ -1,5 +1,5 @@
 ---
-title: US Market Radar
+title: Market Radar
 subtitle: Automated institutional market intelligence powered by Python & Gemini AI.
 layout: "page"
 icon: fa-chart-line
