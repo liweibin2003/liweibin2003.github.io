@@ -5,6 +5,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 import yfinance as yf
 import pandas as pd
+import time
 
 # 强制 matplotlib 在无 GUI 的服务器环境下运行
 import matplotlib
@@ -174,10 +175,23 @@ Return ONLY valid Markdown content.
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key={api_key}"
     payload = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"temperature": 0.5, "maxOutputTokens": 3000}}
     
-    resp = requests.post(url, headers={"Content-Type": "application/json"}, json=payload, timeout=90)
-    if resp.status_code != 200:
-        raise RuntimeError(f"API Error [{resp.status_code}]: {resp.text}")
-    return resp.json()["candidates"][0]["content"]["parts"][0]["text"]
+    max_retries = 5
+    for attempt in range(max_retries):
+        try:
+            resp = requests.post(url, headers={"Content-Type": "application/json"}, json=payload, timeout=90)
+            if resp.status_code == 200:
+                return resp.json()["candidates"][0]["content"]["parts"][0]["text"]
+            else:
+                print(f"Attempt {attempt + 1} failed with status {resp.status_code}: {resp.text}")
+        except Exception as e:
+            print(f"Attempt {attempt + 1} encountered an error: {e}")
+            
+        if attempt < max_retries - 1:
+            sleep_time = 15 * (attempt + 1) # 等待时间依次递增：15秒, 30秒, 45秒, 60秒
+            print(f"Waiting {sleep_time} seconds before retrying...")
+            time.sleep(sleep_time)
+            
+    raise RuntimeError(f"Gemini API failed after {max_retries} attempts due to high demand or network errors.")
 
 def update_json_store(phase, ny_now, analysis_content):
     os.makedirs(os.path.dirname(DATA_FILE_PATH), exist_ok=True)
