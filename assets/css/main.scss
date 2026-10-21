@@ -2,8 +2,3 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @import "jekyll-theme-prologue";
-
-/* 下面是你自定义的样式，会覆盖主题默认设置 */
-body {
-  zoom: 0.75;
-}
