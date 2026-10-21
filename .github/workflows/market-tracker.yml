@@ -46,7 +46,16 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add _data/market_summary.json assets/charts/
+          
+          # 1. 提交 JSON 数据文件
+          git add _data/market_summary.json
+          
+          # 2. 安全判断：只有当图表文件夹确实生成了，才提交它
+          if [ -d "assets/charts/" ]; then
+            git add assets/charts/
+          fi
+          
+          # 3. 检查是否有文件改动并推送
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
