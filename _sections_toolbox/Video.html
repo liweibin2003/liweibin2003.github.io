@@ -1,19 +1,20 @@
 ---
-title: Video
-icon: fa-video
+title: PDF
+icon: fa-file-pdf
 order: 2
 ---
 
-<!-- 1. 跨域隔离：必须放在所有其他脚本之前，且文件必须和页面同源 -->
-<!--    请把 coi-serviceworker.min.js 放到站点根目录（见回复中的说明） -->
-<script src="{{ '/coi-serviceworker.min.js' | relative_url }}"></script>
-
-<!-- 2. FFmpeg.wasm for client-side video processing -->
-<script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
+<!-- External Libraries for PDF Processing (all UMD builds from cdnjs) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
 
 <style>
-    /* Video Workspace Styles */
-    .vid-workspace {
+    /* PDF Workspace Styles (same design language as the Image page) */
+    .pdf-workspace {
         display: flex;
         flex-direction: column;
         background: #ffffff;
@@ -27,13 +28,13 @@ order: 2
     }
 
     /* Top: Function Navigation */
-    .vid-nav {
+    .pdf-nav {
         display: flex;
         background: #f8fafc;
         border-bottom: 1px solid #eaeaea;
         overflow-x: auto;
     }
-    .vid-nav-btn {
+    .pdf-nav-btn {
         flex: 1;
         padding: 15px 10px;
         background: transparent !important;
@@ -46,31 +47,30 @@ order: 2
         white-space: nowrap;
         text-align: center;
     }
-    .vid-nav-btn:hover { color: #007bff !important; background: #f1f5f9 !important; }
-    .vid-nav-btn.active { color: #007bff !important; border-bottom: 3px solid #007bff !important; background: #fff !important; }
+    .pdf-nav-btn:hover { color: #007bff !important; background: #f1f5f9 !important; }
+    .pdf-nav-btn.active { color: #007bff !important; border-bottom: 3px solid #007bff !important; background: #fff !important; }
 
     /* Sub-Top: Tool Options Panel */
-    .vid-tool-panel {
+    .pdf-tool-panel {
         display: none;
         padding: 15px 20px;
         background: #fff;
         border-bottom: 1px solid #eaeaea;
-        animation: fadeIn 0.3s ease;
+        animation: pdfFadeIn 0.3s ease;
     }
-    .vid-tool-panel.active { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; justify-content: center; }
+    .pdf-tool-panel.active { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; justify-content: center; }
+    .panel-note { font-size: 13px; color: #64748b; text-align: center; }
 
-    /* Middle: Interactive Preview Area */
-    .vid-preview-container {
+    /* Middle: File Workspace */
+    .pdf-preview-container {
         position: relative;
         width: 100%;
         height: 500px;
-        background: #1e293b;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        background: #f1f5f9;
         overflow: hidden;
+        transition: box-shadow 0.2s;
     }
-    #vid-source { max-width: 100%; max-height: 100%; display: none; }
+    .pdf-preview-container.drag-over { box-shadow: inset 0 0 0 3px #007bff; }
 
     .upload-overlay {
         position: absolute;
@@ -79,7 +79,7 @@ order: 2
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: rgba(255,255,255,0.95);
+        background: rgba(255,255,255,0.9);
         cursor: pointer;
         z-index: 10;
         transition: opacity 0.3s;
@@ -88,8 +88,39 @@ order: 2
     .upload-overlay i { font-size: 40px; color: #007bff; margin-bottom: 10px; font-style: normal; }
     .upload-overlay h3 { color: #333 !important; margin: 0 0 5px 0; }
 
+    /* File list */
+    #file-area { position: absolute; inset: 0; display: none; flex-direction: column; }
+    .file-toolbar {
+        display: flex; align-items: center; justify-content: space-between; gap: 10px;
+        padding: 10px 16px; background: #fff; border-bottom: 1px solid #eaeaea; font-size: 13px; color: #64748b;
+    }
+    #file-list { flex: 1; overflow-y: auto; padding: 12px 16px; }
+    .file-item {
+        display: flex; align-items: center; gap: 12px;
+        background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+        padding: 8px 12px; margin-bottom: 8px;
+    }
+    .fi-idx { width: 22px; text-align: center; font-size: 13px; color: #94a3b8; font-weight: 600; }
+    .fi-thumb {
+        width: 44px; height: 44px; border-radius: 6px; background: #f1f5f9;
+        display: flex; align-items: center; justify-content: center; font-size: 22px; overflow: hidden; flex-shrink: 0;
+    }
+    .fi-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .fi-info { flex: 1; min-width: 0; }
+    .fi-name { font-size: 14px; font-weight: 600; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .fi-meta { font-size: 12px; color: #94a3b8; margin-top: 2px; }
+    .fi-actions { display: flex; gap: 4px; }
+    .fi-btn {
+        width: 30px; height: 30px; border-radius: 6px; border: 1px solid #cbd5e1 !important;
+        background: transparent !important; color: #475569 !important; cursor: pointer; font-size: 14px;
+        display: inline-flex; align-items: center; justify-content: center; padding: 0;
+    }
+    .fi-btn:hover { background: #f1f5f9 !important; }
+    .fi-btn:disabled { color: #cbd5e1 !important; cursor: not-allowed; }
+    .fi-btn.danger:hover { background: #fee2e2 !important; border-color: #fca5a5 !important; }
+
     /* Bottom: Action Bar */
-    .vid-action-bar {
+    .pdf-action-bar {
         padding: 15px 20px;
         background: #f8fafc;
         display: flex;
@@ -99,8 +130,7 @@ order: 2
         flex-wrap: wrap;
         gap: 15px;
     }
-
-    .action-left { display: flex; align-items: center; gap: 10px; }
+    .action-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
     .privacy-notice {
         font-size: 13px;
@@ -130,348 +160,778 @@ order: 2
     .t-select, .t-input { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; color: #333 !important; }
     .t-slider-group { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #475569; }
 
-    #loading-indicator { display: none; color: #007bff; font-weight: bold; font-size: 14px; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    #status-text { font-weight: 600; font-size: 14px; color: #007bff; white-space: pre-line; }
+    #status-text.success { color: #10b981; }
+    #status-text.error { color: #ef4444; }
+    @keyframes pdfFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* Styles used when rendering Word content into PDF pages (do not remove) */
+    .wd-content {
+        display: flow-root;
+        font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
+        font-size: 14px; line-height: 1.6; color: #000; background: #fff; word-wrap: break-word;
+    }
+    .wd-content > * { margin: 0 0 10px 0; }
+    .wd-content h1 { font-size: 26px; line-height: 1.3; }
+    .wd-content h2 { font-size: 22px; line-height: 1.3; }
+    .wd-content h3 { font-size: 18px; line-height: 1.3; }
+    .wd-content h4, .wd-content h5, .wd-content h6 { font-size: 15px; }
+    .wd-content ul, .wd-content ol { padding-left: 28px; }
+    .wd-content img { max-width: 100%; height: auto; }
+    .wd-content table { border-collapse: collapse; width: 100%; }
+    .wd-content td, .wd-content th { border: 1px solid #888; padding: 4px 8px; vertical-align: top; }
 
     @media (max-width: 768px) {
-        .vid-action-bar { flex-direction: column; }
+        .pdf-action-bar { flex-direction: column; }
         .privacy-notice { order: 3; margin-top: 10px; }
+        .pdf-nav-btn { min-width: 130px; }
     }
 </style>
 
-<div class="vid-workspace">
+<div class="pdf-workspace">
     <!-- Top: Navigation -->
-    <div class="vid-nav">
-        <button class="vid-nav-btn active" onclick="switchVidTab('tab-compress', this)">1. Compress Video</button>
-        <button class="vid-nav-btn" onclick="switchVidTab('tab-trim', this)">2. Trim Video</button>
-        <button class="vid-nav-btn" onclick="switchVidTab('tab-audio', this)">3. Extract Audio</button>
-        <button class="vid-nav-btn" onclick="switchVidTab('tab-screenshot', this)">4. Capture Frame</button>
+    <div class="pdf-nav">
+        <button class="pdf-nav-btn active" onclick="switchPdfTab('img', this)">1. Image to PDF</button>
+        <button class="pdf-nav-btn" onclick="switchPdfTab('word', this)">2. Word to PDF</button>
+        <button class="pdf-nav-btn" onclick="switchPdfTab('merge', this)">3. Merge PDF</button>
+        <button class="pdf-nav-btn" onclick="switchPdfTab('split', this)">4. Split PDF</button>
+        <button class="pdf-nav-btn" onclick="switchPdfTab('compress', this)">5. Compress PDF</button>
     </div>
 
-    <!-- 1. Compress Panel -->
-    <div id="tab-compress" class="vid-tool-panel active">
+    <!-- Sub-Top: Tool Panels -->
+    <!-- 1. Image to PDF -->
+    <div id="panel-img" class="pdf-tool-panel active">
+        <div class="t-slider-group">
+            <label>Page Size:</label>
+            <select id="img-size" class="t-select">
+                <option value="fit">Fit to image</option>
+                <option value="a4">A4</option>
+                <option value="letter">US Letter</option>
+            </select>
+        </div>
+        <div class="t-slider-group">
+            <label>Orientation:</label>
+            <select id="img-orient" class="t-select">
+                <option value="auto">Auto</option>
+                <option value="portrait">Portrait</option>
+                <option value="landscape">Landscape</option>
+            </select>
+        </div>
+        <div class="t-slider-group">
+            <label>Margin:</label>
+            <select id="img-margin" class="t-select">
+                <option value="0">None</option>
+                <option value="28" selected>Small</option>
+                <option value="57">Large</option>
+            </select>
+        </div>
+        <span class="panel-note">Use ↑ ↓ to set the page order. One image = one page.</span>
+    </div>
+
+    <!-- 2. Word to PDF -->
+    <div id="panel-word" class="pdf-tool-panel">
+        <div class="t-slider-group">
+            <label>Page Margin:</label>
+            <select id="word-margin" class="t-select">
+                <option value="40">Narrow</option>
+                <option value="60" selected>Normal</option>
+                <option value="80">Wide</option>
+            </select>
+        </div>
+        <span class="panel-note">⚠️ Supports .docx only. Rendered in the browser, so output pages are images (text not selectable) and complex layouts may differ from Word.</span>
+    </div>
+
+    <!-- 3. Merge -->
+    <div id="panel-merge" class="pdf-tool-panel">
+        <span class="panel-note">Add two or more PDFs. They will be merged from top to bottom — use ↑ ↓ to reorder.</span>
+    </div>
+
+    <!-- 4. Split -->
+    <div id="panel-split" class="pdf-tool-panel">
+        <div class="t-slider-group">
+            <label>Mode:</label>
+            <select id="split-mode" class="t-select" onchange="onSplitModeChange()">
+                <option value="range">Extract pages into one PDF</option>
+                <option value="ranges">Each range as a separate PDF (ZIP)</option>
+                <option value="each">Every page as a separate PDF (ZIP)</option>
+                <option value="every">Split every N pages (ZIP)</option>
+            </select>
+        </div>
+        <div class="t-slider-group" id="split-range-group">
+            <label>Pages:</label>
+            <input type="text" id="split-range" class="t-input" placeholder="e.g. 1-3,5,8-10" style="width: 170px;">
+        </div>
+        <div class="t-slider-group" id="split-n-group" style="display:none;">
+            <label>N =</label>
+            <input type="number" id="split-n" class="t-input" min="1" value="1" style="width: 80px;">
+        </div>
+        <span class="panel-note" id="split-info"></span>
+    </div>
+
+    <!-- 5. Compress -->
+    <div id="panel-compress" class="pdf-tool-panel">
         <div class="t-slider-group">
             <label>Compression Level:</label>
             <select id="compress-level" class="t-select">
-                <option value="23">Light (Faster)</option>
-                <option value="28" selected>Medium (Recommended)</option>
-                <option value="33">High (Smaller File)</option>
+                <option value="strong">Strong (smallest file)</option>
+                <option value="medium" selected>Recommended</option>
+                <option value="light">Light (best quality)</option>
             </select>
         </div>
-        <div class="t-slider-group">
-            <label>Resolution Scale:</label>
-            <select id="compress-scale" class="t-select">
-                <option value="1080">1080p</option>
-                <option value="720" selected>720p</option>
-                <option value="480">480p</option>
-            </select>
-        </div>
+        <span class="panel-note">⚠️ Pages are re-rendered as images to shrink size, so text becomes non-selectable. Best for scanned / image-heavy PDFs.</span>
     </div>
 
-    <!-- 2. Trim Panel -->
-    <div id="tab-trim" class="vid-tool-panel">
-        <div class="t-slider-group">
-            <label>Start Time (sec):</label>
-            <input type="number" id="trim-start" class="t-input" value="0" min="0" step="0.1" style="width: 80px;">
+    <!-- Middle: Workspace -->
+    <div class="pdf-preview-container" id="workspace">
+        <div class="upload-overlay" id="upload-overlay" onclick="document.getElementById('file-input').click()">
+            <i>📂</i>
+            <h3 id="drop-title">Click or Drop Images Here</h3>
+            <p id="drop-hint" style="color:#64748b; font-size: 13px;">Supports JPG, PNG, WEBP, GIF, BMP</p>
         </div>
-        <div class="t-slider-group">
-            <label>End Time (sec):</label>
-            <input type="number" id="trim-end" class="t-input" value="10" min="0.1" step="0.1" style="width: 80px;">
-        </div>
-        <button class="t-btn t-btn-outline" onclick="setCurrentTime('trim-start')">Set Start to Current</button>
-        <button class="t-btn t-btn-outline" onclick="setCurrentTime('trim-end')">Set End to Current</button>
-    </div>
 
-    <!-- 3. Audio Extraction Panel -->
-    <div id="tab-audio" class="vid-tool-panel">
-        <div class="t-slider-group">
-            <label>Output Format:</label>
-            <select id="audio-format" class="t-select">
-                <option value="mp3">MP3 (Universal)</option>
-                <option value="wav">WAV (Lossless)</option>
-                <option value="aac">AAC (Optimized)</option>
-            </select>
+        <div id="file-area">
+            <div class="file-toolbar">
+                <span id="file-count"></span>
+                <button class="t-btn t-btn-outline" id="btn-add" onclick="document.getElementById('file-input').click()">➕ Add Files</button>
+            </div>
+            <div id="file-list"></div>
         </div>
-        <span style="font-size: 13px; color: #64748b;">(Video will be removed, leaving only the audio track)</span>
-    </div>
 
-    <!-- 4. Screenshot Panel -->
-    <div id="tab-screenshot" class="vid-tool-panel">
-        <span style="font-size: 14px; color: #333; font-weight: 500;">
-            🖱️ Play or drag the video progress bar below to the desired frame, then click "Capture & Download Frame".
-        </span>
-    </div>
-
-    <!-- Middle: Preview Workspace -->
-    <div class="vid-preview-container" id="vid-workspace">
-        <div class="upload-overlay" id="vid-upload-overlay" onclick="document.getElementById('main-video-upload').click()">
-            <i>🎞️</i>
-            <h3>Click or Drop Video Here</h3>
-            <p style="color:#64748b; font-size: 13px;">Supports MP4, WebM, MOV (Under 200MB recommended)</p>
-        </div>
-        <input type="file" id="main-video-upload" accept="video/*" style="display: none;" onchange="loadMainVideo(event)">
-        <video id="vid-source" controls></video>
+        <input type="file" id="file-input" accept="image/*" multiple style="display: none;" onchange="onFilesPicked(event)">
     </div>
 
     <!-- Bottom: Action Bar -->
-    <div class="vid-action-bar">
+    <div class="pdf-action-bar">
         <div class="action-left">
-            <button class="t-btn t-btn-outline" onclick="resetVidWorkspace()" id="btn-vid-reset" disabled>🗑️ Clear Workspace</button>
-            <span id="loading-indicator">Initializing Engine...</span>
+            <button class="t-btn t-btn-outline" onclick="resetWorkspace()" id="btn-reset" disabled>🗑️ Clear Workspace</button>
+            <span id="status-text"></span>
         </div>
 
         <div class="privacy-notice">
-            🛡️ 100% Local Processing: Runs inside your browser.
+            🛡️ 100% Local Processing: Your files never leave your device.
         </div>
 
-        <button class="t-btn t-btn-primary" onclick="executeVideoTask()" id="btn-vid-action" disabled>⚡ Process & Download</button>
+        <button class="t-btn t-btn-primary" onclick="runTool()" id="btn-run" disabled>📄 Convert to PDF</button>
     </div>
 </div>
 
 <script>
-    const vidElement = document.getElementById('vid-source');
-    const vidUploadOverlay = document.getElementById('vid-upload-overlay');
-    const loadingIndicator = document.getElementById('loading-indicator');
-    const actionBtn = document.getElementById('btn-vid-action');
-    const resetBtn = document.getElementById('btn-vid-reset');
-
-    let currentVideoFile = null;
-    let currentVideoUrl = null;
-    let currentActiveTab = 'tab-compress';
-
-    // FFmpeg Core
-    let ffmpeg = null;
-    let ffmpegLoading = null; // 防止并发重复加载
-    const { createFFmpeg, fetchFile } = FFmpeg;
-
-    async function initFFmpeg() {
-        if (ffmpeg) return;
-        if (ffmpegLoading) return ffmpegLoading;
-
-        // 提前检测：ffmpeg.wasm 0.11.x 依赖 SharedArrayBuffer（需要跨域隔离）
-        if (typeof SharedArrayBuffer === 'undefined' || !window.crossOriginIsolated) {
-            throw new Error(
-                '当前页面未开启跨域隔离（SharedArrayBuffer 不可用）。\n' +
-                '请确认 coi-serviceworker.min.js 已放到站点根目录并刷新页面，' +
-                '或在服务器上配置 COOP/COEP 响应头。\n' +
-                '提示：在 Console 输入 crossOriginIsolated，应返回 true。'
-            );
+    // ---------- Tool configuration ----------
+    const isPdf = f => f.type === 'application/pdf' || /\.pdf$/i.test(f.name);
+    const TOOLS = {
+        img: {
+            accept: f => /^image\//.test(f.type) || /\.(jpe?g|png|webp|gif|bmp|avif)$/i.test(f.name),
+            multi: true, reorder: true, input: 'image/*',
+            title: 'Click or Drop Images Here', hint: 'Supports JPG, PNG, WEBP, GIF, BMP',
+            btn: '📄 Convert to PDF'
+        },
+        word: {
+            accept: f => /\.docx$/i.test(f.name),
+            multi: true, reorder: false, input: '.docx',
+            title: 'Click or Drop Word Files Here', hint: 'Supports .docx (legacy .doc is not supported)',
+            btn: '📄 Convert to PDF'
+        },
+        merge: {
+            accept: isPdf, multi: true, reorder: true, input: '.pdf,application/pdf',
+            title: 'Click or Drop PDF Files Here', hint: 'Add 2 or more PDF files',
+            btn: '🔗 Merge & Download'
+        },
+        split: {
+            accept: isPdf, multi: false, reorder: false, input: '.pdf,application/pdf',
+            title: 'Click or Drop a PDF Here', hint: 'One PDF at a time',
+            btn: '✂️ Split & Download'
+        },
+        compress: {
+            accept: isPdf, multi: true, reorder: false, input: '.pdf,application/pdf',
+            title: 'Click or Drop PDF Files Here', hint: 'Supports multiple files',
+            btn: '🗜️ Compress & Download'
         }
+    };
+    const PDFJS_WORKER = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-        ffmpegLoading = (async () => {
-            loadingIndicator.style.display = 'inline-block';
-            loadingIndicator.innerText = "Loading FFmpeg Engine...";
+    const store = { img: [], word: [], merge: [], split: [], compress: [] };
+    let current = 'img';
+    let busy = false;
+    let idCounter = 0;
 
-            const instance = createFFmpeg({
-                log: true,
-                corePath: 'https://unpkg.com/@ffmpeg/core@0.11.0/dist/ffmpeg-core.js'
-            });
-            instance.setProgress(({ ratio }) => {
-                const percent = Math.round(ratio * 100);
-                if (percent >= 0 && percent <= 100) {
-                    loadingIndicator.innerText = `Processing: ${percent}%`;
-                }
-            });
+    const $ = id => document.getElementById(id);
 
-            await instance.load();   // 加载成功后才赋值，避免保留一个坏掉的实例
-            ffmpeg = instance;
-        })();
-
-        try {
-            await ffmpegLoading;
-        } finally {
-            ffmpegLoading = null;
-        }
+    // ---------- Helpers ----------
+    function esc(s) {
+        return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     }
-
-    // 1. Core Functions: Upload & Reset
-    function loadMainVideo(event) {
-        const file = event.target.files[0];
-        if (!file) return;
-
-        currentVideoFile = file;
-        if (currentVideoUrl) URL.revokeObjectURL(currentVideoUrl);
-        currentVideoUrl = URL.createObjectURL(file);
-
-        // 先绑定事件，再设置 src，避免错过 loadedmetadata
-        vidElement.onloadedmetadata = () => {
-            document.getElementById('trim-start').value = 0;
-            document.getElementById('trim-end').value = vidElement.duration.toFixed(1);
-        };
-        vidElement.src = currentVideoUrl;
-        vidElement.style.display = 'block';
-        vidUploadOverlay.style.display = 'none';
-
-        resetBtn.disabled = false;
-        actionBtn.disabled = false;
+    function fmtSize(bytes) {
+        if (bytes < 1024) return bytes + ' B';
+        if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+        return (bytes / 1024 / 1024).toFixed(2) + ' MB';
     }
-
-    function resetVidWorkspace() {
-        vidElement.removeAttribute('src');
-        vidElement.load();
-        vidElement.style.display = 'none';
-        vidUploadOverlay.style.display = 'flex';
-        document.getElementById('main-video-upload').value = '';
-
-        if (currentVideoUrl) {
-            URL.revokeObjectURL(currentVideoUrl);
-            currentVideoUrl = null;
-        }
-        resetBtn.disabled = true;
-        actionBtn.disabled = true;
-        currentVideoFile = null;
+    function baseName(file) { return file.name.replace(/\.[^.]+$/, ''); }
+    function need(ok, name) {
+        if (!ok) throw new Error(name + ' failed to load. Check your network / CDN access and refresh the page.');
     }
-
-    // 2. Tab Navigation
-    function switchVidTab(tabId, btn) {
-        document.querySelectorAll('.vid-tool-panel').forEach(el => el.classList.remove('active'));
-        document.querySelectorAll('.vid-nav-btn').forEach(el => el.classList.remove('active'));
-        document.getElementById(tabId).classList.add('active');
-        btn.classList.add('active');
-        currentActiveTab = tabId;
-
-        actionBtn.innerHTML = (tabId === 'tab-screenshot')
-            ? '📸 Capture & Download Frame'
-            : '⚡ Process & Download';
+    function setStatus(msg, type) {
+        const el = $('status-text');
+        el.textContent = msg || '';
+        el.className = type || '';
     }
-
-    function setCurrentTime(inputId) {
-        if (!vidElement.getAttribute('src')) return;
-        document.getElementById(inputId).value = vidElement.currentTime.toFixed(1);
+    function setBusy(b) {
+        busy = b;
+        refreshButtons();
     }
-
-    // 3. Main Execution Function based on active tab
-    async function executeVideoTask() {
-        if (!currentVideoFile) return;
-
-        actionBtn.disabled = true;
-        resetBtn.disabled = true;
-
-        try {
-            if (currentActiveTab === 'tab-screenshot') {
-                takeScreenshot();
-            } else if (currentActiveTab === 'tab-compress') {
-                await processWithFFmpeg('compress');
-            } else if (currentActiveTab === 'tab-trim') {
-                await processWithFFmpeg('trim');
-            } else if (currentActiveTab === 'tab-audio') {
-                await processWithFFmpeg('audio');
-            }
-        } catch (error) {
-            console.error(error);
-            const msg = (error && error.message) ? error.message : String(error);
-            alert("Error processing file:\n" + msg);
-            loadingIndicator.style.display = 'none';
-        } finally {
-            actionBtn.disabled = false;
-            resetBtn.disabled = false;
-        }
+    function refreshButtons() {
+        const empty = store[current].length === 0;
+        $('btn-run').disabled = busy || empty;
+        $('btn-reset').disabled = busy || empty;
+        $('btn-add').disabled = busy;
+        $('btn-run').innerText = TOOLS[current].btn;
     }
-
-    // --- Task: Screenshot (Instant Canvas Processing) ---
-    function takeScreenshot() {
-        if (!vidElement.getAttribute('src') || !vidElement.videoWidth) {
-            alert("Please upload a video first.");
-            return;
-        }
-        const canvas = document.createElement('canvas');
-        canvas.width = vidElement.videoWidth;
-        canvas.height = vidElement.videoHeight;
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(vidElement, 0, 0, canvas.width, canvas.height);
-
-        const dataUrl = canvas.toDataURL('image/png');
-        downloadBlob(dataUrl, `screenshot_${vidElement.currentTime.toFixed(2)}s.png`, true);
+    function uniqueName(name, used) {
+        if (!used.has(name)) { used.add(name); return name; }
+        const dot = name.lastIndexOf('.');
+        const b = name.slice(0, dot), e = name.slice(dot);
+        let n = 2;
+        while (used.has(b + '_' + n + e)) n++;
+        const r = b + '_' + n + e;
+        used.add(r);
+        return r;
     }
-
-    // --- Task: FFmpeg Processes ---
-    async function processWithFFmpeg(mode) {
-        await initFFmpeg();
-        loadingIndicator.style.display = 'inline-block';
-        loadingIndicator.innerText = "Reading File...";
-
-        // 保留原始扩展名，帮助 FFmpeg 识别容器格式
-        const extMatch = currentVideoFile.name.match(/\.([a-zA-Z0-9]+)$/);
-        const inputName = 'input_video.' + (extMatch ? extMatch[1].toLowerCase() : 'mp4');
-        let outputName = '';
-
-        try {
-            ffmpeg.FS('writeFile', inputName, await fetchFile(currentVideoFile));
-
-            let ffmpegArgs = [];
-
-            if (mode === 'compress') {
-                outputName = 'compressed.mp4';
-                const crf = document.getElementById('compress-level').value;
-                const scale = document.getElementById('compress-scale').value;
-                // scale=-2:H 保持宽高比且宽度为偶数；format=yuv420p 提高兼容性
-                ffmpegArgs = [
-                    '-i', inputName,
-                    '-vf', `scale=-2:${scale},format=yuv420p`,
-                    '-c:v', 'libx264', '-crf', crf, '-preset', 'ultrafast',
-                    '-c:a', 'aac', '-b:a', '128k',
-                    outputName
-                ];
-            }
-            else if (mode === 'trim') {
-                outputName = 'trimmed.mp4';
-                const start = parseFloat(document.getElementById('trim-start').value);
-                const end = parseFloat(document.getElementById('trim-end').value);
-                if (isNaN(start) || isNaN(end) || end <= start) {
-                    throw new Error('结束时间必须大于开始时间。');
-                }
-                const duration = (end - start).toFixed(3);
-                // -ss 放在 -i 之前（快速定位），用 -t 指定时长；stream copy 速度最快，
-                // 但裁剪点会对齐到最近的关键帧
-                ffmpegArgs = ['-ss', String(start), '-i', inputName, '-t', duration, '-c', 'copy', outputName];
-            }
-            else if (mode === 'audio') {
-                const format = document.getElementById('audio-format').value;
-                outputName = `extracted.${format}`;
-                if (format === 'mp3') {
-                    ffmpegArgs = ['-i', inputName, '-vn', '-acodec', 'libmp3lame', '-q:a', '2', outputName];
-                } else if (format === 'wav') {
-                    ffmpegArgs = ['-i', inputName, '-vn', '-acodec', 'pcm_s16le', '-ar', '44100', '-ac', '2', outputName];
-                } else if (format === 'aac') {
-                    ffmpegArgs = ['-i', inputName, '-vn', '-acodec', 'aac', '-b:a', '192k', outputName];
-                }
-            }
-
-            loadingIndicator.innerText = "Processing File...";
-            await ffmpeg.run(...ffmpegArgs);
-
-            loadingIndicator.innerText = "Finishing up...";
-            const data = ffmpeg.FS('readFile', outputName);
-
-            let mimeType = 'video/mp4';
-            if (mode === 'audio') {
-                const format = document.getElementById('audio-format').value;
-                mimeType = format === 'mp3' ? 'audio/mpeg' : (format === 'wav' ? 'audio/wav' : 'audio/aac');
-            }
-
-            const blob = new Blob([data], { type: mimeType });
-            const url = URL.createObjectURL(blob);
-            downloadBlob(url, outputName, false);
-        } finally {
-            loadingIndicator.style.display = 'none';
-            // 清理 FFmpeg 虚拟文件系统，出错时也要清理
-            try { ffmpeg.FS('unlink', inputName); } catch (e) {}
-            if (outputName) {
-                try { ffmpeg.FS('unlink', outputName); } catch (e) {}
-            }
-        }
-    }
-
-    // 辅助下载功能
-    function downloadBlob(url, filename, isDataUrl = false) {
+    function saveBlob(blob, filename) {
+        const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
         a.download = filename;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-        if (!isDataUrl) {
-            setTimeout(() => URL.revokeObjectURL(url), 5000);
+        setTimeout(() => URL.revokeObjectURL(url), 10000);
+    }
+    // results: [{name, blob}] -> single file download, or a ZIP when there are several
+    async function deliver(results, zipName) {
+        if (results.length === 1) {
+            saveBlob(results[0].blob, results[0].name);
+            return;
+        }
+        need(window.JSZip, 'JSZip');
+        const zip = new JSZip();
+        const used = new Set();
+        results.forEach(r => zip.file(uniqueName(r.name, used), r.blob));
+        const blob = await zip.generateAsync({ type: 'blob' });
+        saveBlob(blob, zipName || 'pdf_tools_result.zip');
+    }
+    function nextFrame() { return new Promise(r => setTimeout(r, 0)); }
+
+    // ---------- Tabs ----------
+    function switchPdfTab(tool, btn) {
+        if (busy) return;
+        current = tool;
+        document.querySelectorAll('.pdf-tool-panel').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.pdf-nav-btn').forEach(el => el.classList.remove('active'));
+        $('panel-' + tool).classList.add('active');
+        btn.classList.add('active');
+
+        const cfg = TOOLS[tool];
+        const input = $('file-input');
+        input.accept = cfg.input;
+        input.multiple = cfg.multi;
+        $('drop-title').innerText = cfg.title;
+        $('drop-hint').innerText = cfg.hint;
+        setStatus('');
+        renderList();
+    }
+
+    // ---------- File management ----------
+    function onFilesPicked(event) {
+        addFiles(event.target.files);
+        event.target.value = '';
+    }
+
+    function addFiles(fileList) {
+        const cfg = TOOLS[current];
+        const all = Array.from(fileList || []);
+        let valid = all.filter(cfg.accept);
+        const skipped = all.length - valid.length;
+        if (!valid.length) {
+            if (all.length) setStatus('❌ Unsupported file type for this tool.', 'error');
+            return;
+        }
+        if (!cfg.multi) {
+            valid = valid.slice(0, 1);
+            clearItems(current);
+        }
+        const list = store[current];
+        valid.forEach(file => {
+            const item = { id: ++idCounter, file: file, pages: null, thumb: null, error: false };
+            if (current === 'img') item.thumb = URL.createObjectURL(file);
+            list.push(item);
+            if (isPdf(file)) loadPageCount(item);
+        });
+        setStatus(skipped ? ('ℹ️ ' + skipped + ' unsupported file(s) were skipped.') : '');
+        renderList();
+    }
+
+    async function loadPageCount(item) {
+        try {
+            need(window.PDFLib, 'pdf-lib');
+            const buf = await item.file.arrayBuffer();
+            const doc = await PDFLib.PDFDocument.load(buf, { ignoreEncryption: true });
+            item.pages = doc.getPageCount();
+        } catch (e) {
+            console.warn('Cannot read PDF', item.file.name, e);
+            item.error = true;
+        }
+        renderList();
+    }
+
+    function clearItems(tool) {
+        store[tool].forEach(it => { if (it.thumb) URL.revokeObjectURL(it.thumb); });
+        store[tool] = [];
+    }
+
+    function resetWorkspace() {
+        if (busy) return;
+        clearItems(current);
+        setStatus('');
+        renderList();
+    }
+
+    function removeItem(i) {
+        if (busy) return;
+        const it = store[current][i];
+        if (it && it.thumb) URL.revokeObjectURL(it.thumb);
+        store[current].splice(i, 1);
+        renderList();
+    }
+
+    function moveItem(i, dir) {
+        if (busy) return;
+        const list = store[current];
+        const j = i + dir;
+        if (j < 0 || j >= list.length) return;
+        const tmp = list[i]; list[i] = list[j]; list[j] = tmp;
+        renderList();
+    }
+
+    function renderList() {
+        const items = store[current];
+        const cfg = TOOLS[current];
+        $('upload-overlay').style.display = items.length ? 'none' : 'flex';
+        $('file-area').style.display = items.length ? 'flex' : 'none';
+        $('btn-add').style.display = cfg.multi ? '' : 'none';
+
+        const totalSize = items.reduce((s, it) => s + it.file.size, 0);
+        $('file-count').innerText = items.length + ' file(s) · ' + fmtSize(totalSize);
+
+        $('file-list').innerHTML = items.map((it, i) => {
+            const icon = current === 'img'
+                ? '<img src="' + it.thumb + '" alt="">'
+                : (current === 'word' ? '📘' : '📕');
+            let meta = fmtSize(it.file.size);
+            if (isPdf(it.file)) {
+                if (it.error) meta += ' · ⚠️ cannot read (corrupted or password-protected?)';
+                else if (it.pages == null) meta += ' · reading...';
+                else meta += ' · ' + it.pages + ' page(s)';
+            }
+            const arrows = cfg.reorder
+                ? '<button class="fi-btn" title="Move up" onclick="moveItem(' + i + ',-1)"' + (i === 0 ? ' disabled' : '') + '>↑</button>' +
+                  '<button class="fi-btn" title="Move down" onclick="moveItem(' + i + ',1)"' + (i === items.length - 1 ? ' disabled' : '') + '>↓</button>'
+                : '';
+            return '<div class="file-item">' +
+                '<span class="fi-idx">' + (i + 1) + '</span>' +
+                '<div class="fi-thumb">' + icon + '</div>' +
+                '<div class="fi-info"><div class="fi-name" title="' + esc(it.file.name) + '">' + esc(it.file.name) + '</div>' +
+                '<div class="fi-meta">' + meta + '</div></div>' +
+                '<div class="fi-actions">' + arrows +
+                '<button class="fi-btn danger" title="Remove" onclick="removeItem(' + i + ')">✕</button></div>' +
+                '</div>';
+        }).join('');
+
+        if (current === 'split') {
+            const it = items[0];
+            $('split-info').innerText = it && it.pages ? ('Total pages: ' + it.pages) : '';
+        }
+        refreshButtons();
+    }
+
+    // Drag & drop
+    (function initDrop() {
+        const ws = $('workspace');
+        ['dragenter', 'dragover'].forEach(ev => ws.addEventListener(ev, e => {
+            e.preventDefault();
+            ws.classList.add('drag-over');
+        }));
+        ['dragleave', 'drop'].forEach(ev => ws.addEventListener(ev, e => {
+            e.preventDefault();
+            ws.classList.remove('drag-over');
+        }));
+        ws.addEventListener('drop', e => {
+            if (busy) return;
+            if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files);
+        });
+    })();
+
+    function onSplitModeChange() {
+        const mode = $('split-mode').value;
+        $('split-range-group').style.display = (mode === 'range' || mode === 'ranges') ? '' : 'none';
+        $('split-n-group').style.display = (mode === 'every') ? '' : 'none';
+    }
+
+    // ---------- Run dispatcher ----------
+    async function runTool() {
+        if (busy) return;
+        const items = store[current];
+        if (!items.length) return;
+
+        setBusy(true);
+        setStatus('Processing... Please wait.', '');
+        await nextFrame();
+        try {
+            let msg = '✅ Done! Your download should start automatically.';
+            if (current === 'img') {
+                const blob = await imagesToPdf(items);
+                await deliver([{ name: items.length === 1 ? baseName(items[0].file) + '.pdf' : 'images.pdf', blob }]);
+            } else if (current === 'word') {
+                const results = [];
+                for (let i = 0; i < items.length; i++) {
+                    setStatus('Converting ' + (i + 1) + '/' + items.length + ': ' + items[i].file.name + ' ...', '');
+                    await nextFrame();
+                    results.push({ name: baseName(items[i].file) + '.pdf', blob: await wordToPdf(items[i].file) });
+                }
+                await deliver(results, 'word_to_pdf.zip');
+            } else if (current === 'merge') {
+                if (items.length < 2) throw new Error('Please add at least 2 PDF files to merge.');
+                const blob = await mergePdfs(items);
+                await deliver([{ name: 'merged.pdf', blob }]);
+            } else if (current === 'split') {
+                const results = await splitPdf(items[0]);
+                await deliver(results, baseName(items[0].file) + '_split.zip');
+            } else if (current === 'compress') {
+                const results = [];
+                let before = 0, after = 0;
+                for (let i = 0; i < items.length; i++) {
+                    const f = items[i].file;
+                    const blob = await compressPdf(f, (p, n) => {
+                        setStatus('Compressing ' + (i + 1) + '/' + items.length + ' — page ' + p + '/' + n + ' ...', '');
+                    });
+                    before += f.size; after += blob.size;
+                    results.push({ name: baseName(f) + '_compressed.pdf', blob });
+                }
+                await deliver(results, 'compressed_pdfs.zip');
+                const ratio = Math.round((1 - after / before) * 100);
+                msg = after < before
+                    ? '✅ ' + fmtSize(before) + ' → ' + fmtSize(after) + ' (saved ' + ratio + '%)'
+                    : '⚠️ Result (' + fmtSize(after) + ') is not smaller than the original (' + fmtSize(before) + '). Try a stronger level or keep the original.';
+            }
+            setStatus(msg, msg.startsWith('⚠️') ? '' : 'success');
+        } catch (e) {
+            console.error(e);
+            setStatus('❌ ' + e.message, 'error');
+        } finally {
+            setBusy(false);
         }
     }
+
+    // ---------- 1. Image -> PDF ----------
+    async function readImage(file) {
+        let bmp;
+        try {
+            bmp = await createImageBitmap(file, { imageOrientation: 'from-image' });
+        } catch (e) {
+            bmp = await createImageBitmap(file);
+        }
+        const isJpeg = /jpe?g/i.test(file.type) || /\.jpe?g$/i.test(file.name);
+        const canvas = document.createElement('canvas');
+        canvas.width = bmp.width;
+        canvas.height = bmp.height;
+        const ctx = canvas.getContext('2d');
+        if (isJpeg) {
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+        ctx.drawImage(bmp, 0, 0);
+        const blob = await new Promise(res => canvas.toBlob(res, isJpeg ? 'image/jpeg' : 'image/png', 0.95));
+        if (!blob) throw new Error('Cannot decode image: ' + file.name);
+        const w = bmp.width, h = bmp.height;
+        if (bmp.close) bmp.close();
+        canvas.width = 0; canvas.height = 0;
+        return { bytes: new Uint8Array(await blob.arrayBuffer()), isJpeg, w, h };
+    }
+
+    async function imagesToPdf(items) {
+        need(window.PDFLib, 'pdf-lib');
+        const { PDFDocument } = PDFLib;
+        const size = $('img-size').value;
+        const orient = $('img-orient').value;
+        const m = parseFloat($('img-margin').value) || 0;
+        const BASE = { a4: [595.28, 841.89], letter: [612, 792] };
+
+        const pdf = await PDFDocument.create();
+        for (let i = 0; i < items.length; i++) {
+            setStatus('Adding image ' + (i + 1) + '/' + items.length + ' ...', '');
+            await nextFrame();
+            const info = await readImage(items[i].file);
+            const img = info.isJpeg ? await pdf.embedJpg(info.bytes) : await pdf.embedPng(info.bytes);
+
+            let pw, ph, dw, dh;
+            if (size === 'fit') {
+                dw = info.w * 0.75; dh = info.h * 0.75; // px -> pt
+                pw = dw + 2 * m; ph = dh + 2 * m;
+            } else {
+                let [bw, bh] = BASE[size];
+                const landscape = orient === 'auto' ? info.w > info.h : orient === 'landscape';
+                pw = landscape ? bh : bw;
+                ph = landscape ? bw : bh;
+                const scale = Math.min((pw - 2 * m) / info.w, (ph - 2 * m) / info.h);
+                dw = info.w * scale; dh = info.h * scale;
+            }
+            const page = pdf.addPage([pw, ph]);
+            page.drawImage(img, { x: (pw - dw) / 2, y: (ph - dh) / 2, width: dw, height: dh });
+        }
+        const bytes = await pdf.save();
+        return new Blob([bytes], { type: 'application/pdf' });
+    }
+
+    // ---------- 2. Word -> PDF (mammoth -> HTML -> html2canvas -> jsPDF) ----------
+    async function wordToPdf(file) {
+        need(window.mammoth, 'mammoth');
+        need(window.html2canvas, 'html2canvas');
+        need(window.jspdf, 'jsPDF');
+
+        const buf = await file.arrayBuffer();
+        const res = await mammoth.convertToHtml({ arrayBuffer: buf });
+        const marginPx = parseInt($('word-margin').value, 10) || 60;
+        const PAGE_W = 794, PAGE_H = 1123; // A4 @ 96dpi
+        const contentW = PAGE_W - 2 * marginPx;
+        const contentH = PAGE_H - 2 * marginPx;
+
+        // Off-screen stage used for measuring block heights
+        const stage = document.createElement('div');
+        stage.style.cssText = 'position:fixed;left:-10000px;top:0;width:' + contentW + 'px;';
+        stage.innerHTML = '<div class="wd-content" style="width:' + contentW + 'px;">' + res.value + '</div>';
+        document.body.appendChild(stage);
+
+        try {
+            const content = stage.firstElementChild;
+            await Promise.all(Array.from(content.querySelectorAll('img')).map(im =>
+                (im.decode ? im.decode() : Promise.resolve()).catch(() => {})));
+
+            const blocks = Array.from(content.children);
+            if (!blocks.length) throw new Error('The document appears to be empty: ' + file.name);
+
+            // Group top-level blocks into pages
+            const pages = [];
+            let cur = [], curH = 0;
+            const flush = () => { if (cur.length) { pages.push({ nodes: cur, offset: 0 }); cur = []; curH = 0; } };
+            for (const el of blocks) {
+                const cs = getComputedStyle(el);
+                const h = el.offsetHeight + (parseFloat(cs.marginTop) || 0) + (parseFloat(cs.marginBottom) || 0);
+                if (h > contentH) {
+                    // A single block taller than a page (big table / image): slice it
+                    flush();
+                    const n = Math.ceil(h / contentH);
+                    for (let k = 0; k < n; k++) pages.push({ nodes: [el], offset: k * contentH });
+                } else {
+                    if (curH + h > contentH) flush();
+                    cur.push(el); curH += h;
+                }
+            }
+            flush();
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ unit: 'pt', format: 'a4', compress: true });
+            const K = 0.75; // px -> pt
+
+            for (let p = 0; p < pages.length; p++) {
+                setStatus('Rendering ' + file.name + ' — page ' + (p + 1) + '/' + pages.length + ' ...', '');
+                await nextFrame();
+
+                const box = document.createElement('div');
+                box.style.cssText = 'position:fixed;left:-10000px;top:0;width:' + contentW + 'px;height:' + contentH + 'px;overflow:hidden;background:#fff;';
+                const inner = document.createElement('div');
+                inner.className = 'wd-content';
+                inner.style.width = contentW + 'px';
+                inner.style.marginTop = (-pages[p].offset) + 'px';
+                pages[p].nodes.forEach(n => inner.appendChild(n.cloneNode(true)));
+                box.appendChild(inner);
+                document.body.appendChild(box);
+
+                let canvas;
+                try {
+                    canvas = await html2canvas(box, { scale: 2, backgroundColor: '#ffffff', useCORS: true });
+                } finally {
+                    box.remove();
+                }
+                if (p > 0) doc.addPage();
+                doc.addImage(canvas.toDataURL('image/jpeg', 0.92), 'JPEG', marginPx * K, marginPx * K, contentW * K, contentH * K);
+                canvas.width = 0; canvas.height = 0;
+            }
+            return doc.output('blob');
+        } finally {
+            stage.remove();
+        }
+    }
+
+    // ---------- 3. Merge ----------
+    async function mergePdfs(items) {
+        need(window.PDFLib, 'pdf-lib');
+        const { PDFDocument } = PDFLib;
+        const out = await PDFDocument.create();
+        for (let i = 0; i < items.length; i++) {
+            setStatus('Merging ' + (i + 1) + '/' + items.length + ': ' + items[i].file.name + ' ...', '');
+            await nextFrame();
+            let src;
+            try {
+                src = await PDFDocument.load(await items[i].file.arrayBuffer(), { ignoreEncryption: true });
+            } catch (e) {
+                throw new Error('Cannot read "' + items[i].file.name + '" (corrupted or password-protected).');
+            }
+            const pages = await out.copyPages(src, src.getPageIndices());
+            pages.forEach(p => out.addPage(p));
+        }
+        return new Blob([await out.save()], { type: 'application/pdf' });
+    }
+
+    // ---------- 4. Split ----------
+    function parseRanges(str, total) {
+        const tokens = str.split(/[,，;；]+/).map(s => s.trim().replace(/\s+/g, '')).filter(Boolean);
+        if (!tokens.length) throw new Error('Please enter a page range, e.g. 1-3,5,8-10');
+        const groups = [];
+        for (const t of tokens) {
+            let a, b;
+            const m = t.match(/^(\d*)[-–~](\d*)$/);
+            if (m && (m[1] || m[2])) {
+                a = m[1] ? parseInt(m[1], 10) : 1;
+                b = m[2] ? parseInt(m[2], 10) : total;
+            } else if (/^\d+$/.test(t)) {
+                a = b = parseInt(t, 10);
+            } else {
+                throw new Error('Invalid range: "' + t + '"');
+            }
+            if (a < 1 || b > total || a > b) {
+                throw new Error('Range "' + t + '" is out of bounds (the document has ' + total + ' pages).');
+            }
+            const g = [];
+            for (let i = a; i <= b; i++) g.push(i - 1);
+            groups.push(g);
+        }
+        return groups;
+    }
+
+    async function extractPages(src, indices) {
+        const doc = await PDFLib.PDFDocument.create();
+        const pages = await doc.copyPages(src, indices);
+        pages.forEach(p => doc.addPage(p));
+        return new Blob([await doc.save()], { type: 'application/pdf' });
+    }
+
+    async function splitPdf(item) {
+        need(window.PDFLib, 'pdf-lib');
+        let src;
+        try {
+            src = await PDFLib.PDFDocument.load(await item.file.arrayBuffer(), { ignoreEncryption: true });
+        } catch (e) {
+            throw new Error('Cannot read this PDF (corrupted or password-protected).');
+        }
+        const total = src.getPageCount();
+        const base = baseName(item.file);
+        const mode = $('split-mode').value;
+        const results = [];
+
+        if (mode === 'range') {
+            const groups = parseRanges($('split-range').value, total);
+            const indices = [].concat(...groups);
+            results.push({ name: base + '_extracted.pdf', blob: await extractPages(src, indices) });
+        } else if (mode === 'ranges') {
+            const groups = parseRanges($('split-range').value, total);
+            for (let g = 0; g < groups.length; g++) {
+                setStatus('Splitting ' + (g + 1) + '/' + groups.length + ' ...', '');
+                await nextFrame();
+                const first = groups[g][0] + 1, last = groups[g][groups[g].length - 1] + 1;
+                const label = first === last ? 'p' + first : 'p' + first + '-' + last;
+                results.push({ name: base + '_' + label + '.pdf', blob: await extractPages(src, groups[g]) });
+            }
+        } else if (mode === 'each') {
+            for (let i = 0; i < total; i++) {
+                setStatus('Splitting page ' + (i + 1) + '/' + total + ' ...', '');
+                await nextFrame();
+                results.push({ name: base + '_page_' + (i + 1) + '.pdf', blob: await extractPages(src, [i]) });
+            }
+        } else if (mode === 'every') {
+            const n = parseInt($('split-n').value, 10);
+            if (!(n >= 1)) throw new Error('N must be a positive integer.');
+            let part = 1;
+            for (let start = 0; start < total; start += n, part++) {
+                setStatus('Splitting part ' + part + ' ...', '');
+                await nextFrame();
+                const idx = [];
+                for (let i = start; i < Math.min(start + n, total); i++) idx.push(i);
+                results.push({
+                    name: base + '_part' + part + '_p' + (idx[0] + 1) + '-' + (idx[idx.length - 1] + 1) + '.pdf',
+                    blob: await extractPages(src, idx)
+                });
+            }
+        }
+        if (!results.length) throw new Error('Nothing to output.');
+        return results;
+    }
+
+    // ---------- 5. Compress (re-render pages as JPEG with pdf.js) ----------
+    const COMPRESS_PRESETS = {
+        strong: { scale: 1.2, quality: 0.5 },
+        medium: { scale: 1.8, quality: 0.7 },
+        light:  { scale: 2.5, quality: 0.85 }
+    };
+
+    async function compressPdf(file, onProgress) {
+        need(window.PDFLib, 'pdf-lib');
+        need(window.pdfjsLib, 'pdf.js');
+        pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
+
+        const preset = COMPRESS_PRESETS[$('compress-level').value] || COMPRESS_PRESETS.medium;
+        const data = new Uint8Array(await file.arrayBuffer());
+        let pdfDoc;
+        try {
+            pdfDoc = await pdfjsLib.getDocument({ data }).promise;
+        } catch (e) {
+            throw new Error('Cannot read "' + file.name + '": ' + (e && e.message ? e.message : e));
+        }
+
+        const out = await PDFLib.PDFDocument.create();
+        const n = pdfDoc.numPages;
+        const MAX_PIXELS = 16 * 1000 * 1000;
+
+        try {
+            for (let p = 1; p <= n; p++) {
+                if (onProgress) onProgress(p, n);
+                await nextFrame();
+                const page = await pdfDoc.getPage(p);
+                const vp1 = page.getViewport({ scale: 1 });
+                let scale = preset.scale;
+                if (vp1.width * vp1.height * scale * scale > MAX_PIXELS) {
+                    scale = Math.sqrt(MAX_PIXELS / (vp1.width * vp1.height));
+                }
+                const vp = page.getViewport({ scale });
+                const canvas = document.createElement('canvas');
+                canvas.width = Math.floor(vp.width);
+                canvas.height = Math.floor(vp.height);
+                const ctx = canvas.getContext('2d');
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                await page.render({ canvasContext: ctx, viewport: vp }).promise;
+
+                const blob = await new Promise(res => canvas.toBlob(res, 'image/jpeg', preset.quality));
+                const img = await out.embedJpg(new Uint8Array(await blob.arrayBuffer()));
+                const outPage = out.addPage([vp1.width, vp1.height]);
+                outPage.drawImage(img, { x: 0, y: 0, width: vp1.width, height: vp1.height });
+
+                page.cleanup();
+                canvas.width = 0; canvas.height = 0;
+            }
+        } finally {
+            if (pdfDoc.destroy) pdfDoc.destroy();
+        }
+        return new Blob([await out.save()], { type: 'application/pdf' });
+    }
+
+    // Init
+    renderList();
 </script>
