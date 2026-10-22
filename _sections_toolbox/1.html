@@ -21,6 +21,7 @@ order: 1
         overflow: hidden;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         color: #333;
+        margin-top: 20px;
     }
 
     /* Top: Function Navigation */
@@ -33,17 +34,18 @@ order: 1
     .img-nav-btn {
         flex: 1;
         padding: 15px 10px;
-        background: none;
+        background: transparent !important;
         border: none;
         font-size: 14px;
         font-weight: 600;
-        color: #64748b;
+        color: #64748b !important; /* Added !important to override Jekyll theme */
         cursor: pointer;
         transition: all 0.3s;
         white-space: nowrap;
+        text-align: center;
     }
-    .img-nav-btn:hover { color: #007bff; background: #f1f5f9; }
-    .img-nav-btn.active { color: #007bff; border-bottom: 3px solid #007bff; background: #fff; }
+    .img-nav-btn:hover { color: #007bff !important; background: #f1f5f9 !important; }
+    .img-nav-btn.active { color: #007bff !important; border-bottom: 3px solid #007bff !important; background: #fff !important; }
 
     /* Sub-Top: Tool Options Panel */
     .img-tool-panel {
@@ -88,6 +90,7 @@ order: 1
     }
     .upload-overlay:hover { background: rgba(240,248,255,0.95); }
     .upload-overlay i { font-size: 40px; color: #007bff; margin-bottom: 10px; }
+    .upload-overlay h3 { color: #333 !important; margin: 0 0 5px 0; }
 
     /* Bottom: Action Bar */
     .img-action-bar {
@@ -97,6 +100,23 @@ order: 1
         justify-content: space-between;
         align-items: center;
         border-top: 1px solid #eaeaea;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .action-left { display: flex; align-items: center; gap: 10px; }
+    
+    /* Privacy Notice Style */
+    .privacy-notice {
+        font-size: 13px;
+        color: #10b981; /* Green color to indicate safety */
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: 500;
+        text-align: center;
+        flex: 1;
+        justify-content: center;
     }
 
     /* UI Components (Buttons, Sliders, Selects) */
@@ -104,285 +124,18 @@ order: 1
         padding: 8px 16px; border-radius: 6px; border: none; font-size: 14px;
         font-weight: 500; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px;
     }
-    .t-btn-primary { background: #007bff; color: white; }
-    .t-btn-primary:hover { background: #0056b3; }
-    .t-btn-outline { background: transparent; border: 1px solid #cbd5e1; color: #475569; }
-    .t-btn-outline:hover { background: #f1f5f9; }
+    .t-btn-primary { background: #007bff !important; color: white !important; }
+    .t-btn-primary:hover { background: #0056b3 !important; }
+    .t-btn-primary:disabled { background: #94a3b8 !important; cursor: not-allowed; }
     
-    .t-select, .t-input { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; }
+    .t-btn-outline { background: transparent !important; border: 1px solid #cbd5e1 !important; color: #475569 !important; }
+    .t-btn-outline:hover { background: #f1f5f9 !important; }
+    .t-btn-outline:disabled { color: #94a3b8 !important; border-color: #e2e8f0 !important; cursor: not-allowed; }
+    
+    .t-select, .t-input { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; color: #333 !important; }
     .t-slider-group { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #475569; }
     
     #loading-indicator { display: none; color: #007bff; font-weight: bold; font-size: 14px; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-</style>
-
-<div class="img-workspace">
-    <!-- Top: Navigation -->
-    <div class="img-nav">
-        <button class="img-nav-btn active" onclick="switchImgTab('tab-format', this)">1. Format & Compress</button>
-        <button class="img-nav-btn" onclick="switchImgTab('tab-crop', this)">2. Crop & Resize</button>
-        <button class="img-nav-btn" onclick="switchImgTab('tab-bg', this)">3. Background Removal</button>
-        <button class="img-nav-btn" onclick="switchImgTab('tab-color', this)">4. Color Adjustment</button>
-    </div>
-
-    <!-- Sub-Top: Tool Panels -->
-    <!-- 1. Format & Compress Panel -->
-    <div id="tab-format" class="img-tool-panel active">
-        <select id="export-format" class="t-select">
-            <option value="image/jpeg">Export as JPG</option>
-            <option value="image/png">Export as PNG</option>
-            <option value="image/webp">Export as WEBP</option>
-        </select>
-        <div class="t-slider-group">
-            <label>Compression Quality:</label>
-            <input type="range" id="export-quality" min="0.1" max="1.0" step="0.1" value="0.9">
-            <span id="quality-val">90%</span>
-        </div>
-    </div>
-
-    <!-- 2. Crop Panel -->
-    <div id="tab-crop" class="img-tool-panel">
-        <button class="t-btn t-btn-outline" onclick="setCropRatio(NaN)">Free Crop</button>
-        <button class="t-btn t-btn-outline" onclick="setCropRatio(1)">1:1 (Square)</button>
-        <button class="t-btn t-btn-outline" onclick="setCropRatio(16/9)">16:9 (Video)</button>
-        <button class="t-btn t-btn-outline" onclick="setCropRatio(4/3)">4:3</button>
-        <button class="t-btn t-btn-primary" onclick="applyCrop()" style="margin-left: auto;">✔️ Apply Crop</button>
-    </div>
-
-    <!-- 3. Background Removal Panel -->
-    <div id="tab-bg" class="img-tool-panel">
-        <button class="t-btn t-btn-primary" onclick="removeBackground()">🪄 Auto Remove Background</button>
-        <div class="t-slider-group" style="margin-left: 20px;">
-            <label>ID Photo BG Color:</label>
-            <input type="color" id="id-bg-color" value="#ffffff" onchange="changeBgColor(this.value)">
-            <button class="t-btn t-btn-outline" onclick="changeBgColor('transparent')">Transparent</button>
-        </div>
-    </div>
-
-    <!-- 4. Color Adjustment Panel -->
-    <div id="tab-color" class="img-tool-panel">
-        <div class="t-slider-group"><label>Brightness</label><input type="range" id="f-bright" min="0" max="200" value="100" oninput="applyFilters()"></div>
-        <div class="t-slider-group"><label>Contrast</label><input type="range" id="f-contrast" min="0" max="200" value="100" oninput="applyFilters()"></div>
-        <div class="t-slider-group"><label>Saturation</label><input type="range" id="f-saturate" min="0" max="200" value="100" oninput="applyFilters()"></div>
-        <button class="t-btn t-btn-outline" onclick="resetFilters()">Reset Colors</button>
-    </div>
-
-    <!-- Middle: Preview Workspace -->
-    <div class="img-preview-container" id="workspace">
-        <div class="upload-overlay" id="upload-overlay" onclick="document.getElementById('main-image-upload').click()">
-            <i>📸</i>
-            <h3>Click or Drop Image Here</h3>
-            <p style="color:#64748b; font-size: 13px;">Supports JPG, PNG, WEBP</p>
-        </div>
-        <input type="file" id="main-image-upload" accept="image/*" style="display: none;" onchange="loadMainImage(event)">
-        <img id="img-source" src="" alt="Workspace Image">
-    </div>
-
-    <!-- Bottom: Action Bar -->
-    <div class="img-action-bar">
-        <div>
-            <button class="t-btn t-btn-outline" onclick="resetWorkspace()" id="btn-reset" disabled>🗑️ Clear Workspace</button>
-            <span id="loading-indicator">Processing... Please wait.</span>
-        </div>
-        <button class="t-btn t-btn-primary" onclick="downloadResult()" id="btn-download" disabled>💾 Download Result</button>
-    </div>
-</div>
-
-<script>
-    let currentImageBlob = null;
-    let cropperInstance = null;
-    const imgElement = document.getElementById('img-source');
-    const uploadOverlay = document.getElementById('upload-overlay');
-    const workspace = document.getElementById('workspace');
-
-    // 1. Core Functions: Upload & Reset
-    function loadMainImage(event) {
-        const file = event.target.files[0];
-        if (!file) return;
-        
-        const url = URL.createObjectURL(file);
-        imgElement.src = url;
-        imgElement.style.display = 'block';
-        uploadOverlay.style.display = 'none';
-        
-        document.getElementById('btn-reset').disabled = false;
-        document.getElementById('btn-download').disabled = false;
-
-        // Reset all states
-        destroyCropper();
-        resetFilters();
-        workspace.style.backgroundColor = 'transparent';
-    }
-
-    function resetWorkspace() {
-        imgElement.src = '';
-        imgElement.style.display = 'none';
-        uploadOverlay.style.display = 'flex';
-        document.getElementById('main-image-upload').value = '';
-        document.getElementById('btn-reset').disabled = true;
-        document.getElementById('btn-download').disabled = true;
-        destroyCropper();
-        resetFilters();
-        workspace.style.backgroundColor = 'transparent';
-    }
-
-    // 2. Tab Navigation
-    function switchImgTab(tabId, btn) {
-        document.querySelectorAll('.img-tool-panel').forEach(el => el.classList.remove('active'));
-        document.querySelectorAll('.img-nav-btn').forEach(el => el.classList.remove('active'));
-        document.getElementById(tabId).classList.add('active');
-        btn.classList.add('active');
-
-        // Manage Cropper.js instance based on tab
-        if (tabId === 'tab-crop' && imgElement.src) {
-            initCropper();
-        } else {
-            destroyCropper();
-        }
-    }
-
-    // 3. Cropping Logic (Cropper.js)
-    function initCropper() {
-        if (!cropperInstance && imgElement.src) {
-            // Remove CSS filters temporarily so cropper works on original colors
-            imgElement.style.filter = 'none'; 
-            cropperInstance = new Cropper(imgElement, {
-                viewMode: 1,
-                dragMode: 'crop',
-                autoCropArea: 0.8,
-                restore: false,
-                guides: true,
-                center: true,
-                highlight: false,
-                cropBoxMovable: true,
-                cropBoxResizable: true,
-                toggleDragModeOnDblclick: false,
-            });
-        }
-    }
-
-    function destroyCropper() {
-        if (cropperInstance) {
-            cropperInstance.destroy();
-            cropperInstance = null;
-            applyFilters(); // Restore filters if any
-        }
-    }
-
-    function setCropRatio(ratio) {
-        if (cropperInstance) {
-            cropperInstance.setAspectRatio(ratio);
-        }
-    }
-
-    function applyCrop() {
-        if (cropperInstance) {
-            const canvas = cropperInstance.getCroppedCanvas();
-            imgElement.src = canvas.toDataURL(); // Update source with cropped image
-            destroyCropper();
-            setTimeout(initCropper, 100); // Reinit cropper on new image
-        }
-    }
-
-    // 4. Background Removal (@imgly)
-    async function removeBackground() {
-        if (!imgElement.src) return alert("Please upload an image first.");
-        
-        const loader = document.getElementById('loading-indicator');
-        loader.style.display = 'inline-block';
-        loader.innerText = "Loading AI Model & Processing...";
-
-        try {
-            // Fetch the current image state as a blob
-            const response = await fetch(imgElement.src);
-            const blob = await response.blob();
-
-            // Run pure frontend AI background removal
-            const resultBlob = await imglyRemoveBackground(blob);
-            imgElement.src = URL.createObjectURL(resultBlob);
-            
-            // Set format to PNG to preserve transparency by default
-            document.getElementById('export-format').value = 'image/png';
-        } catch (error) {
-            alert("Background removal failed: " + error.message);
-        } finally {
-            loader.style.display = 'none';
-        }
-    }
-
-    function changeBgColor(color) {
-        if (color === 'transparent') {
-            workspace.style.backgroundColor = 'transparent';
-        } else {
-            workspace.style.backgroundColor = color;
-        }
-    }
-
-    // 5. Color Filters (CSS -> Canvas)
-    function applyFilters() {
-        if (cropperInstance) return; // Don't apply CSS filters while cropping
-        const brightness = document.getElementById('f-bright').value;
-        const contrast = document.getElementById('f-contrast').value;
-        const saturate = document.getElementById('f-saturate').value;
-        
-        imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturate}%)`;
-    }
-
-    function resetFilters() {
-        document.getElementById('f-bright').value = 100;
-        document.getElementById('f-contrast').value = 100;
-        document.getElementById('f-saturate').value = 100;
-        applyFilters();
-    }
-
-    // Update Quality Label dynamically
-    document.getElementById('export-quality').addEventListener('input', function(e) {
-        document.getElementById('quality-val').innerText = Math.round(e.target.value * 100) + '%';
-    });
-
-    // 6. Download Result (Baking Filters and Background)
-    function downloadResult() {
-        if (!imgElement.src) return;
-
-        // Create an off-screen canvas to bake everything together
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        const format = document.getElementById('export-format').value;
-        const quality = parseFloat(document.getElementById('export-quality').value);
-
-        // We need an actual Image object to draw to canvas
-        const bakeImg = new Image();
-        bakeImg.crossOrigin = "anonymous";
-        bakeImg.onload = function() {
-            canvas.width = bakeImg.width;
-            canvas.height = bakeImg.height;
-
-            // 1. Draw Background Color if not transparent
-            const bgColor = workspace.style.backgroundColor;
-            if (bgColor && bgColor !== 'transparent' && bgColor !== 'rgba(0, 0, 0, 0)') {
-                ctx.fillStyle = bgColor;
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-            }
-
-            // 2. Apply Filters to Context
-            const brightness = document.getElementById('f-bright').value;
-            const contrast = document.getElementById('f-contrast').value;
-            const saturate = document.getElementById('f-saturate').value;
-            ctx.filter = `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturate}%)`;
-
-            // 3. Draw Image
-            ctx.drawImage(bakeImg, 0, 0, canvas.width, canvas.height);
-
-            // 4. Export
-            const dataUrl = canvas.toDataURL(format, quality);
-            const a = document.createElement('a');
-            a.href = dataUrl;
-            const ext = format.split('/')[1];
-            a.download = `edited_image.${ext}`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        };
-        bakeImg.src = imgElement.src;
-    }
-</script>
+    
+    /* Responsive adjustments */
