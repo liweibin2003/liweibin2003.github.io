@@ -3,7 +3,7 @@ title: Photograph
 subtitle: A collection of moments, seen through my lens.
 layout: "page"
 icon: fa-camera
-order: 5
+order: 6
 ---
 
 <!-- 引入 Fancybox 的 CSS 和 JS -->
