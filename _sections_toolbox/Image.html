@@ -7,12 +7,8 @@ order: 1
 <!-- External Libraries for Image Processing -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
-
-<!-- 修复模块作用域问题：通过 module 导入并绑定到全局 window 对象 -->
-<script type="module">
-    import imglyRemoveBackground from "https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.3/dist/browser/index.js";
-    window.imglyRemoveBackground = imglyRemoveBackground;
-</script>
+<!-- 注意：@imgly/background-removal 是 ES Module，不能用普通 <script src> 加载，
+     改为在 removeBackground() 里用动态 import() 加载 -->
 
 <style>
     /* Image Workspace Styles */
@@ -43,7 +39,7 @@ order: 1
         border: none;
         font-size: 14px;
         font-weight: 600;
-        color: #64748b !important; /* Added !important to override Jekyll theme */
+        color: #64748b !important;
         cursor: pointer;
         transition: all 0.3s;
         white-space: nowrap;
@@ -68,9 +64,9 @@ order: 1
         width: 100%;
         height: 500px;
         background: #e2e8f0;
-        background-image: linear-gradient(45deg, #cbd5e1 25%, transparent 25%), 
-                          linear-gradient(-45deg, #cbd5e1 25%, transparent 25%), 
-                          linear-gradient(45deg, transparent 75%, #cbd5e1 75%), 
+        background-image: linear-gradient(45deg, #cbd5e1 25%, transparent 25%),
+                          linear-gradient(-45deg, #cbd5e1 25%, transparent 25%),
+                          linear-gradient(45deg, transparent 75%, #cbd5e1 75%),
                           linear-gradient(-45deg, transparent 75%, #cbd5e1 75%);
         background-size: 20px 20px;
         background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
@@ -80,7 +76,7 @@ order: 1
         overflow: hidden;
     }
     #img-source { max-width: 100%; max-height: 100%; display: none; }
-    
+
     .upload-overlay {
         position: absolute;
         inset: 0;
@@ -94,7 +90,7 @@ order: 1
         transition: opacity 0.3s;
     }
     .upload-overlay:hover { background: rgba(240,248,255,0.95); }
-    .upload-overlay i { font-size: 40px; color: #007bff; margin-bottom: 10px; }
+    .upload-overlay i { font-size: 40px; color: #007bff; margin-bottom: 10px; font-style: normal; }
     .upload-overlay h3 { color: #333 !important; margin: 0 0 5px 0; }
 
     /* Bottom: Action Bar */
@@ -108,13 +104,12 @@ order: 1
         flex-wrap: wrap;
         gap: 15px;
     }
-    
+
     .action-left { display: flex; align-items: center; gap: 10px; }
-    
-    /* Privacy Notice Style */
+
     .privacy-notice {
         font-size: 13px;
-        color: #10b981; /* Green color to indicate safety */
+        color: #10b981;
         display: flex;
         align-items: center;
         gap: 6px;
@@ -124,7 +119,7 @@ order: 1
         justify-content: center;
     }
 
-    /* UI Components (Buttons, Sliders, Selects) */
+    /* UI Components */
     .t-btn {
         padding: 8px 16px; border-radius: 6px; border: none; font-size: 14px;
         font-weight: 500; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px;
@@ -132,18 +127,17 @@ order: 1
     .t-btn-primary { background: #007bff !important; color: white !important; }
     .t-btn-primary:hover { background: #0056b3 !important; }
     .t-btn-primary:disabled { background: #94a3b8 !important; cursor: not-allowed; }
-    
+
     .t-btn-outline { background: transparent !important; border: 1px solid #cbd5e1 !important; color: #475569 !important; }
     .t-btn-outline:hover { background: #f1f5f9 !important; }
     .t-btn-outline:disabled { color: #94a3b8 !important; border-color: #e2e8f0 !important; cursor: not-allowed; }
-    
+
     .t-select, .t-input { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; color: #333 !important; }
     .t-slider-group { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #475569; }
-    
+
     #loading-indicator { display: none; color: #007bff; font-weight: bold; font-size: 14px; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    
-    /* Responsive adjustments */
+
     @media (max-width: 768px) {
         .img-action-bar { flex-direction: column; }
         .privacy-notice { order: 3; margin-top: 10px; }
@@ -159,7 +153,6 @@ order: 1
         <button class="img-nav-btn" onclick="switchImgTab('tab-color', this)">4. Color Adjustment</button>
     </div>
 
-    <!-- Sub-Top: Tool Panels -->
     <!-- 1. Format & Compress Panel -->
     <div id="tab-format" class="img-tool-panel active">
         <select id="export-format" class="t-select">
@@ -218,19 +211,18 @@ order: 1
             <button class="t-btn t-btn-outline" onclick="resetWorkspace()" id="btn-reset" disabled>🗑️ Clear Workspace</button>
             <span id="loading-indicator">Processing... Please wait.</span>
         </div>
-        
-        <!-- Privacy Notice -->
+
         <div class="privacy-notice">
             🛡️ 100% Local Processing: Your files never leave your device.
         </div>
-        
+
         <button class="t-btn t-btn-primary" onclick="downloadResult()" id="btn-download" disabled>💾 Download Result</button>
     </div>
 </div>
 
 <script>
-    let currentImageBlob = null;
     let cropperInstance = null;
+    let imglyModule = null; // 缓存动态加载的背景扣除库
     const imgElement = document.getElementById('img-source');
     const uploadOverlay = document.getElementById('upload-overlay');
     const workspace = document.getElementById('workspace');
@@ -239,16 +231,15 @@ order: 1
     function loadMainImage(event) {
         const file = event.target.files[0];
         if (!file) return;
-        
+
         const url = URL.createObjectURL(file);
         imgElement.src = url;
         imgElement.style.display = 'block';
         uploadOverlay.style.display = 'none';
-        
+
         document.getElementById('btn-reset').disabled = false;
         document.getElementById('btn-download').disabled = false;
 
-        // Reset all states
         destroyCropper();
         resetFilters();
         workspace.style.backgroundColor = 'transparent';
@@ -273,8 +264,7 @@ order: 1
         document.getElementById(tabId).classList.add('active');
         btn.classList.add('active');
 
-        // Manage Cropper.js instance based on tab
-        if (tabId === 'tab-crop' && imgElement.src) {
+        if (tabId === 'tab-crop' && imgElement.getAttribute('src')) {
             initCropper();
         } else {
             destroyCropper();
@@ -283,9 +273,8 @@ order: 1
 
     // 3. Cropping Logic (Cropper.js)
     function initCropper() {
-        if (!cropperInstance && imgElement.src) {
-            // Remove CSS filters temporarily so cropper works on original colors
-            imgElement.style.filter = 'none'; 
+        if (!cropperInstance && imgElement.getAttribute('src')) {
+            imgElement.style.filter = 'none';
             cropperInstance = new Cropper(imgElement, {
                 viewMode: 1,
                 dragMode: 'crop',
@@ -305,7 +294,7 @@ order: 1
         if (cropperInstance) {
             cropperInstance.destroy();
             cropperInstance = null;
-            applyFilters(); // Restore filters if any
+            applyFilters();
         }
     }
 
@@ -318,35 +307,73 @@ order: 1
     function applyCrop() {
         if (cropperInstance) {
             const canvas = cropperInstance.getCroppedCanvas();
-            imgElement.src = canvas.toDataURL(); // Update source with cropped image
+            // 注意：用 toDataURL() 默认输出 PNG，保留透明通道
+            const newSrc = canvas.toDataURL('image/png');
             destroyCropper();
-            setTimeout(initCropper, 100); // Reinit cropper on new image
+            imgElement.src = newSrc;
+            setTimeout(initCropper, 100);
         }
     }
 
-    // 4. Background Removal (@imgly)
-    async function removeBackground() {
-        if (!imgElement.src) return alert("Please upload an image first.");
-        if (typeof window.imglyRemoveBackground === 'undefined') {
-            return alert("AI model script is still loading or blocked by your network. Please wait a moment and try again.");
+    // 4. Background Removal (@imgly/background-removal, 动态 import ESM)
+    async function loadImgly() {
+        if (imglyModule) return imglyModule;
+
+        // 依次尝试多个 CDN，任何一个成功即可
+        const urls = [
+            'https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.3/+esm',
+            'https://esm.run/@imgly/background-removal@1.4.3'
+        ];
+        let lastError = null;
+        for (const url of urls) {
+            try {
+                imglyModule = await import(url);
+                return imglyModule;
+            } catch (e) {
+                console.warn('Failed to load from', url, e);
+                lastError = e;
+            }
         }
-        
+        throw new Error('Cannot load background removal library: ' + (lastError && lastError.message));
+    }
+
+    async function removeBackground() {
+        if (!imgElement.getAttribute('src')) return alert("Please upload an image first.");
+
+        // 如果正在裁剪，先退出裁剪模式，避免操作到 Cropper 的内部 DOM
+        destroyCropper();
+
         const loader = document.getElementById('loading-indicator');
         loader.style.display = 'inline-block';
         loader.innerText = "Loading AI Model & Processing...";
 
         try {
-            // Fetch the current image state as a blob
+            const lib = await loadImgly();
+
+            // 取出当前图片为 Blob（blob: / data: URL 都可以 fetch）
             const response = await fetch(imgElement.src);
             const blob = await response.blob();
 
-            // Run pure frontend AI background removal
-            const resultBlob = await window.imglyRemoveBackground(blob);
+            // 库导出的函数名是 removeBackground（也可能挂在 default 上）
+            const removeFn = lib.removeBackground || (lib.default && lib.default.removeBackground) || lib.default;
+            if (typeof removeFn !== 'function') {
+                throw new Error('removeBackground export not found in loaded module');
+            }
+
+            const resultBlob = await removeFn(blob, {
+                progress: (key, current, total) => {
+                    if (total) {
+                        loader.innerText = `Loading ${key}: ${Math.round(current / total * 100)}%`;
+                    }
+                }
+            });
+
             imgElement.src = URL.createObjectURL(resultBlob);
-            
-            // Set format to PNG to preserve transparency by default
+
+            // 默认导出 PNG 以保留透明背景
             document.getElementById('export-format').value = 'image/png';
         } catch (error) {
+            console.error(error);
             alert("Background removal failed: " + error.message);
         } finally {
             loader.style.display = 'none';
@@ -354,20 +381,16 @@ order: 1
     }
 
     function changeBgColor(color) {
-        if (color === 'transparent') {
-            workspace.style.backgroundColor = 'transparent';
-        } else {
-            workspace.style.backgroundColor = color;
-        }
+        workspace.style.backgroundColor = (color === 'transparent') ? 'transparent' : color;
     }
 
     // 5. Color Filters (CSS -> Canvas)
     function applyFilters() {
-        if (cropperInstance) return; // Don't apply CSS filters while cropping
+        if (cropperInstance) return;
         const brightness = document.getElementById('f-bright').value;
         const contrast = document.getElementById('f-contrast').value;
         const saturate = document.getElementById('f-saturate').value;
-        
+
         imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturate}%)`;
     }
 
@@ -378,45 +401,46 @@ order: 1
         applyFilters();
     }
 
-    // Update Quality Label dynamically
     document.getElementById('export-quality').addEventListener('input', function(e) {
         document.getElementById('quality-val').innerText = Math.round(e.target.value * 100) + '%';
     });
 
     // 6. Download Result (Baking Filters and Background)
     function downloadResult() {
-        if (!imgElement.src) return;
+        if (!imgElement.getAttribute('src')) return;
 
-        // Create an off-screen canvas to bake everything together
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
         const format = document.getElementById('export-format').value;
         const quality = parseFloat(document.getElementById('export-quality').value);
 
-        // We need an actual Image object to draw to canvas
         const bakeImg = new Image();
         bakeImg.crossOrigin = "anonymous";
         bakeImg.onload = function() {
-            canvas.width = bakeImg.width;
-            canvas.height = bakeImg.height;
+            canvas.width = bakeImg.naturalWidth;
+            canvas.height = bakeImg.naturalHeight;
 
-            // 1. Draw Background Color if not transparent
+            // 1. 背景色（非透明时）
             const bgColor = workspace.style.backgroundColor;
             if (bgColor && bgColor !== 'transparent' && bgColor !== 'rgba(0, 0, 0, 0)') {
                 ctx.fillStyle = bgColor;
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
+            } else if (format === 'image/jpeg') {
+                // JPG 不支持透明，透明区域默认会变黑，这里垫白色
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
             }
 
-            // 2. Apply Filters to Context
+            // 2. 应用滤镜
             const brightness = document.getElementById('f-bright').value;
             const contrast = document.getElementById('f-contrast').value;
             const saturate = document.getElementById('f-saturate').value;
             ctx.filter = `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturate}%)`;
 
-            // 3. Draw Image
+            // 3. 绘制图片
             ctx.drawImage(bakeImg, 0, 0, canvas.width, canvas.height);
 
-            // 4. Export
+            // 4. 导出
             const dataUrl = canvas.toDataURL(format, quality);
             const a = document.createElement('a');
             a.href = dataUrl;
