@@ -259,6 +259,33 @@ order: 5
     background: #15803d;
     color: #fff;
   }
+
+  /* Demo Notice Box */
+  .demo-notice {
+    margin-top: 24px;
+    padding: 16px;
+    background-color: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    color: #92400e;
+    font-size: 13px;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .demo-notice i {
+    color: #d97706;
+    font-size: 16px;
+    margin-top: 2px;
+  }
+  .demo-notice code {
+    background: #fef3c7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #b45309;
+  }
 </style>
 
 <div class="crawler-app">
@@ -361,6 +388,14 @@ order: 5
     <!-- Status & Results Area -->
     <div id="statusArea" class="status-area">Waiting for search input...</div>
     <div id="resultsGrid" class="results-grid"></div>
+
+    <!-- Demo Notice for Section 1 -->
+    <div class="demo-notice">
+      <i class="fa-solid fa-circle-info"></i>
+      <div>
+        <strong>UI Mockup / Demo Mode:</strong> The search results currently displayed are generated locally using mock data. To fetch real video metrics, you need to connect the <code>fetchData()</code> javascript function to a real Serverless API (e.g., Cloudflare Workers or Vercel) that queries the respective platform APIs.
+      </div>
+    </div>
   </div>
 
 
@@ -400,6 +435,14 @@ order: 5
       <a href="#" id="dl-link" class="download-action" target="_blank" rel="noreferrer">
         <i class="fa-solid fa-download"></i> Download Video
       </a>
+    </div>
+
+    <!-- Demo Notice for Section 2 -->
+    <div class="demo-notice">
+      <i class="fa-solid fa-circle-info"></i>
+      <div>
+        <strong>UI Mockup / Demo Mode:</strong> The generated download link is a placeholder. GitHub Pages cannot parse video streams natively. To enable actual downloading, integrate a third-party media parsing API (like Cobalt API or RapidAPI) inside the <code>parseVideo()</code> function to fetch the real <code>.mp4</code> source links.
+      </div>
     </div>
   </div>
 
