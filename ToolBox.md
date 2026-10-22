@@ -1,7 +1,7 @@
 ---
 title: ToolBox
 subtitle: Coming soon
-layout: "page"
-icon: fa-wrench
+layout: toolbox
+icon: fa-toolbox
 order: 7
 ---
