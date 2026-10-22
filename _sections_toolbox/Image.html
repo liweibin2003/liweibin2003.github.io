@@ -320,21 +320,25 @@ order: 1
         if (imglyModule) return imglyModule;
 
         // 依次尝试多个 CDN，任何一个成功即可
+        // 注意：jsDelivr 的 +esm 会因 lodash 缺少具名导出 memoize 而失败，
+        // 所以优先使用 esm.sh（能正确处理 CJS 依赖的具名导出）
         const urls = [
-            'https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.3/+esm',
-            'https://esm.run/@imgly/background-removal@1.4.3'
+            'https://esm.sh/@imgly/background-removal@1.5.5',
+            'https://esm.sh/@imgly/background-removal@1.4.3',
+            'https://staticimgly.com/@imgly/background-removal/1.5.5/dist/index.mjs'
         ];
-        let lastError = null;
+        const errors = [];
         for (const url of urls) {
             try {
                 imglyModule = await import(url);
+                console.log('Background removal library loaded from', url);
                 return imglyModule;
             } catch (e) {
                 console.warn('Failed to load from', url, e);
-                lastError = e;
+                errors.push(url + ' -> ' + e.message);
             }
         }
-        throw new Error('Cannot load background removal library: ' + (lastError && lastError.message));
+        throw new Error('Cannot load background removal library:\n' + errors.join('\n'));
     }
 
     async function removeBackground() {
