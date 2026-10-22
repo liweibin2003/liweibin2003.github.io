@@ -7,7 +7,12 @@ order: 1
 <!-- External Libraries for Image Processing -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.3/dist/browser/index.js"></script>
+
+<!-- 修复模块作用域问题：通过 module 导入并绑定到全局 window 对象 -->
+<script type="module">
+    import imglyRemoveBackground from "https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.3/dist/browser/index.js";
+    window.imglyRemoveBackground = imglyRemoveBackground;
+</script>
 
 <style>
     /* Image Workspace Styles */
@@ -214,7 +219,7 @@ order: 1
             <span id="loading-indicator">Processing... Please wait.</span>
         </div>
         
-        <!-- Privacy Notice Added Here -->
+        <!-- Privacy Notice -->
         <div class="privacy-notice">
             🛡️ 100% Local Processing: Your files never leave your device.
         </div>
@@ -322,6 +327,9 @@ order: 1
     // 4. Background Removal (@imgly)
     async function removeBackground() {
         if (!imgElement.src) return alert("Please upload an image first.");
+        if (typeof window.imglyRemoveBackground === 'undefined') {
+            return alert("AI model script is still loading or blocked by your network. Please wait a moment and try again.");
+        }
         
         const loader = document.getElementById('loading-indicator');
         loader.style.display = 'inline-block';
@@ -333,7 +341,7 @@ order: 1
             const blob = await response.blob();
 
             // Run pure frontend AI background removal
-            const resultBlob = await imglyRemoveBackground(blob);
+            const resultBlob = await window.imglyRemoveBackground(blob);
             imgElement.src = URL.createObjectURL(resultBlob);
             
             // Set format to PNG to preserve transparency by default
