@@ -1,16 +1,16 @@
 ---
 title: Web Crawler
-subtitle: Coming soon
+subtitle: Multi-Platform Video Data Search
 layout: "page"
 icon: fa-bug
 order: 5
 ---
 
-<!-- 引入 Font Awesome (如果你的 Jekyll 主题已包含可忽略) -->
+<!-- Include Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-  /* 独立作用域，防止污染全局 Jekyll 样式 */
+  /* Isolate styles to prevent conflict with global Jekyll themes */
   .crawler-app {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     max-width: 1000px;
@@ -18,30 +18,37 @@ order: 5
     color: #333;
   }
   
-  /* 平台切换 Tab */
+  /* Platform Tabs */
   .crawler-tabs {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 24px;
     border-bottom: 2px solid #eee;
     padding-bottom: 10px;
   }
   .tab-btn {
-    padding: 10px 24px;
+    padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
-    border: none;
+    border: 1px solid #ddd;
     border-radius: 8px;
     cursor: pointer;
-    background: #f5f5f5;
-    color: #666;
+    background: #f5f5f5 !important;
+    color: #333 !important; /* Fixed the invisible text issue */
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
-  .tab-btn i { margin-right: 8px; }
-  .tab-btn.active-yt { background: #ff0000; color: #fff; }
-  .tab-btn.active-tw { background: #9146FF; color: #fff; }
+  
+  /* Active states for different platforms */
+  .tab-btn.active-yt { background: #FF0000 !important; color: #FFF !important; border-color: #FF0000; }
+  .tab-btn.active-tw { background: #9146FF !important; color: #FFF !important; border-color: #9146FF; }
+  .tab-btn.active-vi { background: #1AB7EA !important; color: #FFF !important; border-color: #1AB7EA; }
+  .tab-btn.active-dm { background: #0066DC !important; color: #FFF !important; border-color: #0066DC; }
 
-  /* 搜索区域 */
+  /* Search Area */
   .search-container {
     display: flex;
     gap: 12px;
@@ -55,13 +62,15 @@ order: 5
     border-radius: 8px;
     outline: none;
     transition: border-color 0.3s;
+    background: #fff;
+    color: #333;
   }
   .search-input:focus { border-color: #333; }
   .search-btn {
     padding: 0 24px;
     font-size: 16px;
     font-weight: bold;
-    color: white;
+    color: #fff;
     background: #333;
     border: none;
     border-radius: 8px;
@@ -71,7 +80,7 @@ order: 5
   .search-btn:hover { background: #000; }
   .search-btn:disabled { background: #ccc; cursor: not-allowed; }
 
-  /* 动态筛选面板 */
+  /* Dynamic Filter Panel */
   .filter-panel {
     display: none;
     background: #f8f9fa;
@@ -80,6 +89,7 @@ order: 5
     margin-bottom: 24px;
     gap: 16px;
     flex-wrap: wrap;
+    border: 1px solid #eee;
   }
   .filter-panel.active { display: flex; }
   .filter-group {
@@ -99,13 +109,16 @@ order: 5
     border-radius: 6px;
     font-size: 14px;
     background: #fff;
+    color: #333;
+    min-width: 150px;
   }
 
-  /* 状态展示区 */
+  /* Status Area */
   .status-area {
     text-align: center;
     padding: 40px 0;
     color: #888;
+    font-size: 15px;
   }
   .spinner {
     border: 3px solid #f3f3f3;
@@ -118,7 +131,7 @@ order: 5
   }
   @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-  /* 视频结果网格 */
+  /* Results Grid */
   .results-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -128,22 +141,28 @@ order: 5
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
-  .video-card:hover { transform: translateY(-4px); }
+  .video-card:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
   .video-cover {
     width: 100%;
     aspect-ratio: 16/9;
     background: #e0e0e0;
     object-fit: cover;
+    display: block;
   }
   .video-info { padding: 16px; }
   .video-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0 0 8px 0;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
     line-height: 1.4;
+    color: #111;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -154,17 +173,18 @@ order: 5
     color: #666;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 6px;
+    align-items: center;
+    margin-bottom: 8px;
   }
   .meta-highlight {
     font-weight: bold;
-    color: #333;
+    color: #222;
   }
 </style>
 
 <div class="crawler-app">
   
-  <!-- 1. 平台切换 -->
+  <!-- 1. Platform Tabs -->
   <div class="crawler-tabs">
     <button class="tab-btn active-yt" onclick="switchPlatform('youtube')" id="tab-yt">
       <i class="fa-brands fa-youtube"></i> YouTube
@@ -172,56 +192,101 @@ order: 5
     <button class="tab-btn" onclick="switchPlatform('twitch')" id="tab-tw">
       <i class="fa-brands fa-twitch"></i> Twitch
     </button>
+    <button class="tab-btn" onclick="switchPlatform('vimeo')" id="tab-vi">
+      <i class="fa-brands fa-vimeo"></i> Vimeo
+    </button>
+    <button class="tab-btn" onclick="switchPlatform('dailymotion')" id="tab-dm">
+      <i class="fa-brands fa-dailymotion"></i> Dailymotion
+    </button>
   </div>
 
-  <!-- 2. 核心搜索框 -->
+  <!-- 2. Main Search Box -->
   <div class="search-container">
-    <input type="text" id="searchInput" class="search-input" placeholder="输入关键词，例如：黑神话悟空...">
-    <button id="searchBtn" class="search-btn" onclick="fetchData()">获取数据</button>
+    <input type="text" id="searchInput" class="search-input" placeholder="Enter keyword, e.g., Speedrun, Game Trailer...">
+    <button id="searchBtn" class="search-btn" onclick="fetchData()">Fetch Data</button>
   </div>
 
-  <!-- 3. YouTube 专属筛选器 -->
+  <!-- 3. YouTube Filters -->
   <div id="filters-youtube" class="filter-panel active">
     <div class="filter-group">
-      <label>排序方式 (Order)</label>
+      <label>Order By</label>
       <select id="yt-order">
-        <option value="viewCount">播放量最高</option>
-        <option value="date">最新发布</option>
-        <option value="relevance">相关度</option>
+        <option value="viewCount">Highest Views</option>
+        <option value="date">Latest Published</option>
+        <option value="relevance">Relevance</option>
       </select>
     </div>
     <div class="filter-group">
-      <label>视频时长 (Duration)</label>
+      <label>Duration</label>
       <select id="yt-duration">
-        <option value="any">不限时</option>
-        <option value="short">短视频 (<4分钟)</option>
-        <option value="long">长视频 (>20分钟)</option>
+        <option value="any">Any Duration</option>
+        <option value="short">Short (< 4 mins)</option>
+        <option value="long">Long (> 20 mins)</option>
       </select>
     </div>
   </div>
 
-  <!-- 4. Twitch 专属筛选器 -->
+  <!-- 4. Twitch Filters -->
   <div id="filters-twitch" class="filter-panel">
     <div class="filter-group">
-      <label>内容类型 (Type)</label>
+      <label>Content Type</label>
       <select id="tw-type">
-        <option value="streams">正在直播 (Live)</option>
-        <option value="vods">完整录播 (VODs)</option>
-        <option value="clips">高光切片 (Clips)</option>
+        <option value="streams">Live Streams</option>
+        <option value="vods">VODs (Past Broadcasts)</option>
+        <option value="clips">Clips (Highlights)</option>
       </select>
     </div>
     <div class="filter-group">
-      <label>排序 (Sort)</label>
+      <label>Sort By</label>
       <select id="tw-sort">
-        <option value="views">观看人数/播放量</option>
-        <option value="trending">当前热门</option>
+        <option value="views">Most Views</option>
+        <option value="trending">Trending Now</option>
       </select>
     </div>
   </div>
 
-  <!-- 5. 状态反馈与结果展示 -->
+  <!-- 5. Vimeo Filters -->
+  <div id="filters-vimeo" class="filter-panel">
+    <div class="filter-group">
+      <label>Sort By</label>
+      <select id="vi-sort">
+        <option value="relevant">Relevance</option>
+        <option value="date">Date Added</option>
+        <option value="plays">Most Played</option>
+        <option value="likes">Most Liked</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>License</label>
+      <select id="vi-license">
+        <option value="any">Any License</option>
+        <option value="cc">Creative Commons</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- 6. Dailymotion Filters -->
+  <div id="filters-dailymotion" class="filter-panel">
+    <div class="filter-group">
+      <label>Sort By</label>
+      <select id="dm-sort">
+        <option value="relevance">Relevance</option>
+        <option value="visited">Most Viewed</option>
+        <option value="recent">Most Recent</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Resolution</label>
+      <select id="dm-quality">
+        <option value="all">Any Quality</option>
+        <option value="hd">HD / 4K Only</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- 7. Status & Results Area -->
   <div id="statusArea" class="status-area">
-    等待输入搜索条件...
+    Waiting for search input...
   </div>
   
   <div id="resultsGrid" class="results-grid"></div>
@@ -231,54 +296,60 @@ order: 5
 <script>
   let currentPlatform = 'youtube';
 
-  // 切换平台 UI 逻辑
+  // Logic for switching platforms
   function switchPlatform(platform) {
     currentPlatform = platform;
     
-    // 按钮样式切换
-    document.getElementById('tab-yt').className = 'tab-btn ' + (platform === 'youtube' ? 'active-yt' : '');
-    document.getElementById('tab-tw').className = 'tab-btn ' + (platform === 'twitch' ? 'active-tw' : '');
+    // Reset all buttons to default class
+    document.getElementById('tab-yt').className = 'tab-btn';
+    document.getElementById('tab-tw').className = 'tab-btn';
+    document.getElementById('tab-vi').className = 'tab-btn';
+    document.getElementById('tab-dm').className = 'tab-btn';
+
+    // Apply active class to selected button
+    if (platform === 'youtube') document.getElementById('tab-yt').classList.add('active-yt');
+    if (platform === 'twitch') document.getElementById('tab-tw').classList.add('active-tw');
+    if (platform === 'vimeo') document.getElementById('tab-vi').classList.add('active-vi');
+    if (platform === 'dailymotion') document.getElementById('tab-dm').classList.add('active-dm');
     
-    // 筛选面板切换
-    document.getElementById('filters-youtube').classList.toggle('active', platform === 'youtube');
-    document.getElementById('filters-twitch').classList.toggle('active', platform === 'twitch');
+    // Hide all filter panels
+    document.getElementById('filters-youtube').classList.remove('active');
+    document.getElementById('filters-twitch').classList.remove('active');
+    document.getElementById('filters-vimeo').classList.remove('active');
+    document.getElementById('filters-dailymotion').classList.remove('active');
+
+    // Show active filter panel
+    document.getElementById(`filters-${platform}`).classList.add('active');
     
-    // 清空结果
+    // Clear results area
     document.getElementById('resultsGrid').innerHTML = '';
     document.getElementById('statusArea').style.display = 'block';
-    document.getElementById('statusArea').innerHTML = '等待输入搜索条件...';
+    document.getElementById('statusArea').innerHTML = 'Waiting for search input...';
   }
 
-  // 触发搜索请求
+  // Trigger data fetch
   async function fetchData() {
     const query = document.getElementById('searchInput').value.trim();
     if (!query) {
-      alert("请先输入搜索关键词！");
+      alert("Please enter a search keyword first!");
       return;
     }
 
-    // UI 进入 Loading 状态
+    // Set UI to loading state
     const btn = document.getElementById('searchBtn');
     const statusArea = document.getElementById('statusArea');
     const resultsGrid = document.getElementById('resultsGrid');
     
     btn.disabled = true;
-    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 抓取中...';
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Fetching...';
     statusArea.style.display = 'block';
-    statusArea.innerHTML = '<div class="spinner"></div><p>正在通过 Serverless API 获取数据...</p>';
+    statusArea.innerHTML = '<div class="spinner"></div><p>Fetching data via Serverless API...</p>';
     resultsGrid.innerHTML = '';
 
-    // TODO: 这里是未来对接云函数的地方
-    // const params = currentPlatform === 'youtube' 
-    //   ? `?q=${query}&order=${document.getElementById('yt-order').value}` 
-    //   : `?q=${query}&type=${document.getElementById('tw-type').value}`;
-    // const response = await fetch(`https://your-api.workers.dev/${currentPlatform}${params}`);
-    // const data = await response.json();
-
-    // 模拟网络延迟和伪造数据 (1.5秒后返回)
+    // Simulate network delay (1.5 seconds)
     setTimeout(() => {
       btn.disabled = false;
-      btn.innerHTML = '获取数据';
+      btn.innerHTML = 'Fetch Data';
       statusArea.style.display = 'none';
       
       const mockData = generateMockData(currentPlatform, query);
@@ -286,13 +357,13 @@ order: 5
     }, 1500);
   }
 
-  // 渲染卡片
+  // Render cards based on platform
   function renderResults(data, platform) {
     const grid = document.getElementById('resultsGrid');
     
     if (data.length === 0) {
       document.getElementById('statusArea').style.display = 'block';
-      document.getElementById('statusArea').innerHTML = '没有找到相关视频。';
+      document.getElementById('statusArea').innerHTML = 'No results found.';
       return;
     }
 
@@ -300,26 +371,22 @@ order: 5
       const card = document.createElement('div');
       card.className = 'video-card';
       
-      // 根据平台渲染不同的数据字段
+      let cardInnerHTML = `<img class="video-cover" src="${item.thumbnail}" alt="cover"><div class="video-info">`;
+
       if (platform === 'youtube') {
-        card.innerHTML = `
-          <img class="video-cover" src="${item.thumbnail}" alt="cover">
-          <div class="video-info">
+        cardInnerHTML += `
             <h3 class="video-title">${item.title}</h3>
             <div class="video-meta">
               <span><i class="fa-solid fa-user"></i> ${item.channel}</span>
               <span>${item.date}</span>
             </div>
             <div class="video-meta meta-highlight">
-              <span><i class="fa-solid fa-eye"></i> ${item.views}</span>
+              <span><i class="fa-solid fa-eye"></i> ${item.views} Views</span>
               <span><i class="fa-solid fa-thumbs-up"></i> ${item.likes}</span>
             </div>
-          </div>
         `;
-      } else {
-        card.innerHTML = `
-          <img class="video-cover" src="${item.thumbnail}" alt="cover">
-          <div class="video-info">
+      } else if (platform === 'twitch') {
+        cardInnerHTML += `
             <h3 class="video-title">${item.title}</h3>
             <div class="video-meta">
               <span><i class="fa-solid fa-user"></i> ${item.streamer}</span>
@@ -327,35 +394,79 @@ order: 5
             </div>
             <div class="video-meta meta-highlight">
               <span style="color: #9146FF"><i class="fa-solid fa-gamepad"></i> ${item.category}</span>
-              <span><i class="fa-solid fa-users"></i> ${item.viewers} 在看</span>
+              <span><i class="fa-solid fa-users"></i> ${item.viewers}</span>
             </div>
-          </div>
+        `;
+      } else if (platform === 'vimeo') {
+        cardInnerHTML += `
+            <h3 class="video-title">${item.title}</h3>
+            <div class="video-meta">
+              <span><i class="fa-solid fa-user"></i> ${item.creator}</span>
+              <span>${item.duration}</span>
+            </div>
+            <div class="video-meta meta-highlight">
+              <span style="color: #1AB7EA"><i class="fa-solid fa-play"></i> ${item.plays} Plays</span>
+              <span><i class="fa-solid fa-heart"></i> ${item.likes}</span>
+            </div>
+        `;
+      } else if (platform === 'dailymotion') {
+        cardInnerHTML += `
+            <h3 class="video-title">${item.title}</h3>
+            <div class="video-meta">
+              <span><i class="fa-solid fa-user"></i> ${item.owner}</span>
+              <span>${item.date}</span>
+            </div>
+            <div class="video-meta meta-highlight">
+              <span style="color: #0066DC"><i class="fa-solid fa-eye"></i> ${item.views} Views</span>
+              <span><i class="fa-solid fa-clock"></i> ${item.duration}</span>
+            </div>
         `;
       }
+
+      cardInnerHTML += `</div>`;
+      card.innerHTML = cardInnerHTML;
       grid.appendChild(card);
     });
   }
 
-  // 生成用于前端预览的模拟数据 (Mock Data)
+  // Generate mock data for UI testing
   function generateMockData(platform, query) {
     return [1, 2, 3, 4, 5, 6].map(i => {
       if (platform === 'youtube') {
         return {
-          title: `【${query}】第 ${i} 期：深度解析与实战攻略`,
-          channel: "硬核游戏局",
-          views: (Math.random() * 100).toFixed(1) + "万",
-          likes: Math.floor(Math.random() * 5000) + 100,
-          date: "2024-03-1" + i,
+          title: `[${query}] Episode ${i}: Deep Dive & Gameplay`,
+          channel: "Gamer HQ",
+          views: (Math.random() * 10 + 1).toFixed(1) + "M",
+          likes: Math.floor(Math.random() * 50000) + 1000,
+          date: "Oct 1" + i + ", 2024",
           thumbnail: `https://picsum.photos/seed/${query}yt${i}/400/225`
         };
-      } else {
+      } else if (platform === 'twitch') {
         return {
-          title: `${query} Speedrun Record Try #${i}`,
-          streamer: "SpeedDemon" + i,
+          title: `${query} World Record Attempt #${i}`,
+          streamer: "SpeedDemon_" + i,
           category: query,
           viewers: Math.floor(Math.random() * 20000) + 500,
           duration: "02:14:05",
           thumbnail: `https://picsum.photos/seed/${query}tw${i}/400/225`
+        };
+      } else if (platform === 'vimeo') {
+        return {
+          title: `${query} - Official Cinematic Trailer ${i}`,
+          creator: "Creative Studio " + i,
+          plays: Math.floor(Math.random() * 900) + 100 + "K",
+          likes: Math.floor(Math.random() * 8000) + 500,
+          duration: "03:45",
+          thumbnail: `https://picsum.photos/seed/${query}vi${i}/400/225`
+        };
+      } else {
+        return {
+          title: `How to master ${query} | Tutorial Part ${i}`,
+          owner: "DailyGamer" + i,
+          views: Math.floor(Math.random() * 500) + 10 + "K",
+          date: i + " days ago",
+          duration: "12:30",
+          thumbnail: `https://picsum.photos/seed/${query}dm${i}/400/225`
         };
       }
     });
