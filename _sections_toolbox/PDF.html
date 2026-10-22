@@ -5,7 +5,7 @@ order: 2
 ---
 
 {% raw %}
-<!-- External Libraries for PDF Processing (all UMD builds from cdnjs) -->
+<!-- External Libraries for PDF Processing -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -14,7 +14,7 @@ order: 2
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
 
 <style>
-    /* PDF Workspace Styles (same design language as the Image page) */
+    /* PDF Workspace Styles */
     .pdf-workspace {
         display: flex;
         flex-direction: column;
@@ -28,14 +28,13 @@ order: 2
         margin-top: 20px;
     }
 
-    /* Top: Function Navigation */
-    .pdf-nav {
+    .pdf-workspace .pdf-nav {
         display: flex;
         background: #f8fafc;
         border-bottom: 1px solid #eaeaea;
         overflow-x: auto;
     }
-    .pdf-nav-btn {
+    .pdf-workspace .pdf-nav-btn {
         flex: 1;
         padding: 15px 10px;
         background: transparent !important;
@@ -48,22 +47,20 @@ order: 2
         white-space: nowrap;
         text-align: center;
     }
-    .pdf-nav-btn:hover { color: #007bff !important; background: #f1f5f9 !important; }
-    .pdf-nav-btn.active { color: #007bff !important; border-bottom: 3px solid #007bff !important; background: #fff !important; }
+    .pdf-workspace .pdf-nav-btn:hover { color: #007bff !important; background: #f1f5f9 !important; }
+    .pdf-workspace .pdf-nav-btn.active { color: #007bff !important; border-bottom: 3px solid #007bff !important; background: #fff !important; }
 
-    /* Sub-Top: Tool Options Panel */
-    .pdf-tool-panel {
+    .pdf-workspace .pdf-tool-panel {
         display: none;
         padding: 15px 20px;
         background: #fff;
         border-bottom: 1px solid #eaeaea;
         animation: pdfFadeIn 0.3s ease;
     }
-    .pdf-tool-panel.active { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; justify-content: center; }
-    .panel-note { font-size: 13px; color: #64748b; text-align: center; }
+    .pdf-workspace .pdf-tool-panel.active { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; justify-content: center; }
+    .pdf-workspace .panel-note { font-size: 13px; color: #64748b; text-align: center; }
 
-    /* Middle: File Workspace */
-    .pdf-preview-container {
+    .pdf-workspace .pdf-preview-container {
         position: relative;
         width: 100%;
         height: 500px;
@@ -71,9 +68,9 @@ order: 2
         overflow: hidden;
         transition: box-shadow 0.2s;
     }
-    .pdf-preview-container.drag-over { box-shadow: inset 0 0 0 3px #007bff; }
+    .pdf-workspace .pdf-preview-container.drag-over { box-shadow: inset 0 0 0 3px #007bff; }
 
-    .upload-overlay {
+    .pdf-workspace .upload-overlay {
         position: absolute;
         inset: 0;
         display: flex;
@@ -85,43 +82,43 @@ order: 2
         z-index: 10;
         transition: opacity 0.3s;
     }
-    .upload-overlay:hover { background: rgba(240,248,255,0.95); }
-    .upload-overlay i { font-size: 40px; color: #007bff; margin-bottom: 10px; font-style: normal; }
-    .upload-overlay h3 { color: #333 !important; margin: 0 0 5px 0; }
+    .pdf-workspace .upload-overlay:hover { background: rgba(240,248,255,0.95); }
+    .pdf-workspace .upload-overlay i { font-size: 40px; color: #007bff; margin-bottom: 10px; font-style: normal; }
+    .pdf-workspace .upload-overlay h3 { color: #333 !important; margin: 0 0 5px 0; }
 
     /* File list */
-    #file-area { position: absolute; inset: 0; display: none; flex-direction: column; }
-    .file-toolbar {
+    #pdf-file-area { position: absolute; inset: 0; display: none; flex-direction: column; }
+    .pdf-workspace .file-toolbar {
         display: flex; align-items: center; justify-content: space-between; gap: 10px;
         padding: 10px 16px; background: #fff; border-bottom: 1px solid #eaeaea; font-size: 13px; color: #64748b;
     }
-    #file-list { flex: 1; overflow-y: auto; padding: 12px 16px; }
-    .file-item {
+    #pdf-file-list { flex: 1; overflow-y: auto; padding: 12px 16px; }
+    .pdf-workspace .file-item {
         display: flex; align-items: center; gap: 12px;
         background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
         padding: 8px 12px; margin-bottom: 8px;
     }
-    .fi-idx { width: 22px; text-align: center; font-size: 13px; color: #94a3b8; font-weight: 600; }
-    .fi-thumb {
+    .pdf-workspace .fi-idx { width: 22px; text-align: center; font-size: 13px; color: #94a3b8; font-weight: 600; }
+    .pdf-workspace .fi-thumb {
         width: 44px; height: 44px; border-radius: 6px; background: #f1f5f9;
         display: flex; align-items: center; justify-content: center; font-size: 22px; overflow: hidden; flex-shrink: 0;
     }
-    .fi-thumb img { width: 100%; height: 100%; object-fit: cover; }
-    .fi-info { flex: 1; min-width: 0; }
-    .fi-name { font-size: 14px; font-weight: 600; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .fi-meta { font-size: 12px; color: #94a3b8; margin-top: 2px; }
-    .fi-actions { display: flex; gap: 4px; }
-    .fi-btn {
+    .pdf-workspace .fi-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .pdf-workspace .fi-info { flex: 1; min-width: 0; }
+    .pdf-workspace .fi-name { font-size: 14px; font-weight: 600; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pdf-workspace .fi-meta { font-size: 12px; color: #94a3b8; margin-top: 2px; }
+    .pdf-workspace .fi-actions { display: flex; gap: 4px; }
+    .pdf-workspace .fi-btn {
         width: 30px; height: 30px; border-radius: 6px; border: 1px solid #cbd5e1 !important;
         background: transparent !important; color: #475569 !important; cursor: pointer; font-size: 14px;
         display: inline-flex; align-items: center; justify-content: center; padding: 0;
     }
-    .fi-btn:hover { background: #f1f5f9 !important; }
-    .fi-btn:disabled { color: #cbd5e1 !important; cursor: not-allowed; }
-    .fi-btn.danger:hover { background: #fee2e2 !important; border-color: #fca5a5 !important; }
+    .pdf-workspace .fi-btn:hover { background: #f1f5f9 !important; }
+    .pdf-workspace .fi-btn:disabled { color: #cbd5e1 !important; cursor: not-allowed; }
+    .pdf-workspace .fi-btn.danger:hover { background: #fee2e2 !important; border-color: #fca5a5 !important; }
 
     /* Bottom: Action Bar */
-    .pdf-action-bar {
+    .pdf-workspace .pdf-action-bar {
         padding: 15px 20px;
         background: #f8fafc;
         display: flex;
@@ -131,9 +128,9 @@ order: 2
         flex-wrap: wrap;
         gap: 15px;
     }
-    .action-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .pdf-workspace .action-left { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
-    .privacy-notice {
+    .pdf-workspace .privacy-notice {
         font-size: 13px;
         color: #10b981;
         display: flex;
@@ -145,28 +142,27 @@ order: 2
         justify-content: center;
     }
 
-    /* UI Components */
-    .t-btn {
+    /* UI Components Scoped */
+    .pdf-workspace .t-btn {
         padding: 8px 16px; border-radius: 6px; border: none; font-size: 14px;
         font-weight: 500; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px;
     }
-    .t-btn-primary { background: #007bff !important; color: white !important; }
-    .t-btn-primary:hover { background: #0056b3 !important; }
-    .t-btn-primary:disabled { background: #94a3b8 !important; cursor: not-allowed; }
+    .pdf-workspace .t-btn-primary { background: #007bff !important; color: white !important; }
+    .pdf-workspace .t-btn-primary:hover { background: #0056b3 !important; }
+    .pdf-workspace .t-btn-primary:disabled { background: #94a3b8 !important; cursor: not-allowed; }
 
-    .t-btn-outline { background: transparent !important; border: 1px solid #cbd5e1 !important; color: #475569 !important; }
-    .t-btn-outline:hover { background: #f1f5f9 !important; }
-    .t-btn-outline:disabled { color: #94a3b8 !important; border-color: #e2e8f0 !important; cursor: not-allowed; }
+    .pdf-workspace .t-btn-outline { background: transparent !important; border: 1px solid #cbd5e1 !important; color: #475569 !important; }
+    .pdf-workspace .t-btn-outline:hover { background: #f1f5f9 !important; }
+    .pdf-workspace .t-btn-outline:disabled { color: #94a3b8 !important; border-color: #e2e8f0 !important; cursor: not-allowed; }
 
-    .t-select, .t-input { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; color: #333 !important; }
-    .t-slider-group { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #475569; }
+    .pdf-workspace .t-select, .pdf-workspace .t-input { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; color: #333 !important; }
+    .pdf-workspace .t-slider-group { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #475569; }
 
-    #status-text { font-weight: 600; font-size: 14px; color: #007bff; white-space: pre-line; }
-    #status-text.success { color: #10b981; }
-    #status-text.error { color: #ef4444; }
+    #pdf-status-text { font-weight: 600; font-size: 14px; color: #007bff; white-space: pre-line; }
+    #pdf-status-text.success { color: #10b981; }
+    #pdf-status-text.error { color: #ef4444; }
     @keyframes pdfFadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-    /* Styles used when rendering Word content into PDF pages (do not remove) */
     .wd-content {
         display: flow-root;
         font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", "Helvetica Neue", Arial, sans-serif;
@@ -183,9 +179,9 @@ order: 2
     .wd-content td, .wd-content th { border: 1px solid #888; padding: 4px 8px; vertical-align: top; }
 
     @media (max-width: 768px) {
-        .pdf-action-bar { flex-direction: column; }
-        .privacy-notice { order: 3; margin-top: 10px; }
-        .pdf-nav-btn { min-width: 130px; }
+        .pdf-workspace .pdf-action-bar { flex-direction: column; }
+        .pdf-workspace .privacy-notice { order: 3; margin-top: 10px; }
+        .pdf-workspace .pdf-nav-btn { min-width: 130px; }
     }
 </style>
 
@@ -200,11 +196,10 @@ order: 2
     </div>
 
     <!-- Sub-Top: Tool Panels -->
-    <!-- 1. Image to PDF -->
-    <div id="panel-img" class="pdf-tool-panel active">
+    <div id="pdf-panel-img" class="pdf-tool-panel active">
         <div class="t-slider-group">
             <label>Page Size:</label>
-            <select id="img-size" class="t-select">
+            <select id="pdf-img-size" class="t-select">
                 <option value="fit">Fit to image</option>
                 <option value="a4">A4</option>
                 <option value="letter">US Letter</option>
@@ -212,7 +207,7 @@ order: 2
         </div>
         <div class="t-slider-group">
             <label>Orientation:</label>
-            <select id="img-orient" class="t-select">
+            <select id="pdf-img-orient" class="t-select">
                 <option value="auto">Auto</option>
                 <option value="portrait">Portrait</option>
                 <option value="landscape">Landscape</option>
@@ -220,7 +215,7 @@ order: 2
         </div>
         <div class="t-slider-group">
             <label>Margin:</label>
-            <select id="img-margin" class="t-select">
+            <select id="pdf-img-margin" class="t-select">
                 <option value="0">None</option>
                 <option value="28" selected>Small</option>
                 <option value="57">Large</option>
@@ -229,126 +224,99 @@ order: 2
         <span class="panel-note">Use ↑ ↓ to set the page order. One image = one page.</span>
     </div>
 
-    <!-- 2. Word to PDF -->
-    <div id="panel-word" class="pdf-tool-panel">
+    <div id="pdf-panel-word" class="pdf-tool-panel">
         <div class="t-slider-group">
             <label>Page Margin:</label>
-            <select id="word-margin" class="t-select">
+            <select id="pdf-word-margin" class="t-select">
                 <option value="40">Narrow</option>
                 <option value="60" selected>Normal</option>
                 <option value="80">Wide</option>
             </select>
         </div>
-        <span class="panel-note">⚠️ Supports .docx only. Rendered in the browser, so output pages are images (text not selectable) and complex layouts may differ from Word.</span>
+        <span class="panel-note">⚠️ Supports .docx only. Output pages are images (text not selectable).</span>
     </div>
 
-    <!-- 3. Merge -->
-    <div id="panel-merge" class="pdf-tool-panel">
-        <span class="panel-note">Add two or more PDFs. They will be merged from top to bottom — use ↑ ↓ to reorder.</span>
+    <div id="pdf-panel-merge" class="pdf-tool-panel">
+        <span class="panel-note">Add two or more PDFs. They will be merged from top to bottom.</span>
     </div>
 
-    <!-- 4. Split -->
-    <div id="panel-split" class="pdf-tool-panel">
+    <div id="pdf-panel-split" class="pdf-tool-panel">
         <div class="t-slider-group">
             <label>Mode:</label>
-            <select id="split-mode" class="t-select" onchange="onSplitModeChange()">
+            <select id="pdf-split-mode" class="t-select" onchange="pdfOnSplitModeChange()">
                 <option value="range">Extract pages into one PDF</option>
                 <option value="ranges">Each range as a separate PDF (ZIP)</option>
                 <option value="each">Every page as a separate PDF (ZIP)</option>
                 <option value="every">Split every N pages (ZIP)</option>
             </select>
         </div>
-        <div class="t-slider-group" id="split-range-group">
+        <div class="t-slider-group" id="pdf-split-range-group">
             <label>Pages:</label>
-            <input type="text" id="split-range" class="t-input" placeholder="e.g. 1-3,5,8-10" style="width: 170px;">
+            <input type="text" id="pdf-split-range" class="t-input" placeholder="e.g. 1-3,5,8-10" style="width: 170px;">
         </div>
-        <div class="t-slider-group" id="split-n-group" style="display:none;">
+        <div class="t-slider-group" id="pdf-split-n-group" style="display:none;">
             <label>N =</label>
-            <input type="number" id="split-n" class="t-input" min="1" value="1" style="width: 80px;">
+            <input type="number" id="pdf-split-n" class="t-input" min="1" value="1" style="width: 80px;">
         </div>
-        <span class="panel-note" id="split-info"></span>
+        <span class="panel-note" id="pdf-split-info"></span>
     </div>
 
-    <!-- 5. Compress -->
-    <div id="panel-compress" class="pdf-tool-panel">
+    <div id="pdf-panel-compress" class="pdf-tool-panel">
         <div class="t-slider-group">
             <label>Compression Level:</label>
-            <select id="compress-level" class="t-select">
+            <select id="pdf-compress-level" class="t-select">
                 <option value="strong">Strong (smallest file)</option>
                 <option value="medium" selected>Recommended</option>
                 <option value="light">Light (best quality)</option>
             </select>
         </div>
-        <span class="panel-note">⚠️ Pages are re-rendered as images to shrink size, so text becomes non-selectable. Best for scanned / image-heavy PDFs.</span>
+        <span class="panel-note">⚠️ Pages are re-rendered as images. Best for scanned / image-heavy PDFs.</span>
     </div>
 
     <!-- Middle: Workspace -->
-    <div class="pdf-preview-container" id="workspace">
-        <div class="upload-overlay" id="upload-overlay" onclick="document.getElementById('file-input').click()">
+    <div class="pdf-preview-container" id="pdf-workspace-area">
+        <div class="upload-overlay" id="pdf-upload-overlay" onclick="document.getElementById('pdf-file-input').click()">
             <i>📂</i>
-            <h3 id="drop-title">Click or Drop Images Here</h3>
-            <p id="drop-hint" style="color:#64748b; font-size: 13px;">Supports JPG, PNG, WEBP, GIF, BMP</p>
+            <h3 id="pdf-drop-title">Click or Drop Images Here</h3>
+            <p id="pdf-drop-hint" style="color:#64748b; font-size: 13px;">Supports JPG, PNG, WEBP, GIF, BMP</p>
         </div>
 
-        <div id="file-area">
+        <div id="pdf-file-area">
             <div class="file-toolbar">
-                <span id="file-count"></span>
-                <button class="t-btn t-btn-outline" id="btn-add" onclick="document.getElementById('file-input').click()">➕ Add Files</button>
+                <span id="pdf-file-count"></span>
+                <button class="t-btn t-btn-outline" id="pdf-btn-add" onclick="document.getElementById('pdf-file-input').click()">➕ Add Files</button>
             </div>
-            <div id="file-list"></div>
+            <div id="pdf-file-list"></div>
         </div>
 
-        <input type="file" id="file-input" accept="image/*" multiple style="display: none;" onchange="onFilesPicked(event)">
+        <input type="file" id="pdf-file-input" accept="image/*" multiple style="display: none;" onchange="pdfOnFilesPicked(event)">
     </div>
 
     <!-- Bottom: Action Bar -->
     <div class="pdf-action-bar">
         <div class="action-left">
-            <button class="t-btn t-btn-outline" onclick="resetWorkspace()" id="btn-reset" disabled>🗑️ Clear Workspace</button>
-            <span id="status-text"></span>
+            <button class="t-btn t-btn-outline" onclick="pdfResetWorkspace()" id="pdf-btn-reset" disabled>🗑️ Clear Workspace</button>
+            <span id="pdf-status-text"></span>
         </div>
 
         <div class="privacy-notice">
             🛡️ 100% Local Processing: Your files never leave your device.
         </div>
 
-        <button class="t-btn t-btn-primary" onclick="runTool()" id="btn-run" disabled>📄 Convert to PDF</button>
+        <button class="t-btn t-btn-primary" onclick="pdfRunTool()" id="pdf-btn-run" disabled>📄 Convert to PDF</button>
     </div>
 </div>
 
 <script>
 (function () {
     'use strict';
-    // ---------- Tool configuration ----------
     const isPdf = f => f.type === 'application/pdf' || /\.pdf$/i.test(f.name);
     const TOOLS = {
-        img: {
-            accept: f => /^image\//.test(f.type) || /\.(jpe?g|png|webp|gif|bmp|avif)$/i.test(f.name),
-            multi: true, reorder: true, input: 'image/*',
-            title: 'Click or Drop Images Here', hint: 'Supports JPG, PNG, WEBP, GIF, BMP',
-            btn: '📄 Convert to PDF'
-        },
-        word: {
-            accept: f => /\.docx$/i.test(f.name),
-            multi: true, reorder: false, input: '.docx',
-            title: 'Click or Drop Word Files Here', hint: 'Supports .docx (legacy .doc is not supported)',
-            btn: '📄 Convert to PDF'
-        },
-        merge: {
-            accept: isPdf, multi: true, reorder: true, input: '.pdf,application/pdf',
-            title: 'Click or Drop PDF Files Here', hint: 'Add 2 or more PDF files',
-            btn: '🔗 Merge & Download'
-        },
-        split: {
-            accept: isPdf, multi: false, reorder: false, input: '.pdf,application/pdf',
-            title: 'Click or Drop a PDF Here', hint: 'One PDF at a time',
-            btn: '✂️ Split & Download'
-        },
-        compress: {
-            accept: isPdf, multi: true, reorder: false, input: '.pdf,application/pdf',
-            title: 'Click or Drop PDF Files Here', hint: 'Supports multiple files',
-            btn: '🗜️ Compress & Download'
-        }
+        img: { accept: f => /^image\//.test(f.type) || /\.(jpe?g|png|webp|gif|bmp|avif)$/i.test(f.name), multi: true, reorder: true, input: 'image/*', title: 'Click or Drop Images Here', hint: 'Supports JPG, PNG, WEBP, GIF, BMP', btn: '📄 Convert to PDF' },
+        word: { accept: f => /\.docx$/i.test(f.name), multi: true, reorder: false, input: '.docx', title: 'Click or Drop Word Files Here', hint: 'Supports .docx', btn: '📄 Convert to PDF' },
+        merge: { accept: isPdf, multi: true, reorder: true, input: '.pdf,application/pdf', title: 'Click or Drop PDF Files Here', hint: 'Add 2 or more PDF files', btn: '🔗 Merge & Download' },
+        split: { accept: isPdf, multi: false, reorder: false, input: '.pdf,application/pdf', title: 'Click or Drop a PDF Here', hint: 'One PDF at a time', btn: '✂️ Split & Download' },
+        compress: { accept: isPdf, multi: true, reorder: false, input: '.pdf,application/pdf', title: 'Click or Drop PDF Files Here', hint: 'Supports multiple files', btn: '🗜️ Compress & Download' }
     };
     const PDFJS_WORKER = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
@@ -357,30 +325,29 @@ order: 2
     let busy = false;
     let idCounter = 0;
 
-    const byId = id => document.getElementById(id);
+    // A smart byId helper that auto-prefixes 'pdf-' for safety
+    const byId = id => document.getElementById('pdf-' + id);
 
-    // ---------- Helpers ----------
-    function esc(s) {
-        return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-    }
+    function esc(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
     function fmtSize(bytes) {
         if (bytes < 1024) return bytes + ' B';
         if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
         return (bytes / 1024 / 1024).toFixed(2) + ' MB';
     }
     function baseName(file) { return file.name.replace(/\.[^.]+$/, ''); }
-    function need(ok, name) {
-        if (!ok) throw new Error(name + ' failed to load. Check your network / CDN access and refresh the page.');
-    }
+    function need(ok, name) { if (!ok) throw new Error(name + ' failed to load.'); }
+    
     function setStatus(msg, type) {
         const el = byId('status-text');
         el.textContent = msg || '';
         el.className = type || '';
     }
+    
     function setBusy(b) {
         busy = b;
         refreshButtons();
     }
+    
     function refreshButtons() {
         const empty = store[current].length === 0;
         byId('btn-run').disabled = busy || empty;
@@ -388,6 +355,7 @@ order: 2
         byId('btn-add').disabled = busy;
         byId('btn-run').innerText = TOOLS[current].btn;
     }
+    
     function uniqueName(name, used) {
         if (!used.has(name)) { used.add(name); return name; }
         const dot = name.lastIndexOf('.');
@@ -398,6 +366,7 @@ order: 2
         used.add(r);
         return r;
     }
+    
     function saveBlob(blob, filename) {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
@@ -408,7 +377,7 @@ order: 2
         document.body.removeChild(a);
         setTimeout(() => URL.revokeObjectURL(url), 10000);
     }
-    // results: [{name, blob}] -> single file download, or a ZIP when there are several
+    
     async function deliver(results, zipName) {
         if (results.length === 1) {
             saveBlob(results[0].blob, results[0].name);
@@ -421,14 +390,14 @@ order: 2
         const blob = await zip.generateAsync({ type: 'blob' });
         saveBlob(blob, zipName || 'pdf_tools_result.zip');
     }
+    
     function nextFrame() { return new Promise(r => setTimeout(r, 0)); }
 
-    // ---------- Tabs ----------
     function switchPdfTab(tool, btn) {
         if (busy) return;
         current = tool;
-        document.querySelectorAll('.pdf-tool-panel').forEach(el => el.classList.remove('active'));
-        document.querySelectorAll('.pdf-nav-btn').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.pdf-workspace .pdf-tool-panel').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.pdf-workspace .pdf-nav-btn').forEach(el => el.classList.remove('active'));
         byId('panel-' + tool).classList.add('active');
         btn.classList.add('active');
 
@@ -442,7 +411,6 @@ order: 2
         renderList();
     }
 
-    // ---------- File management ----------
     function onFilesPicked(event) {
         addFiles(event.target.files);
         event.target.value = '';
@@ -454,7 +422,7 @@ order: 2
         let valid = all.filter(cfg.accept);
         const skipped = all.length - valid.length;
         if (!valid.length) {
-            if (all.length) setStatus('❌ Unsupported file type for this tool.', 'error');
+            if (all.length) setStatus('❌ Unsupported file type.', 'error');
             return;
         }
         if (!cfg.multi) {
@@ -468,7 +436,7 @@ order: 2
             list.push(item);
             if (isPdf(file)) loadPageCount(item);
         });
-        setStatus(skipped ? ('ℹ️ ' + skipped + ' unsupported file(s) were skipped.') : '');
+        setStatus(skipped ? ('ℹ️ ' + skipped + ' unsupported file(s) skipped.') : '');
         renderList();
     }
 
@@ -479,7 +447,6 @@ order: 2
             const doc = await PDFLib.PDFDocument.load(buf, { ignoreEncryption: true });
             item.pages = doc.getPageCount();
         } catch (e) {
-            console.warn('Cannot read PDF', item.file.name, e);
             item.error = true;
         }
         renderList();
@@ -525,18 +492,16 @@ order: 2
         byId('file-count').innerText = items.length + ' file(s) · ' + fmtSize(totalSize);
 
         byId('file-list').innerHTML = items.map((it, i) => {
-            const icon = current === 'img'
-                ? '<img src="' + it.thumb + '" alt="">'
-                : (current === 'word' ? '📘' : '📕');
+            const icon = current === 'img' ? '<img src="' + it.thumb + '" alt="">' : (current === 'word' ? '📘' : '📕');
             let meta = fmtSize(it.file.size);
             if (isPdf(it.file)) {
-                if (it.error) meta += ' · ⚠️ cannot read (corrupted or password-protected?)';
+                if (it.error) meta += ' · ⚠️ error';
                 else if (it.pages == null) meta += ' · reading...';
                 else meta += ' · ' + it.pages + ' page(s)';
             }
             const arrows = cfg.reorder
-                ? '<button class="fi-btn" title="Move up" onclick="moveItem(' + i + ',-1)"' + (i === 0 ? ' disabled' : '') + '>↑</button>' +
-                  '<button class="fi-btn" title="Move down" onclick="moveItem(' + i + ',1)"' + (i === items.length - 1 ? ' disabled' : '') + '>↓</button>'
+                ? '<button class="fi-btn" title="Move up" onclick="pdfMoveItem(' + i + ',-1)"' + (i === 0 ? ' disabled' : '') + '>↑</button>' +
+                  '<button class="fi-btn" title="Move down" onclick="pdfMoveItem(' + i + ',1)"' + (i === items.length - 1 ? ' disabled' : '') + '>↓</button>'
                 : '';
             return '<div class="file-item">' +
                 '<span class="fi-idx">' + (i + 1) + '</span>' +
@@ -544,7 +509,7 @@ order: 2
                 '<div class="fi-info"><div class="fi-name" title="' + esc(it.file.name) + '">' + esc(it.file.name) + '</div>' +
                 '<div class="fi-meta">' + meta + '</div></div>' +
                 '<div class="fi-actions">' + arrows +
-                '<button class="fi-btn danger" title="Remove" onclick="removeItem(' + i + ')">✕</button></div>' +
+                '<button class="fi-btn danger" title="Remove" onclick="pdfRemoveItem(' + i + ')">✕</button></div>' +
                 '</div>';
         }).join('');
 
@@ -555,9 +520,8 @@ order: 2
         refreshButtons();
     }
 
-    // Drag & drop
     (function initDrop() {
-        const ws = byId('workspace');
+        const ws = byId('workspace-area');
         ['dragenter', 'dragover'].forEach(ev => ws.addEventListener(ev, e => {
             e.preventDefault();
             ws.classList.add('drag-over');
@@ -578,7 +542,6 @@ order: 2
         byId('split-n-group').style.display = (mode === 'every') ? '' : 'none';
     }
 
-    // ---------- Run dispatcher ----------
     async function runTool() {
         if (busy) return;
         const items = store[current];
@@ -588,20 +551,20 @@ order: 2
         setStatus('Processing... Please wait.', '');
         await nextFrame();
         try {
-            let msg = '✅ Done! Your download should start automatically.';
+            let msg = '✅ Done!';
             if (current === 'img') {
                 const blob = await imagesToPdf(items);
                 await deliver([{ name: items.length === 1 ? baseName(items[0].file) + '.pdf' : 'images.pdf', blob }]);
             } else if (current === 'word') {
                 const results = [];
                 for (let i = 0; i < items.length; i++) {
-                    setStatus('Converting ' + (i + 1) + '/' + items.length + ': ' + items[i].file.name + ' ...', '');
+                    setStatus('Converting ' + (i + 1) + '/' + items.length + ' ...', '');
                     await nextFrame();
                     results.push({ name: baseName(items[i].file) + '.pdf', blob: await wordToPdf(items[i].file) });
                 }
                 await deliver(results, 'word_to_pdf.zip');
             } else if (current === 'merge') {
-                if (items.length < 2) throw new Error('Please add at least 2 PDF files to merge.');
+                if (items.length < 2) throw new Error('Add at least 2 PDFs.');
                 const blob = await mergePdfs(items);
                 await deliver([{ name: 'merged.pdf', blob }]);
             } else if (current === 'split') {
@@ -613,7 +576,7 @@ order: 2
                 for (let i = 0; i < items.length; i++) {
                     const f = items[i].file;
                     const blob = await compressPdf(f, (p, n) => {
-                        setStatus('Compressing ' + (i + 1) + '/' + items.length + ' — page ' + p + '/' + n + ' ...', '');
+                        setStatus('Compressing ' + (i + 1) + '/' + items.length + ' — page ' + p + '/' + n, '');
                     });
                     before += f.size; after += blob.size;
                     results.push({ name: baseName(f) + '_compressed.pdf', blob });
@@ -622,40 +585,30 @@ order: 2
                 const ratio = Math.round((1 - after / before) * 100);
                 msg = after < before
                     ? '✅ ' + fmtSize(before) + ' → ' + fmtSize(after) + ' (saved ' + ratio + '%)'
-                    : '⚠️ Result (' + fmtSize(after) + ') is not smaller than the original (' + fmtSize(before) + '). Try a stronger level or keep the original.';
+                    : '⚠️ Result not smaller.';
             }
             setStatus(msg, msg.startsWith('⚠️') ? '' : 'success');
         } catch (e) {
-            console.error(e);
             setStatus('❌ ' + e.message, 'error');
         } finally {
             setBusy(false);
         }
     }
 
-    // ---------- 1. Image -> PDF ----------
     async function readImage(file) {
         let bmp;
-        try {
-            bmp = await createImageBitmap(file, { imageOrientation: 'from-image' });
-        } catch (e) {
-            bmp = await createImageBitmap(file);
-        }
+        try { bmp = await createImageBitmap(file, { imageOrientation: 'from-image' }); }
+        catch (e) { bmp = await createImageBitmap(file); }
         const isJpeg = /jpe?g/i.test(file.type) || /\.jpe?g$/i.test(file.name);
         const canvas = document.createElement('canvas');
-        canvas.width = bmp.width;
-        canvas.height = bmp.height;
+        canvas.width = bmp.width; canvas.height = bmp.height;
         const ctx = canvas.getContext('2d');
-        if (isJpeg) {
-            ctx.fillStyle = '#ffffff';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
+        if (isJpeg) { ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, canvas.width, canvas.height); }
         ctx.drawImage(bmp, 0, 0);
         const blob = await new Promise(res => canvas.toBlob(res, isJpeg ? 'image/jpeg' : 'image/png', 0.95));
-        if (!blob) throw new Error('Cannot decode image: ' + file.name);
+        if (!blob) throw new Error('Cannot decode image.');
         const w = bmp.width, h = bmp.height;
         if (bmp.close) bmp.close();
-        canvas.width = 0; canvas.height = 0;
         return { bytes: new Uint8Array(await blob.arrayBuffer()), isJpeg, w, h };
     }
 
@@ -669,44 +622,32 @@ order: 2
 
         const pdf = await PDFDocument.create();
         for (let i = 0; i < items.length; i++) {
-            setStatus('Adding image ' + (i + 1) + '/' + items.length + ' ...', '');
-            await nextFrame();
             const info = await readImage(items[i].file);
             const img = info.isJpeg ? await pdf.embedJpg(info.bytes) : await pdf.embedPng(info.bytes);
-
             let pw, ph, dw, dh;
             if (size === 'fit') {
-                dw = info.w * 0.75; dh = info.h * 0.75; // px -> pt
+                dw = info.w * 0.75; dh = info.h * 0.75;
                 pw = dw + 2 * m; ph = dh + 2 * m;
             } else {
                 let [bw, bh] = BASE[size];
                 const landscape = orient === 'auto' ? info.w > info.h : orient === 'landscape';
-                pw = landscape ? bh : bw;
-                ph = landscape ? bw : bh;
+                pw = landscape ? bh : bw; ph = landscape ? bw : bh;
                 const scale = Math.min((pw - 2 * m) / info.w, (ph - 2 * m) / info.h);
                 dw = info.w * scale; dh = info.h * scale;
             }
             const page = pdf.addPage([pw, ph]);
             page.drawImage(img, { x: (pw - dw) / 2, y: (ph - dh) / 2, width: dw, height: dh });
         }
-        const bytes = await pdf.save();
-        return new Blob([bytes], { type: 'application/pdf' });
+        return new Blob([await pdf.save()], { type: 'application/pdf' });
     }
 
-    // ---------- 2. Word -> PDF (mammoth -> HTML -> html2canvas -> jsPDF) ----------
     async function wordToPdf(file) {
-        need(window.mammoth, 'mammoth');
-        need(window.html2canvas, 'html2canvas');
-        need(window.jspdf, 'jsPDF');
-
+        need(window.mammoth, 'mammoth'); need(window.html2canvas, 'html2canvas'); need(window.jspdf, 'jsPDF');
         const buf = await file.arrayBuffer();
         const res = await mammoth.convertToHtml({ arrayBuffer: buf });
         const marginPx = parseInt(byId('word-margin').value, 10) || 60;
-        const PAGE_W = 794, PAGE_H = 1123; // A4 @ 96dpi
-        const contentW = PAGE_W - 2 * marginPx;
-        const contentH = PAGE_H - 2 * marginPx;
+        const PAGE_W = 794, PAGE_H = 1123, contentW = PAGE_W - 2 * marginPx, contentH = PAGE_H - 2 * marginPx;
 
-        // Off-screen stage used for measuring block heights
         const stage = document.createElement('div');
         stage.style.cssText = 'position:fixed;left:-10000px;top:0;width:' + contentW + 'px;';
         stage.innerHTML = '<div class="wd-content" style="width:' + contentW + 'px;">' + res.value + '</div>';
@@ -714,21 +655,15 @@ order: 2
 
         try {
             const content = stage.firstElementChild;
-            await Promise.all(Array.from(content.querySelectorAll('img')).map(im =>
-                (im.decode ? im.decode() : Promise.resolve()).catch(() => {})));
-
+            await Promise.all(Array.from(content.querySelectorAll('img')).map(im => (im.decode ? im.decode() : Promise.resolve()).catch(() => {})));
             const blocks = Array.from(content.children);
-            if (!blocks.length) throw new Error('The document appears to be empty: ' + file.name);
-
-            // Group top-level blocks into pages
-            const pages = [];
-            let cur = [], curH = 0;
+            const pages = []; let cur = [], curH = 0;
             const flush = () => { if (cur.length) { pages.push({ nodes: cur, offset: 0 }); cur = []; curH = 0; } };
+            
             for (const el of blocks) {
                 const cs = getComputedStyle(el);
                 const h = el.offsetHeight + (parseFloat(cs.marginTop) || 0) + (parseFloat(cs.marginBottom) || 0);
                 if (h > contentH) {
-                    // A single block taller than a page (big table / image): slice it
                     flush();
                     const n = Math.ceil(h / contentH);
                     for (let k = 0; k < n; k++) pages.push({ nodes: [el], offset: k * contentH });
@@ -741,77 +676,43 @@ order: 2
 
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF({ unit: 'pt', format: 'a4', compress: true });
-            const K = 0.75; // px -> pt
-
             for (let p = 0; p < pages.length; p++) {
-                setStatus('Rendering ' + file.name + ' — page ' + (p + 1) + '/' + pages.length + ' ...', '');
-                await nextFrame();
-
                 const box = document.createElement('div');
                 box.style.cssText = 'position:fixed;left:-10000px;top:0;width:' + contentW + 'px;height:' + contentH + 'px;overflow:hidden;background:#fff;';
                 const inner = document.createElement('div');
-                inner.className = 'wd-content';
-                inner.style.width = contentW + 'px';
-                inner.style.marginTop = (-pages[p].offset) + 'px';
+                inner.className = 'wd-content'; inner.style.width = contentW + 'px'; inner.style.marginTop = (-pages[p].offset) + 'px';
                 pages[p].nodes.forEach(n => inner.appendChild(n.cloneNode(true)));
-                box.appendChild(inner);
-                document.body.appendChild(box);
+                box.appendChild(inner); document.body.appendChild(box);
 
                 let canvas;
-                try {
-                    canvas = await html2canvas(box, { scale: 2, backgroundColor: '#ffffff', useCORS: true });
-                } finally {
-                    box.remove();
-                }
+                try { canvas = await html2canvas(box, { scale: 2, backgroundColor: '#ffffff', useCORS: true }); }
+                finally { box.remove(); }
                 if (p > 0) doc.addPage();
-                doc.addImage(canvas.toDataURL('image/jpeg', 0.92), 'JPEG', marginPx * K, marginPx * K, contentW * K, contentH * K);
-                canvas.width = 0; canvas.height = 0;
+                doc.addImage(canvas.toDataURL('image/jpeg', 0.92), 'JPEG', marginPx * 0.75, marginPx * 0.75, contentW * 0.75, contentH * 0.75);
             }
             return doc.output('blob');
-        } finally {
-            stage.remove();
-        }
+        } finally { stage.remove(); }
     }
 
-    // ---------- 3. Merge ----------
     async function mergePdfs(items) {
         need(window.PDFLib, 'pdf-lib');
-        const { PDFDocument } = PDFLib;
-        const out = await PDFDocument.create();
+        const out = await PDFLib.PDFDocument.create();
         for (let i = 0; i < items.length; i++) {
-            setStatus('Merging ' + (i + 1) + '/' + items.length + ': ' + items[i].file.name + ' ...', '');
-            await nextFrame();
-            let src;
-            try {
-                src = await PDFDocument.load(await items[i].file.arrayBuffer(), { ignoreEncryption: true });
-            } catch (e) {
-                throw new Error('Cannot read "' + items[i].file.name + '" (corrupted or password-protected).');
-            }
+            let src = await PDFLib.PDFDocument.load(await items[i].file.arrayBuffer(), { ignoreEncryption: true });
             const pages = await out.copyPages(src, src.getPageIndices());
             pages.forEach(p => out.addPage(p));
         }
         return new Blob([await out.save()], { type: 'application/pdf' });
     }
 
-    // ---------- 4. Split ----------
     function parseRanges(str, total) {
         const tokens = str.split(/[,，;；]+/).map(s => s.trim().replace(/\s+/g, '')).filter(Boolean);
-        if (!tokens.length) throw new Error('Please enter a page range, e.g. 1-3,5,8-10');
         const groups = [];
         for (const t of tokens) {
             let a, b;
             const m = t.match(/^(\d*)[-–~](\d*)$/);
-            if (m && (m[1] || m[2])) {
-                a = m[1] ? parseInt(m[1], 10) : 1;
-                b = m[2] ? parseInt(m[2], 10) : total;
-            } else if (/^\d+$/.test(t)) {
-                a = b = parseInt(t, 10);
-            } else {
-                throw new Error('Invalid range: "' + t + '"');
-            }
-            if (a < 1 || b > total || a > b) {
-                throw new Error('Range "' + t + '" is out of bounds (the document has ' + total + ' pages).');
-            }
+            if (m && (m[1] || m[2])) { a = m[1] ? parseInt(m[1], 10) : 1; b = m[2] ? parseInt(m[2], 10) : total; }
+            else if (/^\d+$/.test(t)) { a = b = parseInt(t, 10); }
             const g = [];
             for (let i = a; i <= b; i++) g.push(i - 1);
             groups.push(g);
@@ -828,79 +729,39 @@ order: 2
 
     async function splitPdf(item) {
         need(window.PDFLib, 'pdf-lib');
-        let src;
-        try {
-            src = await PDFLib.PDFDocument.load(await item.file.arrayBuffer(), { ignoreEncryption: true });
-        } catch (e) {
-            throw new Error('Cannot read this PDF (corrupted or password-protected).');
-        }
-        const total = src.getPageCount();
-        const base = baseName(item.file);
-        const mode = byId('split-mode').value;
-        const results = [];
+        let src = await PDFLib.PDFDocument.load(await item.file.arrayBuffer(), { ignoreEncryption: true });
+        const total = src.getPageCount(), base = baseName(item.file), mode = byId('split-mode').value, results = [];
 
         if (mode === 'range') {
-            const groups = parseRanges(byId('split-range').value, total);
-            const indices = [].concat(...groups);
+            const indices = [].concat(...parseRanges(byId('split-range').value, total));
             results.push({ name: base + '_extracted.pdf', blob: await extractPages(src, indices) });
         } else if (mode === 'ranges') {
             const groups = parseRanges(byId('split-range').value, total);
             for (let g = 0; g < groups.length; g++) {
-                setStatus('Splitting ' + (g + 1) + '/' + groups.length + ' ...', '');
-                await nextFrame();
                 const first = groups[g][0] + 1, last = groups[g][groups[g].length - 1] + 1;
-                const label = first === last ? 'p' + first : 'p' + first + '-' + last;
-                results.push({ name: base + '_' + label + '.pdf', blob: await extractPages(src, groups[g]) });
+                results.push({ name: base + '_' + (first === last ? 'p'+first : 'p'+first+'-'+last) + '.pdf', blob: await extractPages(src, groups[g]) });
             }
         } else if (mode === 'each') {
-            for (let i = 0; i < total; i++) {
-                setStatus('Splitting page ' + (i + 1) + '/' + total + ' ...', '');
-                await nextFrame();
-                results.push({ name: base + '_page_' + (i + 1) + '.pdf', blob: await extractPages(src, [i]) });
-            }
+            for (let i = 0; i < total; i++) results.push({ name: base + '_page_' + (i + 1) + '.pdf', blob: await extractPages(src, [i]) });
         } else if (mode === 'every') {
             const n = parseInt(byId('split-n').value, 10);
-            if (!(n >= 1)) throw new Error('N must be a positive integer.');
             let part = 1;
             for (let start = 0; start < total; start += n, part++) {
-                setStatus('Splitting part ' + part + ' ...', '');
-                await nextFrame();
-                const idx = [];
-                for (let i = start; i < Math.min(start + n, total); i++) idx.push(i);
-                results.push({
-                    name: base + '_part' + part + '_p' + (idx[0] + 1) + '-' + (idx[idx.length - 1] + 1) + '.pdf',
-                    blob: await extractPages(src, idx)
-                });
+                const idx = []; for (let i = start; i < Math.min(start + n, total); i++) idx.push(i);
+                results.push({ name: base + '_part' + part + '.pdf', blob: await extractPages(src, idx) });
             }
         }
-        if (!results.length) throw new Error('Nothing to output.');
         return results;
     }
 
-    // ---------- 5. Compress (re-render pages as JPEG with pdf.js) ----------
-    const COMPRESS_PRESETS = {
-        strong: { scale: 1.2, quality: 0.5 },
-        medium: { scale: 1.8, quality: 0.7 },
-        light:  { scale: 2.5, quality: 0.85 }
-    };
-
+    const COMPRESS_PRESETS = { strong: { scale: 1.2, quality: 0.5 }, medium: { scale: 1.8, quality: 0.7 }, light: { scale: 2.5, quality: 0.85 } };
     async function compressPdf(file, onProgress) {
-        need(window.PDFLib, 'pdf-lib');
-        need(window.pdfjsLib, 'pdf.js');
+        need(window.PDFLib, 'pdf-lib'); need(window.pdfjsLib, 'pdf.js');
         pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
-
         const preset = COMPRESS_PRESETS[byId('compress-level').value] || COMPRESS_PRESETS.medium;
         const data = new Uint8Array(await file.arrayBuffer());
-        let pdfDoc;
-        try {
-            pdfDoc = await pdfjsLib.getDocument({ data }).promise;
-        } catch (e) {
-            throw new Error('Cannot read "' + file.name + '": ' + (e && e.message ? e.message : e));
-        }
-
-        const out = await PDFLib.PDFDocument.create();
-        const n = pdfDoc.numPages;
-        const MAX_PIXELS = 16 * 1000 * 1000;
+        let pdfDoc = await pdfjsLib.getDocument({ data }).promise;
+        const out = await PDFLib.PDFDocument.create(), n = pdfDoc.numPages, MAX_PIXELS = 16 * 1000 * 1000;
 
         try {
             for (let p = 1; p <= n; p++) {
@@ -909,45 +770,38 @@ order: 2
                 const page = await pdfDoc.getPage(p);
                 const vp1 = page.getViewport({ scale: 1 });
                 let scale = preset.scale;
-                if (vp1.width * vp1.height * scale * scale > MAX_PIXELS) {
-                    scale = Math.sqrt(MAX_PIXELS / (vp1.width * vp1.height));
-                }
+                if (vp1.width * vp1.height * scale * scale > MAX_PIXELS) scale = Math.sqrt(MAX_PIXELS / (vp1.width * vp1.height));
                 const vp = page.getViewport({ scale });
                 const canvas = document.createElement('canvas');
-                canvas.width = Math.floor(vp.width);
-                canvas.height = Math.floor(vp.height);
-                const ctx = canvas.getContext('2d');
-                ctx.fillStyle = '#ffffff';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                canvas.width = Math.floor(vp.width); canvas.height = Math.floor(vp.height);
+                const ctx = canvas.getContext('2d'); ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, canvas.width, canvas.height);
                 await page.render({ canvasContext: ctx, viewport: vp }).promise;
-
                 const blob = await new Promise(res => canvas.toBlob(res, 'image/jpeg', preset.quality));
                 const img = await out.embedJpg(new Uint8Array(await blob.arrayBuffer()));
-                const outPage = out.addPage([vp1.width, vp1.height]);
-                outPage.drawImage(img, { x: 0, y: 0, width: vp1.width, height: vp1.height });
-
+                out.addPage([vp1.width, vp1.height]).drawImage(img, { x: 0, y: 0, width: vp1.width, height: vp1.height });
                 page.cleanup();
-                canvas.width = 0; canvas.height = 0;
             }
-        } finally {
-            if (pdfDoc.destroy) pdfDoc.destroy();
-        }
+        } finally { if (pdfDoc.destroy) pdfDoc.destroy(); }
         return new Blob([await out.save()], { type: 'application/pdf' });
     }
 
-    // Expose only what inline onclick/onchange handlers need
+    // Expose strictly renamed functions
     Object.assign(window, {
-        switchPdfTab, onFilesPicked, resetWorkspace, removeItem, moveItem, onSplitModeChange, runTool
+        switchPdfTab,
+        pdfOnFilesPicked: onFilesPicked,
+        pdfResetWorkspace: resetWorkspace,
+        pdfRemoveItem: removeItem,
+        pdfMoveItem: moveItem,
+        pdfOnSplitModeChange: onSplitModeChange,
+        pdfRunTool: runTool
     });
 
-    // Show script errors on the page instead of failing silently
     window.addEventListener('error', function (e) {
         if (e && e.message && String(e.filename || '').indexOf('cdnjs') === -1) {
             setStatus('❌ Script error: ' + e.message, 'error');
         }
     });
 
-    // Init
     renderList();
 })();
 </script>
