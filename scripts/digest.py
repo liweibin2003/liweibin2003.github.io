@@ -34,13 +34,15 @@ def detect_market_phase():
         return None, ny_now
 
     current_minute = ny_now.hour * 60 + ny_now.minute
-    if 530 <= current_minute <= 555:
+    
+    # 无缝衔接时间窗，防止排队延迟导致数据落入 manual_run 分支
+    if 530 <= current_minute <= 569:
         return "pre_market", ny_now
-    elif 570 <= current_minute <= 590:
+    elif 570 <= current_minute <= 769:
         return "market_open", ny_now
-    elif 770 <= current_minute <= 795:
+    elif 770 <= current_minute <= 959:
         return "mid_day", ny_now
-    elif 960 <= current_minute <= 985:
+    elif 960 <= current_minute <= 1020:
         return "market_close", ny_now
     else:
         print(f"[{ny_now}] Outside preset time windows. Defaulting to manual inspection mode.")
@@ -151,7 +153,7 @@ Timestamp: {ny_now.strftime('%Y-%m-%d %H:%M:%S %Z')}
 
 Input Snapshot:
 1. Asset Metrics: {json.dumps(metrics)}
-2. Recent News Headliners: {json.dumps(news)}
+​2. Recent News Headliners: {json.dumps(news)}
 
 STRICT Formatting & Depth Requirements:
 - CRITICAL DEPTH: Provide IN-DEPTH analysis. Sections 1, 3, and 4 MUST each contain at least 2 to 3 robust, insightful paragraphs. Expand thoroughly on macro implications, rate expectations, sector rotations, and news sentiment. Do NOT write single short sentences.
@@ -165,7 +167,7 @@ STRICT Formatting & Depth Requirements:
 
 Structure exactly into these four sections:
 1. `### 🌐 Executive Macro & Market Regime`: Thorough 3-paragraph analysis of broader sentiment, index trends, and macro backdrop.
-2. `### 📈 Core Asset Snapshot Table`: The structured table following the strict rules above.
+​2. `### 📈 Core Asset Snapshot Table`: The structured table following the strict rules above.
 3. `### ⚡ Sector Movers & Bellwether Divergence`: Deep-dive into notable outperformers/underperformers based on the data.
 4. `### 🎯 Strategic Takeaways & Key Watchlist`: Key catalysts ahead and actionable institutional insights.
 
