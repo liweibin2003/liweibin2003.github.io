@@ -7,8 +7,6 @@ order: 1
 <!-- External Libraries for Image Processing -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
-<!-- 注意：@imgly/background-removal 是 ES Module，不能用普通 <script src> 加载，
-     改为在 removeBackground() 里用动态 import() 加载 -->
 
 <style>
     /* Image Workspace Styles */
@@ -26,13 +24,13 @@ order: 1
     }
 
     /* Top: Function Navigation */
-    .img-nav {
+    .img-workspace .img-nav {
         display: flex;
         background: #f8fafc;
         border-bottom: 1px solid #eaeaea;
         overflow-x: auto;
     }
-    .img-nav-btn {
+    .img-workspace .img-nav-btn {
         flex: 1;
         padding: 15px 10px;
         background: transparent !important;
@@ -45,21 +43,21 @@ order: 1
         white-space: nowrap;
         text-align: center;
     }
-    .img-nav-btn:hover { color: #007bff !important; background: #f1f5f9 !important; }
-    .img-nav-btn.active { color: #007bff !important; border-bottom: 3px solid #007bff !important; background: #fff !important; }
+    .img-workspace .img-nav-btn:hover { color: #007bff !important; background: #f1f5f9 !important; }
+    .img-workspace .img-nav-btn.active { color: #007bff !important; border-bottom: 3px solid #007bff !important; background: #fff !important; }
 
     /* Sub-Top: Tool Options Panel */
-    .img-tool-panel {
+    .img-workspace .img-tool-panel {
         display: none;
         padding: 15px 20px;
         background: #fff;
         border-bottom: 1px solid #eaeaea;
         animation: fadeIn 0.3s ease;
     }
-    .img-tool-panel.active { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; justify-content: center; }
+    .img-workspace .img-tool-panel.active { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; justify-content: center; }
 
     /* Middle: Interactive Preview Area */
-    .img-preview-container {
+    .img-workspace .img-preview-container {
         position: relative;
         width: 100%;
         height: 500px;
@@ -77,7 +75,7 @@ order: 1
     }
     #img-source { max-width: 100%; max-height: 100%; display: none; }
 
-    .upload-overlay {
+    .img-workspace .upload-overlay {
         position: absolute;
         inset: 0;
         display: flex;
@@ -89,12 +87,12 @@ order: 1
         z-index: 10;
         transition: opacity 0.3s;
     }
-    .upload-overlay:hover { background: rgba(240,248,255,0.95); }
-    .upload-overlay i { font-size: 40px; color: #007bff; margin-bottom: 10px; font-style: normal; }
-    .upload-overlay h3 { color: #333 !important; margin: 0 0 5px 0; }
+    .img-workspace .upload-overlay:hover { background: rgba(240,248,255,0.95); }
+    .img-workspace .upload-overlay i { font-size: 40px; color: #007bff; margin-bottom: 10px; font-style: normal; }
+    .img-workspace .upload-overlay h3 { color: #333 !important; margin: 0 0 5px 0; }
 
     /* Bottom: Action Bar */
-    .img-action-bar {
+    .img-workspace .img-action-bar {
         padding: 15px 20px;
         background: #f8fafc;
         display: flex;
@@ -105,9 +103,9 @@ order: 1
         gap: 15px;
     }
 
-    .action-left { display: flex; align-items: center; gap: 10px; }
+    .img-workspace .action-left { display: flex; align-items: center; gap: 10px; }
 
-    .privacy-notice {
+    .img-workspace .privacy-notice {
         font-size: 13px;
         color: #10b981;
         display: flex;
@@ -119,159 +117,158 @@ order: 1
         justify-content: center;
     }
 
-    /* UI Components */
-    .t-btn {
+    /* UI Components Scoped */
+    .img-workspace .t-btn {
         padding: 8px 16px; border-radius: 6px; border: none; font-size: 14px;
         font-weight: 500; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px;
     }
-    .t-btn-primary { background: #007bff !important; color: white !important; }
-    .t-btn-primary:hover { background: #0056b3 !important; }
-    .t-btn-primary:disabled { background: #94a3b8 !important; cursor: not-allowed; }
+    .img-workspace .t-btn-primary { background: #007bff !important; color: white !important; }
+    .img-workspace .t-btn-primary:hover { background: #0056b3 !important; }
+    .img-workspace .t-btn-primary:disabled { background: #94a3b8 !important; cursor: not-allowed; }
 
-    .t-btn-outline { background: transparent !important; border: 1px solid #cbd5e1 !important; color: #475569 !important; }
-    .t-btn-outline:hover { background: #f1f5f9 !important; }
-    .t-btn-outline:disabled { color: #94a3b8 !important; border-color: #e2e8f0 !important; cursor: not-allowed; }
+    .img-workspace .t-btn-outline { background: transparent !important; border: 1px solid #cbd5e1 !important; color: #475569 !important; }
+    .img-workspace .t-btn-outline:hover { background: #f1f5f9 !important; }
+    .img-workspace .t-btn-outline:disabled { color: #94a3b8 !important; border-color: #e2e8f0 !important; cursor: not-allowed; }
 
-    .t-select, .t-input { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; color: #333 !important; }
-    .t-slider-group { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #475569; }
+    .img-workspace .t-select, .img-workspace .t-input { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; color: #333 !important; }
+    .img-workspace .t-slider-group { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #475569; }
 
-    #loading-indicator { display: none; color: #007bff; font-weight: bold; font-size: 14px; }
+    #img-loading-indicator { display: none; color: #007bff; font-weight: bold; font-size: 14px; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     @media (max-width: 768px) {
-        .img-action-bar { flex-direction: column; }
-        .privacy-notice { order: 3; margin-top: 10px; }
+        .img-workspace .img-action-bar { flex-direction: column; }
+        .img-workspace .privacy-notice { order: 3; margin-top: 10px; }
     }
 </style>
 
 <div class="img-workspace">
     <!-- Top: Navigation -->
     <div class="img-nav">
-        <button class="img-nav-btn active" onclick="switchImgTab('tab-format', this)">1. Format & Compress</button>
-        <button class="img-nav-btn" onclick="switchImgTab('tab-crop', this)">2. Crop & Resize</button>
-        <button class="img-nav-btn" onclick="switchImgTab('tab-bg', this)">3. Background Removal</button>
-        <button class="img-nav-btn" onclick="switchImgTab('tab-color', this)">4. Color Adjustment</button>
+        <button class="img-nav-btn active" onclick="switchImgTab('img-tab-format', this)">1. Format & Compress</button>
+        <button class="img-nav-btn" onclick="switchImgTab('img-tab-crop', this)">2. Crop & Resize</button>
+        <button class="img-nav-btn" onclick="switchImgTab('img-tab-bg', this)">3. Background Removal</button>
+        <button class="img-nav-btn" onclick="switchImgTab('img-tab-color', this)">4. Color Adjustment</button>
     </div>
 
     <!-- 1. Format & Compress Panel -->
-    <div id="tab-format" class="img-tool-panel active">
-        <select id="export-format" class="t-select">
+    <div id="img-tab-format" class="img-tool-panel active">
+        <select id="img-export-format" class="t-select">
             <option value="image/jpeg">Export as JPG</option>
             <option value="image/png">Export as PNG</option>
             <option value="image/webp">Export as WEBP</option>
         </select>
         <div class="t-slider-group">
             <label>Compression Quality:</label>
-            <input type="range" id="export-quality" min="0.1" max="1.0" step="0.1" value="0.9">
-            <span id="quality-val">90%</span>
+            <input type="range" id="img-export-quality" min="0.1" max="1.0" step="0.1" value="0.9">
+            <span id="img-quality-val">90%</span>
         </div>
     </div>
 
     <!-- 2. Crop Panel -->
-    <div id="tab-crop" class="img-tool-panel">
-        <button class="t-btn t-btn-outline" onclick="setCropRatio(NaN)">Free Crop</button>
-        <button class="t-btn t-btn-outline" onclick="setCropRatio(1)">1:1 (Square)</button>
-        <button class="t-btn t-btn-outline" onclick="setCropRatio(16/9)">16:9 (Video)</button>
-        <button class="t-btn t-btn-outline" onclick="setCropRatio(4/3)">4:3</button>
-        <button class="t-btn t-btn-primary" onclick="applyCrop()" style="margin-left: auto;">✔️ Apply Crop</button>
+    <div id="img-tab-crop" class="img-tool-panel">
+        <button class="t-btn t-btn-outline" onclick="imgSetCropRatio(NaN)">Free Crop</button>
+        <button class="t-btn t-btn-outline" onclick="imgSetCropRatio(1)">1:1 (Square)</button>
+        <button class="t-btn t-btn-outline" onclick="imgSetCropRatio(16/9)">16:9 (Video)</button>
+        <button class="t-btn t-btn-outline" onclick="imgSetCropRatio(4/3)">4:3</button>
+        <button class="t-btn t-btn-primary" onclick="imgApplyCrop()" style="margin-left: auto;">✔️ Apply Crop</button>
     </div>
 
     <!-- 3. Background Removal Panel -->
-    <div id="tab-bg" class="img-tool-panel">
-        <button class="t-btn t-btn-primary" onclick="removeBackground()">🪄 Auto Remove Background</button>
+    <div id="img-tab-bg" class="img-tool-panel">
+        <button class="t-btn t-btn-primary" onclick="imgRemoveBackground()">🪄 Auto Remove Background</button>
         <div class="t-slider-group" style="margin-left: 20px;">
             <label>ID Photo BG Color:</label>
-            <input type="color" id="id-bg-color" value="#ffffff" onchange="changeBgColor(this.value)">
-            <button class="t-btn t-btn-outline" onclick="changeBgColor('transparent')">Transparent</button>
+            <input type="color" id="img-id-bg-color" value="#ffffff" onchange="imgChangeBgColor(this.value)">
+            <button class="t-btn t-btn-outline" onclick="imgChangeBgColor('transparent')">Transparent</button>
         </div>
     </div>
 
     <!-- 4. Color Adjustment Panel -->
-    <div id="tab-color" class="img-tool-panel">
-        <div class="t-slider-group"><label>Brightness</label><input type="range" id="f-bright" min="0" max="200" value="100" oninput="applyFilters()"></div>
-        <div class="t-slider-group"><label>Contrast</label><input type="range" id="f-contrast" min="0" max="200" value="100" oninput="applyFilters()"></div>
-        <div class="t-slider-group"><label>Saturation</label><input type="range" id="f-saturate" min="0" max="200" value="100" oninput="applyFilters()"></div>
-        <button class="t-btn t-btn-outline" onclick="resetFilters()">Reset Colors</button>
+    <div id="img-tab-color" class="img-tool-panel">
+        <div class="t-slider-group"><label>Brightness</label><input type="range" id="img-f-bright" min="0" max="200" value="100" oninput="imgApplyFilters()"></div>
+        <div class="t-slider-group"><label>Contrast</label><input type="range" id="img-f-contrast" min="0" max="200" value="100" oninput="imgApplyFilters()"></div>
+        <div class="t-slider-group"><label>Saturation</label><input type="range" id="img-f-saturate" min="0" max="200" value="100" oninput="imgApplyFilters()"></div>
+        <button class="t-btn t-btn-outline" onclick="imgResetFilters()">Reset Colors</button>
     </div>
 
     <!-- Middle: Preview Workspace -->
-    <div class="img-preview-container" id="workspace">
-        <div class="upload-overlay" id="upload-overlay" onclick="document.getElementById('main-image-upload').click()">
+    <div class="img-preview-container" id="img-workspace-area">
+        <div class="upload-overlay" id="img-upload-overlay" onclick="document.getElementById('img-main-image-upload').click()">
             <i>📸</i>
             <h3>Click or Drop Image Here</h3>
             <p style="color:#64748b; font-size: 13px;">Supports JPG, PNG, WEBP</p>
         </div>
-        <input type="file" id="main-image-upload" accept="image/*" style="display: none;" onchange="loadMainImage(event)">
+        <input type="file" id="img-main-image-upload" accept="image/*" style="display: none;" onchange="imgLoadMainImage(event)">
         <img id="img-source" src="" alt="Workspace Image">
     </div>
 
     <!-- Bottom: Action Bar -->
     <div class="img-action-bar">
         <div class="action-left">
-            <button class="t-btn t-btn-outline" onclick="resetWorkspace()" id="btn-reset" disabled>🗑️ Clear Workspace</button>
-            <span id="loading-indicator">Processing... Please wait.</span>
+            <button class="t-btn t-btn-outline" onclick="imgResetWorkspace()" id="img-btn-reset" disabled>🗑️ Clear Workspace</button>
+            <span id="img-loading-indicator">Processing... Please wait.</span>
         </div>
 
         <div class="privacy-notice">
             🛡️ 100% Local Processing: Your files never leave your device.
         </div>
 
-        <button class="t-btn t-btn-primary" onclick="downloadResult()" id="btn-download" disabled>💾 Download Result</button>
+        <button class="t-btn t-btn-primary" onclick="imgDownloadResult()" id="img-btn-download" disabled>💾 Download Result</button>
     </div>
 </div>
 
 <script>
     let cropperInstance = null;
-    let imglyModule = null; // 缓存动态加载的背景扣除库
+    let imglyModule = null; 
     const imgElement = document.getElementById('img-source');
-    const uploadOverlay = document.getElementById('upload-overlay');
-    const workspace = document.getElementById('workspace');
+    
+    // Lazy load the elements instead of evaluating on page load (safer if DOM renders async)
+    const getImgOverlay = () => document.getElementById('img-upload-overlay');
+    const getImgWorkspace = () => document.getElementById('img-workspace-area');
 
-    // 1. Core Functions: Upload & Reset
-    function loadMainImage(event) {
+    function imgLoadMainImage(event) {
         const file = event.target.files[0];
         if (!file) return;
 
         const url = URL.createObjectURL(file);
         imgElement.src = url;
         imgElement.style.display = 'block';
-        uploadOverlay.style.display = 'none';
+        getImgOverlay().style.display = 'none';
 
-        document.getElementById('btn-reset').disabled = false;
-        document.getElementById('btn-download').disabled = false;
+        document.getElementById('img-btn-reset').disabled = false;
+        document.getElementById('img-btn-download').disabled = false;
 
         destroyCropper();
-        resetFilters();
-        workspace.style.backgroundColor = 'transparent';
+        imgResetFilters();
+        getImgWorkspace().style.backgroundColor = 'transparent';
     }
 
-    function resetWorkspace() {
+    function imgResetWorkspace() {
         imgElement.src = '';
         imgElement.style.display = 'none';
-        uploadOverlay.style.display = 'flex';
-        document.getElementById('main-image-upload').value = '';
-        document.getElementById('btn-reset').disabled = true;
-        document.getElementById('btn-download').disabled = true;
+        getImgOverlay().style.display = 'flex';
+        document.getElementById('img-main-image-upload').value = '';
+        document.getElementById('img-btn-reset').disabled = true;
+        document.getElementById('img-btn-download').disabled = true;
         destroyCropper();
-        resetFilters();
-        workspace.style.backgroundColor = 'transparent';
+        imgResetFilters();
+        getImgWorkspace().style.backgroundColor = 'transparent';
     }
 
-    // 2. Tab Navigation
     function switchImgTab(tabId, btn) {
-        document.querySelectorAll('.img-tool-panel').forEach(el => el.classList.remove('active'));
-        document.querySelectorAll('.img-nav-btn').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.img-workspace .img-tool-panel').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.img-workspace .img-nav-btn').forEach(el => el.classList.remove('active'));
         document.getElementById(tabId).classList.add('active');
         btn.classList.add('active');
 
-        if (tabId === 'tab-crop' && imgElement.getAttribute('src')) {
+        if (tabId === 'img-tab-crop' && imgElement.getAttribute('src')) {
             initCropper();
         } else {
             destroyCropper();
         }
     }
 
-    // 3. Cropping Logic (Cropper.js)
     function initCropper() {
         if (!cropperInstance && imgElement.getAttribute('src')) {
             imgElement.style.filter = 'none';
@@ -294,20 +291,19 @@ order: 1
         if (cropperInstance) {
             cropperInstance.destroy();
             cropperInstance = null;
-            applyFilters();
+            imgApplyFilters();
         }
     }
 
-    function setCropRatio(ratio) {
+    function imgSetCropRatio(ratio) {
         if (cropperInstance) {
             cropperInstance.setAspectRatio(ratio);
         }
     }
 
-    function applyCrop() {
+    function imgApplyCrop() {
         if (cropperInstance) {
             const canvas = cropperInstance.getCroppedCanvas();
-            // 注意：用 toDataURL() 默认输出 PNG，保留透明通道
             const newSrc = canvas.toDataURL('image/png');
             destroyCropper();
             imgElement.src = newSrc;
@@ -315,13 +311,8 @@ order: 1
         }
     }
 
-    // 4. Background Removal (@imgly/background-removal, 动态 import ESM)
     async function loadImgly() {
         if (imglyModule) return imglyModule;
-
-        // 依次尝试多个 CDN，任何一个成功即可
-        // 注意：jsDelivr 的 +esm 会因 lodash 缺少具名导出 memoize 而失败，
-        // 所以优先使用 esm.sh（能正确处理 CJS 依赖的具名导出）
         const urls = [
             'https://esm.sh/@imgly/background-removal@1.5.5',
             'https://esm.sh/@imgly/background-removal@1.4.3',
@@ -331,35 +322,29 @@ order: 1
         for (const url of urls) {
             try {
                 imglyModule = await import(url);
-                console.log('Background removal library loaded from', url);
                 return imglyModule;
             } catch (e) {
-                console.warn('Failed to load from', url, e);
                 errors.push(url + ' -> ' + e.message);
             }
         }
         throw new Error('Cannot load background removal library:\n' + errors.join('\n'));
     }
 
-    async function removeBackground() {
+    async function imgRemoveBackground() {
         if (!imgElement.getAttribute('src')) return alert("Please upload an image first.");
 
-        // 如果正在裁剪，先退出裁剪模式，避免操作到 Cropper 的内部 DOM
         destroyCropper();
 
-        const loader = document.getElementById('loading-indicator');
+        const loader = document.getElementById('img-loading-indicator');
         loader.style.display = 'inline-block';
         loader.innerText = "Loading AI Model & Processing...";
 
         try {
             const lib = await loadImgly();
-
-            // 取出当前图片为 Blob（blob: / data: URL 都可以 fetch）
             const response = await fetch(imgElement.src);
             const blob = await response.blob();
-
-            // 库导出的函数名是 removeBackground（也可能挂在 default 上）
             const removeFn = lib.removeBackground || (lib.default && lib.default.removeBackground) || lib.default;
+            
             if (typeof removeFn !== 'function') {
                 throw new Error('removeBackground export not found in loaded module');
             }
@@ -373,9 +358,7 @@ order: 1
             });
 
             imgElement.src = URL.createObjectURL(resultBlob);
-
-            // 默认导出 PNG 以保留透明背景
-            document.getElementById('export-format').value = 'image/png';
+            document.getElementById('img-export-format').value = 'image/png';
         } catch (error) {
             console.error(error);
             alert("Background removal failed: " + error.message);
@@ -384,39 +367,37 @@ order: 1
         }
     }
 
-    function changeBgColor(color) {
-        workspace.style.backgroundColor = (color === 'transparent') ? 'transparent' : color;
+    function imgChangeBgColor(color) {
+        getImgWorkspace().style.backgroundColor = (color === 'transparent') ? 'transparent' : color;
     }
 
-    // 5. Color Filters (CSS -> Canvas)
-    function applyFilters() {
+    function imgApplyFilters() {
         if (cropperInstance) return;
-        const brightness = document.getElementById('f-bright').value;
-        const contrast = document.getElementById('f-contrast').value;
-        const saturate = document.getElementById('f-saturate').value;
+        const brightness = document.getElementById('img-f-bright').value;
+        const contrast = document.getElementById('img-f-contrast').value;
+        const saturate = document.getElementById('img-f-saturate').value;
 
         imgElement.style.filter = `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturate}%)`;
     }
 
-    function resetFilters() {
-        document.getElementById('f-bright').value = 100;
-        document.getElementById('f-contrast').value = 100;
-        document.getElementById('f-saturate').value = 100;
-        applyFilters();
+    function imgResetFilters() {
+        document.getElementById('img-f-bright').value = 100;
+        document.getElementById('img-f-contrast').value = 100;
+        document.getElementById('img-f-saturate').value = 100;
+        imgApplyFilters();
     }
 
-    document.getElementById('export-quality').addEventListener('input', function(e) {
-        document.getElementById('quality-val').innerText = Math.round(e.target.value * 100) + '%';
+    document.getElementById('img-export-quality').addEventListener('input', function(e) {
+        document.getElementById('img-quality-val').innerText = Math.round(e.target.value * 100) + '%';
     });
 
-    // 6. Download Result (Baking Filters and Background)
-    function downloadResult() {
+    function imgDownloadResult() {
         if (!imgElement.getAttribute('src')) return;
 
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
-        const format = document.getElementById('export-format').value;
-        const quality = parseFloat(document.getElementById('export-quality').value);
+        const format = document.getElementById('img-export-format').value;
+        const quality = parseFloat(document.getElementById('img-export-quality').value);
 
         const bakeImg = new Image();
         bakeImg.crossOrigin = "anonymous";
@@ -424,27 +405,22 @@ order: 1
             canvas.width = bakeImg.naturalWidth;
             canvas.height = bakeImg.naturalHeight;
 
-            // 1. 背景色（非透明时）
-            const bgColor = workspace.style.backgroundColor;
+            const bgColor = getImgWorkspace().style.backgroundColor;
             if (bgColor && bgColor !== 'transparent' && bgColor !== 'rgba(0, 0, 0, 0)') {
                 ctx.fillStyle = bgColor;
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
             } else if (format === 'image/jpeg') {
-                // JPG 不支持透明，透明区域默认会变黑，这里垫白色
                 ctx.fillStyle = '#ffffff';
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
             }
 
-            // 2. 应用滤镜
-            const brightness = document.getElementById('f-bright').value;
-            const contrast = document.getElementById('f-contrast').value;
-            const saturate = document.getElementById('f-saturate').value;
+            const brightness = document.getElementById('img-f-bright').value;
+            const contrast = document.getElementById('img-f-contrast').value;
+            const saturate = document.getElementById('img-f-saturate').value;
             ctx.filter = `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturate}%)`;
 
-            // 3. 绘制图片
             ctx.drawImage(bakeImg, 0, 0, canvas.width, canvas.height);
 
-            // 4. 导出
             const dataUrl = canvas.toDataURL(format, quality);
             const a = document.createElement('a');
             a.href = dataUrl;
