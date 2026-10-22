@@ -316,6 +316,8 @@ order: 2
 </div>
 
 <script>
+(function () {
+    'use strict';
     // ---------- Tool configuration ----------
     const isPdf = f => f.type === 'application/pdf' || /\.pdf$/i.test(f.name);
     const TOOLS = {
@@ -354,7 +356,7 @@ order: 2
     let busy = false;
     let idCounter = 0;
 
-    const $ = id => document.getElementById(id);
+    const byId = id => document.getElementById(id);
 
     // ---------- Helpers ----------
     function esc(s) {
@@ -370,7 +372,7 @@ order: 2
         if (!ok) throw new Error(name + ' failed to load. Check your network / CDN access and refresh the page.');
     }
     function setStatus(msg, type) {
-        const el = $('status-text');
+        const el = byId('status-text');
         el.textContent = msg || '';
         el.className = type || '';
     }
@@ -380,10 +382,10 @@ order: 2
     }
     function refreshButtons() {
         const empty = store[current].length === 0;
-        $('btn-run').disabled = busy || empty;
-        $('btn-reset').disabled = busy || empty;
-        $('btn-add').disabled = busy;
-        $('btn-run').innerText = TOOLS[current].btn;
+        byId('btn-run').disabled = busy || empty;
+        byId('btn-reset').disabled = busy || empty;
+        byId('btn-add').disabled = busy;
+        byId('btn-run').innerText = TOOLS[current].btn;
     }
     function uniqueName(name, used) {
         if (!used.has(name)) { used.add(name); return name; }
@@ -426,15 +428,15 @@ order: 2
         current = tool;
         document.querySelectorAll('.pdf-tool-panel').forEach(el => el.classList.remove('active'));
         document.querySelectorAll('.pdf-nav-btn').forEach(el => el.classList.remove('active'));
-        $('panel-' + tool).classList.add('active');
+        byId('panel-' + tool).classList.add('active');
         btn.classList.add('active');
 
         const cfg = TOOLS[tool];
-        const input = $('file-input');
+        const input = byId('file-input');
         input.accept = cfg.input;
         input.multiple = cfg.multi;
-        $('drop-title').innerText = cfg.title;
-        $('drop-hint').innerText = cfg.hint;
+        byId('drop-title').innerText = cfg.title;
+        byId('drop-hint').innerText = cfg.hint;
         setStatus('');
         renderList();
     }
@@ -514,14 +516,14 @@ order: 2
     function renderList() {
         const items = store[current];
         const cfg = TOOLS[current];
-        $('upload-overlay').style.display = items.length ? 'none' : 'flex';
-        $('file-area').style.display = items.length ? 'flex' : 'none';
-        $('btn-add').style.display = cfg.multi ? '' : 'none';
+        byId('upload-overlay').style.display = items.length ? 'none' : 'flex';
+        byId('file-area').style.display = items.length ? 'flex' : 'none';
+        byId('btn-add').style.display = cfg.multi ? '' : 'none';
 
         const totalSize = items.reduce((s, it) => s + it.file.size, 0);
-        $('file-count').innerText = items.length + ' file(s) · ' + fmtSize(totalSize);
+        byId('file-count').innerText = items.length + ' file(s) · ' + fmtSize(totalSize);
 
-        $('file-list').innerHTML = items.map((it, i) => {
+        byId('file-list').innerHTML = items.map((it, i) => {
             const icon = current === 'img'
                 ? '<img src="' + it.thumb + '" alt="">'
                 : (current === 'word' ? '📘' : '📕');
@@ -547,14 +549,14 @@ order: 2
 
         if (current === 'split') {
             const it = items[0];
-            $('split-info').innerText = it && it.pages ? ('Total pages: ' + it.pages) : '';
+            byId('split-info').innerText = it && it.pages ? ('Total pages: ' + it.pages) : '';
         }
         refreshButtons();
     }
 
     // Drag & drop
     (function initDrop() {
-        const ws = $('workspace');
+        const ws = byId('workspace');
         ['dragenter', 'dragover'].forEach(ev => ws.addEventListener(ev, e => {
             e.preventDefault();
             ws.classList.add('drag-over');
@@ -570,9 +572,9 @@ order: 2
     })();
 
     function onSplitModeChange() {
-        const mode = $('split-mode').value;
-        $('split-range-group').style.display = (mode === 'range' || mode === 'ranges') ? '' : 'none';
-        $('split-n-group').style.display = (mode === 'every') ? '' : 'none';
+        const mode = byId('split-mode').value;
+        byId('split-range-group').style.display = (mode === 'range' || mode === 'ranges') ? '' : 'none';
+        byId('split-n-group').style.display = (mode === 'every') ? '' : 'none';
     }
 
     // ---------- Run dispatcher ----------
@@ -659,9 +661,9 @@ order: 2
     async function imagesToPdf(items) {
         need(window.PDFLib, 'pdf-lib');
         const { PDFDocument } = PDFLib;
-        const size = $('img-size').value;
-        const orient = $('img-orient').value;
-        const m = parseFloat($('img-margin').value) || 0;
+        const size = byId('img-size').value;
+        const orient = byId('img-orient').value;
+        const m = parseFloat(byId('img-margin').value) || 0;
         const BASE = { a4: [595.28, 841.89], letter: [612, 792] };
 
         const pdf = await PDFDocument.create();
@@ -698,7 +700,7 @@ order: 2
 
         const buf = await file.arrayBuffer();
         const res = await mammoth.convertToHtml({ arrayBuffer: buf });
-        const marginPx = parseInt($('word-margin').value, 10) || 60;
+        const marginPx = parseInt(byId('word-margin').value, 10) || 60;
         const PAGE_W = 794, PAGE_H = 1123; // A4 @ 96dpi
         const contentW = PAGE_W - 2 * marginPx;
         const contentH = PAGE_H - 2 * marginPx;
@@ -833,15 +835,15 @@ order: 2
         }
         const total = src.getPageCount();
         const base = baseName(item.file);
-        const mode = $('split-mode').value;
+        const mode = byId('split-mode').value;
         const results = [];
 
         if (mode === 'range') {
-            const groups = parseRanges($('split-range').value, total);
+            const groups = parseRanges(byId('split-range').value, total);
             const indices = [].concat(...groups);
             results.push({ name: base + '_extracted.pdf', blob: await extractPages(src, indices) });
         } else if (mode === 'ranges') {
-            const groups = parseRanges($('split-range').value, total);
+            const groups = parseRanges(byId('split-range').value, total);
             for (let g = 0; g < groups.length; g++) {
                 setStatus('Splitting ' + (g + 1) + '/' + groups.length + ' ...', '');
                 await nextFrame();
@@ -856,7 +858,7 @@ order: 2
                 results.push({ name: base + '_page_' + (i + 1) + '.pdf', blob: await extractPages(src, [i]) });
             }
         } else if (mode === 'every') {
-            const n = parseInt($('split-n').value, 10);
+            const n = parseInt(byId('split-n').value, 10);
             if (!(n >= 1)) throw new Error('N must be a positive integer.');
             let part = 1;
             for (let start = 0; start < total; start += n, part++) {
@@ -886,7 +888,7 @@ order: 2
         need(window.pdfjsLib, 'pdf.js');
         pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
 
-        const preset = COMPRESS_PRESETS[$('compress-level').value] || COMPRESS_PRESETS.medium;
+        const preset = COMPRESS_PRESETS[byId('compress-level').value] || COMPRESS_PRESETS.medium;
         const data = new Uint8Array(await file.arrayBuffer());
         let pdfDoc;
         try {
@@ -932,6 +934,19 @@ order: 2
         return new Blob([await out.save()], { type: 'application/pdf' });
     }
 
+    // Expose only what inline onclick/onchange handlers need
+    Object.assign(window, {
+        switchPdfTab, onFilesPicked, resetWorkspace, removeItem, moveItem, onSplitModeChange, runTool
+    });
+
+    // Show script errors on the page instead of failing silently
+    window.addEventListener('error', function (e) {
+        if (e && e.message && String(e.filename || '').indexOf('cdnjs') === -1) {
+            setStatus('❌ Script error: ' + e.message, 'error');
+        }
+    });
+
     // Init
     renderList();
+})();
 </script>
