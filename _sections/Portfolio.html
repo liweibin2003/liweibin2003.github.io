@@ -14,32 +14,43 @@ order: 2
     margin-bottom: 35px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-align: left; /* 强制整个卡片内的基础文本左对齐 */
+    text-align: left; 
   }
   .portfolio-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   }
+  
+  /* 强制标题加粗并居中 */
   .portfolio-card h3 {
     margin-top: 0;
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: #2c3e50 !important;
     font-size: 1.5em;
     border-bottom: 2px solid #f0f2f5;
     padding-bottom: 10px;
-    text-align: center; /* 强制大标题单独居中 */
+    text-align: center;
+    font-weight: 700 !important; /* 强制标题加粗 */
   }
+  
+  /* 强制所有 strong 标签加粗并加深颜色 */
+  .portfolio-card strong {
+    font-weight: 700 !important; /* 强制抵抗主题的细体重置 */
+    color: #333333 !important; 
+  }
+
   .portfolio-card p {
     margin-bottom: 12px;
     line-height: 1.6;
     color: #4a4a4a;
   }
+  
   .portfolio-link {
     display: block; 
     width: fit-content; 
-    margin: 20px auto 0; /* 左右 auto 强制按钮在父容器中居中 */
+    margin: 20px auto 0; 
     font-size: 1.05em;
-    font-weight: 700;
+    font-weight: 700 !important;
     color: #1b65d4;
     text-decoration: none;
     background: #e8f4fd;
@@ -54,9 +65,9 @@ order: 2
 </style>
 
 <div class="portfolio-card">
-  <h3>🤖 <strong>VibeCoding: Automated US Market Radar</strong></h3>
+  <h3>🤖 VibeCoding: Automated US Market Radar</h3>
   
-  <p><strong>🛠️ Tech Stack:</strong> Python, GitHub Actions, Jekyll (Liquid), Google Gemini 3.8 Flash AI, yfinance</p>
+  <p><strong>🛠️ Tech Stack:</strong> Python, GitHub Actions, Jekyll (Liquid), Google Gemini-3.8-Flash, yfinance</p>
   
   <p><strong>💡 Role:</strong> AI Automation Engineer / Full-Stack Creator</p>
   
@@ -66,3 +77,15 @@ order: 2
   <a href="/market.html" class="portfolio-link">👉 Click here to view the live Market Radar</a>
 </div>
 
+<div class="portfolio-card">
+  <h3>📊 Tableau Showcase: Interactive E-commerce Dashboard</h3>
+  
+  <p><strong>🛠️ Tech Stack:</strong> Tableau, Data Visualization, Scatter Plot</p>
+  
+  <p><strong>💡 Role:</strong> Data Analyst / BI Developer</p>
+  
+  <p><strong>📝 Project Overview:</strong><br>
+  An interactive business intelligence dashboard analyzing China's regional e-commerce performance. Designed for deep data exploration, this comprehensive visualization tracks core KPIs including over 8.7M in sales and 1.1M in profits. It features an interactive map for real-time provincial filtering, profit ratio scatter plots, and temporal trend charts to uncover regional market dynamics and profitability.</p>
+  
+  <a href="/Tableau.html" class="portfolio-link">👉 Click here to view the Interactive Dashboard</a>
+</div>
