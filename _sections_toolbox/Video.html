@@ -4,12 +4,15 @@ icon: fa-video
 order: 2
 ---
 
-<!-- External Libraries for Video Processing -->
-<!-- FFmpeg.wasm for client-side video processing -->
+<!-- 1. 跨域隔离：必须放在所有其他脚本之前，且文件必须和页面同源 -->
+<!--    请把 coi-serviceworker.min.js 放到站点根目录（见回复中的说明） -->
+<script src="{{ '/coi-serviceworker.min.js' | relative_url }}"></script>
+
+<!-- 2. FFmpeg.wasm for client-side video processing -->
 <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
 
 <style>
-    /* Video Workspace Styles - 沿用一致的视觉风格 */
+    /* Video Workspace Styles */
     .vid-workspace {
         display: flex;
         flex-direction: column;
@@ -61,7 +64,7 @@ order: 2
         position: relative;
         width: 100%;
         height: 500px;
-        background: #1e293b; /* 视频背景调暗以提升沉浸感 */
+        background: #1e293b;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -165,7 +168,7 @@ order: 2
         </div>
     </div>
 
-    <!-- 2. Trim/Crop Time Panel -->
+    <!-- 2. Trim Panel -->
     <div id="tab-trim" class="vid-tool-panel">
         <div class="t-slider-group">
             <label>Start Time (sec):</label>
@@ -173,7 +176,7 @@ order: 2
         </div>
         <div class="t-slider-group">
             <label>End Time (sec):</label>
-            <input type="number" id="trim-end" class="t-input" value="10" min="1" step="0.1" style="width: 80px;">
+            <input type="number" id="trim-end" class="t-input" value="10" min="0.1" step="0.1" style="width: 80px;">
         </div>
         <button class="t-btn t-btn-outline" onclick="setCurrentTime('trim-start')">Set Start to Current</button>
         <button class="t-btn t-btn-outline" onclick="setCurrentTime('trim-end')">Set End to Current</button>
@@ -195,7 +198,7 @@ order: 2
     <!-- 4. Screenshot Panel -->
     <div id="tab-screenshot" class="vid-tool-panel">
         <span style="font-size: 14px; color: #333; font-weight: 500;">
-            🖱️ Play or drag the video progress bar below to the desired frame, then click "Process & Download".
+            🖱️ Play or drag the video progress bar below to the desired frame, then click "Capture & Download Frame".
         </span>
     </div>
 
@@ -207,8 +210,7 @@ order: 2
             <p style="color:#64748b; font-size: 13px;">Supports MP4, WebM, MOV (Under 200MB recommended)</p>
         </div>
         <input type="file" id="main-video-upload" accept="video/*" style="display: none;" onchange="loadMainVideo(event)">
-        <!-- Video element with native controls -->
-        <video id="vid-source" controls crossorigin="anonymous"></video>
+        <video id="vid-source" controls></video>
     </div>
 
     <!-- Bottom: Action Bar -->
@@ -231,31 +233,54 @@ order: 2
     const vidUploadOverlay = document.getElementById('vid-upload-overlay');
     const loadingIndicator = document.getElementById('loading-indicator');
     const actionBtn = document.getElementById('btn-vid-action');
-    
+    const resetBtn = document.getElementById('btn-vid-reset');
+
     let currentVideoFile = null;
+    let currentVideoUrl = null;
     let currentActiveTab = 'tab-compress';
-    
+
     // FFmpeg Core
     let ffmpeg = null;
+    let ffmpegLoading = null; // 防止并发重复加载
     const { createFFmpeg, fetchFile } = FFmpeg;
 
     async function initFFmpeg() {
-        if (!ffmpeg) {
+        if (ffmpeg) return;
+        if (ffmpegLoading) return ffmpegLoading;
+
+        // 提前检测：ffmpeg.wasm 0.11.x 依赖 SharedArrayBuffer（需要跨域隔离）
+        if (typeof SharedArrayBuffer === 'undefined' || !window.crossOriginIsolated) {
+            throw new Error(
+                '当前页面未开启跨域隔离（SharedArrayBuffer 不可用）。\n' +
+                '请确认 coi-serviceworker.min.js 已放到站点根目录并刷新页面，' +
+                '或在服务器上配置 COOP/COEP 响应头。\n' +
+                '提示：在 Console 输入 crossOriginIsolated，应返回 true。'
+            );
+        }
+
+        ffmpegLoading = (async () => {
             loadingIndicator.style.display = 'inline-block';
             loadingIndicator.innerText = "Loading FFmpeg Engine...";
-            ffmpeg = createFFmpeg({
+
+            const instance = createFFmpeg({
                 log: true,
-                // 提供直接的跨域资源防止被拦截
                 corePath: 'https://unpkg.com/@ffmpeg/core@0.11.0/dist/ffmpeg-core.js'
             });
-            ffmpeg.setProgress(({ ratio }) => {
+            instance.setProgress(({ ratio }) => {
                 const percent = Math.round(ratio * 100);
                 if (percent >= 0 && percent <= 100) {
                     loadingIndicator.innerText = `Processing: ${percent}%`;
                 }
             });
-            await ffmpeg.load();
-            loadingIndicator.style.display = 'none';
+
+            await instance.load();   // 加载成功后才赋值，避免保留一个坏掉的实例
+            ffmpeg = instance;
+        })();
+
+        try {
+            await ffmpegLoading;
+        } finally {
+            ffmpegLoading = null;
         }
     }
 
@@ -265,27 +290,34 @@ order: 2
         if (!file) return;
 
         currentVideoFile = file;
-        const url = URL.createObjectURL(file);
-        vidElement.src = url;
+        if (currentVideoUrl) URL.revokeObjectURL(currentVideoUrl);
+        currentVideoUrl = URL.createObjectURL(file);
+
+        // 先绑定事件，再设置 src，避免错过 loadedmetadata
+        vidElement.onloadedmetadata = () => {
+            document.getElementById('trim-start').value = 0;
+            document.getElementById('trim-end').value = vidElement.duration.toFixed(1);
+        };
+        vidElement.src = currentVideoUrl;
         vidElement.style.display = 'block';
         vidUploadOverlay.style.display = 'none';
 
-        document.getElementById('btn-vid-reset').disabled = false;
+        resetBtn.disabled = false;
         actionBtn.disabled = false;
-
-        // 加载完视频数据后，初始化时间轴
-        vidElement.onloadedmetadata = () => {
-            document.getElementById('trim-end').value = vidElement.duration.toFixed(1);
-        };
     }
 
     function resetVidWorkspace() {
-        vidElement.src = '';
+        vidElement.removeAttribute('src');
+        vidElement.load();
         vidElement.style.display = 'none';
         vidUploadOverlay.style.display = 'flex';
         document.getElementById('main-video-upload').value = '';
-        
-        document.getElementById('btn-vid-reset').disabled = true;
+
+        if (currentVideoUrl) {
+            URL.revokeObjectURL(currentVideoUrl);
+            currentVideoUrl = null;
+        }
+        resetBtn.disabled = true;
         actionBtn.disabled = true;
         currentVideoFile = null;
     }
@@ -298,26 +330,22 @@ order: 2
         btn.classList.add('active');
         currentActiveTab = tabId;
 
-        // Update button context
-        if (tabId === 'tab-screenshot') {
-            actionBtn.innerHTML = '📸 Capture & Download Frame';
-        } else {
-            actionBtn.innerHTML = '⚡ Process & Download';
-        }
+        actionBtn.innerHTML = (tabId === 'tab-screenshot')
+            ? '📸 Capture & Download Frame'
+            : '⚡ Process & Download';
     }
 
-    // 辅助功能：将当前视频时间填入修剪输入框
     function setCurrentTime(inputId) {
-        if (!vidElement.src) return;
+        if (!vidElement.getAttribute('src')) return;
         document.getElementById(inputId).value = vidElement.currentTime.toFixed(1);
     }
 
     // 3. Main Execution Function based on active tab
     async function executeVideoTask() {
-        if (!currentVideoFile && currentActiveTab !== 'tab-screenshot') return;
-        
+        if (!currentVideoFile) return;
+
         actionBtn.disabled = true;
-        document.getElementById('btn-vid-reset').disabled = true;
+        resetBtn.disabled = true;
 
         try {
             if (currentActiveTab === 'tab-screenshot') {
@@ -331,17 +359,18 @@ order: 2
             }
         } catch (error) {
             console.error(error);
-            alert("Error processing file. See console for details.");
+            const msg = (error && error.message) ? error.message : String(error);
+            alert("Error processing file:\n" + msg);
             loadingIndicator.style.display = 'none';
         } finally {
             actionBtn.disabled = false;
-            document.getElementById('btn-vid-reset').disabled = false;
+            resetBtn.disabled = false;
         }
     }
 
     // --- Task: Screenshot (Instant Canvas Processing) ---
     function takeScreenshot() {
-        if (!vidElement.src) {
+        if (!vidElement.getAttribute('src') || !vidElement.videoWidth) {
             alert("Please upload a video first.");
             return;
         }
@@ -350,7 +379,7 @@ order: 2
         canvas.height = vidElement.videoHeight;
         const ctx = canvas.getContext('2d');
         ctx.drawImage(vidElement, 0, 0, canvas.width, canvas.height);
-        
+
         const dataUrl = canvas.toDataURL('image/png');
         downloadBlob(dataUrl, `screenshot_${vidElement.currentTime.toFixed(2)}s.png`, true);
     }
@@ -361,59 +390,76 @@ order: 2
         loadingIndicator.style.display = 'inline-block';
         loadingIndicator.innerText = "Reading File...";
 
-        const inputName = 'input_video.mp4';
-        ffmpeg.FS('writeFile', inputName, await fetchFile(currentVideoFile));
-
+        // 保留原始扩展名，帮助 FFmpeg 识别容器格式
+        const extMatch = currentVideoFile.name.match(/\.([a-zA-Z0-9]+)$/);
+        const inputName = 'input_video.' + (extMatch ? extMatch[1].toLowerCase() : 'mp4');
         let outputName = '';
-        let ffmpegArgs = [];
 
-        if (mode === 'compress') {
-            outputName = 'compressed.mp4';
-            const crf = document.getElementById('compress-level').value;
-            const scale = document.getElementById('compress-scale').value;
-            // 参数解析: 设置分辨率高度，保留宽高比，调整压缩率
-            ffmpegArgs = ['-i', inputName, '-vf', `scale=-2:${scale}`, '-c:v', 'libx264', '-crf', crf, '-preset', 'ultrafast', outputName];
-        } 
-        else if (mode === 'trim') {
-            outputName = 'trimmed.mp4';
-            const start = document.getElementById('trim-start').value;
-            const end = document.getElementById('trim-end').value;
-            // 极速裁剪: stream copy 而非重新编码
-            ffmpegArgs = ['-i', inputName, '-ss', start, '-to', end, '-c', 'copy', outputName];
-        } 
-        else if (mode === 'audio') {
-            const format = document.getElementById('audio-format').value;
-            outputName = `extracted.${format}`;
-            if (format === 'mp3') {
-                ffmpegArgs = ['-i', inputName, '-q:a', '0', '-map', 'a', outputName];
-            } else if (format === 'wav') {
-                ffmpegArgs = ['-i', inputName, '-vn', '-acodec', 'pcm_s16le', '-ar', '44100', '-ac', '2', outputName];
-            } else if (format === 'aac') {
-                ffmpegArgs = ['-i', inputName, '-vn', '-acodec', 'aac', outputName];
+        try {
+            ffmpeg.FS('writeFile', inputName, await fetchFile(currentVideoFile));
+
+            let ffmpegArgs = [];
+
+            if (mode === 'compress') {
+                outputName = 'compressed.mp4';
+                const crf = document.getElementById('compress-level').value;
+                const scale = document.getElementById('compress-scale').value;
+                // scale=-2:H 保持宽高比且宽度为偶数；format=yuv420p 提高兼容性
+                ffmpegArgs = [
+                    '-i', inputName,
+                    '-vf', `scale=-2:${scale},format=yuv420p`,
+                    '-c:v', 'libx264', '-crf', crf, '-preset', 'ultrafast',
+                    '-c:a', 'aac', '-b:a', '128k',
+                    outputName
+                ];
+            }
+            else if (mode === 'trim') {
+                outputName = 'trimmed.mp4';
+                const start = parseFloat(document.getElementById('trim-start').value);
+                const end = parseFloat(document.getElementById('trim-end').value);
+                if (isNaN(start) || isNaN(end) || end <= start) {
+                    throw new Error('结束时间必须大于开始时间。');
+                }
+                const duration = (end - start).toFixed(3);
+                // -ss 放在 -i 之前（快速定位），用 -t 指定时长；stream copy 速度最快，
+                // 但裁剪点会对齐到最近的关键帧
+                ffmpegArgs = ['-ss', String(start), '-i', inputName, '-t', duration, '-c', 'copy', outputName];
+            }
+            else if (mode === 'audio') {
+                const format = document.getElementById('audio-format').value;
+                outputName = `extracted.${format}`;
+                if (format === 'mp3') {
+                    ffmpegArgs = ['-i', inputName, '-vn', '-acodec', 'libmp3lame', '-q:a', '2', outputName];
+                } else if (format === 'wav') {
+                    ffmpegArgs = ['-i', inputName, '-vn', '-acodec', 'pcm_s16le', '-ar', '44100', '-ac', '2', outputName];
+                } else if (format === 'aac') {
+                    ffmpegArgs = ['-i', inputName, '-vn', '-acodec', 'aac', '-b:a', '192k', outputName];
+                }
+            }
+
+            loadingIndicator.innerText = "Processing File...";
+            await ffmpeg.run(...ffmpegArgs);
+
+            loadingIndicator.innerText = "Finishing up...";
+            const data = ffmpeg.FS('readFile', outputName);
+
+            let mimeType = 'video/mp4';
+            if (mode === 'audio') {
+                const format = document.getElementById('audio-format').value;
+                mimeType = format === 'mp3' ? 'audio/mpeg' : (format === 'wav' ? 'audio/wav' : 'audio/aac');
+            }
+
+            const blob = new Blob([data], { type: mimeType });
+            const url = URL.createObjectURL(blob);
+            downloadBlob(url, outputName, false);
+        } finally {
+            loadingIndicator.style.display = 'none';
+            // 清理 FFmpeg 虚拟文件系统，出错时也要清理
+            try { ffmpeg.FS('unlink', inputName); } catch (e) {}
+            if (outputName) {
+                try { ffmpeg.FS('unlink', outputName); } catch (e) {}
             }
         }
-
-        loadingIndicator.innerText = "Processing File...";
-        await ffmpeg.run(...ffmpegArgs);
-
-        loadingIndicator.innerText = "Finishing up...";
-        const data = ffmpeg.FS('readFile', outputName);
-        
-        let mimeType = 'video/mp4';
-        if (mode === 'audio') {
-            const format = document.getElementById('audio-format').value;
-            mimeType = format === 'mp3' ? 'audio/mpeg' : (format === 'wav' ? 'audio/wav' : 'audio/aac');
-        }
-
-        const blob = new Blob([data.buffer], { type: mimeType });
-        const url = URL.createObjectURL(blob);
-        downloadBlob(url, outputName, false);
-        
-        loadingIndicator.style.display = 'none';
-        
-        // 清理内存
-        ffmpeg.FS('unlink', inputName);
-        ffmpeg.FS('unlink', outputName);
     }
 
     // 辅助下载功能
@@ -425,7 +471,6 @@ order: 2
         a.click();
         document.body.removeChild(a);
         if (!isDataUrl) {
-            // 稍微延迟释放内存，防止下载失败
             setTimeout(() => URL.revokeObjectURL(url), 5000);
         }
     }
