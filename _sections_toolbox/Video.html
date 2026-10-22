@@ -1,1 +1,433 @@
+---
+layout: page
+title: Video
+icon: fa-video
+order: 2
+---
 
+<!-- External Libraries for Video Processing -->
+<!-- FFmpeg.wasm for client-side video processing -->
+<script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
+
+<style>
+    /* Video Workspace Styles - 沿用一致的视觉风格 */
+    .vid-workspace {
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+        border: 1px solid #eaeaea;
+        overflow: hidden;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        color: #333;
+        margin-top: 20px;
+    }
+
+    /* Top: Function Navigation */
+    .vid-nav {
+        display: flex;
+        background: #f8fafc;
+        border-bottom: 1px solid #eaeaea;
+        overflow-x: auto;
+    }
+    .vid-nav-btn {
+        flex: 1;
+        padding: 15px 10px;
+        background: transparent !important;
+        border: none;
+        font-size: 14px;
+        font-weight: 600;
+        color: #64748b !important;
+        cursor: pointer;
+        transition: all 0.3s;
+        white-space: nowrap;
+        text-align: center;
+    }
+    .vid-nav-btn:hover { color: #007bff !important; background: #f1f5f9 !important; }
+    .vid-nav-btn.active { color: #007bff !important; border-bottom: 3px solid #007bff !important; background: #fff !important; }
+
+    /* Sub-Top: Tool Options Panel */
+    .vid-tool-panel {
+        display: none;
+        padding: 15px 20px;
+        background: #fff;
+        border-bottom: 1px solid #eaeaea;
+        animation: fadeIn 0.3s ease;
+    }
+    .vid-tool-panel.active { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; justify-content: center; }
+
+    /* Middle: Interactive Preview Area */
+    .vid-preview-container {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        background: #1e293b; /* 视频背景调暗以提升沉浸感 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    #vid-source { max-width: 100%; max-height: 100%; display: none; }
+
+    .upload-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.95);
+        cursor: pointer;
+        z-index: 10;
+        transition: opacity 0.3s;
+    }
+    .upload-overlay:hover { background: rgba(240,248,255,0.95); }
+    .upload-overlay i { font-size: 40px; color: #007bff; margin-bottom: 10px; font-style: normal; }
+    .upload-overlay h3 { color: #333 !important; margin: 0 0 5px 0; }
+
+    /* Bottom: Action Bar */
+    .vid-action-bar {
+        padding: 15px 20px;
+        background: #f8fafc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #eaeaea;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .action-left { display: flex; align-items: center; gap: 10px; }
+
+    .privacy-notice {
+        font-size: 13px;
+        color: #10b981;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: 500;
+        text-align: center;
+        flex: 1;
+        justify-content: center;
+    }
+
+    /* UI Components */
+    .t-btn {
+        padding: 8px 16px; border-radius: 6px; border: none; font-size: 14px;
+        font-weight: 500; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .t-btn-primary { background: #007bff !important; color: white !important; }
+    .t-btn-primary:hover { background: #0056b3 !important; }
+    .t-btn-primary:disabled { background: #94a3b8 !important; cursor: not-allowed; }
+
+    .t-btn-outline { background: transparent !important; border: 1px solid #cbd5e1 !important; color: #475569 !important; }
+    .t-btn-outline:hover { background: #f1f5f9 !important; }
+    .t-btn-outline:disabled { color: #94a3b8 !important; border-color: #e2e8f0 !important; cursor: not-allowed; }
+
+    .t-select, .t-input { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; color: #333 !important; }
+    .t-slider-group { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #475569; }
+
+    #loading-indicator { display: none; color: #007bff; font-weight: bold; font-size: 14px; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    @media (max-width: 768px) {
+        .vid-action-bar { flex-direction: column; }
+        .privacy-notice { order: 3; margin-top: 10px; }
+    }
+</style>
+
+<div class="vid-workspace">
+    <!-- Top: Navigation -->
+    <div class="vid-nav">
+        <button class="vid-nav-btn active" onclick="switchVidTab('tab-compress', this)">1. Compress Video</button>
+        <button class="vid-nav-btn" onclick="switchVidTab('tab-trim', this)">2. Trim Video</button>
+        <button class="vid-nav-btn" onclick="switchVidTab('tab-audio', this)">3. Extract Audio</button>
+        <button class="vid-nav-btn" onclick="switchVidTab('tab-screenshot', this)">4. Capture Frame</button>
+    </div>
+
+    <!-- 1. Compress Panel -->
+    <div id="tab-compress" class="vid-tool-panel active">
+        <div class="t-slider-group">
+            <label>Compression Level:</label>
+            <select id="compress-level" class="t-select">
+                <option value="23">Light (Faster)</option>
+                <option value="28" selected>Medium (Recommended)</option>
+                <option value="33">High (Smaller File)</option>
+            </select>
+        </div>
+        <div class="t-slider-group">
+            <label>Resolution Scale:</label>
+            <select id="compress-scale" class="t-select">
+                <option value="1080">1080p</option>
+                <option value="720" selected>720p</option>
+                <option value="480">480p</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- 2. Trim/Crop Time Panel -->
+    <div id="tab-trim" class="vid-tool-panel">
+        <div class="t-slider-group">
+            <label>Start Time (sec):</label>
+            <input type="number" id="trim-start" class="t-input" value="0" min="0" step="0.1" style="width: 80px;">
+        </div>
+        <div class="t-slider-group">
+            <label>End Time (sec):</label>
+            <input type="number" id="trim-end" class="t-input" value="10" min="1" step="0.1" style="width: 80px;">
+        </div>
+        <button class="t-btn t-btn-outline" onclick="setCurrentTime('trim-start')">Set Start to Current</button>
+        <button class="t-btn t-btn-outline" onclick="setCurrentTime('trim-end')">Set End to Current</button>
+    </div>
+
+    <!-- 3. Audio Extraction Panel -->
+    <div id="tab-audio" class="vid-tool-panel">
+        <div class="t-slider-group">
+            <label>Output Format:</label>
+            <select id="audio-format" class="t-select">
+                <option value="mp3">MP3 (Universal)</option>
+                <option value="wav">WAV (Lossless)</option>
+                <option value="aac">AAC (Optimized)</option>
+            </select>
+        </div>
+        <span style="font-size: 13px; color: #64748b;">(Video will be removed, leaving only the audio track)</span>
+    </div>
+
+    <!-- 4. Screenshot Panel -->
+    <div id="tab-screenshot" class="vid-tool-panel">
+        <span style="font-size: 14px; color: #333; font-weight: 500;">
+            🖱️ Play or drag the video progress bar below to the desired frame, then click "Process & Download".
+        </span>
+    </div>
+
+    <!-- Middle: Preview Workspace -->
+    <div class="vid-preview-container" id="vid-workspace">
+        <div class="upload-overlay" id="vid-upload-overlay" onclick="document.getElementById('main-video-upload').click()">
+            <i>🎞️</i>
+            <h3>Click or Drop Video Here</h3>
+            <p style="color:#64748b; font-size: 13px;">Supports MP4, WebM, MOV (Under 200MB recommended)</p>
+        </div>
+        <input type="file" id="main-video-upload" accept="video/*" style="display: none;" onchange="loadMainVideo(event)">
+        <!-- Video element with native controls -->
+        <video id="vid-source" controls crossorigin="anonymous"></video>
+    </div>
+
+    <!-- Bottom: Action Bar -->
+    <div class="vid-action-bar">
+        <div class="action-left">
+            <button class="t-btn t-btn-outline" onclick="resetVidWorkspace()" id="btn-vid-reset" disabled>🗑️ Clear Workspace</button>
+            <span id="loading-indicator">Initializing Engine...</span>
+        </div>
+
+        <div class="privacy-notice">
+            🛡️ 100% Local Processing: Runs inside your browser.
+        </div>
+
+        <button class="t-btn t-btn-primary" onclick="executeVideoTask()" id="btn-vid-action" disabled>⚡ Process & Download</button>
+    </div>
+</div>
+
+<script>
+    const vidElement = document.getElementById('vid-source');
+    const vidUploadOverlay = document.getElementById('vid-upload-overlay');
+    const loadingIndicator = document.getElementById('loading-indicator');
+    const actionBtn = document.getElementById('btn-vid-action');
+    
+    let currentVideoFile = null;
+    let currentActiveTab = 'tab-compress';
+    
+    // FFmpeg Core
+    let ffmpeg = null;
+    const { createFFmpeg, fetchFile } = FFmpeg;
+
+    async function initFFmpeg() {
+        if (!ffmpeg) {
+            loadingIndicator.style.display = 'inline-block';
+            loadingIndicator.innerText = "Loading FFmpeg Engine...";
+            ffmpeg = createFFmpeg({
+                log: true,
+                // 提供直接的跨域资源防止被拦截
+                corePath: 'https://unpkg.com/@ffmpeg/core@0.11.0/dist/ffmpeg-core.js'
+            });
+            ffmpeg.setProgress(({ ratio }) => {
+                const percent = Math.round(ratio * 100);
+                if (percent >= 0 && percent <= 100) {
+                    loadingIndicator.innerText = `Processing: ${percent}%`;
+                }
+            });
+            await ffmpeg.load();
+            loadingIndicator.style.display = 'none';
+        }
+    }
+
+    // 1. Core Functions: Upload & Reset
+    function loadMainVideo(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        currentVideoFile = file;
+        const url = URL.createObjectURL(file);
+        vidElement.src = url;
+        vidElement.style.display = 'block';
+        vidUploadOverlay.style.display = 'none';
+
+        document.getElementById('btn-vid-reset').disabled = false;
+        actionBtn.disabled = false;
+
+        // 加载完视频数据后，初始化时间轴
+        vidElement.onloadedmetadata = () => {
+            document.getElementById('trim-end').value = vidElement.duration.toFixed(1);
+        };
+    }
+
+    function resetVidWorkspace() {
+        vidElement.src = '';
+        vidElement.style.display = 'none';
+        vidUploadOverlay.style.display = 'flex';
+        document.getElementById('main-video-upload').value = '';
+        
+        document.getElementById('btn-vid-reset').disabled = true;
+        actionBtn.disabled = true;
+        currentVideoFile = null;
+    }
+
+    // 2. Tab Navigation
+    function switchVidTab(tabId, btn) {
+        document.querySelectorAll('.vid-tool-panel').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.vid-nav-btn').forEach(el => el.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        btn.classList.add('active');
+        currentActiveTab = tabId;
+
+        // Update button context
+        if (tabId === 'tab-screenshot') {
+            actionBtn.innerHTML = '📸 Capture & Download Frame';
+        } else {
+            actionBtn.innerHTML = '⚡ Process & Download';
+        }
+    }
+
+    // 辅助功能：将当前视频时间填入修剪输入框
+    function setCurrentTime(inputId) {
+        if (!vidElement.src) return;
+        document.getElementById(inputId).value = vidElement.currentTime.toFixed(1);
+    }
+
+    // 3. Main Execution Function based on active tab
+    async function executeVideoTask() {
+        if (!currentVideoFile && currentActiveTab !== 'tab-screenshot') return;
+        
+        actionBtn.disabled = true;
+        document.getElementById('btn-vid-reset').disabled = true;
+
+        try {
+            if (currentActiveTab === 'tab-screenshot') {
+                takeScreenshot();
+            } else if (currentActiveTab === 'tab-compress') {
+                await processWithFFmpeg('compress');
+            } else if (currentActiveTab === 'tab-trim') {
+                await processWithFFmpeg('trim');
+            } else if (currentActiveTab === 'tab-audio') {
+                await processWithFFmpeg('audio');
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Error processing file. See console for details.");
+            loadingIndicator.style.display = 'none';
+        } finally {
+            actionBtn.disabled = false;
+            document.getElementById('btn-vid-reset').disabled = false;
+        }
+    }
+
+    // --- Task: Screenshot (Instant Canvas Processing) ---
+    function takeScreenshot() {
+        if (!vidElement.src) {
+            alert("Please upload a video first.");
+            return;
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = vidElement.videoWidth;
+        canvas.height = vidElement.videoHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(vidElement, 0, 0, canvas.width, canvas.height);
+        
+        const dataUrl = canvas.toDataURL('image/png');
+        downloadBlob(dataUrl, `screenshot_${vidElement.currentTime.toFixed(2)}s.png`, true);
+    }
+
+    // --- Task: FFmpeg Processes ---
+    async function processWithFFmpeg(mode) {
+        await initFFmpeg();
+        loadingIndicator.style.display = 'inline-block';
+        loadingIndicator.innerText = "Reading File...";
+
+        const inputName = 'input_video.mp4';
+        ffmpeg.FS('writeFile', inputName, await fetchFile(currentVideoFile));
+
+        let outputName = '';
+        let ffmpegArgs = [];
+
+        if (mode === 'compress') {
+            outputName = 'compressed.mp4';
+            const crf = document.getElementById('compress-level').value;
+            const scale = document.getElementById('compress-scale').value;
+            // 参数解析: 设置分辨率高度，保留宽高比，调整压缩率
+            ffmpegArgs = ['-i', inputName, '-vf', `scale=-2:${scale}`, '-c:v', 'libx264', '-crf', crf, '-preset', 'ultrafast', outputName];
+        } 
+        else if (mode === 'trim') {
+            outputName = 'trimmed.mp4';
+            const start = document.getElementById('trim-start').value;
+            const end = document.getElementById('trim-end').value;
+            // 极速裁剪: stream copy 而非重新编码
+            ffmpegArgs = ['-i', inputName, '-ss', start, '-to', end, '-c', 'copy', outputName];
+        } 
+        else if (mode === 'audio') {
+            const format = document.getElementById('audio-format').value;
+            outputName = `extracted.${format}`;
+            if (format === 'mp3') {
+                ffmpegArgs = ['-i', inputName, '-q:a', '0', '-map', 'a', outputName];
+            } else if (format === 'wav') {
+                ffmpegArgs = ['-i', inputName, '-vn', '-acodec', 'pcm_s16le', '-ar', '44100', '-ac', '2', outputName];
+            } else if (format === 'aac') {
+                ffmpegArgs = ['-i', inputName, '-vn', '-acodec', 'aac', outputName];
+            }
+        }
+
+        loadingIndicator.innerText = "Processing File...";
+        await ffmpeg.run(...ffmpegArgs);
+
+        loadingIndicator.innerText = "Finishing up...";
+        const data = ffmpeg.FS('readFile', outputName);
+        
+        let mimeType = 'video/mp4';
+        if (mode === 'audio') {
+            const format = document.getElementById('audio-format').value;
+            mimeType = format === 'mp3' ? 'audio/mpeg' : (format === 'wav' ? 'audio/wav' : 'audio/aac');
+        }
+
+        const blob = new Blob([data.buffer], { type: mimeType });
+        const url = URL.createObjectURL(blob);
+        downloadBlob(url, outputName, false);
+        
+        loadingIndicator.style.display = 'none';
+        
+        // 清理内存
+        ffmpeg.FS('unlink', inputName);
+        ffmpeg.FS('unlink', outputName);
+    }
+
+    // 辅助下载功能
+    function downloadBlob(url, filename, isDataUrl = false) {
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        if (!isDataUrl) {
+            // 稍微延迟释放内存，防止下载失败
+            setTimeout(() => URL.revokeObjectURL(url), 5000);
+        }
+    }
+</script>
