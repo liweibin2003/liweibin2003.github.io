@@ -52,26 +52,39 @@ order: 6
   font-weight: 500;
 }
 
-/* 九宫格图片布局 */
+/* 瀑布流图片布局（保持原比例平铺） */
 .image-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3列 = 九宫格 */
-  gap: 15px;
+  column-count: 3; /* 默认3列瀑布流 */
+  column-gap: 15px; /* 列之间的间距 */
 }
 .image-grid a {
   display: block;
+  margin-bottom: 15px; /* 替代原本 grid 的 row-gap，控制上下间距 */
+  break-inside: avoid; /* 防止单张图片被截断到下一列 */
   overflow: hidden;
   border-radius: 8px;
 }
 .image-grid img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* 强制正方形裁切，保证九宫格对齐 */
-  object-fit: cover;
+  height: auto; /* 保持图片原有比例，不再强制裁切为正方形 */
+  display: block;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 .image-grid img:hover {
   transform: scale(1.05); /* 鼠标悬浮图片微微放大 */
+}
+
+/* 响应式调整：屏幕较小时自动减少列数，保证观看体验 */
+@media (max-width: 768px) {
+  .image-grid {
+    column-count: 2; /* 平板/小屏幕改为2列 */
+  }
+}
+@media (max-width: 480px) {
+  .image-grid {
+    column-count: 1; /* 手机窄屏幕改为1列 */
+  }
 }
 
 /* 统一标题样式，替代 Markdown 的 ### */
@@ -119,11 +132,11 @@ order: 6
     </a>
     <div class="video-title">Chinese Traditional Zither (me)</div>
   </div>
-</div> <!-- 补上了这里缺失的关闭标签 -->
+</div>
 
 <div class="section-title">Photo Gallery</div>
 
-<!-- 图片九宫格区 -->
+<!-- 瀑布流图片区 -->
 <div class="image-grid">
   <a href="{{ '/assets/images/7.jpg' | relative_url }}" data-fancybox="image-gallery">
     <img src="{{ '/assets/images/7.jpg' | relative_url }}" alt="Portfolio Image 7">
@@ -151,6 +164,24 @@ order: 6
   </a>
   <a href="{{ '/assets/images/15.jpg' | relative_url }}" data-fancybox="image-gallery">
     <img src="{{ '/assets/images/15.jpg' | relative_url }}" alt="Portfolio Image 15">
+  </a>
+  <a href="{{ '/assets/images/16.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/16.jpg' | relative_url }}" alt="Portfolio Image 16">
+  </a>
+  <a href="{{ '/assets/images/17.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/17.jpg' | relative_url }}" alt="Portfolio Image 17">
+  </a>
+  <a href="{{ '/assets/images/18.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/18.jpg' | relative_url }}" alt="Portfolio Image 18">
+  </a>
+  <a href="{{ '/assets/images/19.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/19.jpg' | relative_url }}" alt="Portfolio Image 19">
+  </a>
+  <a href="{{ '/assets/images/20.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/20.jpg' | relative_url }}" alt="Portfolio Image 20">
+  </a>
+  <a href="{{ '/assets/images/21.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/21.jpg' | relative_url }}" alt="Portfolio Image 21">
   </a>
 </div>
 
