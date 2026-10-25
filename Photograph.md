@@ -165,12 +165,6 @@ order: 6
   <a href="{{ '/assets/images/15.jpg' | relative_url }}" data-fancybox="image-gallery">
     <img src="{{ '/assets/images/15.jpg' | relative_url }}" alt="Portfolio Image 15">
   </a>
-  <a href="{{ '/assets/images/16.jpg' | relative_url }}" data-fancybox="image-gallery">
-    <img src="{{ '/assets/images/16.jpg' | relative_url }}" alt="Portfolio Image 16">
-  </a>
-  <a href="{{ '/assets/images/17.jpg' | relative_url }}" data-fancybox="image-gallery">
-    <img src="{{ '/assets/images/17.jpg' | relative_url }}" alt="Portfolio Image 17">
-  </a>
   <a href="{{ '/assets/images/18.jpg' | relative_url }}" data-fancybox="image-gallery">
     <img src="{{ '/assets/images/18.jpg' | relative_url }}" alt="Portfolio Image 18">
   </a>
@@ -182,6 +176,12 @@ order: 6
   </a>
   <a href="{{ '/assets/images/21.jpg' | relative_url }}" data-fancybox="image-gallery">
     <img src="{{ '/assets/images/21.jpg' | relative_url }}" alt="Portfolio Image 21">
+  </a>
+  <a href="{{ '/assets/images/22.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/22.jpg' | relative_url }}" alt="Portfolio Image 22">
+  </a>
+    <a href="{{ '/assets/images/23.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/23.jpg' | relative_url }}" alt="Portfolio Image 23">
   </a>
 </div>
 
