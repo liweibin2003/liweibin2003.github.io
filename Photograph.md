@@ -184,6 +184,48 @@ order: 6
     <img src="{{ '/assets/images/23.png' | relative_url }}" alt="Portfolio Image 23">
   </a>
 </div>
+<div class="image-grid">
+  <a href="{{ '/assets/images/24.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/24.jpg' | relative_url }}" alt="Portfolio Image 24">
+  </a>
+  <a href="{{ '/assets/images/25.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/25.jpg' | relative_url }}" alt="Portfolio Image 25">
+  </a>
+  <a href="{{ '/assets/images/26.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/26.jpg' | relative_url }}" alt="Portfolio Image 26">
+  </a>
+  <a href="{{ '/assets/images/27.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/27.jpg' | relative_url }}" alt="Portfolio Image 27">
+  </a>
+  <a href="{{ '/assets/images/28.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/28.jpg' | relative_url }}" alt="Portfolio Image 28">
+  </a>
+  <a href="{{ '/assets/images/29.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/29.jpg' | relative_url }}" alt="Portfolio Image 29">
+  </a>
+  <a href="{{ '/assets/images/30.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/30.jpg' | relative_url }}" alt="Portfolio Image 30">
+  </a>
+  <a href="{{ '/assets/images/31.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/31.jpg' | relative_url }}" alt="Portfolio Image 31">
+  </a>
+  <a href="{{ '/assets/images/32.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/32.jpg' | relative_url }}" alt="Portfolio Image 32">
+  </a>
+  <a href="{{ '/assets/images/33.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/33.jpg' | relative_url }}" alt="Portfolio Image 33">
+  </a>
+  <a href="{{ '/assets/images/34.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/34.jpg' | relative_url }}" alt="Portfolio Image 34">
+  </a>
+  <a href="{{ '/assets/images/35.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/35.jpg' | relative_url }}" alt="Portfolio Image 35">
+  </a>
+  <a href="{{ '/assets/images/36.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/36.jpg' | relative_url }}" alt="Portfolio Image 36">
+  </a>
+</div>
+
 
 <!-- 初始化 Fancybox 脚本 -->
 <script>
