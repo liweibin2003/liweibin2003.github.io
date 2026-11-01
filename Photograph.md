@@ -132,6 +132,7 @@ order: 6
     </a>
     <div class="video-title">To be continued</div>
   </div>
+</div> <!-- 👈 增加这个闭合标签结束 video-grid -->
 
 <div class="section-title">Photo Gallery</div>
 
