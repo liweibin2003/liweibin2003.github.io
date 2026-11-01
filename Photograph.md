@@ -125,15 +125,6 @@ order: 6
     <div class="video-title">Photoshop Tutorial: Cosplay</div>
   </div>
 
-  <!-- 视频 4：本地 mp4 源 + 本地视频默认封面 -->
-  <div class="video-item">
-    <a href="{{ '/assets/images/4.mp4' | relative_url }}" data-fancybox="video-gallery">
-      <video src="{{ '/assets/images/4.mp4' | relative_url }}" preload="metadata" muted></video>
-    </a>
-    <div class="video-title">Chinese Traditional Zither (me)</div>
-  </div>
-</div>
-
 <div class="section-title">Photo Gallery</div>
 
 <!-- 瀑布流图片区 -->
@@ -183,10 +174,8 @@ order: 6
     <a href="{{ '/assets/images/23.png' | relative_url }}" data-fancybox="image-gallery">
     <img src="{{ '/assets/images/23.png' | relative_url }}" alt="Portfolio Image 23">
   </a>
-</div>
-<div class="image-grid">
-  <a href="{{ '/assets/images/24.jpg' | relative_url }}" data-fancybox="image-gallery">
-    <img src="{{ '/assets/images/24.jpg' | relative_url }}" alt="Portfolio Image 24">
+  <a href="{{ '/assets/images/34.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/34.jpg' | relative_url }}" alt="Portfolio Image 34">
   </a>
   <a href="{{ '/assets/images/25.jpg' | relative_url }}" data-fancybox="image-gallery">
     <img src="{{ '/assets/images/25.jpg' | relative_url }}" alt="Portfolio Image 25">
@@ -215,8 +204,8 @@ order: 6
   <a href="{{ '/assets/images/33.jpg' | relative_url }}" data-fancybox="image-gallery">
     <img src="{{ '/assets/images/33.jpg' | relative_url }}" alt="Portfolio Image 33">
   </a>
-  <a href="{{ '/assets/images/34.jpg' | relative_url }}" data-fancybox="image-gallery">
-    <img src="{{ '/assets/images/34.jpg' | relative_url }}" alt="Portfolio Image 34">
+  <a href="{{ '/assets/images/24.jpg' | relative_url }}" data-fancybox="image-gallery">
+    <img src="{{ '/assets/images/24.jpg' | relative_url }}" alt="Portfolio Image 24">
   </a>
   <a href="{{ '/assets/images/35.jpg' | relative_url }}" data-fancybox="image-gallery">
     <img src="{{ '/assets/images/35.jpg' | relative_url }}" alt="Portfolio Image 35">
