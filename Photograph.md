@@ -125,6 +125,14 @@ order: 6
     <div class="video-title">Photoshop Tutorial: Cosplay</div>
   </div>
 
+  <!-- 视频 3：本地 mp4 源 + 本地视频默认封面 -->
+  <div class="video-item">
+    <a href="{{ '/assets/images/5.mp4' | relative_url }}" data-fancybox="video-gallery">
+      <video src="{{ '/assets/images/5.mp4' | relative_url }}" preload="metadata" muted></video>
+    </a>
+    <div class="video-title">To be continued</div>
+  </div>
+
 <div class="section-title">Photo Gallery</div>
 
 <!-- 瀑布流图片区 -->
